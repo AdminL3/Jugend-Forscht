@@ -45,7 +45,7 @@ try:
     inputs[-1].send_keys(email)
     driver.find_element(By.XPATH, "//span[text()='Weiter']").click()
 except:
-    print("error")
+    pass
 
 time.sleep(1)
 inputs = driver.find_elements(By.TAG_NAME, 'input')
