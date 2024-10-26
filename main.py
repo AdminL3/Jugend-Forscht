@@ -56,6 +56,7 @@ inputs[-1].send_keys(password)
 driver.find_element(By.XPATH, "//span[text()='Anmelden']").click()
 time.sleep(2)
 
+driver.get('https://x.com/home')
 
 for i in range(5):
     time.sleep(1)
