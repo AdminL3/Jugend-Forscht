@@ -28,12 +28,6 @@ driver.get('https://x.com/signin')
 user = "LeviBlu412024"
 password = "X+aDGi@S484+qcL"
 
-# suche nach object
-suchfeld = driver.find_element(By.CSS_SELECTOR, '[role="searchbox"]')
-suchfeld.send_keys(Input)
-suchbutton = driver.find_element(
-    By.CSS_SELECTOR, '[data-qa="ftfind-search-submit"]')
-suchbutton.click()
 
 
 for i in range(5):
