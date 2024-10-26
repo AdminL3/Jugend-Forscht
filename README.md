@@ -1,6 +1,6 @@
-# 🐍 Twitter (X) Automation Bot with Selenium
+# 🐍 Data Analasis Bot using Python
 
-A Python script that automates interactions with Twitter/X platform, including login, search, and data extraction capabilities. Perfect for social media research and content analysis.
+A Python script that automates interactions with Data platforms, including login, search, and data extraction capabilities. Perfect for social media research and content analysis.
 
 
 ## ⚙️ Prerequisites
