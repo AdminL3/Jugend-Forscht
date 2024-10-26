@@ -35,86 +35,94 @@ if x:
 
 
 else:
-    options = webdriver.ChromeOptions()
-    options.add_argument("--start-maximized")
-    options.add_argument("--disable-search-engine-choice-screen")
-    options.add_experimental_option("detach", True)
-    driver = webdriver.Chrome(options=options)
+    pass
+    # option to login without session not implemented yet
 
-    driver.get('https://x.com/home')
-    print(driver.title)
+    # options = webdriver.ChromeOptions()
+    # options.add_argument("--start-maximized")
+    # options.add_argument("--disable-search-engine-choice-screen")
+    # options.add_experimental_option("detach", True)
+    # driver = webdriver.Chrome(options=options)
 
-    time.sleep(3)
+    # driver.get('https://x.com/home')
+    # print(driver.title)
 
-    # accept all cookies
-    button = driver.find_element(
-        By.XPATH, "//button[.//span[text()='Alle Cookies akzeptieren']]")
-    button.click()
+    # time.sleep(3)
 
-    # login
-    driver.get('https://x.com/signin')
-    user = "LeviBlu412024"
-    password = "X+aDGi@S484+qcL"
-    email = "l-blu@outlook.de"
+    # # accept all cookies
+    # button = driver.find_element(
+    #     By.XPATH, "//button[.//span[text()='Alle Cookies akzeptieren']]")
+    # button.click()
 
-    time.sleep(3)
+    # # login
+    # driver.get('https://x.com/signin')
+    # email = "l-blu@outlook.de"
+    # password = "dppC:6JErV.eHmL"
 
-    # benutzername
-    username = driver.find_element(By.TAG_NAME, 'input')
-    username.send_keys(user)
+    # time.sleep(3)
 
-    # click enter
-    driver.find_element(By.XPATH, "//span[text()='Weiter']").click()
-    time.sleep(2)
+    # # benutzername
+    # username = driver.find_element(By.TAG_NAME, 'input')
+    # username.send_keys(user)
 
-    inputs = driver.find_elements(By.TAG_NAME, 'input')
-    try:
-        verification = driver.find_element(
-            By.XPATH, "//span[text()='Gib deine Telefonnummer oder E-Mail-Adresse ein']")
-        inputs[-1].send_keys(email)
-        driver.find_element(By.XPATH, "//span[text()='Weiter']").click()
-    except:
-        pass
+    # # click enter
+    # driver.find_element(By.XPATH, "//span[text()='Weiter']").click()
+    # time.sleep(2)
 
-    time.sleep(1)
-    inputs = driver.find_elements(By.TAG_NAME, 'input')
-    # passwort
-    inputs[-1].send_keys(password)
+    # inputs = driver.find_elements(By.TAG_NAME, 'input')
+    # try:
+    #     verification = driver.find_element(
+    #         By.XPATH, "//span[text()='Gib deine Telefonnummer oder E-Mail-Adresse ein']")
+    #     inputs[-1].send_keys(email)
+    #     driver.find_element(By.XPATH, "//span[text()='Weiter']").click()
+    # except:
+    #     pass
 
-    # click login
-    driver.find_element(By.XPATH, "//span[text()='Anmelden']").click()
-    time.sleep(2)
+    # time.sleep(1)
+    # inputs = driver.find_elements(By.TAG_NAME, 'input')
+    # # passwort
+    # inputs[-1].send_keys(password)
+
+    # # click login
+    # driver.find_element(By.XPATH, "//span[text()='Anmelden']").click()
+    # time.sleep(2)
 
 
 print("Successfully logged in!")
-driver.get('https://x.com/home')
+driver.get('https://facebook.com/home')
 # search function
 print("What would you like to search for?")
-base_url = "https://x.com/search?q={}&src=typed_query&f=top"
-
 topic = input()
+
 
 amount = 10
 print(f"Taking first {amount} articles")
 
 
-url = base_url.format(topic)
+base_url = "https://www.facebook.com/search/posts/?q="
+url = base_url + topic
 driver.get(url)
-time.sleep(2)
 
-driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-time.sleep(1)
-driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-time.sleep(5)
-articles = driver.find_elements(By.CSS_SELECTOR, "[data-testid='tweet']")
-print(f"Found {len(articles)} articles")
+# print("Searching Elements")
+# for i in range(4):
+#     time.sleep(3)
+#     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+# time.sleep(3)
+# articles = driver.find_elements(
+#     By.CSS_SELECTOR, '[dir="auto"][style="text-align: start;"]')
+# print(f"Found {len(articles)} articles")
 
 
-for i in range(amount):
-    try:
-        element = articles[i].find_element(
-            By.CSS_SELECTOR, '[data-testid="tweetText"]')
-        tweet_text = element.text
-        print(tweet_text)
-    except:
-        print("No more Articles")
+# for i in range(amount):
+#     try:
+#         text = articles[i].text
+#         print(text)
+#     except:
+#         print("No more Articles")
+
+
+html_code = driver.execute_script("return document.documentElement.outerHTML")
+pyperclip.copy(html_code)
+# Print or process the HTML code as needed
+print(html_code)
