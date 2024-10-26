@@ -56,12 +56,15 @@ inputs[-1].send_keys(password)
 driver.find_element(By.XPATH, "//span[text()='Anmelden']").click()
 time.sleep(2)
 
+# go home
 driver.get('https://x.com/home')
 
 print("Successfully logged in!")
+
+# search function
 print("What would you like to search for?")
 base_url = "https://x.com/search?q={}&src=typed_query&f=top"
-# Format the URL with the search term
+
 input = input()
 url = base_url.format(input)
 
