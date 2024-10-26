@@ -33,6 +33,11 @@ password = "X+aDGi@S484+qcL"
 username = driver.find_element(By.TAG_NAME, 'input')
 username.send_keys(user)
 
+# passwort
+inputs = driver.find_elements(By.TAG_NAME, 'input')
+inputs[-1].send_keys(password)
+
+
 for i in range(5):
     time.sleep(1)
     print(5-i)
