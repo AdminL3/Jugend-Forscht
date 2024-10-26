@@ -2,8 +2,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-# Input = "Yannis"
-Input = input("Wonach möchtest du suchen?   ")
+
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
 options.add_argument("--disable-search-engine-choice-screen")
