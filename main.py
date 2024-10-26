@@ -29,6 +29,9 @@ user = "LeviBlu412024"
 password = "X+aDGi@S484+qcL"
 
 
+# benutzername
+username = driver.find_element(By.TAG_NAME, 'input')
+username.send_keys(user)
 
 for i in range(5):
     time.sleep(1)
