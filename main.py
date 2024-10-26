@@ -34,15 +34,18 @@ username = driver.find_element(By.TAG_NAME, 'input')
 username.send_keys(user)
 
 # click enter
-button = driver.find_element(
-    By.XPATH, "//button[.//span[text()='Weiter']]")
-time.sleep(1)
+driver.find_element(By.XPATH, "//span[text()='Weiter']").click()
 time.sleep(2)
 
 
 # passwort
 inputs = driver.find_elements(By.TAG_NAME, 'input')
 inputs[-1].send_keys(password)
+
+
+# click login
+driver.find_element(By.XPATH, "//span[text()='Anmelden']").click()
+time.sleep(2)
 
 
 for i in range(5):
