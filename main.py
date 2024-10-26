@@ -58,6 +58,16 @@ time.sleep(2)
 
 driver.get('https://x.com/home')
 
+print("Successfully logged in!")
+print("What would you like to search for?")
+base_url = "https://x.com/search?q={}&src=typed_query&f=top"
+# Format the URL with the search term
+input = input()
+url = base_url.format(input)
+
+driver.get(url)
+
+
 for i in range(5):
     time.sleep(1)
     print(5-i)
