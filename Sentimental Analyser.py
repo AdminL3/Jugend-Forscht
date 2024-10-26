@@ -1,10 +1,10 @@
-from textblob import TextBlob
+import textblob
 
 
 print("Input text:")
 text = input()
 
-blob = TextBlob(text)
+blob = textblob(text)
 sentiment_polarity = blob.sentiment.polarity
 if sentiment_polarity > 0:
     sentiment_type = "Positive 😀"
