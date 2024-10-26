@@ -110,9 +110,11 @@ articles = driver.find_elements(By.CSS_SELECTOR, "[data-testid='tweet']")
 print(f"Found {len(articles)} articles")
 
 
-urls = []
 for i in range(amount):
-    article = articles[i]
-    a_tag = article.find_element(By.TAG_NAME, 'a')
-    url = a_tag.get_attribute('href')
-    urls.append(url)
+    try:
+        element = articles[i].find_element(
+            By.CSS_SELECTOR, '[data-testid="tweetText"]')
+        tweet_text = element.text
+        print(tweet_text)
+    except:
+        print("No more Articles")
