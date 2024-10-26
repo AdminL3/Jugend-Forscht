@@ -33,6 +33,12 @@ password = "X+aDGi@S484+qcL"
 username = driver.find_element(By.TAG_NAME, 'input')
 username.send_keys(user)
 
+# click enter
+button = driver.find_element(
+    By.XPATH, "//button[.//span[text()='Weiter']]")
+time.sleep(1)
+
+
 # passwort
 inputs = driver.find_elements(By.TAG_NAME, 'input')
 inputs[-1].send_keys(password)
