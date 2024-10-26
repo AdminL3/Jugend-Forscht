@@ -98,8 +98,10 @@ topic = input()
 amount = 5
 print(f"Taking first {amount} articles")
 
-driver.get(url)
 
+url = base_url.format(topic)
+driver.get(url)
+time.sleep(1)
 
 articles = driver.find_elements(By.TAG_NAME, 'article')
 print(f"There are {len(articles)} articles found")
