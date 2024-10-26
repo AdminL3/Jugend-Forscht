@@ -1,57 +1,103 @@
+# 🐍 Twitter (X) Automation Bot with Selenium
 
-# 🐍 Twitter Automation Bot with Selenium
+A Python script that automates interactions with Twitter/X platform, including login, search, and data extraction capabilities. Perfect for social media research and content analysis.
 
-This Python script automates the login process on Twitter (now X) and performs a custom search on the platform using Selenium. It provides a template for web scraping and automated UI interactions.
 
 ## ⚙️ Prerequisites
 
-1. **Python**
-2. **Selenium**
-3. **ChromeDriver** – Download the correct version [here](https://sites.google.com/a/chromium.org/chromedriver/downloads) based on your Chrome browser version.
+1. **Python 3.x**
+2. **Required Packages**:
+   - Selenium
+   - Pyperclip
+3. **ChromeDriver** or **Google Chrome Browser**
 
-## 🔧 Setup
+## 🔧 Installation
 
-1. **Create a Virtual Environment** (optional):
+1. **Create a Virtual Environment** (optional but recommended):
    ```bash
    python -m venv venv
-   .venv\Scripts\activate  # or source venv/bin/activate
+   .venv\Scripts\activate  # Windows
+   source venv/bin/activate  # Linux/Mac
    ```
 
-2. **Install Selenium**:
+2. **Install Dependencies**:
    ```bash
-   pip install selenium
+   pip install selenium pyperclip
    ```
 
-3. **ChromeDriver Setup**: Ensure `chromedriver` is accessible in your PATH or in the same directory as the script.
-
-## 📜 Script Functionality
-
-1. **Browser Setup**: Opens a maximized Chrome window and disables search engine choice popups.
-2. **Automated Login**: Logs in to Twitter using username, email, and password inputs.
-3. **Search Execution**: After login, the user can enter a search term to look up content on Twitter.
-4. **Output Functionality**: The Core Feature (yet to be implemented) analyses the data of the search query
+3. **ChromeDriver Setup** (optional if Chrome): 
+   - Download matching version from [ChromeDriver Downloads](https://sites.google.com/a/chromium.org/chromedriver/downloads)
+   - Add to system PATH or place in script directory
 
 ## 🚀 Usage
 
-Activate VENV (optional) (auto in VSCode)
+### Standard Operation
 ```bash
-.venv\Scripts\activate
-```
-Run Python file
-```bash
-py main.py
+python main.py
 ```
 
+### Session Types
 
+1. **Automatic Login**:
+   - Select 'n' when prompted
+   - Bot will:
+     - Launch fresh Chrome instance
+     - Handle cookie acceptance
+     - Perform automated login
 
-## 🛠️ Known Issues
+2. **Existing Session**:
+   - Open Chrome with debugging port:
+     ```bash
+     "C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222
+     ```
+   - Manually login to X
+   - Select 'y' when running script
+   - Continue with existing logged-in session
 
-- **Two-Factor Authentication (2FA)**: This script does not support accounts with 2FA enabled.
-- **Popup Variability**: Occasional additional prompts may interrupt the flow.
+### Search & Extraction
+1. Enter search query when prompted
+2. Specify number of results to extract
+3. URLs will be collected from search results
 
-## 📬 Contact
+## 🔐 Authentication
 
-Feel free to open an issue for questions or suggestions!
+Default credentials are provided (but using your own is recommended):
+- Username: LeviBlu412024
+- Email: l-blu@outlook.de
+- Password: X+aDGi@S484+qcL
 
+## ⚠️ Limitations & Known Issues
 
+- **Two-Factor Authentication**: Not supported
+- **Dynamic Content**: May need adjustments for Twitter's UI changes
+- **Rate Limiting**: No built-in handling for Twitter's rate limits
+- **Session Handling**: Debug port must be manually configured for existing sessions
 
+## 🛠️ Technical Details
+
+- Uses Selenium WebDriver for browser automation
+- Implements explicit waits for better reliability
+- Handles cookie consent popups automatically
+- Supports both fresh and existing Chrome sessions
+- Extracts article URLs using XPath and tag selection
+
+## 📝 Future Improvements
+
+- [ ] Add support for 2FA
+- [ ] Add data export functionality
+- [ ] Data Analytics
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit pull requests.
+
+## 📬 Support
+
+For issues and questions:
+1. Open an issue in the repository
+2. Provide detailed description of the problem
+3. Include steps to reproduce if applicable
+
+## 📜 License
+
+This project is open source - feel free to use and modify with attribution.
