@@ -27,6 +27,8 @@ if x:
         '"C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222')
     print('Copied command to clipboard')
     input("Press any key to continue...")
+    print("Accessing Session...")
+
     options = Options()
     options.add_experimental_option("debuggerAddress", "localhost:9222")
     driver = webdriver.Chrome(options=options)
@@ -83,9 +85,6 @@ else:
     driver.find_element(By.XPATH, "//span[text()='Anmelden']").click()
     time.sleep(2)
 
-    # go home
-
-    print("Successfully logged in!")
 
 print("Successfully logged in!")
 driver.get('https://x.com/home')
@@ -95,19 +94,19 @@ base_url = "https://x.com/search?q={}&src=typed_query&f=top"
 
 topic = input()
 
-amount = 5
+amount = 10
 print(f"Taking first {amount} articles")
 
 
 url = base_url.format(topic)
 driver.get(url)
-time.sleep(1)
+time.sleep(2)
 
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 time.sleep(1)
 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-time.sleep(1)
-articles = driver.find_elements(By.TAG_NAME, 'article')
+time.sleep(5)
+articles = driver.find_elements(By.CSS_SELECTOR, "[data-testid='tweet']")
 print(f"Found {len(articles)} articles")
 
 
