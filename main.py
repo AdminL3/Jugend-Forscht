@@ -103,6 +103,10 @@ url = base_url.format(topic)
 driver.get(url)
 time.sleep(1)
 
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+time.sleep(1)
+driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+time.sleep(1)
 articles = driver.find_elements(By.TAG_NAME, 'article')
 print(f"There are {len(articles)} articles found")
 while True:
