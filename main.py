@@ -26,6 +26,7 @@ button.click()
 driver.get('https://x.com/signin')
 user = "LeviBlu412024"
 password = "X+aDGi@S484+qcL"
+email = "l-blu@outlook.de"
 
 time.sleep(3)
 
@@ -37,11 +38,19 @@ username.send_keys(user)
 driver.find_element(By.XPATH, "//span[text()='Weiter']").click()
 time.sleep(2)
 
-
-# passwort
 inputs = driver.find_elements(By.TAG_NAME, 'input')
-inputs[-1].send_keys(password)
+try:
+    verification = driver.find_element(
+        By.XPATH, "//span[text()='Gib deine Telefonnummer oder E-Mail-Adresse ein']")
+    inputs[-1].send_keys(email)
+    driver.find_element(By.XPATH, "//span[text()='Weiter']").click()
+except:
+    print("error")
 
+time.sleep(1)
+inputs = driver.find_elements(By.TAG_NAME, 'input')
+# passwort
+inputs[-1].send_keys(password)
 
 # click login
 driver.find_element(By.XPATH, "//span[text()='Anmelden']").click()
