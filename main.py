@@ -93,8 +93,10 @@ driver.get('https://x.com/home')
 print("What would you like to search for?")
 base_url = "https://x.com/search?q={}&src=typed_query&f=top"
 
-input = input()
-url = base_url.format(input)
+topic = input()
+
+amount = 5
+print(f"Taking first {amount} articles")
 
 driver.get(url)
 
