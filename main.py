@@ -8,7 +8,9 @@ options.add_argument("--start-maximized")
 options.add_argument("--disable-search-engine-choice-screen")
 options.add_experimental_option("detach", True)
 driver = webdriver.Chrome(options=options)
-driver.get('https://www.otto.de/')
+
+
+driver.get('https://x.com/home')
 print(driver.title)
 
 time.sleep(2)
