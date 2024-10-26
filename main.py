@@ -13,7 +13,7 @@ driver = webdriver.Chrome(options=options)
 driver.get('https://x.com/home')
 print(driver.title)
 
-time.sleep(2)
+time.sleep(3)
 
 # accept cookies
 driver.find_element(By.ID, 'onetrust-accept-btn-handler').click()
