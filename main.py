@@ -97,3 +97,22 @@ input = input()
 url = base_url.format(input)
 
 driver.get(url)
+
+
+articles = driver.find_elements(By.TAG_NAME, 'article')
+print(f"There are {len(articles)} articles found")
+while True:
+    print("How many do you want to extract?")
+    amount = input()
+    try:
+        int(amount)
+        break
+    except:
+        print("Not a number, try again:")
+
+urls = []
+for i in range(amount):
+    article = articles[i]
+    a_tag = article.find_element(By.TAG_NAME, 'a')
+    url = a_tag.get_attribute('href')
+    urls.append(url)
