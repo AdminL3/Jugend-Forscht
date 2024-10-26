@@ -14,9 +14,11 @@ driver.get('https://x.com/home')
 print(driver.title)
 
 time.sleep(3)
+# accept all cookies
+button = driver.find_element(
+    By.XPATH, "//button[.//span[text()='Alle Cookies akzeptieren']]")
+button.click()
 
-# accept cookies
-driver.find_element(By.ID, 'onetrust-accept-btn-handler').click()
 
 # suche nach object
 suchfeld = driver.find_element(By.CSS_SELECTOR, '[role="searchbox"]')
