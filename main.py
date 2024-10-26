@@ -14,11 +14,19 @@ driver.get('https://x.com/home')
 print(driver.title)
 
 time.sleep(3)
+
+
 # accept all cookies
 button = driver.find_element(
     By.XPATH, "//button[.//span[text()='Alle Cookies akzeptieren']]")
 button.click()
 
+time.sleep(1)
+
+# login
+driver.get('https://x.com/signin')
+user = "LeviBlu412024"
+password = "X+aDGi@S484+qcL"
 
 # suche nach object
 suchfeld = driver.find_element(By.CSS_SELECTOR, '[role="searchbox"]')
