@@ -66,10 +66,3 @@ input = input()
 url = base_url.format(input)
 
 driver.get(url)
-
-
-for i in range(5):
-    time.sleep(1)
-    print(5-i)
-driver.quit()
-exit
