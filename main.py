@@ -21,13 +21,13 @@ button = driver.find_element(
     By.XPATH, "//button[.//span[text()='Alle Cookies akzeptieren']]")
 button.click()
 
-time.sleep(1)
 
 # login
 driver.get('https://x.com/signin')
 user = "LeviBlu412024"
 password = "X+aDGi@S484+qcL"
 
+time.sleep(3)
 
 # benutzername
 username = driver.find_element(By.TAG_NAME, 'input')
@@ -37,6 +37,7 @@ username.send_keys(user)
 button = driver.find_element(
     By.XPATH, "//button[.//span[text()='Weiter']]")
 time.sleep(1)
+time.sleep(2)
 
 
 # passwort
