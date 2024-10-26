@@ -6,9 +6,10 @@ A Python script that automates interactions with Data platforms, including login
 ## ⚙️ Prerequisites
 
 1. **Python 3.x**
-2. **Required Packages**:
+2. **Packages**:
    - Selenium
-   - Pyperclip
+   - Pyperclip (optional)
+   - Requests
 3. **ChromeDriver** or **Google Chrome Browser**
 
 ## 🔧 Installation
@@ -22,7 +23,7 @@ A Python script that automates interactions with Data platforms, including login
 
 2. **Install Dependencies**:
    ```bash
-   pip install selenium pyperclip
+   pip install selenium pyperclip requests
    ```
 
 3. **ChromeDriver Setup** (optional if Chrome): 
@@ -38,7 +39,12 @@ python main.py
 
 ### Session Types
 
-1. **Automatic Login**:
+1. **API Access**:
+   - Some Apps are accessed with APIs
+   - Reddit required Praw
+
+2. **Automatic Login**:
+   - Some Apps use Selenium to get the data
    - Select 'n' when prompted
    - Bot will:
      - Launch fresh Chrome instance
