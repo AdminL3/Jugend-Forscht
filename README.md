@@ -10,6 +10,8 @@ A Python script that automates interactions with Data platforms, including login
    - Selenium
    - Pyperclip (optional)
    - Requests
+   - nltk (Data Analasis)
+   - Textblob (Data Analasis)
 3. **ChromeDriver** or **Google Chrome Browser**
 
 ## 🔧 Installation
@@ -23,7 +25,7 @@ A Python script that automates interactions with Data platforms, including login
 
 2. **Install Dependencies**:
    ```bash
-   pip install selenium pyperclip requests
+   pip install selenium pyperclip requests nltk textblob
    ```
 
 3. **ChromeDriver Setup** (optional if Chrome): 
