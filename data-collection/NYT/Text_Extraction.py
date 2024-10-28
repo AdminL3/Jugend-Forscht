@@ -20,3 +20,12 @@ print(driver.title)
 
 topic = "us"
 
+# Loop through each month and each URL
+for i in range(12):
+    month = i + 1
+    output_dir = f"data/NYT/articles/{topic}/month{month}/"
+    os.makedirs(output_dir, exist_ok=True)
+    file_path = f"data/NYT/links/{topic}/month{month}.txt"
+    with open(file_path, 'r', encoding='latin-1') as file:
+        urls = file.read().splitlines()
+    index = 0
