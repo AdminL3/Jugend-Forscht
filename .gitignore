@@ -1,4 +1,5 @@
 .venv
 data-collection/config.py
 data-collection/NYT/config.py
+data-collection/NYT/__pycache__/
 data
