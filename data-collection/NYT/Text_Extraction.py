@@ -25,13 +25,12 @@ year = 2020
 # year = config.get_input_number("What year do you want to convert?")
 topics = config.topics
 for topic in topics:
-    # Loop through each month and each URL
     for i in range(12):
         month = i + 1
-        output_dir = f"data/NYT/articles/{topic}/month{month}/"
+        output_dir = f"data/NYT/articles/{topic}/{year}/month{month}/"
         os.makedirs(output_dir, exist_ok=True)
-        file_path = f"data/NYT/links/{topic}/month{month}.txt"
-        with open(file_path, 'r', encoding='latin-1') as file:
+        urls_path = f"data/NYT/links/{topic}/{year}/month{month}.txt"
+        with open(urls_path, 'r', encoding='latin-1') as file:
             urls = file.read().splitlines()
         index = 0
         for url in urls:
@@ -65,7 +64,6 @@ for topic in topics:
                 article_text = "\n".join([p.get_text() for p in paragraphs])
 
                 # Write article text to a file
-                output_file = os.path.join(output_dir, file_name)
                 with open(output_file, 'w', encoding='utf-8') as f:
                     f.write(article_text)
         
