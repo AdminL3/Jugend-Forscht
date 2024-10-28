@@ -22,6 +22,7 @@ for month_idx in range(12):
         response.raise_for_status()
         data = response.json()
         articles = data.get("response", {}).get("docs", [])
+        
         for topic in topics:
             file_path = f"data/NYT/links/{topic}/month{month}.txt"
             
@@ -37,3 +38,9 @@ for month_idx in range(12):
             print(f"Die Links für {topic} wurden erfolgreich in 'month{month}.txt' gespeichert.")
 
         time.sleep(3)
+
+    except requests.exceptions.RequestException as e:
+        print(f"Fehler beim Abrufen der Daten: {e}")
+        time.sleep(5)
+    except ValueError:
+        print("Fehler beim Parsen der JSON-Antwort.")
