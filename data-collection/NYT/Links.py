@@ -16,3 +16,9 @@ for month_idx in range(12):
     if os.path.exists(file_path):
         print(f"File 'month{month}.txt'  already exists. Skipping...")
         continue
+    
+    try:
+        response = requests.get(URL)
+        response.raise_for_status()
+        data = response.json()
+        articles = data.get("response", {}).get("docs", [])
