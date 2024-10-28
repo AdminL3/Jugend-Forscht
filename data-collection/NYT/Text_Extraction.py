@@ -4,6 +4,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
+import config
+
 
 # Setup Chrome options
 options = webdriver.ChromeOptions()
@@ -19,9 +21,9 @@ print(driver.title)
 
 
 last_date = 0
-
-topics = ["politics", "world"]
-#loop through each topic
+year = 2020
+# year = config.get_input_number("What year do you want to convert?")
+topics = config.topics
 for topic in topics:
     # Loop through each month and each URL
     for i in range(12):

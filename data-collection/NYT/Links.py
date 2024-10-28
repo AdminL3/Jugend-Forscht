@@ -9,7 +9,7 @@ start_year = 2021
 amount_years = 1
 # amount_years = config.get_input_number("Input amount of years: ")
 
-topics = ["politics", "world"]
+topics = config.topics
 API_KEY = config.NYT_API_KEY
 for i in range(amount_years):
     year = start_year + i
