@@ -29,3 +29,17 @@ for i in range(12):
     with open(file_path, 'r', encoding='latin-1') as file:
         urls = file.read().splitlines()
     index = 0
+    for url in urls:
+        index += 1
+        parts = url.split('/')
+        year = parts[3]
+        month = parts[4]
+        day = parts[5]
+        date = f"{year}_{month}_{day}_"
+        
+        file_name = f"{date}{index}.txt"
+        
+        output_file = os.path.join(output_dir, file_name)
+        if os.path.exists(output_file):
+            print(f"File {file_name} already exists. Skipping...")
+            continue
