@@ -9,6 +9,7 @@ month = 0
 topics = ["us", "politics", "world"]
 API_KEY = config.NYT_API_KEY
 
+
 for month_idx in range(12):
     month += 1
     file_path = f"data/NYT/links/{topics[0]}/month{month}.txt"
