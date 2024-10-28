@@ -43,3 +43,21 @@ for i in range(12):
         if os.path.exists(output_file):
             print(f"File {file_name} already exists. Skipping...")
             continue
+        
+        print("Getting source code for URL:", url)
+        driver.get(url)
+        
+        soup = BeautifulSoup(driver.page_source, "html.parser")
+        
+        article_section = soup.find("section", {"name": "articleBody"})
+        
+        if article_section:
+            print("Article body found.")
+            # Extract all text from paragraph tags inside the divs
+            paragraphs = article_section.find_all("p")
+            article_text = "\n".join([p.get_text() for p in paragraphs])
+
+            # Write article text to a file
+            output_file = os.path.join(output_dir, file_name)
+            with open(output_file, 'w', encoding='utf-8') as f:
+                f.write(article_text)
