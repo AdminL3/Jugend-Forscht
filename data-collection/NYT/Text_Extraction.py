@@ -16,3 +16,7 @@ driver = webdriver.Chrome(options=options)
 # Go to Google to initialize driver
 driver.get('https://google.com/')
 print(driver.title)
+
+
+topic = "us"
+
