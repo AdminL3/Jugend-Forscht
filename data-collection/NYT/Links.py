@@ -6,7 +6,7 @@ import config
 
 year = 2020
 month = 0
-topics = ["us", "politics", "world"]
+topics = ["politics", "world"]
 API_KEY = config.NYT_API_KEY
 
 

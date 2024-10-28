@@ -20,7 +20,7 @@ print(driver.title)
 
 last_date = 0
 
-topics = ["us", "politics", "world"]
+topics = ["politics", "world"]
 #loop through each topic
 for topic in topics:
     # Loop through each month and each URL
