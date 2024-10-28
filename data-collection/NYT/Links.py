@@ -22,3 +22,18 @@ for month_idx in range(12):
         response.raise_for_status()
         data = response.json()
         articles = data.get("response", {}).get("docs", [])
+        for topic in topics:
+            file_path = f"data/NYT/links/{topic}/month{month}.txt"
+            
+            
+            with open(file_path, "w", encoding="utf-8") as file:
+                for article in articles:
+                    url = article.get("web_url", "No URL")
+                    if f"/{topic}/" in url:
+                        if any(format in url for format in ["/interactive/", "/slideshow/", "/video/", "/crossword/"]):
+                            continue
+                        file.write(url + '\n')
+                        
+            print(f"Die Links für {topic} wurden erfolgreich in 'month{month}.txt' gespeichert.")
+
+        time.sleep(3)
