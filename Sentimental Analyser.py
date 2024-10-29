@@ -1,10 +1,15 @@
-import textblob
+from textblob import TextBlob
+
+# Load the file
+file = r"data\NYT\articles\politics\2020\month01\2020_01_01_1.txt"
+with open(file, 'r', encoding='utf-8') as f:
+    text = f.read()
 
 
-print("Input text:")
-text = input()
+# Create TextBlob object
+blob = TextBlob(text)
 
-blob = textblob(text)
+# Sentiment analysis
 sentiment_polarity = blob.sentiment.polarity
 if sentiment_polarity > 0:
     sentiment_type = "Positive 😀"
@@ -13,18 +18,14 @@ elif sentiment_polarity < 0:
 else:
     sentiment_type = "Neutral 😐"
 
-
+# Subjectivity analysis
 sentiment_subjectivity = blob.sentiment.subjectivity
-sentiment_subjectivity_new = int(abs(((sentiment_subjectivity*100)*2)-100))
+subjectivity_type = "Objective 😀" if sentiment_subjectivity < 0.5 else "Subjective 😠"
+sentiment_subjectivity_new = int(abs(((sentiment_subjectivity * 100) * 2) - 100))
 
-if sentiment_subjectivity < 0.5:
-    subjectivity_type = "Subjective 😀"
-else:
-    subjectivity_type = "Objective 😠"
-
-result = f"{sentiment_type} ({int(abs(sentiment_polarity*100))}%)"
+# Output results
+result = f"{sentiment_type} ({int(abs(sentiment_polarity * 100))}%)"
 print("The text is very " + result)
-
 
 result = f"{subjectivity_type} ({sentiment_subjectivity_new}%)"
 print("and also " + result)
