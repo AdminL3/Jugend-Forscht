@@ -46,7 +46,7 @@ else:
     options.add_argument("--start-maximized")
     options.add_argument("--disable-search-engine-choice-screen")
     options.add_experimental_option("detach", True) 
-    # options.add_argument("--headless")
+    options.add_argument("--headless")
     driver = webdriver.Chrome(options=options)
 
 
@@ -89,7 +89,6 @@ for topic in topics:
                     continue
                 
                 driver.get(url)
-                time.sleep(3)
 
                 page_source = driver.execute_script("return document.documentElement.outerHTML;")
                 
