@@ -2,4 +2,5 @@
 data-collection/config.py
 data-collection/NYT/config.py
 data-collection/NYT/__pycache__/
-databackup.py
+data
+backup.py
