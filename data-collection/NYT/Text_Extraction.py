@@ -5,14 +5,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import config
-
+import time
 
 # Setup Chrome options
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
 options.add_argument("--disable-search-engine-choice-screen")
 options.add_experimental_option("detach", True) 
-options.add_argument("--headless")
+# options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 
 # Go to Google to initialize driver
@@ -21,9 +21,9 @@ print(driver.title)
 
 
 #start variables
-start_year = 2021
+start_year = 2020
 # start_year = config.get_input_number("Input Start Year: ")
-amount_years = 1
+amount_years = 2
 # amount_years = config.get_input_number("Input amount of years: ")
 
 
@@ -58,7 +58,8 @@ for topic in topics:
                     continue
                 
                 print("Getting source code for URL:", url)
-                driver.get(url)
+                driver.get("view-source:"+ url)
+                time.sleep(5)
                 
                 soup = BeautifulSoup(driver.page_source, "html.parser")
                 
