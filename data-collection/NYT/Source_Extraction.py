@@ -3,16 +3,52 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
 import os
+import time
+import pyperclip
 
 
-# Set up Chrome options to prevent loading extra resources (like images)
-options = webdriver.ChromeOptions()
-options.add_argument('--headless')  # Optional: runs the browser in the background
-options.add_argument('--disable-gpu')
 
-# Initialize the WebDriver
-driver = webdriver.Chrome( options=options)
+
+
+print("Do you want to login to existing session? (y/n)")
+
+while True:
+    try:
+        x = input().strip().lower()
+        if x == "y":
+            x = True
+            break
+        elif x == "n":
+            x = False
+            break
+        else:
+            raise ValueError("Invalid input, please enter 'y' or 'n'.")
+    except ValueError as e:
+        print(e)
+
+
+if x:
+    pyperclip.copy(
+        '"C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222')
+    print('Copied command to clipboard')
+    input("Press any key to continue...")
+    print("Accessing Session...")
+
+    options = Options()
+    options.add_experimental_option("debuggerAddress", "localhost:9222")
+    driver = webdriver.Chrome(options=options)
+
+else:
+    # Setup Chrome options
+    options = webdriver.ChromeOptions()
+    options.add_argument("--start-maximized")
+    options.add_argument("--disable-search-engine-choice-screen")
+    options.add_experimental_option("detach", True) 
+    # options.add_argument("--headless")
+    driver = webdriver.Chrome(options=options)
+
 
 
 
@@ -53,23 +89,14 @@ for topic in topics:
                     continue
                 
                 driver.get(url)
+                time.sleep(3)
 
-                # Wait until the content you need is present
-                try:
-                    WebDriverWait(driver, 10).until(
-                        EC.presence_of_element_located((By.TAG_NAME, "body"))
-                    )
-                    
-                    # Get the complete source code as rendered by the browser
-                    page_source = driver.execute_script("return document.documentElement.outerHTML;")
-                    
-                    # Optional: Save it to a file
-                    with open(output_file, "w", encoding="utf-8") as f:
-                        f.write(page_source)
-                    
-                    print("Source code saved successfully.")
-                except Exception as e:
-                    print("Error:", e)
+                page_source = driver.execute_script("return document.documentElement.outerHTML;")
+                
+                with open(output_file, "w", encoding="utf-8") as f:
+                    f.write(page_source)
+                
+                print("Source code saved successfully.")
                     
             
                 last_date = date
