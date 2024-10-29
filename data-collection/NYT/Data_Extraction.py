@@ -46,15 +46,19 @@ for topic in topics:
                 if article_body:
                     # Get the full content inside the ArticleBody tag
                     article_text = article_body.get_text(separator="\n", strip=True)
-                    print("Article Body")
+                    print("Article Body Found")
                     output_dir = f"data/NYT/articles/{topic}/{year}/month{month}/"
                     os.makedirs(output_dir, exist_ok=True)
                     output_file = os.path.join(output_dir, file.split('/')[-1])
-                
-                    with open(output_file, "w", encoding="utf-8") as f:
-                        f.write(title)
-                        f.write("\n"*2)
-                        f.write(clean_text(article_text))
+                    if ("subscribe to the times" not in article_text.lower()):
+                        with open(output_file, "w", encoding="utf-8") as f:
+                            f.write(title)
+                            f.write("\n"*2)
+                            f.write(clean_text(article_text))
+                    else:
+                        os.remove(file)
+                        if os.path.exists(output_file):
+                            os.remove(output_file)   
                 else:
                     print("No section with name='ArticleBody' found.")
                     
