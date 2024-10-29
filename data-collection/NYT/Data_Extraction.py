@@ -2,13 +2,31 @@ import time
 import os
 import pyperclip
 from bs4 import BeautifulSoup
-
+import re
+import json
 
 def clean_text(text):
     text = text.replace("SKIP ADVERTISEMENT", "")
     text = text.replace("ADVERTISEMENT", "")
     text = text.replace("Advertisement", "")
     return text
+
+def get_text_from_html(html):
+    matches = re.findall(r'"text":"(.*?)"', html)
+    
+    matches = list(dict.fromkeys(matches))
+    
+    
+    print(len(matches))
+    text = ""
+    for match in matches:
+        text += match + "\n"
+        
+    
+    return text
+
+
+
     
     
 #start variables
@@ -37,28 +55,14 @@ for topic in topics:
                 with open(file, 'r', encoding='utf-8') as f:
                     html_content = f.read()
                     
-                soup = BeautifulSoup(html_content, "html.parser")
-
-                # Find the section with name="ArticleBody"
-                article_body = soup.find(attrs={"name": "articleBody"})
-                title = soup.find("title").get_text()
-                # Check if the section was found
-                if article_body:
-                    # Get the full content inside the ArticleBody tag
-                    article_text = article_body.get_text(separator="\n", strip=True)
-                    print("Article Body Found")
-                    output_dir = f"data/NYT/articles/{topic}/{year}/month{month}/"
-                    os.makedirs(output_dir, exist_ok=True)
-                    output_file = os.path.join(output_dir, file.split('/')[-1])
-                    if ("subscribe to the times" not in article_text.lower()):
-                        with open(output_file, "w", encoding="utf-8") as f:
-                            f.write(title)
-                            f.write("\n"*2)
-                            f.write(clean_text(article_text))
-                    else:
-                        os.remove(file)
-                        if os.path.exists(output_file):
-                            os.remove(output_file)   
-                else:
-                    print("No section with name='ArticleBody' found.")
+                
+                output_dir = f"data/NYT/articles/{topic}/{year}/month{month}/"
+                os.makedirs(output_dir, exist_ok=True)
+                output_file = os.path.join(output_dir, file.split('/')[-1])
+                
+                article_text = get_text_from_html(html_content)
+                    
+                print("Saving")
+                with open(output_file, "w", encoding="utf-8") as f:
+                    f.write(article_text)
                     
