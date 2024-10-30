@@ -66,7 +66,7 @@ for topic in topics:
         for i in range(12):
             month = i + 1
             urls_path = f"data/NYT/links/{topic}/{year}/month{month}.txt"
-            with open(urls_path, 'r', encoding='latin-1') as file:
+            with open(urls_path, 'r', encoding='utf-8') as file:
                 urls = file.read().splitlines()
             index = 0
             for url in urls:
