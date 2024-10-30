@@ -17,7 +17,6 @@ def get_text_from_html(html):
     matches = list(dict.fromkeys(matches))
     
     
-    print(len(matches))
     text = ""
     for match in matches:
         text += match + "\n"
@@ -32,21 +31,22 @@ def get_text_from_html(html):
 #start variables
 start_year = 2020
 # start_year = config.get_input_number("Input Start Year: ")
-amount_years = 1    
+amount_years = 4   
 # amount_years = config.get_input_number("Input amount of years: ")
 
 last_date = 0
 topics = ["politics", "world"]
 for topic in topics:
+    print(topic)
     for i in range(amount_years):
         year = start_year + i
+        print(year)
         for j in range(12):
             numbers = [str(h).zfill(2) for h in range(1, 13)]
             month = numbers[j]
             print(month)
             files_path = f"data/NYT/source/{topic}/{year}/month{month}/"
             files = []
-            print(files)
             if os.path.exists(files_path):
                 for file in os.listdir(files_path):
                     if file.endswith('.txt'):
@@ -62,7 +62,6 @@ for topic in topics:
                 
                 article_text = get_text_from_html(html_content)
                     
-                print("Saving")
                 with open(output_file, "w", encoding="utf-8") as f:
                     f.write(article_text)
                     
