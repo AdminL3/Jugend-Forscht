@@ -51,20 +51,18 @@ else:
 
 
 
-
-#start variables
 start_year = 2020
-# start_year = config.get_input_number("Input Start Year: ")
-amount_years = 2
-# amount_years = config.get_input_number("Input amount of years: ")
-
+amount_years = 1
+topics = ["world"]
+monthstart = 2
+amount_month = 1
 last_date = 0
-topics = ["politics", "world"]
+driver = webdriver.Chrome(options=options)
 for topic in topics:
     for i in range(amount_years):
         year = start_year + i
-        for i in range(12):
-            month = i + 1
+        for i in range(amount_month):
+            month = monthstart + i
             urls_path = f"data/NYT/links/{topic}/{year}/month{month}.txt"
             with open(urls_path, 'r', encoding='utf-8') as file:
                 urls = file.read().splitlines()
