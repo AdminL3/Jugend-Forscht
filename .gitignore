@@ -3,3 +3,4 @@ data
 data-collection/config.py
 data-collection/__pycache__/
 data-collection/other
+test.py
