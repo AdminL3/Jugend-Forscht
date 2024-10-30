@@ -10,6 +10,14 @@ import pyperclip
 
 
 
+start_year = 2020
+amount_years = 1
+topics = ["world"]
+start_month = 2
+amount_month = 2
+last_date = 0
+
+
 
 
 print("Do you want to login to existing session? (y/n)")
@@ -50,19 +58,12 @@ else:
     driver = webdriver.Chrome(options=options)
 
 
-
-start_year = 2020
-amount_years = 1
-topics = ["world"]
-monthstart = 2
-amount_month = 1
-last_date = 0
 driver = webdriver.Chrome(options=options)
 for topic in topics:
     for i in range(amount_years):
         year = start_year + i
         for i in range(amount_month):
-            month = monthstart + i
+            month = start_month + i
             urls_path = f"data/NYT/links/{topic}/{year}/month{month}.txt"
             with open(urls_path, 'r', encoding='utf-8') as file:
                 urls = file.read().splitlines()
@@ -93,7 +94,13 @@ for topic in topics:
                 with open(output_file, "w", encoding="utf-8") as f:
                     f.write(page_source)
                 
-                print("Source code saved successfully.")
+                print("Saved to " + output_file)
                     
             
                 last_date = date
+                
+                
+print("Finished saving:")
+print(f"Year {str(year)} to year {str(start_year + amount_years - 1)}")
+print(f"Month {str(month)} to month {str(start_month + amount_month - 1)}")
+print("and Topics " + str(topics))

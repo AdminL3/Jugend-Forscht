@@ -2,12 +2,15 @@ import os
 import time
 import pyperclip
 import requests
+import config
+headers = config.headers
+
 
 
 start_year = 2020
 amount_years = 1
 topics = ["world"]
-monthstart = 2
+start_month = 2
 amount_month = 1
 last_date = 0
 driver = webdriver.Chrome(options=options)
@@ -15,7 +18,7 @@ for topic in topics:
     for i in range(amount_years):
         year = start_year + i
         for i in range(amount_month):
-            month = monthstart + i
+            month = start_month + i
             print(f"Next Month: {month}")
             urls_path = f"/content/urls/{year}/month{month}.txt"
             # urls_path = f"/content/urls/month1.txt"
@@ -51,3 +54,11 @@ for topic in topics:
 
 
                 last_date = date
+                
+                
+                
+                
+print("Finished saving:")
+print(f"Year {str(year)} to year {str(start_year + amount_years - 1)}")
+print(f"Month {str(month)} to month {str(start_month + amount_month - 1)}")
+print("and Topics " + str(topics))
