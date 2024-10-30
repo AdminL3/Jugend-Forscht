@@ -5,33 +5,11 @@ from bs4 import BeautifulSoup
 import re
 import json
 
-def clean_text(text):
-    text = text.replace("SKIP ADVERTISEMENT", "")
-    text = text.replace("ADVERTISEMENT", "")
-    text = text.replace("Advertisement", "")
-    return text
-
-def get_text_from_html(html):
-    matches = re.findall(r'"text":"(.*?)"', html)
-    
-    matches = list(dict.fromkeys(matches))
-    
-    
-    text = ""
-    for match in matches:
-        text += match + "\n"
         
-    
-    return text
-
-
-
-    
-    
 #start variables
-start_year = 2020
+start_year = 2019
 # start_year = config.get_input_number("Input Start Year: ")
-amount_years = 4   
+amount_years = 3
 # amount_years = config.get_input_number("Input amount of years: ")
 
 last_date = 0
