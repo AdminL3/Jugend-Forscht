@@ -1,7 +1,7 @@
 from textblob import TextBlob
 
 # Load the file
-file = r"data\NYT\articles\politics\2020\month01\2020_01_01_1.txt"
+file = r"data\articles\politics\2020\month01\2020_01_01_1.txt"
 with open(file, 'r', encoding='utf-8') as f:
     text = f.read()
 
