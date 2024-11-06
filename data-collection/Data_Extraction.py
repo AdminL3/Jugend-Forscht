@@ -6,6 +6,19 @@ import re
 import json
 
         
+def get_text_from_html(html):
+    matches = re.findall(r'"text":"(.*?)"', html)
+    
+    matches = list(dict.fromkeys(matches))
+    
+    text = ""
+    for match in matches:
+        text += match + "\n"
+        
+    return text
+
+
+
 #start variables
 start_year = 2019
 # start_year = config.get_input_number("Input Start Year: ")
