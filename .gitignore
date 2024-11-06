@@ -2,7 +2,5 @@
 data
 data-collection/config.py
 data-collection/__pycache__/
-data-collection/other
 test.py
-Google-Colab
-file_checker.py
+missing_files.txt
