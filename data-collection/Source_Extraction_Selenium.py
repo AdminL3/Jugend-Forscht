@@ -1,23 +1,16 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
-import os
-import time
 import pyperclip
-
+import os
 
 
 start_year = 2020
 amount_years = 1
 topics = ["world"]
-start_month = 2
-amount_month = 2
+start_month = 4
+amount_month = 8
 last_date = 0
-
-
 
 
 print("Do you want to login to existing session? (y/n)")
@@ -53,7 +46,7 @@ else:
     options = webdriver.ChromeOptions()
     options.add_argument("--start-maximized")
     options.add_argument("--disable-search-engine-choice-screen")
-    options.add_experimental_option("detach", True) 
+    options.add_experimental_option("detach", True)
     options.add_argument("--headless")
     driver = webdriver.Chrome(options=options)
 
@@ -79,27 +72,27 @@ for topic in topics:
                 else:
                     index = 1
                 file_name = f"{date}{index}.txt"
-                
+
                 output_dir = f"data/source/{topic}/{year}/month{month}/"
                 os.makedirs(output_dir, exist_ok=True)
                 output_file = os.path.join(output_dir, file_name)
                 if os.path.exists(output_file):
                     print(f"File {file_name} already exists. Skipping...")
                     continue
-                
+
                 driver.get(url)
 
-                page_source = driver.execute_script("return document.documentElement.outerHTML;")
-                
+                page_source = driver.execute_script(
+                    "return document.documentElement.outerHTML;")
+
                 with open(output_file, "w", encoding="utf-8") as f:
                     f.write(page_source)
-                
+
                 print("Saved to " + output_file)
-                    
-            
+
                 last_date = date
-                
-                
+
+
 print("Finished saving:")
 print(f"Year {str(year)} to year {str(start_year + amount_years - 1)}")
 print(f"Month {str(month)} to month {str(start_month + amount_month - 1)}")
