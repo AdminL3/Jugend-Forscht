@@ -19,7 +19,7 @@ for topic in topics:
         for i in range(amount_month):
             month = start_month + i
             print(f"Next Month: {month}")
-            urls_path = f"data/NYT/links/{topic}/{year}/month{month}.txt"
+            urls_path = f"data/links/{topic}/{year}/month{month}.txt"
             # urls_path = f"/content/urls/month1.txt"
             with open(urls_path, 'r', encoding='utf-8') as file:
                 urls = file.read().splitlines()
@@ -36,7 +36,7 @@ for topic in topics:
                     index = 1
                 file_name = f"{date}{index}.txt"
 
-                output_dir = f"data/NYT/source/{topic}/{year}/month{month}/"
+                output_dir = f"data/source/{topic}/{year}/month{month}/"
                 os.makedirs(output_dir, exist_ok=True)
                 output_file = os.path.join(output_dir, file_name)
                 if os.path.exists(output_file):

@@ -36,7 +36,7 @@ for topic in topics:
             numbers = [str(h).zfill(2) for h in range(1, 13)]
             month = numbers[j]
             print(month)
-            files_path = f"data/NYT/source/{topic}/{year}/month{month}/"
+            files_path = f"data/source/{topic}/{year}/month{month}/"
             files = []
             if os.path.exists(files_path):
                 for file in os.listdir(files_path):
@@ -47,7 +47,7 @@ for topic in topics:
                     html_content = f.read()
                     
                 
-                output_dir = f"data/NYT/articles/{topic}/{year}/month{month}/"
+                output_dir = f"data/articles/{topic}/{year}/month{month}/"
                 os.makedirs(output_dir, exist_ok=True)
                 output_file = os.path.join(output_dir, file.split('/')[-1])
                 

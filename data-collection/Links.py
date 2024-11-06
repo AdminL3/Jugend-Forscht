@@ -16,7 +16,7 @@ for i in range(amount_years):
     month = 0
     for month_idx in range(12):
         month += 1
-        if os.path.exists(f"data/NYT/links/{topics[0]}/{year}/month{month}.txt") and os.path.exists(f"data/NYT/links/{topics[1]}/{year}/month{month}.txt"):
+        if os.path.exists(f"data/links/{topics[0]}/{year}/month{month}.txt") and os.path.exists(f"data/links/{topics[1]}/{year}/month{month}.txt"):
             print(f"File 'month{month}.txt'  already exists. Skipping...")
             continue
         URL = f"https://api.nytimes.com/svc/archive/v1/{year}/{month}.json?api-key={API_KEY}"
@@ -35,7 +35,7 @@ for i in range(amount_years):
         
         
         for topic in topics:
-            file_path = f"data/NYT/links/{topic}/{year}/month{month}.txt"
+            file_path = f"data/links/{topic}/{year}/month{month}.txt"
             with open(file_path, "w", encoding="utf-8") as file:
                 for article in articles:
                     url = article.get("web_url", "No URL")
