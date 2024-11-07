@@ -1,28 +1,23 @@
-import time
 import os
-import pyperclip
-from bs4 import BeautifulSoup
 import re
-import json
 
-        
+
 def get_text_from_html(html):
     matches = re.findall(r'"text":"(.*?)"', html)
-    
+
     matches = list(dict.fromkeys(matches))
-    
+
     text = ""
     for match in matches:
         text += match + "\n"
-        
+
     return text
 
 
-
-#start variables
-start_year = 2019
+# start variables
+start_year = 2021
 # start_year = config.get_input_number("Input Start Year: ")
-amount_years = 3
+amount_years = 1
 # amount_years = config.get_input_number("Input amount of years: ")
 
 last_date = 0
@@ -45,14 +40,12 @@ for topic in topics:
             for file in files:
                 with open(file, 'r', encoding='utf-8') as f:
                     html_content = f.read()
-                    
-                
+
                 output_dir = f"data/articles/{topic}/{year}/month{month}/"
                 os.makedirs(output_dir, exist_ok=True)
                 output_file = os.path.join(output_dir, file.split('/')[-1])
-                
+
                 article_text = get_text_from_html(html_content)
-                    
+
                 with open(output_file, "w", encoding="utf-8") as f:
                     f.write(article_text)
-                    
