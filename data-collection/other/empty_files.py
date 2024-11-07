@@ -2,23 +2,18 @@ import os
 
 # run againg for empty folders
 
-
-def delete_empty_folders(root_dir):
-    # Walk through the directory
-    for dirpath, dirnames, filenames in os.walk(root_dir, topdown=False):
-        # Check if the directory is empty
-        if not os.listdir(dirpath):  # If the folder is empty
-            print(f"Deleting empty folder: {dirpath}")
-            os.rmdir(dirpath)  # Delete the empty folder
-
-        # Also check for empty files and delete them
-        for file in filenames:
-            file_path = os.path.join(dirpath, file)
-            if os.path.getsize(file_path) == 0:  # If the file is empty
-                print(f"Deleting empty file: {file_path}")
-                os.remove(file_path)  # Delete the empty file
+base = r'C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\data\articles'
 
 
-# Specify the root directory to start from
-root_directory = r'C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\data\articles'
-delete_empty_folders(root_directory)
+for dirpath, dirnames, filenames in os.walk(base, topdown=False):
+    # Check if the directory is empty
+    if not os.listdir(dirpath):  # If the folder is empty
+        print(f"Deleting empty folder: {dirpath}")
+        os.rmdir(dirpath)  # Delete the empty folder
+
+    # Also check for empty files and delete them
+    for file in filenames:
+        file_path = os.path.join(dirpath, file)
+        if os.path.getsize(file_path) == 0:  # If the file is empty
+            print(f"Deleting empty file: {file_path}")
+            os.remove(file_path)
