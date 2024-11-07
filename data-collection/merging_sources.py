@@ -9,10 +9,36 @@ data_source_folder = r"C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\d
 if not os.path.exists(data_source_folder):
     os.makedirs(data_source_folder)
 
-# Copy files from AWS source to data source
-for filename in os.listdir(aws_source_folder):
-    aws_file_path = os.path.join(aws_source_folder, filename)
-    if os.path.isfile(aws_file_path):
-        shutil.copy(aws_file_path, data_source_folder)
+# Function to copy files and folders recursively
 
-print("Files copied successfully.")
+
+def copy_files_and_folders(aws_folder, data_folder):
+    # Check all items in the current folder
+    for item in os.listdir(aws_folder):
+        aws_item_path = os.path.join(aws_folder, item)
+        data_item_path = os.path.join(data_folder, item)
+
+        if os.path.isdir(aws_item_path):
+            # Handle directories: Check if it exists, if not, create it
+            if not os.path.exists(data_item_path):
+                os.makedirs(data_item_path)
+                print(f"New folder created: {item}")
+            else:
+                print(f"Folder already exists: {item}")
+
+            # Recursively call the function to handle files in this subfolder
+            copy_files_and_folders(aws_item_path, data_item_path)
+
+        elif os.path.isfile(aws_item_path):
+            # Handle files: Check if the file exists
+            if not os.path.exists(data_item_path):
+                shutil.copy(aws_item_path, data_item_path)
+                print(f"New file added: {item}")
+            else:
+                print(f"File already exists: {item}")
+
+
+# Start the copying process
+copy_files_and_folders(aws_source_folder, data_source_folder)
+
+print("File and folder copy process completed.")
