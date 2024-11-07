@@ -5,30 +5,30 @@ import pyperclip
 import os
 
 
-start_year = 2020
+start_year = 2021
 amount_years = 1
 topics = ["world"]
-start_month = 4
-amount_month = 8
+start_month = 10
+amount_month = 1
 last_date = 0
 
 
-print("Do you want to login to existing session? (y/n)")
+# print("Do you want to login to existing session? (y/n)")
 
-while True:
-    try:
-        x = input().strip().lower()
-        if x == "y":
-            x = True
-            break
-        elif x == "n":
-            x = False
-            break
-        else:
-            raise ValueError("Invalid input, please enter 'y' or 'n'.")
-    except ValueError as e:
-        print(e)
-
+# while True:
+#     try:
+#         x = input().strip().lower()
+#         if x == "y":
+#             x = True
+#             break
+#         elif x == "n":
+#             x = False
+#             break
+#         else:
+#             raise ValueError("Invalid input, please enter 'y' or 'n'.")
+#     except ValueError as e:
+#         print(e)
+x = False
 
 if x:
     pyperclip.copy(
