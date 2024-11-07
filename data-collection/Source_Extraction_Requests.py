@@ -6,7 +6,6 @@ import config
 headers = config.headers
 
 
-
 start_year = 2021
 amount_years = 1
 topics = ["world"]
@@ -50,17 +49,14 @@ for topic in topics:
                         f.write(page_source)
                         print(page_source)
                         print(f"Success {file_name}")
-                        
-                        
+
                 except requests.exceptions.RequestException as e:
                     print(f"Error fetching webpage: {e}")
                 time.sleep(1)
 
                 last_date = date
-                
-                
-                
-                
+
+
 print("Finished saving:")
 print(f"Year {str(year)} to year {str(start_year + amount_years - 1)}")
 print(f"Month {str(month)} to month {str(start_month + amount_month - 1)}")
