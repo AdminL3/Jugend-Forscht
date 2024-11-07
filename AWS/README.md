@@ -1,9 +1,4 @@
-
-# EC2 Selenium Setup Guide
-
-## Overview
-
-This guide explains how to set up an EC2 instance, install necessary software, and run Python Selenium scripts remotely. You will also learn how to transfer your Python files from your local machine to the EC2 instance and run them.
+# AWS Python Instance Setup
 
 ---
 
@@ -12,7 +7,7 @@ This guide explains how to set up an EC2 instance, install necessary software, a
 1. **Login to AWS Console**:
 
    - Go to the [AWS Management Console](https://aws.amazon.com/console/).
-   - Select **EC2** under "Compute".
+   - Select **EC2**.
 
 2. **Launch a New EC2 Instance**:
 
@@ -20,13 +15,13 @@ This guide explains how to set up an EC2 instance, install necessary software, a
    - Choose an Amazon Machine Image (AMI), e.g., **Ubuntu Server**.
    - Select the instance type, e.g., **t2.micro** (free tier eligible).
    - Configure the instance settings (accept default settings or adjust as needed).
-   - Under **Key Pair**, either create a new key pair or select an existing one. Download the `.pem` file.
-   - Open **Security Groups** and ensure that **SSH (port 22)** is allowed from your IP address.
+   - Under **Key Pair**, either create a new key pair or select an existing one. Download the `.pem` file. (Important for accessing later!)
    - Launch the instance.
 
 3. **Get Public DNS of the Instance**:
    - In the **EC2 Dashboard**, go to **Instances**.
    - Select your instance and find the **Public DNS (IPv4)** address.
+   - Should look like this: ec2-XX-XX-XXX-XXX.compute-1.amazonaws.com
 
 ---
 
@@ -34,20 +29,29 @@ This guide explains how to set up an EC2 instance, install necessary software, a
 
 1. **Open Terminal** on your local machine.
 
-2. **SSH into EC2 Instance**:
+2. Access your **AWS** Folder
+
+   ```bash
+   cd C:\Users\Path\to\AWS
+   ```
+
+   - Your **key.pem** and other files should be here
+
+3. **SSH into EC2 Instance**:
 
    - Use the public DNS or IP address from your EC2 instance.
 
    ```bash
-   ssh -i /path/to/your-key.pem ubuntu@ec2-your-public-dns.compute-1.amazonaws.com
+   ssh -i key.pem ubuntu@ec2-XX-XX-XXX-XXX.compute-1.amazonaws.com
    ```
 
-- Replace `/path/to/your-key.pem` with the actual path to your `.pem` key.
 - When asked if you trust the connection, type `yes` to continue.
 
 ---
 
 ## Step 3: Install Dependencies
+
+Now that you are connected you can do your usual setup:
 
 1. **Update Package Lists**:
 
@@ -57,15 +61,19 @@ This guide explains how to set up an EC2 instance, install necessary software, a
    sudo apt update
    ```
 
-2. **Install Python 3 and Pip**:
+2. **Install Python and Pip**:
 
    - Install Python 3 and the necessary packages:
 
    ```bash
-   sudo apt install python3 python3-pip python3-venv
+   sudo apt install python3 python3-pip
    ```
 
-3. **Install Chromium and ChromeDriver**:
+3. **Install Venv** (optional):
+   ```bash
+   python3-venv
+   ```
+4. **Install Chromium and ChromeDriver** (to use selenium):
 
    - Install Chromium and ChromeDriver on your EC2 instance (ensure they are compatible):
 
@@ -91,7 +99,7 @@ This guide explains how to set up an EC2 instance, install necessary software, a
    ```bash
    mkdir my_project
    cd my_project
-   python3 -m venv myenv
+   python3 -m venv venv
    ```
 
 2. **Activate the Virtual Environment**:
@@ -99,12 +107,13 @@ This guide explains how to set up an EC2 instance, install necessary software, a
    - Activate the virtual environment to isolate your Python dependencies:
 
    ```bash
-   source myenv/bin/activate
+   source venv/bin/activate
    ```
 
-3. **Install Selenium**:
+3. **Install local Dependencies**:
 
-   - Install Selenium in your virtual environment:
+   - Install all the dependencies you want in your project:
+   - I am going to install Selenium
 
    ```bash
    pip install selenium
@@ -116,13 +125,13 @@ This guide explains how to set up an EC2 instance, install necessary software, a
 
 1. **Use SCP to Transfer Files**:
 
-   - On your local machine, navigate to the directory where your `main.py` is located. Use `scp` to copy files to your EC2 instance:
+   - On your local machine, navigate to the directory where your `main.py` / **code** is located. Use `scp` (SecureCopy) to copy files to your EC2 instance:
 
    ```bash
-   scp -i /path/to/your-key.pem main.py ubuntu@ec2-your-public-dns.compute-1.amazonaws.com:/home/ubuntu/
+   scp -i key.pem main.py ec2-XX-XX-XXX-XXX.compute-1.amazonaws.com:/home/ubuntu/your_project/
    ```
 
-   - Ensure that paths are correct and replace `/path/to/your-key.pem` with the correct path.
+   - Ensure that you are in the correct directory where your files are (See step 2.2)
 
 ---
 
@@ -131,13 +140,13 @@ This guide explains how to set up an EC2 instance, install necessary software, a
 1. **SSH Into Your EC2 Instance** (if not already connected):
 
    ```bash
-   ssh -i /path/to/your-key.pem ubuntu@ec2-your-public-dns.compute-1.amazonaws.com
+   ssh -i key.pem ubuntu@ec2-XX-XX-XXX-XXX.compute-1.amazonaws.com
    ```
 
 2. **Navigate to the Project Directory**:
 
    ```bash
-   cd /home/ubuntu/my_project
+   cd /home/ubuntu/your_project
    ```
 
 3. **Run the Python Script**:
@@ -171,9 +180,9 @@ This guide explains how to set up an EC2 instance, install necessary software, a
 
 ---
 
-## Step 8: Terminate EC2 Instance
+## Step 8: Stop EC2 Instance
 
-Once you’re done with your EC2 instance, you can terminate it to avoid ongoing charges:
+Once you’re done with your EC2 instance, stop it to avoid payment
 
 1. Go to **EC2 Dashboard** in AWS.
 2. Select your instance.
