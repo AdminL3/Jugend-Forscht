@@ -1,25 +1,30 @@
+from selenium import webdriver
 import os
-import time
-import pyperclip
-import requests
-import config
-headers = config.headers
 
 
-start_year = 2021
+start_year = 2020
 amount_years = 1
 topics = ["world"]
-start_month = 12
-amount_month = 1
+start_month = 10
+amount_month = 3
 last_date = 0
+
+
+options = webdriver.ChromeOptions()
+options.add_argument("--start-maximized")
+options.add_argument("--disable-search-engine-choice-screen")
+options.add_experimental_option("detach", True)
+options.add_argument("--headless")
+driver = webdriver.Chrome(options=options)
+
+
+driver = webdriver.Chrome(options=options)
 for topic in topics:
     for i in range(amount_years):
         year = start_year + i
         for i in range(amount_month):
             month = start_month + i
-            print(f"Next Month: {month}")
             urls_path = f"data/links/{topic}/{year}/month{month}.txt"
-            # urls_path = f"/content/urls/month1.txt"
             with open(urls_path, 'r', encoding='utf-8') as file:
                 urls = file.read().splitlines()
             index = 0
@@ -42,22 +47,21 @@ for topic in topics:
                     print(f"File {file_name} already exists. Skipping...")
                     continue
 
-                try:
-                    response = requests.get(url)
-                    page_source = response.text
-                    with open(output_file, "w", encoding="utf-8") as f:
-                        f.write(page_source)
-                        print(page_source)
-                        print(f"Success {file_name}")
+                driver.get(url)
 
-                except requests.exceptions.RequestException as e:
-                    print(f"Error fetching webpage: {e}")
-                time.sleep(1)
+                page_source = driver.execute_script(
+                    "return document.documentElement.outerHTML;")
+
+                with open(output_file, "w", encoding="utf-8") as f:
+                    f.write(page_source)
+
+                print("Saved to " + output_file)
 
                 last_date = date
 
 
 print("Finished saving:")
-print(f"Year {str(year)} to year {str(start_year + amount_years - 1)}")
-print(f"Month {str(month)} to month {str(start_month + amount_month - 1)}")
+print(f"Year {str(start_year)} to year {str(start_year + amount_years - 1)}")
+print(f"Month {str(start_month)} to month {
+      str(start_month + amount_month - 1)}")
 print("and Topics " + str(topics))
