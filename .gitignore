@@ -4,3 +4,4 @@ data-collection/config.py
 data-collection/__pycache__/
 .vscode
 AWS/key.pem
+AWS/source

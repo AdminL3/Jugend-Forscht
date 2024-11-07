@@ -2,7 +2,7 @@ cd C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\AWS
 
 scp -i key.pem main.py ubuntu@ec2-54-90-173-188.compute-1.amazonaws.com:/home/ubuntu/
 
-scp -i key.pem -r ubuntu@ec2-54-90-173-188.compute-1.amazonaws.com:/home/ubuntu/data/source/ /source/
+scp -i key.pem -r ubuntu@ec2-54-90-173-188.compute-1.amazonaws.com:/home/ubuntu/data/source/ .\
 
 
 
@@ -14,3 +14,9 @@ python3 main.py
 
 
 ec2-54-90-173-188.compute-1.amazonaws.com
+
+
+
+
+# move source folder to normal source folder
+
