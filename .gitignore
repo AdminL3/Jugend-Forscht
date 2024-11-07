@@ -4,3 +4,4 @@ data-collection/config.py
 data-collection/__pycache__/
 test.py
 missing_files.txt
+.vscode
