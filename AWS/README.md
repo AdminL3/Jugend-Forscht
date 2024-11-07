@@ -12,9 +12,9 @@
 2. **Launch a New EC2 Instance**:
 
    - Click **Launch Instance**.
-   - Choose an Amazon Machine Image (AMI), e.g., **Ubuntu Server**.
-   - Select the instance type, e.g., **t2.micro** (free tier eligible).
-   - Configure the instance settings (accept default settings or adjust as needed).
+   - Choose an Amazon Machine Image --> **Ubuntu Server**.
+   - Select the instance type, e.g., **t2.micro** (for free tier).
+   - Configure all the settings (accept defaults or customize).
    - Under **Key Pair**, either create a new key pair or select an existing one. Download the `.pem` file. (Important for accessing later!)
    - Launch the instance.
 
