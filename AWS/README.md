@@ -1,6 +1,4 @@
-You're right! I apologize for the formatting mistake. Here's the corrected `README.md` with proper formatting:
 
-````markdown
 # EC2 Selenium Setup Guide
 
 ## Overview
@@ -43,7 +41,6 @@ This guide explains how to set up an EC2 instance, install necessary software, a
    ```bash
    ssh -i /path/to/your-key.pem ubuntu@ec2-your-public-dns.compute-1.amazonaws.com
    ```
-````
 
 - Replace `/path/to/your-key.pem` with the actual path to your `.pem` key.
 - When asked if you trust the connection, type `yes` to continue.
@@ -183,19 +180,3 @@ Once you’re done with your EC2 instance, you can terminate it to avoid ongoing
 3. Click **Actions** → **Instance State** → **Terminate Instance**.
 
 ---
-
-## Conclusion
-
-You’ve successfully set up an EC2 instance to run Selenium scripts remotely, transferred files using SCP, and executed your Python script. This setup allows you to offload tasks to a cloud environment, reducing the computational load on your local machine.
-
----
-
-### Additional Notes:
-
-- Make sure to secure your `.pem` key file, as it grants access to your EC2 instance.
-- If you plan to run long-running scripts, consider using screen or tmux sessions to keep processes running after disconnecting.
-
-```
-
-This version has the correct formatting for headings, lists, and code blocks. You can now paste this into your `README.md` file. Let me know if there’s anything else you’d like to adjust!
-```
