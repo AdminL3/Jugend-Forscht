@@ -11,3 +11,6 @@ ssh -i C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\AWS\key.pem ubunt
 source myenv/bin/activate
 
 python3 main.py
+
+
+ec2-54-90-173-188.compute-1.amazonaws.com
