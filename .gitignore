@@ -5,4 +5,4 @@ data-collection/__pycache__/
 test.py
 missing_files.txt
 .vscode
-AWS\key.pem
+AWS/key.pem
