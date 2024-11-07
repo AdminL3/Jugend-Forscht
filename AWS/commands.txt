@@ -4,6 +4,10 @@ scp -i key.pem main.py ubuntu@ec2-54-90-173-188.compute-1.amazonaws.com:/home/ub
 
 scp -i key.pem -r ubuntu@ec2-54-90-173-188.compute-1.amazonaws.com:/home/ubuntu/data/source/ .\
 
+cd C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\AWS && scp -i key.pem -r ubuntu@ec2-54-90-173-188.compute-1.amazonaws.com:/home/ubuntu/data/source/ .\
+
+
+
 
 
 ssh -i C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\AWS\key.pem ubuntu@ec2-54-90-173-188.compute-1.amazonaws.com
