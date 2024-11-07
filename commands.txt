@@ -1,0 +1,3 @@
+cd C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht
+.venv\Scripts\activate 
+py data-collection/Source_Extraction_Selenium.py
