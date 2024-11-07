@@ -1,17 +1,3 @@
-from selenium import webdriver
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options
-import pyperclip
-import os
-
-
-start_year = 2020
-amount_years = 1
-topics = ["world"]
-start_month = 9
-amount_month = 1
-last_date = 0
-
 
 # print("Do you want to login to existing session? (y/n)")
 
@@ -28,27 +14,43 @@ last_date = 0
 #             raise ValueError("Invalid input, please enter 'y' or 'n'.")
 #     except ValueError as e:
 #         print(e)
-x = False
 
-if x:
-    pyperclip.copy(
-        '"C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222')
-    print('Copied command to clipboard')
-    input("Press any key to continue...")
-    print("Accessing Session...")
+# if x:
+#     pyperclip.copy(
+#         '"C:\Program Files\Google\Chrome\Application\chrome.exe" --remote-debugging-port=9222')
+#     print('Copied command to clipboard')
+#     input("Press any key to continue...")
+#     print("Accessing Session...")
 
-    options = Options()
-    options.add_experimental_option("debuggerAddress", "localhost:9222")
-    driver = webdriver.Chrome(options=options)
+#     options = Options()
+#     options.add_experimental_option("debuggerAddress", "localhost:9222")
+#     driver = webdriver.Chrome(options=options)
 
-else:
-    # Setup Chrome options
-    options = webdriver.ChromeOptions()
-    options.add_argument("--start-maximized")
-    options.add_argument("--disable-search-engine-choice-screen")
-    options.add_experimental_option("detach", True)
-    options.add_argument("--headless")
-    driver = webdriver.Chrome(options=options)
+# else:
+# Setup Chrome options
+
+
+from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options
+import pyperclip
+import os
+
+
+start_year = 2020
+amount_years = 1
+topics = ["world"]
+start_month = 10
+amount_month = 3
+last_date = 0
+
+
+options = webdriver.ChromeOptions()
+options.add_argument("--start-maximized")
+options.add_argument("--disable-search-engine-choice-screen")
+options.add_experimental_option("detach", True)
+options.add_argument("--headless")
+driver = webdriver.Chrome(options=options)
 
 
 driver = webdriver.Chrome(options=options)
