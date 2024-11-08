@@ -1,7 +1,7 @@
 from textblob import TextBlob
 
 # Load the file
-file = r"data\articles\politics\2020\month01\2020_01_01_1.txt"
+file = r"text.txt"
 with open(file, 'r', encoding='utf-8') as f:
     text = f.read()
 
@@ -21,7 +21,8 @@ else:
 # Subjectivity analysis
 sentiment_subjectivity = blob.sentiment.subjectivity
 subjectivity_type = "Objective 😀" if sentiment_subjectivity < 0.5 else "Subjective 😠"
-sentiment_subjectivity_new = int(abs(((sentiment_subjectivity * 100) * 2) - 100))
+sentiment_subjectivity_new = int(
+    abs(((sentiment_subjectivity * 100) * 2) - 100))
 
 # Output results
 result = f"{sentiment_type} ({int(abs(sentiment_polarity * 100))}%)"
