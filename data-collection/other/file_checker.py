@@ -47,14 +47,7 @@ for topic in topics:
                     missing_dates.append(
                         f"{topic}/{year}/month{month:02}/{year}_{month:02}_{day:02}")
 
-# Print summary
-print("Total Missing Dates:", len(missing_dates))
-if missing_dates:
-    print("\nDates with No Files:")
-    for date in missing_dates:
-        print(date)
 
-# Optionally, save the missing dates to a text file
-with open("missing_files.txt", "w") as f:
+with open("data-collection/other/missing_files.txt", "w") as f:
     for date in missing_dates:
         f.write(date + "\n")

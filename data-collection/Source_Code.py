@@ -5,8 +5,8 @@ import os
 start_year = 2020
 amount_years = 1
 topics = ["world"]
-start_month = 10
-amount_month = 3
+start_month = 1
+amount_month = 12
 last_date = 0
 
 

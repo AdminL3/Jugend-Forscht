@@ -24,7 +24,7 @@ def copy_files_and_folders(aws_folder, data_folder):
                 os.makedirs(data_item_path)
                 print(f"New folder created: {item}")
             else:
-                print(f"Folder already exists: {item}")
+                print(f"Folder already exists: {item}", end='  ')
 
             # Recursively call the function to handle files in this subfolder
             copy_files_and_folders(aws_item_path, data_item_path)
@@ -33,9 +33,9 @@ def copy_files_and_folders(aws_folder, data_folder):
             # Handle files: Check if the file exists
             if not os.path.exists(data_item_path):
                 shutil.copy(aws_item_path, data_item_path)
-                print(f"New file added: {item}")
+                print(f"New file added: {item} \n\n")
             else:
-                print(f"File already exists: {item}")
+                print(f"File already exists: {item}", end='  ')
 
 
 # Start the copying process

@@ -7,12 +7,10 @@ import os
 start_year = 2020
 amount_years = 1
 topics = ["world"]
-start_month = 10
-amount_month = 3
+start_month = 1
+amount_month = 12
 last_date = 0
 
-
-# Set up Chrome options
 
 # Set up Chrome options
 options = Options()
@@ -26,11 +24,6 @@ service = Service('/usr/bin/chromedriver')  # Adjust the path if necessary
 
 # Initialize the driver with Service and Options
 driver = webdriver.Chrome(service=service, options=options)
-
-# # Example usage
-# driver.get("http://www.google.com")
-# print(driver.title)
-# driver.quit()
 
 
 for topic in topics:
