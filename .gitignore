@@ -1,7 +1,7 @@
+.vscode
 .venv
 data
 data-collection/config.py
 data-collection/__pycache__/
-.vscode
-AWS/key.pem
-AWS/source
+data-collection/AWS/key.pem
+data-collection/AWS/source

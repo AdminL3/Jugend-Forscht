@@ -7,8 +7,8 @@ import os
 start_year = 2020
 amount_years = 1
 topics = ["world"]
-start_month = 1
-amount_month = 12
+start_month = 2
+amount_month = 1
 last_date = 0
 
 
@@ -22,9 +22,6 @@ options.add_argument("--remote-debugging-port=9222")
 # Specify the path to chromedriver
 service = Service('/usr/bin/chromedriver')  # Adjust the path if necessary
 
-# Initialize the driver with Service and Options
-driver = webdriver.Chrome(service=service, options=options)
-
 
 for topic in topics:
     for i in range(amount_years):
@@ -36,6 +33,9 @@ for topic in topics:
                 urls = file.read().splitlines()
             index = 0
             for url in urls:
+
+                # Initialize the driver with Service and Options
+                driver = webdriver.Chrome(service=service, options=options)
                 parts = url.split('/')
                 year = parts[3]
                 month = parts[4]
@@ -58,13 +58,16 @@ for topic in topics:
 
                 page_source = driver.execute_script(
                     "return document.documentElement.outerHTML;")
-
+                print(page_source)
+                print("Continue?")
+                input()
                 with open(output_file, "w", encoding="utf-8") as f:
                     f.write(page_source)
 
                 print("Saved to " + output_file)
 
                 last_date = date
+                driver.quit()
 
 
 print("Finished saving:")
