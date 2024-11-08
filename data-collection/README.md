@@ -2,30 +2,28 @@
 
 ---
 
-## Step 1: Get Links
+## Step 1: Get Links from **NYT API**
 
 1. **Get NYT API Key**:
 
-   - Go to the [AWS Management Console](https://aws.amazon.com/console/).
-   - Get **Key**.
+   - Create Developer Account
+   - Go to the [NYT Apps](https://developer.nytimes.com/my-apps).
+   - Get **API Key**.
 
-2. **Launch a New EC2 Instance**:
+2. **Use API**:
 
-   - Click **Launch Instance**.
-   - Choose an Amazon Machine Image --> **Ubuntu Server**.
-   - Select the instance type, e.g., **t2.micro** (for free tier).
-   - Configure all the settings (accept defaults or customize).
-   - Under **Key Pair**, either create a new key pair or select an existing one. Download the `.pem` file. (Important for accessing later!)
-   - Launch the instance.
-
-3. **Get Public DNS of the Instance**:
-   - In the **EC2 Dashboard**, go to **Instances**.
-   - Select your instance and find the **Public DNS (IPv4)** address.
-   - Should look like this: ec2-XX-XX-XXX-XXX.compute-1.amazonaws.com
+   - Go to [NYT APIs](https://developer.nytimes.com/apis).
+   - Check out the API Structure.
+   - Get links or titles (depending on needs)
+   - Save as File
 
 ---
 
-## Step 2: Connect to EC2 Instance
+## Step 2: Extract Source code from URLs
+
+#### I tried different ways to do this choose yourself(sorted by working level)
+
+### 1. Slenium
 
 1. **Open Terminal** on your local machine.
 
