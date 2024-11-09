@@ -4,91 +4,64 @@
 
 ## Step 1: Get Links from **NYT API**
 
-##### See [Get_Links.py](https://github.com/AdminL3/Jugend-Forscht/blob/main/data-collection/Get_Links.py)
+This step involves collecting article links from the New York Times (NYT) API. You can find the code for this step in the [Get_Links.py](https://github.com/AdminL3/Jugend-Forscht/blob/main/data-collection/Get_Links.py) file.
 
 1. **Get NYT API Key**:
 
-   - Create Developer Account
-   - Go to the [NYT Apps](https://developer.nytimes.com/my-apps).
-   - Get **API Key**.
+   - Create a developer account on the [NYT Developer Portal](https://developer.nytimes.com/).
+   - Go to the [NYT Apps](https://developer.nytimes.com/my-apps) page.
+   - Get your API key.
 
 2. **Use API**:
 
-   - Go to [NYT APIs](https://developer.nytimes.com/apis).
-   - Check out the API Structure.
-   - Get links or titles (depending on needs)
-   - Save as File
+   - Go to the [NYT APIs](https://developer.nytimes.com/apis) page.
+   - Explore the API structure.
+   - Choose the data you want to collect (links or titles).
+   - Save the data as a file.
 
 ---
 
-## Step 2: Extract Source code from URLs
+## Step 2: Extract Source Code from URLs
 
-#### I tried different ways to do this choose yourself (sorted by working level)
+In this step, you can choose from different methods to extract the source code from URLs. Here are the options:
 
 ### 1. Selenium
 
-1. **Install** Selenium.
+1. **Install** Selenium:
 
    ```bash
-   pip install selemij
+   pip install selenium
    ```
 
-   - Your **key.pem** and other files should be here
+2. Use **Selenium**:
 
-2. **SSH into EC2 Instance**:
+   - Use the public DNS or IP address of your EC2 instance.
 
-   - Use the public DNS or IP address from your EC2 instance.
+   ```bash
+   chromdriver
+   ```
+
+### 2. Requests
+
+1. **Install** Requests:
+
+   ```bash
+   pip install requests
+   ```
+
+2. Use **Requests**:
+
+   - Use the public DNS or IP address of your EC2 instance.
 
    ```bash
    ssh -i key.pem ubuntu@ec2-XX-XX-XXX-XXX.compute-1.amazonaws.com
    ```
 
-- When asked if you trust the connection, type `yes` to continue.
+   - When asked if you trust the connection, type `yes` to continue.
 
 ---
 
-## Step 3: Install Dependencies
-
-Now that you are connected you can do your usual setup:
-
-1. **Update Package Lists**:
-
-   - Run the following to make sure your package lists are up to date:
-
-   ```bash
-   sudo apt update
-   ```
-
-2. **Install Python and Pip**:
-
-   - Install Python 3 and the necessary packages:
-
-   ```bash
-   sudo apt install python3 python3-pip
-   ```
-
-3. **Install Venv** (optional):
-   ```bash
-   python3-venv
-   ```
-4. **Install Chromium and ChromeDriver** (to use selenium):
-
-   - Install Chromium and ChromeDriver on your EC2 instance (ensure they are compatible):
-
-   ```bash
-   sudo apt install chromium-browser
-   sudo apt install chromedriver
-   ```
-
-   - Create a symlink to make `chromedriver` accessible globally:
-
-   ```bash
-   sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
-   ```
-
----
-
-## Step 4: Set Up Virtual Environment
+## Step 3: Set Up Virtual Environment
 
 1. **Create a Virtual Environment**:
 
@@ -110,8 +83,8 @@ Now that you are connected you can do your usual setup:
 
 3. **Install local Dependencies**:
 
-   - Install all the dependencies you want in your project:
-   - I am going to install Selenium
+   - Install all the dependencies you want in your project.
+   - For example, to install Selenium:
 
    ```bash
    pip install selenium
@@ -119,11 +92,12 @@ Now that you are connected you can do your usual setup:
 
 ---
 
-## Step 5: Transfer Files from Local Machine to EC2
+## Step 4: Transfer Files from Local Machine to EC2
 
 1. **Use SCP to Transfer Files**:
 
-   - On your local machine, navigate to the directory where your `main.py` / **code** is located. Use `scp` (SecureCopy) to copy files to your EC2 instance:
+   - On your local machine, navigate to the directory where your code is located.
+   - Use `scp` (Secure Copy) to copy files to your EC2 instance:
 
    ```bash
    scp -i key.pem main.py ec2-XX-XX-XXX-XXX.compute-1.amazonaws.com:/home/ubuntu/your_project/
@@ -133,7 +107,7 @@ Now that you are connected you can do your usual setup:
 
 ---
 
-## Step 6: Run the Script on EC2
+## Step 5: Run the Script on EC2
 
 1. **SSH Into Your EC2 Instance** (if not already connected):
 
@@ -155,7 +129,7 @@ Now that you are connected you can do your usual setup:
 
 ---
 
-## Step 7: Troubleshooting
+## Step 6: Troubleshooting
 
 1. **Permission Issues When Installing Packages**:
 
@@ -174,16 +148,15 @@ Now that you are connected you can do your usual setup:
    - Use `python3` instead of `py` to run your Python scripts on Linux-based systems (e.g., EC2).
 
 4. **File Transfer Issues**:
+
    - Ensure that the paths used in `scp` are correct and that there are no typos or missing files.
 
 ---
 
-## Step 8: Stop EC2 Instance
+## Step 7: Stop EC2 Instance
 
-Once you’re done with your EC2 instance, stop it to avoid payment
+Once you’re done with your EC2 instance, stop it to avoid unnecessary charges.
 
-1. Go to **EC2 Dashboard** in AWS.
+1. Go to the **EC2 Dashboard** in the AWS Management Console.
 2. Select your instance.
 3. Click **Actions** → **Instance State** → **Terminate Instance**.
-
----
