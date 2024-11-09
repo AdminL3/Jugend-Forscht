@@ -1,8 +1,3 @@
-world/2020/month01/2020_01_30
-world/2020/month01/2020_01_31
-world/2020/month02/2020_02_01
-world/2020/month02/2020_02_02
-world/2020/month02/2020_02_03
 world/2020/month02/2020_02_04
 world/2020/month02/2020_02_05
 world/2020/month02/2020_02_06
