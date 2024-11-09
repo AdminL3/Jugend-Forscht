@@ -126,7 +126,7 @@ In this step, you can choose from different methods to extract the source code f
 
 ## Step 2.5: Use AWS to run in the cloud
 
-- See [Run Python in the Cloud](/AWS)
+- See [Run Python in the Cloud](./AWS/)
 
 1. **Create a Virtual Environment**:
 
