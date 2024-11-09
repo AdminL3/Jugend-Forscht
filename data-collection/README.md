@@ -4,6 +4,8 @@
 
 ## Step 1: Get Links from **NYT API**
 
+##### See [Get_Links.py](https://github.com/AdminL3/Jugend-Forscht/blob/main/data-collection/Get_Links.py)
+
 1. **Get NYT API Key**:
 
    - Create Developer Account
@@ -21,21 +23,19 @@
 
 ## Step 2: Extract Source code from URLs
 
-#### I tried different ways to do this choose yourself(sorted by working level)
+#### I tried different ways to do this choose yourself (sorted by working level)
 
-### 1. Slenium
+### 1. Selenium
 
-1. **Open Terminal** on your local machine.
-
-2. Access your **AWS** Folder
+1. **Install** Selenium.
 
    ```bash
-   cd C:\Users\Path\to\AWS
+   pip install selemij
    ```
 
    - Your **key.pem** and other files should be here
 
-3. **SSH into EC2 Instance**:
+2. **SSH into EC2 Instance**:
 
    - Use the public DNS or IP address from your EC2 instance.
 
