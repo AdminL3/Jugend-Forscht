@@ -1,18 +1,21 @@
 cd C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\data-collection\AWS
 
-scp -i key.pem C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\data-collection\Scraperapi\main.py ubuntu@ec2-34-204-85-39.compute-1.amazonaws.com:/home/ubuntu/
+scp -i key.pem C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\data-collection\Scraperapi\main.py ubuntu@ec2-107-22-135-80.compute-1.amazonaws.com:/home/ubuntu/
 
-scp -i key.pem -r ubuntu@ec2-34-204-85-39.compute-1.amazonaws.com:/home/ubuntu/data/source/ source/
+scp -i key.pem -r ubuntu@ec2-107-22-135-80.compute-1.amazonaws.com:/home/ubuntu/data/source/ source/
 
-cd C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\data-collection\AWS && scp -i key.pem -r ubuntu@ec2-34-204-85-39.compute-1.amazonaws.com:/home/ubuntu/data/source/world/2020/month01/ source/world/2020/
+cd C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\data-collection\AWS && scp -i key.pem -r ubuntu@ec2-107-22-135-80.compute-1.amazonaws.com:/home/ubuntu/data/source/world/2020/month01/ source/world/2020/
 
 
 
-ssh -i C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\data-collection\AWS\key.pem ubuntu@ec2-34-204-85-39.compute-1.amazonaws.com
+ssh -i C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\data-collection\AWS\key.pem ubuntu@ec2-107-22-135-80.compute-1.amazonaws.com
 
 source myenv/bin/activate
 
 python3 main.py
 
+python3 main.py && sudo shutdown -h now
 
-ubuntu@ec2-34-204-85-39.compute-1.amazonaws.com
+
+
+ubuntu@ec2-107-22-135-80.compute-1.amazonaws.com
