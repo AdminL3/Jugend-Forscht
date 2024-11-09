@@ -35,13 +35,39 @@ In this step, you can choose from different methods to extract the source code f
 
 2. Use **Selenium**:
 
-   - Use the public DNS or IP address of your EC2 instance.
+   - Create Options
 
    ```bash
-   chromdriver
+   options = webdriver.ChromeOptions()
+   options.add_argument("--start-maximized")
+   options.add_argument("--disable-search-engine-choice-screen")
+   options.add_experimental_option("detach", True)
+   options.add_argument("--headless")
+   driver = webdriver.Chrome(options=options)
+   ```
+
+   - Create Driver
+
+   ```bash
+   driver = webdriver.Chrome(options=options)
+   ```
+
+   - Access Content
+
+   ```bash
+   while True:
+      try:
+         driver.get(url)
+         page_source = driver.execute_script(
+               "return document.documentElement.outerHTML;")
+         break
+      except:
+         pass
    ```
 
 ### 2. Requests
+
+- This Works for some time until you get blocked. Then you should use Proxys or external APIs --> See **Proxyrotation** and **ExternalAPIs**
 
 1. **Install** Requests:
 
@@ -51,17 +77,56 @@ In this step, you can choose from different methods to extract the source code f
 
 2. Use **Requests**:
 
-   - Use the public DNS or IP address of your EC2 instance.
+   - Access HTML Code
 
    ```bash
-   ssh -i key.pem ubuntu@ec2-XX-XX-XXX-XXX.compute-1.amazonaws.com
+   response = requests.get(url)
+   page_source = response.text
    ```
 
-   - When asked if you trust the connection, type `yes` to continue.
+### 3. External API
+
+- I am using [ScraperAPI](https://www.scraperapi.com/)
+- This Works, but you are limited tokens and its slower
+
+1. **Install** Requests:
+
+   ```bash
+   pip install requests
+   ```
+
+2. Access **API**:
+
+   ```bash
+   payload = {'api_key': api_key,
+               'url': url}
+   r = requests.get('https://api.scraperapi.com/', params=payload)
+   ```
+
+### 4. Proxyrotation
+
+- You can get free Proxys at [Free Proxy List](https://free-proxy-list.net/)
+- Some Proxys do not work!
+
+1. **Install** Requests:
+
+   ```bash
+   pip install requests
+   ```
+
+2. Check which Proxies work:
+
+   - Download Proxies
+   - Loop through them and save as file
+
+3. Use working proxies to access HTML
+   - See **2. Requests**
 
 ---
 
-## Step 3: Set Up Virtual Environment
+## Step 2.5: Use AWS to run in the cloud
+
+- See [Run Python in the Cloud](/AWS)
 
 1. **Create a Virtual Environment**:
 
@@ -71,23 +136,6 @@ In this step, you can choose from different methods to extract the source code f
    mkdir my_project
    cd my_project
    python3 -m venv venv
-   ```
-
-2. **Activate the Virtual Environment**:
-
-   - Activate the virtual environment to isolate your Python dependencies:
-
-   ```bash
-   source venv/bin/activate
-   ```
-
-3. **Install local Dependencies**:
-
-   - Install all the dependencies you want in your project.
-   - For example, to install Selenium:
-
-   ```bash
-   pip install selenium
    ```
 
 ---
