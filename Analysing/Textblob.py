@@ -1,11 +1,12 @@
 from textblob import TextBlob
 
-# Load the file
-file = r"text.txt"
-with open(file, 'r', encoding='utf-8') as f:
-    text = f.read()
+# # Load the file
+# file = r"text.txt"
+# with open(file, 'r', encoding='utf-8') as f:
+#     text = f.read()
 
-
+text = '''
+'''
 # Create TextBlob object
 blob = TextBlob(text)
 
