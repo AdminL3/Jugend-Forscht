@@ -7,3 +7,4 @@ data-collection/AWS/key.pem
 data-collection/AWS/source
 data-collection/Scraperapi/config.py
 database/NYT.db
+/data-collection/Scraperapi/__pycache__
