@@ -1,12 +1,13 @@
+from importlib.util import source_from_cache
 from selenium import webdriver
 import os
 
 
-start_year = 2020
+start_year = 2021
 amount_years = 1
-topics = ["politics", "world"]
-start_month = 1
-amount_month = 12
+topics = ["world"]
+start_month = 5
+amount_month = 8
 last_date = 0
 
 
@@ -14,7 +15,7 @@ options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
 options.add_argument("--disable-search-engine-choice-screen")
 options.add_experimental_option("detach", True)
-# options.add_argument("--headless")
+options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 
 
@@ -47,10 +48,16 @@ for topic in topics:
                     print(f"File {file_name} already exists. Skipping...")
                     continue
 
-                driver.get(url)
+                while True:
+                    try:
+                        driver.get(url)
+                        page_source = driver.execute_script(
+                            "return document.documentElement.outerHTML;")
+                        break
+                    except:
+                        pass
 
-                page_source = driver.execute_script(
-                    "return document.documentElement.outerHTML;")
+                # print(page_source)
 
                 with open(output_file, "w", encoding="utf-8") as f:
                     f.write(page_source)
