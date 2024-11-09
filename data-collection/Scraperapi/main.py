@@ -6,8 +6,8 @@ import requests
 start_year = 2020
 amount_years = 1
 topics = ["world"]
-start_month = 1
-amount_month = 12
+start_month = 2
+amount_month = 1
 
 last_date = 0
 api_key = config.APIKEY
