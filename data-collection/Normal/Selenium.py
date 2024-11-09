@@ -4,7 +4,7 @@ import os
 
 start_year = 2020
 amount_years = 1
-topics = ["world"]
+topics = ["politics", "world"]
 start_month = 1
 amount_month = 12
 last_date = 0
@@ -14,7 +14,7 @@ options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
 options.add_argument("--disable-search-engine-choice-screen")
 options.add_experimental_option("detach", True)
-options.add_argument("--headless")
+# options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 
 

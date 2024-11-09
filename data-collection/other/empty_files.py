@@ -18,5 +18,5 @@ for _ in range(2):
             if os.path.getsize(file_path) == 0:  # If the file is empty
                 print(f"Deleting empty file: {file_path}")
                 os.remove(file_path)
-                os.remove(os.path.join(
-                    base2 + os.path.join('\\'.join(file_path.split('\\')[9:14]))))
+                # os.remove(os.path.join(
+                #     base2 + os.path.join('\\'.join(file_path.split('\\')[9:14]))))

@@ -3,10 +3,10 @@ import config
 import requests
 
 
-start_year = 2021
+start_year = 2020
 amount_years = 1
 topics = ["world"]
-start_month = 1
+start_month = 12
 amount_month = 1
 
 last_date = 0
