@@ -2,7 +2,7 @@ import shutil
 import os
 
 # Define paths
-aws_source_folder = r"C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\AWS\source"
+aws_source_folder = r"C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\data-collection\AWS\source"
 data_source_folder = r"C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\data\source"
 
 # Ensure destination folder exists
@@ -33,7 +33,7 @@ def copy_files_and_folders(aws_folder, data_folder):
             # Handle files: Check if the file exists
             if not os.path.exists(data_item_path):
                 shutil.copy(aws_item_path, data_item_path)
-                print(f"New file added: {item} \n\n")
+                print(f"New file added: {item}")
             else:
                 print(f"File already exists: {item}", end='  ')
 
