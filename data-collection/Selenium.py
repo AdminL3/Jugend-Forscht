@@ -1,12 +1,10 @@
-from csv import Error
 from selenium import webdriver
 import os
 
 
 start_year = 2020
 amount_years = 2
-topics = ["world"]
-# topics = ["world", "politics"]
+topics = ["world", "politics"]
 start_month = 1
 amount_month = 12
 last_date = 0
@@ -57,6 +55,7 @@ for topic in topics:
                         break
                     except Exception as e:
                         print("Error: ", e)
+                        driver.refresh()
 
                 # print(page_source)
 
@@ -69,7 +68,7 @@ for topic in topics:
 
 
 print("Finished saving:")
-print(f"Year {str(start_year)} to year {str(start_year + amount_years - 1)}")
-print(f"Month {str(start_month)} to month {
+print(f"Year {str(start_year)} to {str(start_year + amount_years - 1)}")
+print(f"Month {str(start_month)} to {
       str(start_month + amount_month - 1)}")
-print("and Topics " + str(topics))
+print("and the Topics: " + str(topics))
