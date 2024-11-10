@@ -1,4 +1,4 @@
-# Data Collection from NYT
+# Data Collection from the NYT
 
 ---
 
@@ -62,12 +62,12 @@ In this step, you can choose from different methods to extract the source code f
                "return document.documentElement.outerHTML;")
          break
       except:
-         pass
+         print("Error")
    ```
 
 ### 2. Requests
 
-- This Works for some time until you get blocked. Then you should use Proxys or external APIs --> See **Proxyrotation** and **ExternalAPIs**
+- This Works for some time until you get blocked. Then you should use Proxys or External APIs --> See [**Proxyrotation**](#4-proxyrotation) and [**ExternalAPIs**](#3-external-api)
 
 1. **Install** Requests:
 
@@ -117,94 +117,112 @@ In this step, you can choose from different methods to extract the source code f
 2. Check which Proxies work:
 
    - Download Proxies
-   - Loop through them and save as file
+   - Loop through them and save the working ones as a file
 
 3. Use working proxies to access HTML
-   - See **2. Requests**
+   - See [**2. Requests**](#2-requests)
 
 ---
 
-## Step 2.5: Use AWS to run in the cloud
+## Step 2.5: Use AWS to run Python in the cloud
 
-- See [Run Python in the Cloud](./AWS/)
+- See my Subfolder [Run Python in the Cloud](./AWS/)
 
-1. **Create a Virtual Environment**:
-
-   - Navigate to your project directory or create a new directory for your project:
-
-   ```bash
-   mkdir my_project
-   cd my_project
-   python3 -m venv venv
-   ```
+- Run your scripts in the Cloud to reduce computer usage
 
 ---
 
-## Step 4: Transfer Files from Local Machine to EC2
+## Step 3: Convert HTML to Text
 
-1. **Use SCP to Transfer Files**:
+#### 1. Use **BeautifulSoup** to Parse HTML:
 
-   - On your local machine, navigate to the directory where your code is located.
-   - Use `scp` (Secure Copy) to copy files to your EC2 instance:
+- Usually I would just use Beautiful Soup to parse HTML
+
+1. **Install** Requests:
 
    ```bash
-   scp -i key.pem main.py ec2-XX-XX-XXX-XXX.compute-1.amazonaws.com:/home/ubuntu/your_project/
+   pip install requests beautifulsoup4
    ```
 
-   - Ensure that you are in the correct directory where your files are (See step 2.2)
+   ```bash
+   import requests
+   from bs4 import BeautifulSoup
+   ```
+
+1. **Use** BS4:
+
+- This totally depends on your HTML Code
+
+  ```bash
+  response = requests.get(url)
+  ```
+
+  ```bash
+  soup = BeautifulSoup(response.text, 'html.parser')
+  ```
+
+  ```bash
+  text = soup.get_text(separator='\n', strip=True)
+  ```
+
+#### 2. Use **Re** to Parse HTML:
+
+- But Since NYT really tries to prevent me from getting their data
+- I had to use RE to parse the data from some javascript encoding
+
+  ```bash
+  import re
+  ```
+
+  ```bash
+  def get_text_from_html(html):
+    matches = re.findall(r'"text":"(.*?)"', html)
+
+    matches = list(dict.fromkeys(matches))
+
+    text = ""
+    for match in matches:
+        text += match + "\n"
+
+    return text
+  ```
 
 ---
 
-## Step 5: Run the Script on EC2
+## 3. Extra Functionality
 
-1. **SSH Into Your EC2 Instance** (if not already connected):
+1. **Find empty files**:
 
-   ```bash
-   ssh -i key.pem ubuntu@ec2-XX-XX-XXX-XXX.compute-1.amazonaws.com
-   ```
+   - Sometimes the content wasnt downloaded correcly so i checked where there where empty files without content.
 
-2. **Navigate to the Project Directory**:
+     ```bash
+     for dirpath, dirnames, filenames in os.walk(base, topdown=False):
+        # Check if the directory is empty
+        if not os.listdir(dirpath):  # If the folder is empty
+              print(f"Deleting empty folder: {dirpath}")
+              os.rmdir(dirpath)  # Delete the empty folder
 
-   ```bash
-   cd /home/ubuntu/your_project
-   ```
+        # Also check for empty files and delete them
+        for file in filenames:
+              file_path = os.path.join(dirpath, file)
+              if os.path.getsize(file_path) == 0:  # If the file is empty
+                 print(f"Deleting empty file: {file_path}")
+                 os.remove(file_path)
+     ```
 
-3. **Run the Python Script**:
+   - Again, this depends on your folder structure.
 
-   ```bash
-   python3 main.py
-   ```
+2. **Find missing files**:
 
----
-
-## Step 6: Troubleshooting
-
-1. **Permission Issues When Installing Packages**:
-
-   - If you encounter permission issues, ensure you're using `sudo` where necessary for installing software packages.
-
-2. **Chromedriver Version Mismatch**:
-
-   - Ensure that the version of `chromedriver` is compatible with the version of Google Chrome/Chromium installed on the instance. You can check your `chromedriver` version by running:
-
-   ```bash
-   chromedriver --version
-   ```
-
-3. **No `py` Command Available**:
-
-   - Use `python3` instead of `py` to run your Python scripts on Linux-based systems (e.g., EC2).
-
-4. **File Transfer Issues**:
-
-   - Ensure that the paths used in `scp` are correct and that there are no typos or missing files.
+   - To check what files are missing i used a simple script
+   - See _file_checker.py_
 
 ---
 
-## Step 7: Stop EC2 Instance
+## Result
 
-Once you’re done with your EC2 instance, stop it to avoid unnecessary charges.
+- This is only a part of the full project!
 
-1. Go to the **EC2 Dashboard** in the AWS Management Console.
-2. Select your instance.
-3. Click **Actions** → **Instance State** → **Terminate Instance**.
+- The part, where we extract the full NYT Source Code
+
+- View the whole Projekt at [Github](https://github.com/AdminL3/Jugend-Forscht/)
