@@ -1,12 +1,14 @@
+from csv import Error
 from selenium import webdriver
 import os
 
 
-start_year = 2021
-amount_years = 1
+start_year = 2020
+amount_years = 2
 topics = ["world"]
-start_month = 5
-amount_month = 8
+# topics = ["world", "politics"]
+start_month = 1
+amount_month = 12
 last_date = 0
 
 
@@ -53,8 +55,8 @@ for topic in topics:
                         page_source = driver.execute_script(
                             "return document.documentElement.outerHTML;")
                         break
-                    except:
-                        pass
+                    except Exception as e:
+                        print("Error: ", e)
 
                 # print(page_source)
 
