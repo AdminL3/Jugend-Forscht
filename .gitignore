@@ -1,10 +1,7 @@
-.vscode
-.venv
 data
-data-collection/config.py
-data-collection/__pycache__/
+/.venv
+/.vscode
 data-collection/AWS/key.pem
-data-collection/AWS/source
+data-collection/config.py
 data-collection/Scraperapi/config.py
-database/NYT.db
-/data-collection/Scraperapi/__pycache__
+/data-collection/__pycache__
