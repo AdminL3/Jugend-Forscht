@@ -17,13 +17,6 @@ cursor.execute('''
     WHERE date = ? AND idx = ?
 ''', (new_source, new_text, date_to_update, idx_to_update))
 
-# Optionally, you can also update the 'world' table if needed
-cursor.execute('''
-    UPDATE world
-    SET source = ?, text = ?
-    WHERE date = ? AND idx = ?
-''', (new_source, new_text, date_to_update, idx_to_update))
-
 # Commit the changes and close connection
 conn.commit()
 conn.close()
