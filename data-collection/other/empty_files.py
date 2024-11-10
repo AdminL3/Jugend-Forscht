@@ -1,22 +1,41 @@
 import os
 
-
-base = r'C:\Users\L-Blu\Levi\Programmieren\Python\Jugend-Forscht\data\articles'
-base2 = 'C:\\Users\\L-Blu\\Levi\\Programmieren\\Python\\Jugend-Forscht\\data\\source\\'
+base = r'data/articles'
 
 
-for _ in range(2):
-    for dirpath, dirnames, filenames in os.walk(base, topdown=False):
-        # Check if the directory is empty
-        if not os.listdir(dirpath):  # If the folder is empty
-            print(f"Deleting empty folder: {dirpath}")
-            os.rmdir(dirpath)  # Delete the empty folder
+def clean_empty_files_and_folders(base_path):
+    print("Starting cleanup process...")
 
-        # Also check for empty files and delete them
+    files_removed = 0
+    folders_removed = 0
+
+    for dirpath, dirnames, filenames in os.walk(base_path, topdown=False):
+        # First, check and remove empty files
         for file in filenames:
             file_path = os.path.join(dirpath, file)
-            if os.path.getsize(file_path) == 0:  # If the file is empty
-                print(f"Deleting empty file: {file_path}")
-                os.remove(file_path)
-                # os.remove(os.path.join(
-                #     base2 + os.path.join('\\'.join(file_path.split('\\')[9:14]))))
+            try:
+                if os.path.getsize(file_path) == 0:
+                    print(f"Deleting empty file: {file_path}")
+                    os.remove(file_path)
+                    files_removed += 1
+            except OSError as e:
+                print(f"Error processing file {file_path}: {e}")
+
+        # Then check if the directory is empty (after removing empty files)
+        try:
+            if not os.listdir(dirpath) and dirpath != base_path:
+                print(f"Deleting empty folder: {dirpath}")
+                os.rmdir(dirpath)
+                folders_removed += 1
+        except OSError as e:
+            print(f"Error processing directory {dirpath}: {e}")
+
+    print(f"- Empty files removed: {files_removed}")
+    print(f"- Empty folders removed: {folders_removed}")
+
+
+if os.path.exists(base):
+    clean_empty_files_and_folders(base)
+    print("\nCleanup process completed!")
+else:
+    print(f"Error: Base directory '{base}' does not exist!")

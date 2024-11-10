@@ -14,6 +14,18 @@ def get_text_from_html(html):
     return text
 
 
+def get_output_path(path):
+    set = path.split(r'/')
+    topic = set[2]
+    filename = set[5].split(".")[0]
+    date = filename.split("_")
+    index = date[3]
+    day = date[2]
+    month = date[1]
+    year = set[3]
+    return [f"data/articles/{topic}/{year}/month{month}/day{day}/", f"{index}.txt"]
+
+
 # start variables
 start_year = 2020
 # start_year = config.get_input_number("Input Start Year: ")
@@ -40,11 +52,11 @@ for topic in topics:
                 with open(file, 'r', encoding='utf-8') as f:
                     html_content = f.read()
 
-                output_dir = f"data/articles/{topic}/{year}/month{month}/"
-                os.makedirs(output_dir, exist_ok=True)
-                output_file = os.path.join(output_dir, file.split('/')[-1])
+                output = get_output_path(file)
+                os.makedirs(output[0], exist_ok=True)
+                output_file_path = output[0] + output[1]
 
                 article_text = get_text_from_html(html_content)
 
-                with open(output_file, "w", encoding="utf-8") as f:
+                with open(output_file_path, "w", encoding="utf-8") as f:
                     f.write(article_text)
