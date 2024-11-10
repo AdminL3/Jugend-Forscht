@@ -12,7 +12,11 @@ month_range = range(1, 13)
 day_range = range(1, 32)
 
 # List of files to skip
-files_to_skip = []
+files_to_skip = [
+    "politics/2021/month08/day01",
+    "politics/2021/month12/day25",
+    "politics/2021/month12/day31"
+]
 
 missing_dates = []
 

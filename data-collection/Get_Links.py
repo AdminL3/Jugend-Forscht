@@ -4,7 +4,7 @@ import os
 import config
 
 # start variables
-start_year = 2021
+start_year = 2022
 # start_year = config.get_input_number("Input Start Year: ")
 amount_years = 1
 # amount_years = config.get_input_number("Input amount of years: ")
