@@ -2,16 +2,21 @@ import os
 
 
 def get_output_path(path):
-
     set = path.split(r'/')
-    topic = set[2]
-    filename = set[5].split(".")[0]
-    date = filename.split("_")
-    index = date[3]
-    day = date[2]
-    month = date[1]
-    year = set[3]
-    return [f"data/word_count/{topic}/{year}/month{month}/day{day}/", f"{index}.txt"]
+    base = r"data/word_count/"
+
+    return [str(base)+str(set[2])+"/"+str(set[3])+"/"+str(set[4])+"/"+str(set[5])+"/", str(set[6])]
+
+
+def word_count(text):
+    text = text.lower()
+    text = text.replace("\n", " ")
+    text = text.replace("  ", " ")
+    text = text.replace(".", "")
+    text = text.replace(",", "")
+    words = text.split()
+    word_count = len(words)
+    return str(word_count)
 
 
 start_year = 2020
@@ -28,19 +33,30 @@ for topic in topics:
             month = numbers[j]
             print(month)
             files_path = f"data/articles/{topic}/{year}/month{month}/"
-            files = []
+            days = []
             if os.path.exists(files_path):
-                for file in os.listdir(files_path):
+                for item in os.listdir(files_path):
+                    item_path = os.path.join(files_path, item)
+                    days.append(item_path)
+            else:
+                print(f"Folder does not exist: {files_path}")
+
+            files = []
+            for day in days:
+                for file in os.listdir(day):
                     if file.endswith('.txt'):
-                        files.append(os.path.join(files_path, file))
+                        files.append(os.path.join(day, file))
+
             for file in files:
                 with open(file, 'r', encoding='utf-8') as f:
                     article_text = f.read()
+                path = file.replace("\\", "/")
 
-                output = get_output_path(file)
+                print(path)
+                output = get_output_path(path)
+
                 os.makedirs(output[0], exist_ok=True)
-                output_file_path = output[0] + output[1]
-
-                word_count = len(article_text.split(" "))
-                with open(output_file_path, "w", encoding="utf-8") as f:
-                    f.write(word_count)
+                output_path = output[0]+output[1]
+                word_counter = word_count(article_text)
+                with open(output_path, "w", encoding="utf-8") as f:
+                    f.write(word_counter)
