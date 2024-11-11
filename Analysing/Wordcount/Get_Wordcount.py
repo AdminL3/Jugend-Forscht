@@ -3,7 +3,7 @@ import sqlite3
 from datetime import date
 
 # Step 1: Connect to an SQLite database (creates the file if it doesn't exist)
-conn = sqlite3.connect("wordcount.db")
+conn = sqlite3.connect("Analysing\Wordcount\wordcount.db")
 cursor = conn.cursor()
 
 # Step 2: Create the table to store dates and numbers
