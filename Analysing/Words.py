@@ -20,7 +20,7 @@ def word_count(text):
 
 
 start_year = 2020
-amount_years = 1
+amount_years = 2
 topics = ["politics", "world"]
 
 for topic in topics:
