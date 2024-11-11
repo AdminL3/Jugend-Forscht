@@ -5,3 +5,4 @@ data-collection/AWS/key.pem
 data-collection/config.py
 data-collection/Scraperapi/config.py
 /data-collection/__pycache__
+Analysing/Wordcount/wordcount.db
