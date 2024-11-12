@@ -1,31 +1,61 @@
 # How to Create Plots in Pandas
 
-## Data Preparation
+## Importing
 
-We will start by importing the necessary libraries and loading the data.
+- First for Getting the data from the Database
 
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# Load the air quality data
-air_quality = pd.read_csv("data/air_quality_no2.csv", index_col=0, parse_dates=True)
-air_quality.head()
+```
+import sqlite3
 ```
 
-> **Note**: `index_col=0` sets the first column as the DataFrame index, and `parse_dates=True` converts dates into `Timestamp` objects.
+- Then import modules for Plotting
+
+```
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+```
+
+## Getting from database
+
+- Accessing Database from before
+
+```
+connection = sqlite3.connect("Analysing\Wordcount\wordcount.db")
+cursor = connection.cursor()
+```
+
+- Loading data
+
+```
+cursor.execute("SELECT * FROM Wordcount;")
+rows = cursor.fetchall()
+```
+
+- Close connection
+
+```
+connection.close()
+```
 
 ## Plotting Basics
 
-### Quick Visual Check of the Data
+### Quick Visual Representation of the Data
 
-```python
-# Quick overview plot
-air_quality.plot()
+- Create Dataframe
+
+```
+Dataframe = pd.DataFrame(rows, columns=[column[0] for column in cursor.description])
+```
+
+- Plot Data
+
+```
+rows.plot()
 plt.show()
 ```
 
-Pandas creates one line plot for each numeric column by default.
+Pandas automatically does the rest
 
 ![Quick Data Overview Plot](https://pandas.pydata.org/docs/_images/04_airqual_quick.png)
 
