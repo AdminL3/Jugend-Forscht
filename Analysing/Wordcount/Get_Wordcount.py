@@ -6,10 +6,17 @@ conn = sqlite3.connect("Analysing\Wordcount\wordcount.db")
 cursor = conn.cursor()
 
 cursor.execute('''
-    CREATE TABLE IF NOT EXISTS Wordcount (
+    CREATE TABLE IF NOT EXISTS World (
         id INTEGER PRIMARY KEY AUTOINCREMENT,   -- unique identifier for each entry
         date TEXT NOT NULL,                     -- column to store the date in text format
-        number INTEGER NOT NULL                 -- column to store the associated number
+        wordcount INTEGER NOT NULL                 -- column to store the associated number
+    )
+''')
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS Politics (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,   -- unique identifier for each entry
+        date TEXT NOT NULL,                     -- column to store the date in text format
+        wordcount INTEGER NOT NULL                 -- column to store the associated number
     )
 ''')
 conn.commit()
@@ -38,8 +45,8 @@ def word_count(text):
 
 
 start_year = 2020
-amount_years = 1
-topics = ["politics"]
+amount_years = 2
+topics = ["politics", "world"]
 
 for topic in topics:
     print(topic)
@@ -70,19 +77,19 @@ for topic in topics:
                     article_text = f.read()
                 path = file.replace("\\", "/")
 
-                print(path)
+                # print(path)
                 date = get_date(path)
 
                 word_counter = word_count(article_text)
 
                 data.append((date, word_counter))
-
-
 # Step 3: Insert sample data into the table
+    print(data)
+    cursor.executemany(
+        f"INSERT INTO {topic} (date, wordcount) VALUES (?, ?)", data)
+    conn.commit()
+    data = []
 
-cursor.executemany(
-    "INSERT INTO Wordcount (date, number) VALUES (?, ?)", data)
-conn.commit()
 
 # Step 4: Close the connection
 conn.close()

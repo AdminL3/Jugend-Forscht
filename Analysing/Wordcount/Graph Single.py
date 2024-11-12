@@ -8,7 +8,7 @@ connection = sqlite3.connect("Analysing\Wordcount\wordcount.db")
 cursor = connection.cursor()
 
 
-cursor.execute("SELECT * FROM Wordcount;")
+cursor.execute("SELECT * FROM Politics;")
 rows = cursor.fetchall()
 
 
@@ -25,7 +25,7 @@ Dataframe.plot(style='o', markersize=2)
 
 
 X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
-y = Dataframe['number']
+y = Dataframe['wordcount']
 model = LinearRegression()
 model.fit(X, y)
 y_pred = model.predict(X)
@@ -36,6 +36,6 @@ plt.xlabel("Date")
 plt.ylabel("")
 plt.legend(["Word Count", "Regression Line"])
 plt.title("Word Count Analysis")
-plt.savefig("Analysing\Wordcount\docs\img3.png")
+plt.savefig("Analysing\Wordcount\docs\img4.png")
 
 plt.show()
