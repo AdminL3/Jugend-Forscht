@@ -2,11 +2,9 @@ import os
 import sqlite3
 from datetime import date
 
-# Step 1: Connect to an SQLite database (creates the file if it doesn't exist)
 conn = sqlite3.connect("Analysing\Wordcount\wordcount.db")
 cursor = conn.cursor()
 
-# Step 2: Create the table to store dates and numbers
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS Wordcount (
         id INTEGER PRIMARY KEY AUTOINCREMENT,   -- unique identifier for each entry
@@ -17,8 +15,6 @@ cursor.execute('''
 conn.commit()
 
 
-# Get the data
-sample = (str(date(2024, 11, 11)), 10)
 data = []
 
 
