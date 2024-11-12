@@ -29,14 +29,13 @@ y = Dataframe['number']
 model = LinearRegression()
 model.fit(X, y)
 y_pred = model.predict(X)
-plt.plot(Dataframe.index, y_pred, color='red', label='Regression')
+plt.plot(Dataframe.index, y_pred, color='red')
 
 
 plt.xlabel("Date")
 plt.ylabel("")
-plt.legend()
+plt.legend(["Word Count", "Regression Line"])
 plt.title("Word Count Analysis")
-plt.legend(['Wordcount'])
 plt.savefig("Analysing\Wordcount\docs\img3.png")
 
 plt.show()

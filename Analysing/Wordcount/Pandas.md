@@ -161,7 +161,7 @@ y_pred = model.predict(X)
 #### Plot it
 
 ```
-plt.plot(Dataframe.index, y_pred, color='red', label='Regression')
+plt.plot(Dataframe.index, y_pred, color='red')
 ```
 
 Make sure to plot the line after you plot the Graph!
@@ -169,7 +169,7 @@ Make sure to plot the line after you plot the Graph!
 #### Update Legend
 
 ```
-??
+plt.legend(["Word Count", "Regression Line"])
 ```
 
 ![Regression](docs/img3.png)
