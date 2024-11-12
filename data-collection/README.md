@@ -29,7 +29,7 @@ In this step, you can choose from different methods to extract the source code f
 
 1. **Install** Selenium:
 
-   ```bash
+   ```
    pip install selenium
    ```
 
@@ -37,7 +37,7 @@ In this step, you can choose from different methods to extract the source code f
 
    - Create Options
 
-   ```bash
+   ```
    options = webdriver.ChromeOptions()
    options.add_argument("--start-maximized")
    options.add_argument("--disable-search-engine-choice-screen")
@@ -48,13 +48,13 @@ In this step, you can choose from different methods to extract the source code f
 
    - Create Driver
 
-   ```bash
+   ```
    driver = webdriver.Chrome(options=options)
    ```
 
    - Access Content
 
-   ```bash
+   ```
    while True:
       try:
          driver.get(url)
@@ -71,7 +71,7 @@ In this step, you can choose from different methods to extract the source code f
 
 1. **Install** Requests:
 
-   ```bash
+   ```
    pip install requests
    ```
 
@@ -79,7 +79,7 @@ In this step, you can choose from different methods to extract the source code f
 
    - Access HTML Code
 
-   ```bash
+   ```
    response = requests.get(url)
    page_source = response.text
    ```
@@ -91,13 +91,13 @@ In this step, you can choose from different methods to extract the source code f
 
 1. **Install** Requests:
 
-   ```bash
+   ```
    pip install requests
    ```
 
 2. Access **API**:
 
-   ```bash
+   ```
    payload = {'api_key': api_key,
                'url': url}
    r = requests.get('https://api.scraperapi.com/', params=payload)
@@ -110,7 +110,7 @@ In this step, you can choose from different methods to extract the source code f
 
 1. **Install** Requests:
 
-   ```bash
+   ```
    pip install requests
    ```
 
@@ -140,11 +140,11 @@ In this step, you can choose from different methods to extract the source code f
 
 1. **Install** Requests:
 
-   ```bash
+   ```
    pip install requests beautifulsoup4
    ```
 
-   ```bash
+   ```
    import requests
    from bs4 import BeautifulSoup
    ```
@@ -153,15 +153,15 @@ In this step, you can choose from different methods to extract the source code f
 
 - This totally depends on your HTML Code
 
-  ```bash
+  ```
   response = requests.get(url)
   ```
 
-  ```bash
+  ```
   soup = BeautifulSoup(response.text, 'html.parser')
   ```
 
-  ```bash
+  ```
   text = soup.get_text(separator='\n', strip=True)
   ```
 
@@ -170,11 +170,11 @@ In this step, you can choose from different methods to extract the source code f
 - But Since NYT really tries to prevent me from getting their data
 - I had to use RE to parse the data from some javascript encoding
 
-  ```bash
+  ```
   import re
   ```
 
-  ```bash
+  ```
   def get_text_from_html(html):
     matches = re.findall(r'"text":"(.*?)"', html)
 
@@ -195,7 +195,7 @@ In this step, you can choose from different methods to extract the source code f
 
    - Sometimes the content wasnt downloaded correcly so i checked where there where empty files without content.
 
-     ```bash
+     ```
      for dirpath, dirnames, filenames in os.walk(base, topdown=False):
         # Check if the directory is empty
         if not os.listdir(dirpath):  # If the folder is empty

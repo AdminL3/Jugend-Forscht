@@ -7,7 +7,7 @@
 
 ### 1. Create Database for Topics
 
-```bash
+```
 topics = ["politics", "world"]
 for topic in topics:
      Create the table for storing article metadata
@@ -26,7 +26,7 @@ for topic in topics:
 
 ### 2. Add Data thats already been created
 
-```bash
+```
 def add(source, topic, filename):
     date_str = filename.split('.')[0]  # Remove the .txt extension
     date_parts = date_str.split('_')  # Split by underscore
@@ -50,7 +50,7 @@ def add(source, topic, filename):
 
 - Baseline on how you would do that
 
-```bash
+```
 date_to_update = '2024-11-09'
 idx_to_update = 1
 new_source = 'New Source'

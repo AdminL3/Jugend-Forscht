@@ -12,7 +12,7 @@ This is used in every step.
 - This depends on your file structure!
 - My file structure:
 
-```bash
+```
 data/articles/<topic>/<year>/month<month>/day<day>/<index>.txt
 ```
 
