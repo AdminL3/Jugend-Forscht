@@ -77,21 +77,10 @@ Dataframe = Dataframe.drop(columns=['id'])
 
 ---
 
-2.  Now only show the points **without lines**:
+2.  Customize **Plotting**:
 
-```
-Dataframe.plot(style='o')
-```
-
-instead of:
-
-```
-Dataframe.plot()
-```
-
----
-
-3.  Reduce **Dot Size**:
+- Remove Lines
+- Reduce Dot Size
 
 ```
 Dataframe.plot(style='o', markersize=2)
@@ -100,7 +89,7 @@ Dataframe.plot(style='o', markersize=2)
 instead of:
 
 ```
-Dataframe.plot(style='o')
+Dataframe.plot()
 ```
 
 ---
@@ -127,6 +116,12 @@ plt.xlabel("Date")
 plt.ylabel("")
 ```
 
+5. **Custom Title**
+
+```
+plt.title("Word Count Analysis")
+```
+
 ---
 
 - Looks a lot better now:
@@ -134,3 +129,47 @@ plt.ylabel("")
   ![Result of changes](docs/img2.png)
 
 ---
+
+# Regression
+
+#### Prepare Regression
+
+```
+pip install scikit-learn
+```
+
+#### Prepare data for regression model
+
+```
+X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
+y = Dataframe['number']
+```
+
+#### Set up the model and fit ot
+
+```
+model = LinearRegression()
+model.fit(X, y)
+```
+
+#### Get the parameters
+
+```
+y_pred = model.predict(X)
+```
+
+#### Plot it
+
+```
+plt.plot(Dataframe.index, y_pred, color='red', label='Regression')
+```
+
+Make sure to plot the line after you plot the Graph!
+
+#### Update Legend
+
+```
+??
+```
+
+![Regression](docs/img3.png)

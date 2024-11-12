@@ -1,7 +1,8 @@
 import sqlite3
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
-
+from sklearn.linear_model import LinearRegression
 
 connection = sqlite3.connect("Analysing\Wordcount\wordcount.db")
 cursor = connection.cursor()
@@ -22,11 +23,20 @@ Dataframe.set_index('date', inplace=True)
 
 Dataframe.plot(style='o', markersize=2)
 
+
+X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
+y = Dataframe['number']
+model = LinearRegression()
+model.fit(X, y)
+y_pred = model.predict(X)
+plt.plot(Dataframe.index, y_pred, color='red', label='Regression')
+
+
 plt.xlabel("Date")
 plt.ylabel("")
 plt.legend()
 plt.title("Word Count Analysis")
 plt.legend(['Wordcount'])
-plt.savefig("Analysing\Wordcount\docs\img2.png")
+plt.savefig("Analysing\Wordcount\docs\img3.png")
 
 plt.show()
