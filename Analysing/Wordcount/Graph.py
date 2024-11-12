@@ -8,18 +8,26 @@ cursor = connection.cursor()
 
 cursor.execute("SELECT * FROM Wordcount;")
 rows = cursor.fetchall()
+
+
 Dataframe = pd.DataFrame(
     rows, columns=[column[0] for column in cursor.description])
-
 Dataframe = Dataframe.drop(columns=['id'])
 
-Dataframe.plot(style='o', markersize=2)
+
+Dataframe['date'] = pd.to_datetime(Dataframe['date'])
+Dataframe.set_index('date', inplace=True)
+
+ax = Dataframe.plot(style='o', markersize=2)
+
+
+plt.xlabel("Date")
+plt.ylabel("")
 
 plt.legend(['Wordcount'])
 
+
 plt.savefig("Analysing\Wordcount\docs\img2.png")
-
 plt.show()
-
 
 connection.close()

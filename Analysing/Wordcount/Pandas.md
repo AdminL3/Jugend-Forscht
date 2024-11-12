@@ -83,7 +83,7 @@ Dataframe = Dataframe.drop(columns=['id'])
 Dataframe.plot(style='o')
 ```
 
-instead:
+instead of:
 
 ```
 Dataframe.plot()
@@ -91,24 +91,19 @@ Dataframe.plot()
 
 ---
 
-<!-- 3. Make **Fullscreen**
-
-```
-manager = plt.get_current_fig_manager()
-manager.full_screen_toggle()
-``` -->
-
 3.  Reduce **Dot Size**:
 
 ```
 Dataframe.plot(style='o', markersize=2)
 ```
 
-instead:
+instead of:
 
 ```
 Dataframe.plot(style='o')
 ```
+
+---
 
 4. **Custom Legend**
 
@@ -116,46 +111,26 @@ Dataframe.plot(style='o')
 plt.legend(['Wordcount'])
 ```
 
-## Types in Pandas
+---
 
-Aside from line plots, pandas provides several other plotting options. Here’s how to list them:
+5. **Custom X-Axis**
 
-```python
-# List available plot methods in pandas
-[method_name for method_name in dir(air_quality.plot) if not method_name.startswith("_")]
+```
+# Convert date column to datetime
+Dataframe['date'] = pd.to_datetime(Dataframe['date'])
+
+# Set the date as the index
+Dataframe.set_index('date', inplace=True)
+
+# Update Labels
+plt.xlabel("Date")
+plt.ylabel("")
 ```
 
-## Separate Subplots for Each Column
+---
 
-To display each column in a separate subplot, use the `subplots=True` argument:
+- Looks a lot better now:
 
-```python
-# Area plot with separate subplots for each station
-axs = air_quality.plot.area(figsize=(12, 4), subplots=True)
-plt.show()
-```
-
-![Separate Subplots](https://pandas.pydata.org/docs/_images/04_airqual_area_subplot.png)
-
-## Customizing and Saving Plots
-
-For further customization, we can interact directly with the Matplotlib figure and axes:
-
-```python
-# Customize plot with labels and save to file
-fig, axs = plt.subplots(figsize=(12, 4))
-air_quality.plot.area(ax=axs)
-axs.set_ylabel("NO₂ concentration")
-fig.savefig("no2_concentrations.png")
-plt.show()
-```
-
-![Customized Plot](https://pandas.pydata.org/docs/_images/04_airqual_customized.png)
-
-> **Remember**:
->
-> - `.plot.*` methods work on both Series and DataFrames.
-> - Each column is plotted as a different element (e.g., line, boxplot).
-> - Pandas plots are Matplotlib objects, so you can fully customize them with Matplotlib.
+  ![Result of changes](docs/img2.png)
 
 ---
