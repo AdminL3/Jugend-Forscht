@@ -57,33 +57,66 @@ plt.show()
 
 Pandas automatically does the rest
 
-![Quick Data Overview Plot](https://pandas.pydata.org/docs/_images/04_airqual_quick.png)
+![Quick Data Overview Plot](docs/img1.png)
 
-### Plotting Data for Paris
-
-To focus on data from a single column (e.g., Paris station), use the following:
+### Saving the Plot
 
 ```python
-# Plot only Paris station data
-air_quality["station_paris"].plot()
-plt.show()
+plt.savefig("Analysing\Wordcount\docs\img1.png")
 ```
 
-![Paris Station Data Plot](https://pandas.pydata.org/docs/_images/04_airqual_paris.png)
+- Make sure to add this line before **plt.show()**
 
-## Comparative Plot: London vs. Paris
+## Configure Custom Setting
 
-We can visually compare NO₂ values between London and Paris using a scatter plot:
+1. The **ID line** is annoying me. Let's remove it
 
-```python
-# Scatter plot for London vs Paris NO₂ levels
-air_quality.plot.scatter(x="station_london", y="station_paris", alpha=0.5)
-plt.show()
+```
+Dataframe = Dataframe.drop(columns=['id'])
 ```
 
-![Scatter Plot London vs Paris](https://pandas.pydata.org/docs/_images/04_airqual_scatter.png)
+---
 
-## Other Plot Types in Pandas
+2.  Now only show the points **without lines**:
+
+```
+Dataframe.plot(style='o')
+```
+
+instead:
+
+```
+Dataframe.plot()
+```
+
+---
+
+<!-- 3. Make **Fullscreen**
+
+```
+manager = plt.get_current_fig_manager()
+manager.full_screen_toggle()
+``` -->
+
+3.  Reduce **Dot Size**:
+
+```
+Dataframe.plot(style='o', markersize=2)
+```
+
+instead:
+
+```
+Dataframe.plot(style='o')
+```
+
+4. **Custom Legend**
+
+```
+plt.legend(['Wordcount'])
+```
+
+## Types in Pandas
 
 Aside from line plots, pandas provides several other plotting options. Here’s how to list them:
 
