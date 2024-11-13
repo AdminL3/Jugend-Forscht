@@ -90,6 +90,9 @@ In this step, you can choose from different methods to extract the source code f
          print("Error")
    ```
 
+The Error was a Captcha:
+![Captcha Test Selenium](./Errors/Error%201.png)
+
 ### 2. Requests
 
 - This Works for some time until you get blocked. Then you should use Proxys or External APIs --> See [**Proxyrotation**](#4-proxyrotation) and [**ExternalAPIs**](#3-external-api)
@@ -108,6 +111,11 @@ In this step, you can choose from different methods to extract the source code f
    response = requests.get(url)
    page_source = response.text
    ```
+
+   The Error:
+
+   - Result of Data was a captcha
+     ![Requests Error](./Errors/Error%205.png)
 
 ### 3. External API
 
@@ -145,7 +153,30 @@ In this step, you can choose from different methods to extract the source code f
    - Loop through them and save the working ones as a file
 
 3. Use working proxies to access HTML
+
    - See [**2. Requests**](#2-requests)
+
+###### Free Proxies are unfortunately very unreliable
+
+### 5. Other Errors i had to deal with
+
+#### Another Blocker on Selenium:
+
+![Requests Error](./Errors/Error%202.png)
+
+---
+
+#### And countless paywalls:
+
+1.  ![Requests Error](./Errors/Error%203.png)
+
+---
+
+2.  ![Requests Error](./Errors/Error%204.png)
+
+---
+
+3.  ![Requests Error](./Errors/Error%206.jpg)
 
 ---
 

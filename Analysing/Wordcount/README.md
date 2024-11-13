@@ -56,4 +56,4 @@ conn.close()
 
 ## 2. Visualisation in Pandas
 
-###### See "[Plotting the Wordcount in Pandas](./Pandas_Documentation/)"
+###### See "[Plotting the Wordcount in Pandas](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Pandas_Documentation/)"

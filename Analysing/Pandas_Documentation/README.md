@@ -1,5 +1,8 @@
 # How to Create Plots in Pandas
 
+- Using the Wordcount Example
+- Can be used with Sentimental Analysation
+
 ## Importing
 
 - First for Getting the data from the Database
