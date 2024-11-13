@@ -1,6 +1,10 @@
 # How to Create Plots in Pandas
 
 - Using the Wordcount Example
+
+* See Analysing\Wordcount\Graph Single\.py
+* Docs: [Analysing\Wordcount\README](https://github.com/AdminL3/Jugend-Forscht/blob/main/Analysing/Wordcount/)
+
 - Can be used with Sentimental Analysation
 
 ## Importing
