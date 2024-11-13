@@ -168,15 +168,15 @@ The Error was a Captcha:
 
 #### And countless paywalls:
 
-1.  ![Requests Error](./Errors/Error%203.png)
+1.  ![Paywall Error 1](./Errors/Error%203.png)
 
 ---
 
-2.  ![Requests Error](./Errors/Error%204.png)
+2.  ![Paywall Error 2](./Errors/Error%204.png)
 
 ---
 
-3.  ![Requests Error](./Errors/Error%206.jpg)
+3. <img src="./Errors/Error%206.jpg" alt="Login Wall" width="300"/>
 
 ---
 
