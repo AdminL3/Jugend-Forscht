@@ -16,8 +16,33 @@ This step involves collecting article links from the New York Times (NYT) API. Y
 
    - Go to the [NYT APIs](https://developer.nytimes.com/apis) page.
    - Explore the API structure.
-   - Choose the data you want to collect (links or titles).
-   - Save the data as a file.
+
+   * Example Request
+
+```
+URL = f"https://api.nytimes.com/svc/archive/v1/{year}/{month}.json?api-key={API_KEY}"
+```
+
+3. Parse json
+
+- Now we get a long json string, where we have to extract the url
+- Choose the data you want to collect (links or titles).
+
+```
+url = article.get("web_url", "No URL")
+```
+
+- And remove the articles you dont want
+
+```
+if any(format in url for format in ["/interactive/", "/slideshow/", "/video/", "/crossword/"]):
+```
+
+- Save the data as a file.
+
+```
+file.write(url + '\n')
+```
 
 ---
 
