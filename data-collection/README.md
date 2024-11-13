@@ -180,11 +180,17 @@ The Error was a Captcha:
 
 ---
 
-## Step 2.5: Use AWS to run Python in the cloud
+## Step 2.5: Optimize Data Collection
+
+1. Use AWS to run Python in the cloud
 
 - See my Subfolder [Run Python in the Cloud](./AWS/)
 
 - Run your scripts in the Cloud to reduce computer usage
+
+2. Use Threads to run multiple scripts simultaneously
+
+- See my Subfolder [Multiprocessing](./Multiprocesses/)
 
 ---
 
@@ -225,6 +231,8 @@ The Error was a Captcha:
 
 - But Since NYT really tries to prevent me from getting their data
 - I had to use RE to parse the data from some javascript encoding
+
+- See "Extract_Text\.py"
 
   ```
   import re
