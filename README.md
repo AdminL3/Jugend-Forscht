@@ -1,5 +1,21 @@
 # Analysing the New York Times Articles
 
+## Preparation
+
+Install dependencies
+
+```
+pip install -r requirements.txt
+```
+
+Used Packages:
+
+- Selenium
+- Requests
+- Pandas
+- ...
+- (Pyperclip)
+
 ###### This is a "[Jugend-Forscht](https://jugend-forscht.de)" Project
 
 ## 1. Getting Data
