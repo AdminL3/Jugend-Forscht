@@ -1,8 +1,13 @@
-data
+# Virtual environment
 /.venv
+#VS-Code Settings
 /.vscode
+# Data Storage for NYT Links, Sources and Articles
+data
+# EC2 Instance key
 data-collection/AWS/key.pem
 data-collection/config.py
 data-collection/Scraperapi/config.py
 /data-collection/__pycache__
+# wordcount database
 Analysing/Wordcount/wordcount.db
