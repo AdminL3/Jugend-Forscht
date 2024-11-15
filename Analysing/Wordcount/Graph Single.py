@@ -36,6 +36,6 @@ plt.xlabel("Date")
 plt.ylabel("")
 plt.legend(["Word Count", "Regression Line"])
 plt.title("Word Count Analysis")
-plt.savefig("Analysing\Wordcount\docs\img4.png")
+# plt.savefig("Analysing\Wordcount\docs\img1.png")
 
 plt.show()

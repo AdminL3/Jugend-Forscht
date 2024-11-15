@@ -63,7 +63,7 @@ plt.legend(["Politics Word Count", "World Word Count",
 plt.title("Word Count Analysis for Politics and World")
 
 # Step 7: Save the plot as an image
-plt.savefig("Analysing\Wordcount\Pandas_Documentation\img4.png")
+# plt.savefig("Analysing\Wordcount\Pandas_Documentation\img1.png")
 
 # Display the plot
 plt.show()

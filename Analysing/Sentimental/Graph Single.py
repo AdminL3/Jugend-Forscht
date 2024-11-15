@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
-connection = sqlite3.connect("Analysing\Wordcount\wordcount.db")
+connection = sqlite3.connect("Analysing\Sentimental\polarity.db")
 cursor = connection.cursor()
 
 
@@ -36,6 +36,6 @@ plt.xlabel("Date")
 plt.ylabel("")
 plt.legend(["Word Count", "Regression Line"])
 plt.title("Word Count Analysis")
-plt.savefig("Analysing\Wordcount\docs\img4.png")
+# plt.savefig("Analysing\Wordcount\docs\img1.png")
 
 plt.show()
