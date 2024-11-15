@@ -86,7 +86,7 @@ for topic in topics:
 
                 data.append((date, sentiment[0], sentiment[1]))
 # Step 3: Insert sample data into the table
-    print(data)
+    # print(data)
     cursor.executemany(
         f"INSERT INTO {topic} (date, polarity, subjectivity) VALUES (?, ?, ?)", data)
     conn.commit()
