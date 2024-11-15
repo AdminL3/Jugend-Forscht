@@ -29,6 +29,17 @@ See [Wordcount - README](./Wordcount/)
 
 ---
 
+## Option 2: Sentimental Analasis
+
+See [Sentimental - README](./Sentimental/)
+
+- Counting The Words
+- Visualizing them in a Graph
+- Extracting longest articles
+- Getting Korrelation Koefficient
+
+---
+
 ## Result
 
 - This is only a part of the full project!
