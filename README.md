@@ -14,6 +14,7 @@ Used Packages:
 - Requests
 - Pandas
 - Matplotlib
+- scikit-learn
 - ...
 - (Pyperclip)
 
