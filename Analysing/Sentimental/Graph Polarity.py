@@ -36,7 +36,7 @@ plt.plot(Dataframe.index, y_pred, color='red')
 plt.xlabel("Date")
 plt.ylabel("")
 plt.legend(["Polarity", "Regression Line"])
-plt.title("Sentimental Analysis")
+plt.title("Polarity Analysis")
 plt.savefig("Analysing\Sentimental\images\polarity.png")
 
 plt.show()
