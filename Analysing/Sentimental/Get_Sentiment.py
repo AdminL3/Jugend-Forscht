@@ -4,7 +4,7 @@ from datetime import date
 from textblob import TextBlob
 
 
-conn = sqlite3.connect("Analysing\Sentimental\polarity.db")
+conn = sqlite3.connect("Analysing\Sentimental\sentiment.db")
 cursor = conn.cursor()
 
 cursor.execute('''

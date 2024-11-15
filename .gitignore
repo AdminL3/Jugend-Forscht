@@ -12,4 +12,4 @@ data-collection/Scraperapi/config.py
 # Wordcount database
 Analysing/Wordcount/wordcount.db
 # Polarisation Database
-Analysing\Sentimental\polarity.db
+Analysing\Sentimental\sentiment.db

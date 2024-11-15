@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
-connection = sqlite3.connect("Analysing\Sentimental\polarity.db")
+connection = sqlite3.connect("Analysing\Sentimental\sentiment.db")
 cursor = connection.cursor()
 
 
