@@ -13,6 +13,7 @@ Used Packages:
 - Selenium
 - Requests
 - Pandas
+- Matplotlib
 - ...
 - (Pyperclip)
 
