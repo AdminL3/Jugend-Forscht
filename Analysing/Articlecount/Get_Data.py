@@ -111,6 +111,6 @@ for topic in topics:
         VALUES (?, ?)
     """, (topic_id, topic_total))
 
+    conn.commit()
 
-# Step 4: Close the connection
 conn.close()
