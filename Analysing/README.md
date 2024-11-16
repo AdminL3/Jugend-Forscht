@@ -2,21 +2,11 @@
 
 - The data, which we collected in [Step 2: # Data Collection from the NYT](../data-collection/)
 
----
+##### There are a lot of things you can analyse,
 
-## Get the Data
+##### but they all follow the same Structure.
 
-This is used in every step.
-
-- This step involves collecting the articles created before.
-- This depends on your file structure!
-- My file structure:
-
-```
-data/articles/<topic>/<year>/month<month>/day<day>/<index>.txt
-```
-
----
+##### See [#Structure](#structure)
 
 ## Option 1: Analysing Wordcount
 
@@ -40,6 +30,22 @@ See [Sentimental - README](./Sentimental/)
 
 ---
 
+## Structure
+
+This is used in every step.
+
+#### Getting the data
+
+- This step involves collecting the articles created before.
+- This depends on your file structure!
+- My file structure:
+
+```
+data/articles/<topic>/<year>/month<month>/day<day>/<index>.txt
+```
+
+#### Saving the results in a database:
+
 ## Result
 
 - This is only a part of the full project!
@@ -47,5 +53,4 @@ See [Sentimental - README](./Sentimental/)
 - The part, where we analyse the data.
 
 - View the whole Projekt at [Github](https://github.com/AdminL3/Jugend-Forscht/)
-
-Sure, here's a documentation in markdown style for the code snippet you provided:
+  w
