@@ -34,8 +34,8 @@ plt.plot(Dataframe.index, y_pred, color='red')
 
 plt.xlabel("Date")
 plt.ylabel("")
-plt.legend(["Word Count", "Regression Line"])
-plt.title("Word Count Analysis")
-# plt.savefig("Analysing\Wordcount\docs\img1.png")
+plt.legend([f"{topic} Word Count", "Regression Line"])
+plt.title(f"Word Count Analysis  - {topic}")
+plt.savefig(f"Analysing\Wordcount\output\{topic}.png")
 
 plt.show()
