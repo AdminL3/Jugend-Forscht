@@ -6,13 +6,11 @@ connection = sqlite3.connect("Analysing/Articlecount/articlecount.db")
 cursor = connection.cursor()
 
 
-for i in range(2):
-    topic_id = i
-
-    topics = ["Politics", "World"]
+topics = ["Politics", "World"]
+colors = ['#1f77b4', '#ff7f0e']
+for topic_id in range(2):
     topic = topics[topic_id]
-    colors = ['#1f77b4', '#ff7f0e']
-    color = colors[0] if topic == "Politics" else colors[1]
+    color = colors[topic_id]
 
     cursor.execute(f"SELECT * FROM monthly_totals WHERE topic_id = {topic_id}")
     rows = cursor.fetchall()
@@ -38,11 +36,11 @@ for i in range(2):
     # Customize the plot
     plt.xlabel("Date")
     plt.ylabel("Article Count")
-    plt.legend(["Article Count"])
-    plt.title(f"Article Count Analysis for {topics[topic_id]}")
+    plt.legend([f"Article Count for {topic}"])
+    plt.title(f"Monthly Analysis of Amount of Articles for {topic}")
     plt.tight_layout()
 
     # Save the plot
-    plt.savefig(f"Analysing/Articlecount/output/Month/{topics[topic_id]}.png")
+    plt.savefig(f"Analysing/Articlecount/output/month/{topic}.png")
 
     plt.close()
