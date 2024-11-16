@@ -1,8 +1,12 @@
 import os
 import sqlite3
-from datetime import date
 
-conn = sqlite3.connect("Analysing\Articlecount\articlecount.db")
+data_root = "data/articles"
+start_year = 2020
+amount_years = 2
+topics = ["politics", "world"]
+
+conn = sqlite3.connect("Analysing/Articlecount/articlecount.db")
 cursor = conn.cursor()
 
 # Create tables
