@@ -7,12 +7,9 @@ from sklearn.linear_model import LinearRegression
 connection = sqlite3.connect("Analysing\Wordcount\wordcount.db")
 cursor = connection.cursor()
 
-topics = ["Politics", "World"]
-topic = topics[1]
-colors = ['#1f77b4', '#ff7f0e']
-color = colors[0] if topic == "Politics" else colors[1]
-colors_reg = ['red', 'blue']
-regression_color = colors_reg[0] if topic == "Politics" else colors_reg[1]
+topics = ["Politics", "World", "Opinion"]
+colors = ['#1f77b4', '#ff7f0e', "#2ca02c"]
+colors_reg = ['red', 'blue', "e6e600"]
 
 
 cursor.execute(f"SELECT * FROM {topic};")

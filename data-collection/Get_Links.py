@@ -9,7 +9,7 @@ start_year = 2022
 amount_years = 1
 # amount_years = config.get_input_number("Input amount of years: ")
 
-topics = ["politics", "world"]
+topics = ["politics", "world", "opinion"]
 API_KEY = config.NYT_API_KEY
 for i in range(amount_years):
     year = start_year + i
@@ -45,5 +45,6 @@ for i in range(amount_years):
                         file.write(url + '\n')
 
             print(f"Die Links für {topic} wurden erfolgreich in '{
-                  year}/month{month}.txt' gespeichert.")
+                  year}/month{month}.txt' gespeichert."
+                  )
             time.sleep(3)

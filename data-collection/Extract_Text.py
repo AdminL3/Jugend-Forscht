@@ -32,7 +32,7 @@ start_year = 2020
 amount_years = 2
 # amount_years = config.get_input_number("Input amount of years: ")
 
-topics = ["politics", "world"]
+topics = ["politics", "world", "opinion"]
 for topic in topics:
     print(topic)
     for i in range(amount_years):

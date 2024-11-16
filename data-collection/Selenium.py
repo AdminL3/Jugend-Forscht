@@ -4,7 +4,7 @@ import os
 
 start_year = 2020
 amount_years = 2
-topics = ["world", "politics"]
+topics = ["world", "politics", "opinion"]
 start_month = 1
 amount_month = 12
 last_date = 0

@@ -8,7 +8,7 @@ cursor = connection.cursor()
 
 topics = ["Politics", "World"]
 colors = ['#1f77b4', '#ff7f0e']
-for topic_id in range(2):
+for topic_id in range(len(topics)):
     topic = topics[topic_id]
     color = colors[topic_id]
 
