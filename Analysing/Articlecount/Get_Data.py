@@ -57,28 +57,6 @@ conn.commit()
 data = []
 
 
-def get_date(path):
-    path_parts = path.split('/')
-    year = path_parts[3]
-    month = path_parts[4][5:]
-    day = path_parts[5][3:]
-    return f"{year}-{month}-{day}"
-
-
-def word_count(text):
-    text = text.lower()
-    text = text.replace("\n", " ")
-    text = text.replace("  ", " ")
-    text = text.replace(".", "")
-    text = text.replace(",", "")
-    words = text.split()
-    word_count = len(words)
-    return str(word_count)
-
-
-start_year = 2020
-amount_years = 2
-topics = ["politics", "world"]
 
 for topic in topics:
     print(topic)
