@@ -39,4 +39,4 @@ plt.legend(["Polarity", "Regression Line"])
 plt.title("Polarity Analysis")
 plt.savefig(f"Analysing/Sentimental/output/polarity/{topic}.png")
 
-plt.show()
+plt.close()

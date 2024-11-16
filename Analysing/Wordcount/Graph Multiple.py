@@ -71,4 +71,4 @@ plt.title("Word Count Analysis for Politics and World")
 plt.savefig("Analysing\Wordcount\output\Both.png")
 
 # Display the plot
-plt.show()
+plt.close()

@@ -45,4 +45,4 @@ plt.legend([f"{topic} Word Count", "Regression Line"])
 plt.title(f"Word Count Analysis  - {topic}")
 plt.savefig(f"Analysing\Wordcount\output\{topic}.png")
 
-plt.show()
+plt.close()

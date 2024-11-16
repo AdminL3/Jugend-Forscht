@@ -40,4 +40,4 @@ plt.legend(["Subjectivity", "Regression Line"])
 plt.title("Subjectivity Analysis")
 plt.savefig(f"Analysing/Sentimental/output/subjectivity/{topic}.png")
 
-plt.show()
+plt.close()
