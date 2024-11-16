@@ -53,22 +53,27 @@ CREATE TABLE IF NOT EXISTS topic_totals (
 """)
 conn.commit()
 
-
 data = []
 
-
-
+topic_id = -1
 for topic in topics:
-    print(topic)
+    print(f"Processing topic: {topic}")
+    topic_id += 1
+
+    topic_total = 0  # Initialize topic-wide total for all years
+
     for i in range(amount_years):
         year = start_year + i
-        print(year)
+        print(f"  Year: {year}")
+        yearly_total = 0  # Initialize yearly total
+
         for j in range(12):
-            numbers = [str(h).zfill(2) for h in range(1, 13)]
-            month = numbers[j]
-            print(month)
-            files_path = f"data/articles/{topic}/{year}/month{month}/"
-            days = []
+            month = str(j + 1).zfill(2)
+            print(f"Month: {month}")
+            files_path = os.path.join(
+                data_root, topic, str(year), f"month{month}")
+            monthly_total = 0
+
             if os.path.exists(files_path):
                 for item in os.listdir(files_path):
                     item_path = os.path.join(files_path, item)
