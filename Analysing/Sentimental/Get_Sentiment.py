@@ -4,31 +4,6 @@ from datetime import date
 from textblob import TextBlob
 
 
-conn = sqlite3.connect("Analysing\Sentimental\sentiment.db")
-cursor = conn.cursor()
-
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS World (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        date TEXT NOT NULL,
-        polarity INTEGER NOT NULL,
-        subjectivity INTEGER NOT NULL
-    )
-''')
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS Politics (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        date TEXT NOT NULL,
-        polarity INTEGER NOT NULL,
-        subjectivity INTEGER NOT NULL
-    )
-''')
-conn.commit()
-
-
-data = []
-
-
 def get_date(path):
     path_parts = path.split('/')
     year = path_parts[3]
@@ -49,9 +24,21 @@ def get_sentiment(text):
 start_year = 2020
 amount_years = 2
 topics = ["politics", "world", "opinion"]
+conn = sqlite3.connect("Analysing\Sentimental\sentiment.db")
+cursor = conn.cursor()
+data = []
 
 for topic in topics:
     print(topic)
+    cursor.execute(f'''
+        CREATE TABLE IF NOT EXISTS {topic} (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            date TEXT NOT NULL,
+            polarity INTEGER NOT NULL,
+            subjectivity INTEGER NOT NULL
+            )
+    ''')
+    conn.commit()
     for i in range(amount_years):
         year = start_year + i
         print(year)

@@ -2,28 +2,6 @@ import os
 import sqlite3
 from datetime import date
 
-conn = sqlite3.connect("Analysing\Wordcount\wordcount.db")
-cursor = conn.cursor()
-
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS World (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,   -- unique identifier for each entry
-        date TEXT NOT NULL,                     -- column to store the date in text format
-        wordcount INTEGER NOT NULL                 -- column to store the associated number
-    )
-''')
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS Politics (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,   -- unique identifier for each entry
-        date TEXT NOT NULL,                     -- column to store the date in text format
-        wordcount INTEGER NOT NULL                 -- column to store the associated number
-    )
-''')
-conn.commit()
-
-
-data = []
-
 
 def get_date(path):
     path_parts = path.split('/')
@@ -44,12 +22,23 @@ def word_count(text):
     return str(word_count)
 
 
+conn = sqlite3.connect("Analysing\Wordcount\wordcount.db")
+cursor = conn.cursor()
 start_year = 2020
 amount_years = 2
 topics = ["politics", "world", "opinion"]
 
+data = []
 for topic in topics:
     print(topic)
+    cursor.execute(f'''
+        CREATE TABLE IF NOT EXISTS {topic} (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            date TEXT NOT NULL,
+            wordcount INTEGER NOT NULL
+        )
+    ''')
+    conn.commit()
     for i in range(amount_years):
         year = start_year + i
         print(year)
