@@ -61,8 +61,7 @@ conn.close()
 
 ### Differences to Wordcount
 
-See "[Plotting the Wordcount in Pandas](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Pandas_Documentation/)"
-And [Analysing the Wordcount](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Wordcount/)
+See [Analysing the Wordcount](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Wordcount/)
 
 ##### Differentiate between Subjectivity and Polarity
 
@@ -71,7 +70,26 @@ sentiment_polarity = blob.sentiment.polarity
 sentiment_subjectivity = blob.sentiment.subjectivity
 ```
 
-##### Graphing to different plots
+##### Graphing two different plots see
 
-![Analysing Polarity](\images\polarity.png)
-![Analysing Subjectivity](\images\subjectivity.png)
+See "[Plotting the Wordcount in Pandas Documentation](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Pandas_Documentation/)"
+
+#### Polarity
+
+###### World
+
+![Analysing Polarity - World](\output\polarity\World.png)
+
+###### Politics
+
+![Analysing Polarity - Politics](\output\polarity\Politics.png)
+
+#### Subjectivity
+
+###### World
+
+![Analysing Subjectivity - World](\output\subjectivity\World.png)
+
+###### Politics
+
+![Analysing Subjectivity - Politics](\output\subjectivity\Politics.png)
