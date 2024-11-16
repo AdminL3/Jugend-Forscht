@@ -1,3 +1,4 @@
+from calendar import c
 import sqlite3
 import matplotlib.pyplot as plt
 import numpy as np
@@ -6,6 +7,10 @@ from sklearn.linear_model import LinearRegression
 
 connection = sqlite3.connect("Analysing\Wordcount\wordcount.db")
 cursor = connection.cursor()
+
+topics = ["Politics", "World"]
+colors = ['#1f77b4', '#ff7f0e']
+colors_reg = ['red', 'blue']
 
 
 cursor.execute("SELECT * FROM Politics;")
@@ -31,9 +36,9 @@ DataframeWorld['date'] = pd.to_datetime(DataframeWorld['date'])
 DataframeWorld.set_index('date', inplace=True)
 
 plt.plot(DataframePolitics.index,
-         DataframePolitics['wordcount'], 'o', markersize=2)
+         DataframePolitics['wordcount'], 'o', markersize=2, color=f'{colors[0]}')
 plt.plot(DataframeWorld.index,
-         DataframeWorld['wordcount'], 'o', markersize=2)
+         DataframeWorld['wordcount'], 'o', markersize=2, color=f'{colors[1]}')
 
 
 # Step 5: Apply linear regression on both datasets
@@ -44,7 +49,7 @@ model_politics = LinearRegression()
 model_politics.fit(X_politics, y_politics)
 y_pred_politics = model_politics.predict(X_politics)
 plt.plot(DataframePolitics.index, y_pred_politics,
-         color='red')
+         color=f'{colors_reg[0]}')
 
 # Linear regression for World
 X_world = DataframeWorld.index.astype(np.int64).values.reshape(-1, 1)
@@ -53,7 +58,7 @@ model_world = LinearRegression()
 model_world.fit(X_world, y_world)
 y_pred_world = model_world.predict(X_world)
 plt.plot(DataframeWorld.index, y_pred_world,
-         color='blue')
+         color=f'{colors_reg[1]}')
 
 # Step 6: Add labels, legend, and title
 plt.xlabel("Date")
