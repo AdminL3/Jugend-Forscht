@@ -22,6 +22,10 @@ Dataframe = pd.DataFrame(
 # Drop unnecessary columns
 Dataframe = Dataframe.drop(columns=['id'])
 Dataframe = Dataframe.drop(columns=['topic_id'])
+
+# Combine 'year' and 'month' into a 'date' column
+Dataframe['date'] = pd.to_datetime(Dataframe[['year', 'month']].assign(day=1))
+
 # Set 'date' as the index
 Dataframe.set_index('date', inplace=True)
 
