@@ -53,4 +53,3 @@ data/articles/<topic>/<year>/month<month>/day<day>/<index>.txt
 - The part, where we analyse the data.
 
 - View the whole Projekt at [Github](https://github.com/AdminL3/Jugend-Forscht/)
-  w

@@ -59,7 +59,7 @@ Dataframe = pd.DataFrame(rows, columns=[column[0] for column in cursor.descripti
 
 ```
 rows.plot()
-plt.show()
+plt.close()
 ```
 
 Pandas automatically does the rest
@@ -72,7 +72,7 @@ Pandas automatically does the rest
 plt.savefig("Analysing\Wordcount\Pandas_Documentation\img1.png")
 ```
 
-- Make sure to add this line before **plt.show()**
+- Make sure to add this line before **plt.close()**
 
 ## Configure Custom Setting
 

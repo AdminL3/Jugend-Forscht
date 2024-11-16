@@ -55,24 +55,26 @@ conn.close()
 
 ## 2. Visualisation in Pandas
 
-######
+#### See "[Plotting the Wordcount in Pandas Documentation](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Pandas_Documentation/)"
 
-###### Almost the same for Sentiment
-
-### Differences to Wordcount
+###### This is almost the same to the Wordcount
 
 See [Analysing the Wordcount](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Wordcount/)
 
-##### Differentiate between Subjectivity and Polarity
+#### Differences to Wordcount
+
+###### Differentiate between Subjectivity and Polarity
 
 ```
 sentiment_polarity = blob.sentiment.polarity
 sentiment_subjectivity = blob.sentiment.subjectivity
 ```
 
-##### Graphing two different plots see
+---
 
-See "[Plotting the Wordcount in Pandas Documentation](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Pandas_Documentation/)"
+## Graphing the data
+
+#### See "[Plotting the Wordcount in Pandas Documentation](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Pandas_Documentation/)"
 
 #### Polarity
 
