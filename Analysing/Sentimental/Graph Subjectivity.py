@@ -8,7 +8,8 @@ connection = sqlite3.connect("Analysing\Sentimental\sentiment.db")
 cursor = connection.cursor()
 
 
-cursor.execute("SELECT * FROM Politics;")
+topic = "Politics"
+cursor.execute(f"SELECT * FROM {topic};")
 rows = cursor.fetchall()
 
 
@@ -37,6 +38,6 @@ plt.xlabel("Date")
 plt.ylabel("")
 plt.legend(["Subjectivity", "Regression Line"])
 plt.title("Subjectivity Analysis")
-plt.savefig("Analysing\Sentimental\images\subjectivity.png")
+plt.savefig(f"Analysing/Sentimental/output/subjectivity/{topic}.png")
 
 plt.show()

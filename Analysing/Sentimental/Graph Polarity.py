@@ -7,8 +7,8 @@ from sklearn.linear_model import LinearRegression
 connection = sqlite3.connect("Analysing\Sentimental\sentiment.db")
 cursor = connection.cursor()
 
-
-cursor.execute("SELECT * FROM Politics;")
+topic = "World"
+cursor.execute(f"SELECT * FROM {topic};")
 rows = cursor.fetchall()
 
 
@@ -37,6 +37,6 @@ plt.xlabel("Date")
 plt.ylabel("")
 plt.legend(["Polarity", "Regression Line"])
 plt.title("Polarity Analysis")
-plt.savefig("Analysing\Sentimental\images\polarity.png")
+plt.savefig(f"Analysing/Sentimental/output/polarity/{topic}.png")
 
 plt.show()
