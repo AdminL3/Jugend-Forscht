@@ -14,9 +14,7 @@ cursor.execute("""
 CREATE TABLE IF NOT EXISTS articles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     topic_id INTEGER,
-    year INTEGER,
-    month INTEGER,
-    day INTEGER,
+    date TEXT,
     count INTEGER,
     FOREIGN KEY (topic_id) REFERENCES topics (id)
 )
@@ -53,8 +51,6 @@ CREATE TABLE IF NOT EXISTS topic_totals (
 """)
 conn.commit()
 
-data = []
-
 topic_id = -1
 for topic in topics:
     print(f"Processing topic: {topic}")
@@ -64,7 +60,7 @@ for topic in topics:
 
     for i in range(amount_years):
         year = start_year + i
-        print(f"  Year: {year}")
+        print(f"Year: {year}")
         yearly_total = 0  # Initialize yearly total
 
         for j in range(12):
@@ -83,11 +79,16 @@ for topic in topics:
                         daily_count = len(files)
                         monthly_total += daily_count
 
+                        # Construct the date in YYYY-MM-DD format# Correct handling of 'day'
+                        # Extract only digits
+                        day_numeric = ''.join(filter(str.isdigit, day))
+                        date = f"{year}-{month}-{day_numeric.zfill(2)}"
+
                         # Insert daily count into the articles table
                         cursor.execute("""
-                            INSERT INTO articles (topic_id, year, month, day, count)
-                            VALUES (?, ?, ?, ?, ?)
-                        """, (topic_id, year, month, day, daily_count))
+                            INSERT INTO articles (topic_id, date, count)
+                            VALUES (?, ?, ?)
+                        """, (topic_id, date, daily_count))
 
             # Add to yearly and topic totals
             yearly_total += monthly_total
