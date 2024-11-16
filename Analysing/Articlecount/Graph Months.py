@@ -44,3 +44,49 @@ for topic_id in range(2):
     plt.savefig(f"Analysing/Articlecount/output/month/{topic}.png")
 
     plt.close()
+
+
+# both
+
+cursor.execute(f"SELECT * FROM monthly_totals WHERE topic_id = {0}")
+rows_p = cursor.fetchall()
+cursor.execute(f"SELECT * FROM monthly_totals WHERE topic_id = {1}")
+rows_w = cursor.fetchall()
+
+# Create DataFrame
+DataframePolitics = pd.DataFrame(
+    rows_p, columns=[column[0] for column in cursor.description])
+DataframeWorld = pd.DataFrame(
+    rows_w, columns=[column[0] for column in cursor.description])
+
+# Drop unnecessary columns
+DataframePolitics = DataframePolitics.drop(columns=['id'])
+DataframeWorld = DataframeWorld.drop(columns=['id'])
+DataframePolitics = DataframePolitics.drop(columns=['topic_id'])
+DataframeWorld = DataframeWorld.drop(columns=['topic_id'])
+
+# Combine 'year' and 'month' into a 'date' column
+DataframePolitics['date'] = pd.to_datetime(
+    Dataframe[['year', 'month']].assign(day=1))
+DataframeWorld['date'] = pd.to_datetime(
+    Dataframe[['year', 'month']].assign(day=1))
+
+# Plot the article counts by month
+plt.plot(DataframePolitics.index,
+         DataframePolitics['total_count'], 'o', markersize=4, color=f'{colors[0]}')
+plt.plot(DataframeWorld.index,
+         DataframeWorld['total_count'], 'o', markersize=4, color=f'{colors[1]}')
+
+
+# Customize the plot
+plt.xlabel("Date")
+plt.ylabel("Article Count")
+plt.legend([f"Article Count for {topics[0]}",
+           f"Article Count for {topics[1]}"])
+plt.title(f"Monthly Analysis of Amount of Articles")
+plt.tight_layout()
+
+# Save the plot
+plt.savefig(f"Analysing/Articlecount/output/Month/Both.png")
+
+plt.close()
