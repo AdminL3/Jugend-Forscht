@@ -48,41 +48,32 @@ for topic_id in range(2):
 
 # both
 
-cursor.execute(f"SELECT * FROM monthly_totals WHERE topic_id = {0}")
-rows_p = cursor.fetchall()
-cursor.execute(f"SELECT * FROM monthly_totals WHERE topic_id = {1}")
-rows_w = cursor.fetchall()
+for i in range(len(topics)):
+    cursor.execute(f"SELECT * FROM monthly_totals WHERE topic_id = {i}")
+    rows = cursor.fetchall()
 
-# Create DataFrame
-DataframePolitics = pd.DataFrame(
-    rows_p, columns=[column[0] for column in cursor.description])
-DataframeWorld = pd.DataFrame(
-    rows_w, columns=[column[0] for column in cursor.description])
+    # Create DataFrame
+    Dataframe = pd.DataFrame(
+        rows, columns=[column[0] for column in cursor.description])
 
-# Drop unnecessary columns
-DataframePolitics = DataframePolitics.drop(columns=['id'])
-DataframeWorld = DataframeWorld.drop(columns=['id'])
-DataframePolitics = DataframePolitics.drop(columns=['topic_id'])
-DataframeWorld = DataframeWorld.drop(columns=['topic_id'])
+    # Drop unnecessary columns
+    Dataframe = Dataframe.drop(columns=['id'])
+    Dataframe = Dataframe.drop(columns=['topic_id'])
 
-# Combine 'year' and 'month' into a 'date' column
-DataframePolitics['date'] = pd.to_datetime(
-    Dataframe[['year', 'month']].assign(day=1))
-DataframeWorld['date'] = pd.to_datetime(
-    Dataframe[['year', 'month']].assign(day=1))
+    # Combine 'year' and 'month' into a 'date' column
+    Dataframe['date'] = pd.to_datetime(
+        Dataframe[['year', 'month']].assign(day=1))
 
-# Plot the article counts by month
-plt.plot(DataframePolitics.index,
-         DataframePolitics['total_count'], 'o', markersize=4, color=f'{colors[0]}')
-plt.plot(DataframeWorld.index,
-         DataframeWorld['total_count'], 'o', markersize=4, color=f'{colors[1]}')
+    # Plot the article counts by month
+    plt.plot(Dataframe.index,
+             Dataframe['total_count'], 'o', markersize=4, color=f'{colors[i]}')
 
 
 # Customize the plot
+legend = [f"Article Count for {topic}" for topic in topics]
 plt.xlabel("Date")
 plt.ylabel("Article Count")
-plt.legend([f"Article Count for {topics[0]}",
-           f"Article Count for {topics[1]}"])
+plt.legend(legend)
 plt.title(f"Monthly Analysis of Amount of Articles")
 plt.tight_layout()
 
