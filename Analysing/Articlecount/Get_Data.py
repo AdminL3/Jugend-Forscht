@@ -75,35 +75,41 @@ for topic in topics:
             monthly_total = 0
 
             if os.path.exists(files_path):
-                for item in os.listdir(files_path):
-                    item_path = os.path.join(files_path, item)
-                    days.append(item_path)
-            else:
-                print(f"Folder does not exist: {files_path}")
+                for day in os.listdir(files_path):
+                    day_path = os.path.join(files_path, day)
+                    if os.path.isdir(day_path):
+                        files = [file for file in os.listdir(
+                            day_path) if file.endswith('.txt')]
+                        daily_count = len(files)
+                        monthly_total += daily_count
 
-            files = []
-            for day in days:
-                for file in os.listdir(day):
-                    if file.endswith('.txt'):
-                        files.append(os.path.join(day, file))
+                        # Insert daily count into the articles table
+                        cursor.execute("""
+                            INSERT INTO articles (topic_id, year, month, day, count)
+                            VALUES (?, ?, ?, ?, ?)
+                        """, (topic_id, year, month, day, daily_count))
 
-            for file in files:
-                with open(file, 'r', encoding='utf-8') as f:
-                    article_text = f.read()
-                path = file.replace("\\", "/")
+            # Add to yearly and topic totals
+            yearly_total += monthly_total
+            topic_total += monthly_total
 
-                # print(path)
-                date = get_date(path)
+            # Insert monthly total into the monthly_totals table
+            cursor.execute("""
+                INSERT INTO monthly_totals (topic_id, year, month, total_count)
+                VALUES (?, ?, ?, ?)
+            """, (topic_id, year, month, monthly_total))
 
-                word_counter = word_count(article_text)
+        # Insert yearly total into the yearly_totals table
+        cursor.execute("""
+            INSERT INTO yearly_totals (topic_id, year, total_count)
+            VALUES (?, ?, ?)
+        """, (topic_id, year, yearly_total))
 
-                data.append((date, word_counter))
-# Step 3: Insert sample data into the table
-    print(data)
-    cursor.executemany(
-        f"INSERT INTO {topic} (date, wordcount) VALUES (?, ?)", data)
-    conn.commit()
-    data = []
+    # Insert topic-wide total into the topic_totals table
+    cursor.execute("""
+        INSERT INTO topic_totals (topic_id, total_count)
+        VALUES (?, ?)
+    """, (topic_id, topic_total))
 
 
 # Step 4: Close the connection
