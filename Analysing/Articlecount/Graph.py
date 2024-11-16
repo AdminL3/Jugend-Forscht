@@ -13,6 +13,7 @@ colors = ['#1f77b4', '#ff7f0e']
 color = colors[0] if topic == "Politics" else colors[1]
 
 
+cursor.execute(f"SELECT * FROM monthly_totals WHERE topic_id = {topic_id}")
 rows = cursor.fetchall()
 
 # Create DataFrame
