@@ -155,6 +155,7 @@ y = Dataframe['wordcount']
 #### Set up the model and fit ot
 
 ```
+from sklearn.linear_model import LinearRegression
 model = LinearRegression()
 model.fit(X, y)
 ```
