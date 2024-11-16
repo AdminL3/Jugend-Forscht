@@ -5,20 +5,48 @@ from datetime import date
 conn = sqlite3.connect("Analysing\Articlecount\articlecount.db")
 cursor = conn.cursor()
 
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS World (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,   -- unique identifier for each entry
-        date TEXT NOT NULL,                     -- column to store the date in text format
-        articlecount INTEGER NOT NULL                 -- column to store the associated number
-    )
-''')
-cursor.execute('''
-    CREATE TABLE IF NOT EXISTS Politics (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,   -- unique identifier for each entry
-        date TEXT NOT NULL,                     -- column to store the date in text format
-        articlecount INTEGER NOT NULL                 -- column to store the associated number
-    )
-''')
+# Create tables
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS articles (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    topic_id INTEGER,
+    year INTEGER,
+    month INTEGER,
+    day INTEGER,
+    count INTEGER,
+    FOREIGN KEY (topic_id) REFERENCES topics (id)
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS monthly_totals (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    topic_id INTEGER,
+    year INTEGER,
+    month INTEGER,
+    total_count INTEGER,
+    FOREIGN KEY (topic_id) REFERENCES topics (id)
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS yearly_totals (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    topic_id INTEGER,
+    year INTEGER,
+    total_count INTEGER,
+    FOREIGN KEY (topic_id) REFERENCES topics (id)
+)
+""")
+
+cursor.execute("""
+CREATE TABLE IF NOT EXISTS topic_totals (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    topic_id INTEGER,
+    total_count INTEGER,
+    FOREIGN KEY (topic_id) REFERENCES topics (id)
+)
+""")
 conn.commit()
 
 
