@@ -1,4 +1,3 @@
-from os import path
 import sqlite3
 
 
@@ -39,6 +38,6 @@ topics = ["Politics", "World", "Opinion"]
 output = "Analysing/Wordcount/extrema.txt"
 with open(output, "w") as file:
     file.write("Wordcount analysis\n\n")
-with open(output, "a") as file:
+with open(output, "a", encoding="utf-8") as file:
     for i, topic in enumerate(topics):
         file.write(get_extrema(topic))
