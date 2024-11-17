@@ -1,0 +1,86 @@
+Maxima:
+
+POLITICS:
+
+Date: 2020-08-13-6
+polarity: -0.22934782608695653
+Title: Kamala Harris drew immediate attacks from President Trump and other Republicans. 
+
+
+Date: 2021-08-05-5
+polarity: -0.1827689678742312
+Title: The naval base at Guantánamo Bay has managed to avoid any major coronavirus outbreaks so far, but has recently detected seven cases among residents and visitors. Members of the military and their relatives, base workers and journalists debarked from a ferry at Guantánamo Bay in 2019.
+
+
+Date: 2021-06-10-5
+polarity: -0.17021276595744678
+Title: The Supreme Court in Washington. Justice Elena Kagan, writing for four justices, said the law excluded crimes in which the defendant had merely been reckless.
+
+
+Date: 2021-11-26-2
+polarity: -0.15162574604882312
+Title: Because of an editing error, an earlier version of a picture caption with this article misstated the name of the radio station on Guantánamo Bay. It is known as Radio GTMO, not Radio Gitmo.
+
+
+Date: 2021-05-20-10
+polarity: -0.1490194149285059
+Title: “Of all the good that the law can do, we have to change our hearts,” President Biden said at the signing ceremony at the White House on Thursday. “Hate can be given no safe harbor in America.”
+
+
+
+WORLD:
+
+Date: 2020-02-18-16
+polarity: -0.17894736842105263
+Title: The scene of the blaze in the Camp Hill suburb of Brisbane, Australia, on Wednesday.
+
+
+Date: 2020-12-21-11
+polarity: -0.1736111111111111
+Title: A police cordon around the truck where the bodies were found in Grays, England, in 2019.
+
+
+Date: 2021-10-15-12
+polarity: -0.17334455667788995
+Title: An earlier version of this article misspelled the suspect's middle name. He is Espen Andersen Brathen, not Espen Anderson Brathen. The error was repeated in a subheading.
+
+
+Date: 2021-04-28-2
+polarity: -0.16024242424242424
+Title: Richard Pusey, who filmed the scene of a truck crash involving four police officers, in Melbourne, Australia, last year.
+
+
+Date: 2020-11-18-29
+polarity: -0.15265827922077918
+Title: A soldier patrolling a mining area in the village of Buenos Aires last year after a crackdown on illegal mining.
+
+
+
+OPINION:
+
+Date: 2020-12-30-11
+polarity: -0.25
+Title: Mr. 
+
+
+Date: 2020-01-08-9
+polarity: -0.20946969696969697
+Title: A Brief History of John Baldessari
+
+
+Date: 2020-09-23-7
+polarity: -0.20833333333333331
+Title: We Want to Hear From You: How Would You Change the Supreme Court?
+
+
+Date: 2020-04-04-6
+polarity: -0.2
+Title: Joe Maccarone is an illustrator living and working in Baltimore.
+
+
+Date: 2020-06-09-1
+polarity: -0.1686868686868687
+Title: How Was My Son Ahmaud Arbery’s Murder Not a Hate Crime?
+
+
+

@@ -1,0 +1,86 @@
+Maxima:
+
+POLITICS:
+
+Date: 2020-10-07-45
+polarity: 0.40477994227994235
+Title: A fly landed on Mike Pence’s head during the V.P. debate, and social media erupted.
+
+
+Date: 2020-11-03-20
+polarity: 0.3306818181818182
+Title: Estimates for Florida, Georgia and North Carolina are now live.
+
+
+Date: 2020-11-03-19
+polarity: 0.325
+Title: Examining the Latino vote on the ground in Florida.
+
+
+Date: 2020-08-26-10
+polarity: 0.3178571428571428
+Title: Stephanie Bice, an Oklahoma state senator, entering her watch party to give a speech after winning a runoff election for a U.S. House seat on Tuesday.
+
+
+Date: 2020-05-02-3
+polarity: 0.2995568965265936
+Title: Representative Max Rose holds his newborn son.
+
+
+
+WORLD:
+
+Date: 2021-05-06-11
+polarity: 0.262956487956488
+Title: Jordyn Coleman, 11, attending math class from his apartment in Clarksdale, Miss., during a virtual learning day.
+
+
+Date: 2021-02-06-9
+polarity: 0.26112355077872323
+Title: Carmen Vázquez has been called one of the L.G.B.T.Q. movement’s “most brilliant activists.”
+
+
+Date: 2021-06-10-4
+polarity: 0.2548497267759563
+Title: Placards attached to the fence at a school in South London in March denounced sexual violence.
+
+
+Date: 2020-01-02-10
+polarity: 0.24333791208791203
+Title: Demonstrators during a protest against sexual harassment in Cairo in 2014.
+
+
+Date: 2021-01-01-8
+polarity: 0.24022564193797072
+Title: The singer-songwriter Armando Manzanero performing in 2017 in Alamos, Mexico. He was hospitalized with Covid-19 in the days before his death.
+
+
+
+OPINION:
+
+Date: 2020-08-11-12
+polarity: 0.3023445304695305
+Title: Former Vice President Joseph R. Biden Jr. committed in March to choosing a woman as his running mate.
+
+
+Date: 2020-07-24-1
+polarity: 0.2802371541501977
+Title: What’s Fair in Work and Pay: A Conversation About the Economy We Need
+
+
+Date: 2020-03-15-6
+polarity: 0.27397694897694896
+Title: Contributing Opinion Writer
+
+
+Date: 2020-02-27-8
+polarity: 0.27078905942542303
+Title: Opinion Columnist
+
+
+Date: 2020-11-25-14
+polarity: 0.2703296703296703
+Title: A Conspiracy to Steal the Election, Aided by 80 Million Voters
+
+
+

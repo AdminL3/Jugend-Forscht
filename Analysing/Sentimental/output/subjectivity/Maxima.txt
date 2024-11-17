@@ -1,0 +1,86 @@
+Maxima:
+
+POLITICS:
+
+Date: 2020-11-06-10
+subjectivity: 1
+Title: In photos: A festive atmosphere starts brewing in Wilmington. 
+
+
+Date: 2020-09-19-12
+subjectivity: 0.6688311688311688
+Title: A Republican senator argues a vote should not take place until after the election. 
+
+
+Date: 2020-02-07-17
+subjectivity: 0.6520408163265307
+Title: President Trump on Friday in Charlotte, N.C. He criticized Democrats for their “failed impeachment hoax” and talked about how the “most important election” was coming up.
+
+
+Date: 2021-08-10-8
+subjectivity: 0.65
+Title: Senator Roger Wicker of Mississippi was among the Republicans who voted in favor of the bipartisan infrastructure deal.
+
+
+Date: 2021-01-16-13
+subjectivity: 0.641027650510409
+Title: The riot the president incited in Washington helped push his approval rating to a new low.
+
+
+
+WORLD:
+
+Date: 2021-06-10-4
+subjectivity: 0.6374316939890711
+Title: Placards attached to the fence at a school in South London in March denounced sexual violence.
+
+
+Date: 2021-05-22-12
+subjectivity: 0.5992213804713806
+Title: A performer from Spain during the grand final dress rehearsal.
+
+
+Date: 2021-04-28-2
+subjectivity: 0.5978181818181818
+Title: Richard Pusey, who filmed the scene of a truck crash involving four police officers, in Melbourne, Australia, last year.
+
+
+Date: 2021-02-17-14
+subjectivity: 0.5873300100572827
+Title: Amid the pandemic, families of 4-year-olds who are interested in gifted programs will be enrolled in a random lottery in May.
+
+
+Date: 2021-05-07-3
+subjectivity: 0.5832617283510139
+Title: The giant wood moth was discovered by a construction worker at the Mount Cotton State School.
+
+
+
+OPINION:
+
+Date: 2020-11-14-6
+subjectivity: 0.8333333333333334
+Title: Trump Twittertorium
+
+
+Date: 2020-07-15-1
+subjectivity: 0.6851921470342524
+Title: Trump Isn’t the Worst Pandemic President
+
+
+Date: 2020-12-16-10
+subjectivity: 0.6643141945773525
+Title: What’s It Like to Live in a Nursing Home During a Pandemic?
+
+
+Date: 2020-11-25-14
+subjectivity: 0.6611721611721612
+Title: A Conspiracy to Steal the Election, Aided by 80 Million Voters
+
+
+Date: 2020-09-18-9
+subjectivity: 0.6598290598290598
+Title: A Bipartisan Commission to Ensure a Fair Election?
+
+
+

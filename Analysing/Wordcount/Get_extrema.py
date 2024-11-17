@@ -54,7 +54,7 @@ def get_minima(topic, length):
     return text
 
 
-length = 1
+length = 5
 topics = ["Politics", "World", "Opinion"]
 output = "Analysing/Wordcount/output/"
 options = ["Maxima", "Minima"]
