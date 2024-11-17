@@ -28,6 +28,18 @@ for i, topic in enumerate(topics):
     plt.plot(Dataframe.index,
              Dataframe['wordcount'], 'o', markersize=2, color=colors[i])
 
+
+for i, topic in enumerate(topics):
+    cursor.execute(f"SELECT * FROM {topic};")
+    rows = cursor.fetchall()
+
+    Dataframe = pd.DataFrame(
+        rows, columns=[column[0] for column in cursor.description])
+
+    Dataframe = Dataframe.drop(columns=['id'])
+    Dataframe['date'] = pd.to_datetime(Dataframe['date'])
+    Dataframe.set_index('date', inplace=True)
+
     X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
     y = Dataframe['wordcount']
     model = LinearRegression()
