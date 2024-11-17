@@ -14,6 +14,7 @@ topics = ["Politics", "World", "Opinion"]
 
 options = ['polarity', 'subjectivity']
 for o, option in enumerate(options):
+    name = option.capitalize()
     for i, topic in enumerate(topics):
         cursor.execute(f"SELECT * FROM {topic};")
         rows = cursor.fetchall()
@@ -39,8 +40,8 @@ for o, option in enumerate(options):
 
         plt.xlabel("Date")
         plt.ylabel("")
-        plt.legend(["Polarity", "Regression Line"])
-        plt.title("Polarity Analysis")
+        plt.legend([f"{name} for {topic}", f"Regression Line"])
+        plt.title(f"{name} Analysis for {topic}")
         plt.savefig(f"Analysing/Sentimental/output/{option}/{topic}.png")
 
         plt.close()
