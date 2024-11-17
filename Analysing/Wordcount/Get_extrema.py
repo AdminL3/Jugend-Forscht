@@ -1,5 +1,5 @@
+from os import path
 import sqlite3
-from turtle import title
 
 
 def get_title(date, topic):
@@ -36,8 +36,9 @@ def get_extrema(topic):
 
 
 topics = ["Politics", "World", "Opinion"]
-with open("Analysing/Wordcount/new/wordcounts.txt", "w") as file:
+output = "Analysing/Wordcount/extrema.txt"
+with open(output, "w") as file:
     file.write("Wordcount analysis\n\n")
-with open("Analysing/Wordcount/new/wordcounts.txt", "a") as file:
+with open(output, "a") as file:
     for i, topic in enumerate(topics):
         file.write(get_extrema(topic))
