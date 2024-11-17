@@ -3,10 +3,10 @@ from selenium import webdriver
 import os
 
 start_year = 2020
-amount_years = 2
-topics = ["world", "politics"]
+amount_years = 1
+topics = ["opinion"]
 start_month = 1
-amount_month = 12
+amount_month = 4
 last_date = 0
 
 
