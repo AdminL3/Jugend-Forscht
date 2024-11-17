@@ -57,5 +57,10 @@ for topic in topics:
                     html_content = f.read()
                 article_text = get_text_from_html(html_content)
 
+                # Remove the first line if it is empty
+                lines = article_text.split('\n')
+                if lines[0].strip() == '':
+                    article_text = '\n'.join(lines[1:])
+
                 with open(output_file_path, "w", encoding="utf-8") as f:
                     f.write(article_text)
