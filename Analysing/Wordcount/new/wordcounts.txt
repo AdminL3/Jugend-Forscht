@@ -1,0 +1,27 @@
+Wordcount for Politics:
+
+Top 5 days with most words:
+Day: 8515, Word count: 2021-12-30
+Day: 8516, Word count: 2021-12-30
+Day: 8517, Word count: 2021-12-30
+Day: 8510, Word count: 2021-12-29
+Day: 8511, Word count: 2021-12-29
+
+Wordcount for World:
+
+Top 5 days with most words:
+Day: 10319, Word count: 2021-12-31
+Day: 10320, Word count: 2021-12-31
+Day: 10321, Word count: 2021-12-31
+Day: 10322, Word count: 2021-12-31
+Day: 10323, Word count: 2021-12-31
+
+Wordcount for Opinion:
+
+Top 5 days with most words:
+Day: 5027, Word count: 2020-12-31
+Day: 5028, Word count: 2020-12-31
+Day: 5029, Word count: 2020-12-31
+Day: 5030, Word count: 2020-12-31
+Day: 5031, Word count: 2020-12-31
+
