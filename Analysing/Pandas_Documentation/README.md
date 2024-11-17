@@ -190,64 +190,60 @@ plt.legend(["Word Count", "Regression Line"])
 
 ### 1. Create Duplicates of everything
 
-#### Looping through the creation
+#### Looping through the creation of the scatter plots
 
 ```
-for i in range(len(topics)):
-  # set variables
-  topic = topics[i]
-  color = colors[i]
-  regression_color = colors_reg[i]
+for i, topic in enumerate(topics):
+    cursor.execute(f"SELECT * FROM {topic};")
+    rows = cursor.fetchall()
 
-  cursor.execute(f"SELECT * FROM {topics[i]};")
-  rows = cursor.fetchall()
+    Dataframe = pd.DataFrame(
+        rows, columns=[column[0] for column in cursor.description])
 
-  Dataframe = pd.DataFrame(rows, columns=[column[0] for column in cursor.description])
+    Dataframe = Dataframe.drop(columns=['id'])
+    Dataframe['date'] = pd.to_datetime(Dataframe['date'])
+    Dataframe.set_index('date', inplace=True)
 
-  Dataframe = Dataframe.drop(columns=['id'])
-
-  Dataframe['date'] = pd.to_datetime(Dataframe['date'])
-  Dataframe.set_index('date', inplace=True)
-
-  Dataframe.plot(style='o', markersize=2, color=f'{color}')
-
-
-  X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
-  y = Dataframe['wordcount']
-  model = LinearRegression()
-  model.fit(X, y)
-  y_pred = model.predict(X)
-  plt.plot(Dataframe.index, y_pred, color=f'{regression_color}')
-
-
+    plt.plot(Dataframe.index,
+             Dataframe['wordcount'], 'o', markersize=2, color=colors[i])
 ```
 
-#### Make sure to plot on thrid party
-
-graph
+#### Then Graph the Regression line on top
 
 ```
-plt.plot(Dataframe.index,
-             Dataframe['wordcount'], 'o', markersize=2, color=f'{color}')
+for i, topic in enumerate(topics):
+    cursor.execute(f"SELECT * FROM {topic};")
+    rows = cursor.fetchall()
 
+    Dataframe = pd.DataFrame(
+        rows, columns=[column[0] for column in cursor.description])
+
+    Dataframe = Dataframe.drop(columns=['id'])
+    Dataframe['date'] = pd.to_datetime(Dataframe['date'])
+    Dataframe.set_index('date', inplace=True)
+
+    X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
+    y = Dataframe['wordcount']
+    model = LinearRegression()
+    model.fit(X, y)
+    y_pred = model.predict(X)
+    plt.plot(Dataframe.index, y_pred, color=colors_reg[i])
 ```
 
-#### Then plotting them together
+#### Update Legend
 
 ```
-  plt.xlabel("Date")
-  plt.ylabel("")
-  plt.legend([f"{topic} Word Count", "Regression Line"])
-  plt.title(f"Word Count Analysis  - {topic}")
-  plt.savefig(f".../{topic}.png")
+legend1 = [f"Word Count for {topic}" for topic in topics]
+legend2 = [f"Regression Line for {topic}" for topic in topics]
+plt.xlabel("Date")
+plt.ylabel("Word Count")
+plt.legend(legend1 + legend2)
+plt.title("Word Count Analysis")
 
-  plt.close()
+plt.savefig("Analysing\Wordcount\output\Both.png")
+plt.show()
 ```
 
 ### Result:
 
 ![Two Graphs Combined](img4.png)
-
-## Creating SubPlots
-
-See "Graph Subplots\.py"
