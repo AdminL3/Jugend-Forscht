@@ -1,4 +1,3 @@
-from calendar import c
 import sqlite3
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,66 +8,52 @@ connection = sqlite3.connect("Analysing\Wordcount\wordcount.db")
 cursor = connection.cursor()
 
 topics = ["Politics", "World"]
+# topics = ["Politics", "World", "Opinion"]
 colors = ['#1f77b4', '#ff7f0e']
 colors_reg = ['red', 'blue']
 
 
-cursor.execute("SELECT * FROM Politics;")
-politics_rows = cursor.fetchall()
-cursor.execute("SELECT * FROM World;")
-world_rows = cursor.fetchall()
+for i, topic in enumerate(topics):
+    # set variables
+    topic = topics[i]
+    color = colors[i]
+    regression_color = colors_reg[i]
 
+    cursor.execute(f"SELECT * FROM {topic};")
+    rows = cursor.fetchall()
 
-DataframePolitics = pd.DataFrame(
-    politics_rows, columns=[column[0] for column in cursor.description])
-DataframeWorld = pd.DataFrame(
-    world_rows, columns=[column[0] for column in cursor.description])
+    Dataframe = pd.DataFrame(
+        rows, columns=[column[0] for column in cursor.description])
 
+    Dataframe = Dataframe.drop(columns=['id'])
 
-DataframePolitics = DataframePolitics.drop(columns=['id'])
-DataframeWorld = DataframeWorld.drop(columns=['id'])
+    Dataframe['date'] = pd.to_datetime(Dataframe['date'])
+    Dataframe.set_index('date', inplace=True)
 
+    plt.plot(Dataframe.index,
+             Dataframe['wordcount'], 'o', markersize=2, color=f'{color}')
 
-DataframePolitics['date'] = pd.to_datetime(DataframePolitics['date'])
-DataframePolitics.set_index('date', inplace=True)
-
-DataframeWorld['date'] = pd.to_datetime(DataframeWorld['date'])
-DataframeWorld.set_index('date', inplace=True)
-
-plt.plot(DataframePolitics.index,
-         DataframePolitics['wordcount'], 'o', markersize=2, color=f'{colors[0]}')
-plt.plot(DataframeWorld.index,
-         DataframeWorld['wordcount'], 'o', markersize=2, color=f'{colors[1]}')
-
-
-# Step 5: Apply linear regression on both datasets
-# Linear regression for Politics
-X_politics = DataframePolitics.index.astype(np.int64).values.reshape(-1, 1)
-y_politics = DataframePolitics['wordcount']
-model_politics = LinearRegression()
-model_politics.fit(X_politics, y_politics)
-y_pred_politics = model_politics.predict(X_politics)
-plt.plot(DataframePolitics.index, y_pred_politics,
-         color=f'{colors_reg[0]}')
-
-# Linear regression for World
-X_world = DataframeWorld.index.astype(np.int64).values.reshape(-1, 1)
-y_world = DataframeWorld['wordcount']
-model_world = LinearRegression()
-model_world.fit(X_world, y_world)
-y_pred_world = model_world.predict(X_world)
-plt.plot(DataframeWorld.index, y_pred_world,
-         color=f'{colors_reg[1]}')
+    X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
+    y = Dataframe['wordcount']
+    model = LinearRegression()
+    model.fit(X, y)
+    y_pred = model.predict(X)
+    plt.plot(Dataframe.index, y_pred, color=f'{regression_color}')
 
 # Step 6: Add labels, legend, and title
+legend1 = [f"Word Count for {topic}" for topic in topics]
+legend2 = [f"Regression Line for {topic}" for topic in topics]
+
+legend = [item for pair in zip(legend1, legend2) for item in pair]
+
+
 plt.xlabel("Date")
 plt.ylabel("Word Count")
-plt.legend(["Politics Word Count", "World Word Count",
-           "Politics Regression Line", "World Regression Line"])
-plt.title("Word Count Analysis for Politics and World")
+plt.legend(legend)
+plt.title("Word Count Analysis")
 
 # Step 7: Save the plot as an image
 plt.savefig("Analysing\Wordcount\output\Both.png")
 
 # Display the plot
-plt.close()
+plt.show()
