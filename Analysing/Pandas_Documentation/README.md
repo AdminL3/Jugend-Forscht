@@ -188,86 +188,60 @@ plt.legend(["Word Count", "Regression Line"])
 
 # Plotting Multiple Graphs
 
-See "Graph Multiple\.py"
-
 ### 1. Create Duplicates of everything
 
-#### Get both Data Tables
+#### Looping through the creation
 
 ```
-cursor.execute("SELECT * FROM Politics;")
-politics_rows = cursor.fetchall()
-cursor.execute("SELECT * FROM World;")
-world_rows = cursor.fetchall()
-```
+for i in range(len(topics)):
+  # set variables
+  topic = topics[i]
+  color = colors[i]
+  regression_color = colors_reg[i]
 
-#### Create DataFrame
+  cursor.execute(f"SELECT * FROM {topics[i]};")
+  rows = cursor.fetchall()
 
-```
-DataframePolitics = pd.DataFrame(
-    politics_rows, columns=[column[0] for column in cursor.description])
-DataframeWorld = pd.DataFrame(
-    world_rows, columns=[column[0] for column in cursor.description])
-```
+  Dataframe = pd.DataFrame(rows, columns=[column[0] for column in cursor.description])
 
-#### Remove ID
+  Dataframe = Dataframe.drop(columns=['id'])
 
-```
-DataframePolitics = DataframePolitics.drop(columns=['id'])
-DataframeWorld = DataframeWorld.drop(columns=['id'])
-```
+  Dataframe['date'] = pd.to_datetime(Dataframe['date'])
+  Dataframe.set_index('date', inplace=True)
 
-#### Convert Date to DateTime
+  Dataframe.plot(style='o', markersize=2, color=f'{color}')
 
-```
-DataframePolitics['date'] = pd.to_datetime(DataframePolitics['date'])
-DataframePolitics.set_index('date', inplace=True)
-```
+
+  X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
+  y = Dataframe['wordcount']
+  model = LinearRegression()
+  model.fit(X, y)
+  y_pred = model.predict(X)
+  plt.plot(Dataframe.index, y_pred, color=f'{regression_color}')
+
 
 ```
-DataframeWorld['date'] = pd.to_datetime(DataframeWorld['date'])
-DataframeWorld.set_index('date', inplace=True)
-```
 
-#### Plot the Graph
+#### Make sure to plot on thrid party
 
-```
-plt.plot(DataframePolitics.index,
-         DataframePolitics['wordcount'], 'o', markersize=2)
-plt.plot(DataframeWorld.index,
-         DataframeWorld['wordcount'], 'o', markersize=2)
-```
-
-#### Create Regression and Plot it
+graph
 
 ```
-# Linear regression for Politics
-X_politics = DataframePolitics.index.astype(np.int64).values.reshape(-1, 1)
-y_politics = DataframePolitics['wordcount']
-model_politics = LinearRegression()
-model_politics.fit(X_politics, y_politics)
-y_pred_politics = model_politics.predict(X_politics)
-plt.plot(DataframePolitics.index, y_pred_politics,
-         color='red')
-
-# Linear regression for World
-X_world = DataframeWorld.index.astype(np.int64).values.reshape(-1, 1)
-y_world = DataframeWorld['wordcount']
-model_world = LinearRegression()
-model_world.fit(X_world, y_world)
-y_pred_world = model_world.predict(X_world)
-plt.plot(DataframeWorld.index, y_pred_world,
-         color='blue')
-```
-
-#### Update Labels
+plt.plot(Dataframe.index,
+             Dataframe['wordcount'], 'o', markersize=2, color=f'{color}')
 
 ```
-plt.xlabel("Date")
-plt.ylabel("Word Count")
-plt.legend(["Politics Word Count", "World Word Count",
-           "Politics Regression Line", "World Regression Line"])
-plt.title("Word Count Analysis for Politics and World")
+
+#### Then plotting them together
+
+```
+  plt.xlabel("Date")
+  plt.ylabel("")
+  plt.legend([f"{topic} Word Count", "Regression Line"])
+  plt.title(f"Word Count Analysis  - {topic}")
+  plt.savefig(f".../{topic}.png")
+
+  plt.close()
 ```
 
 ### Result:
