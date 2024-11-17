@@ -10,7 +10,6 @@ def clean_empty_files_and_folders(base_path):
     folders_removed = 0
 
     for dirpath, dirnames, filenames in os.walk(base_path, topdown=False):
-        # First, check and remove empty files
         for file in filenames:
             file_path = os.path.join(dirpath, file)
             try:

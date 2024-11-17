@@ -182,15 +182,15 @@ The Error was a Captcha:
 
 ## Step 2.5: Optimize Data Collection
 
-1. Use AWS to run Python in the cloud
+##### 1. Use AWS to run Python in the cloud
 
 - See my Subfolder [Run Python in the Cloud](./AWS/)
 
 - Run your scripts in the Cloud to reduce computer usage
 
-2. Use Threads to run multiple scripts simultaneously
+##### 1. Use Multiprocessing to run Multiple Threads at onece
 
-- See my Subfolder [Multiprocessing](./Multiprocesses/)
+- See my Subfolder and Documentation at [Multiprocessing](./Multiprocesses/)
 
 ---
 
