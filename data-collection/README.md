@@ -195,7 +195,7 @@ In this step, you can choose from different methods to extract the source code f
 
 - Run your scripts in the Cloud to reduce computer usage
 
-##### 1. Use Multiprocessing to run Multiple Threads at onece
+##### 2. Use Multiprocessing to run Multiple Threads at onece
 
 - See my Subfolder and Documentation at [Multiprocessing](./Multiprocesses/)
 
