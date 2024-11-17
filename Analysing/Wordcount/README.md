@@ -57,3 +57,9 @@ conn.close()
 ## 2. Visualisation in Pandas
 
 ###### See "[Plotting the Wordcount in Pandas](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Pandas_Documentation/)"
+
+## 3. Extracting the longest Articles
+
+See _Get_Extrema.py_
+Output:
+![Minima](output/Maxima.txt)
