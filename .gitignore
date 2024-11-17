@@ -9,7 +9,3 @@ data-collection/AWS/key.pem
 data-collection/config.py
 data-collection/Scraperapi/config.py
 /data-collection/__pycache__
-# Wordcount database
-Analysing/Wordcount/wordcount.db
-# Polarisation Database
-Analysing\Sentimental\sentiment.db
