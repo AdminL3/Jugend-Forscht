@@ -90,8 +90,15 @@ In this step, you can choose from different methods to extract the source code f
          print("Error")
    ```
 
-The Error was a Captcha:
+---
+
+###### Error in Selenium:
+
 ![Captcha Test Selenium](./Errors/Error%201.png)
+
+###### Even in headless browser:
+
+![Captcha Test Headless Selenium](./Errors/Error%206.png)
 
 ### 2. Requests
 
