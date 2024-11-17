@@ -4,6 +4,12 @@ from datetime import date
 from textblob import TextBlob
 
 
+def get_idx(path):
+    path_parts = path.split('/')
+    idx = path_parts[-1][:-4]
+    return idx
+
+
 def get_date(path):
     path_parts = path.split('/')
     year = path_parts[3]
@@ -34,6 +40,7 @@ for topic in topics:
         CREATE TABLE IF NOT EXISTS {topic} (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             date TEXT NOT NULL,
+            idx INTEGER NOT NULL,
             polarity INTEGER NOT NULL,
             subjectivity INTEGER NOT NULL
             )
@@ -71,11 +78,11 @@ for topic in topics:
 
                 sentiment = get_sentiment(article_text)
 
-                data.append((date, sentiment[0], sentiment[1]))
+                data.append((date, get_idx(path), sentiment[0], sentiment[1]))
 # Step 3: Insert sample data into the table
     # print(data)
     cursor.executemany(
-        f"INSERT INTO {topic} (date, polarity, subjectivity) VALUES (?, ?, ?)", data)
+        f"INSERT INTO {topic} (date, idx, polarity, subjectivity) VALUES (?, ?, ?, ?)", data)
     conn.commit()
     data = []
 

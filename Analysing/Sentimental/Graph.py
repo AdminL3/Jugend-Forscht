@@ -23,6 +23,7 @@ for o, option in enumerate(options):
             rows, columns=[column[0] for column in cursor.description])
 
         Dataframe = Dataframe.drop(columns=['id'])
+        Dataframe = Dataframe.drop(columns=['idx'])
         Dataframe = Dataframe.drop(columns=[f'{options[1-o]}'])
 
         Dataframe['date'] = pd.to_datetime(Dataframe['date'])
