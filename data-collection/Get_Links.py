@@ -4,21 +4,23 @@ import os
 import config
 
 # start variables
-start_year = 2022
-# start_year = config.get_input_number("Input Start Year: ")
-amount_years = 1
-# amount_years = config.get_input_number("Input amount of years: ")
+start_year = 2020
+amount_years = 2
 
-topics = ["politics", "world", "opinion"]
+topics = ["world", "politics", "opinion"]
 API_KEY = config.NYT_API_KEY
+
 for i in range(amount_years):
     year = start_year + i
-    month = 0
-    for month_idx in range(12):
-        month += 1
-        if os.path.exists(f"data/links/{topics[0]}/{year}/month{month}.txt") and os.path.exists(f"data/links/{topics[1]}/{year}/month{month}.txt"):
-            print(f"File 'month{month}.txt'  already exists. Skipping...")
+    for month in range(1, 13):
+        all_files_exist = all(os.path.exists(
+            f"data/links/{topic}/{year}/month{month}.txt") for topic in topics)
+
+        if all_files_exist:
+            print(f"Files for month {month} in year {
+                  year} already exist. Skipping...")
             continue
+
         URL = f"https://api.nytimes.com/svc/archive/v1/{
             year}/{month}.json?api-key={API_KEY}"
         try:
@@ -27,15 +29,17 @@ for i in range(amount_years):
             response.raise_for_status()
             data = response.json()
             articles = data.get("response", {}).get("docs", [])
-
         except requests.exceptions.RequestException as e:
-            print(f"Fehler beim Abrufen der Daten: {e}")
+            print(f"Error fetching data: {e}")
             time.sleep(5)
+            continue
         except ValueError:
-            print("Fehler beim Parsen der JSON-Antwort.")
+            print("Error parsing JSON response.")
+            continue
 
         for topic in topics:
             file_path = f"data/links/{topic}/{year}/month{month}.txt"
+            os.makedirs(os.path.dirname(file_path), exist_ok=True)
             with open(file_path, "w", encoding="utf-8") as file:
                 for article in articles:
                     url = article.get("web_url", "No URL")
@@ -44,7 +48,6 @@ for i in range(amount_years):
                             continue
                         file.write(url + '\n')
 
-            print(f"Die Links für {topic} wurden erfolgreich in '{
-                  year}/month{month}.txt' gespeichert."
-                  )
+            print(f"Links for {topic} successfully saved in '{
+                  year}/month{month}.txt'.")
             time.sleep(3)
