@@ -8,9 +8,9 @@ from sklearn.linear_model import LinearRegression
 connection = sqlite3.connect("Analysing/Articlecount/articlecount.db")
 cursor = connection.cursor()
 
-colors = ['#1f77b4', '#ff7f0e']
-colors_reg = ['blue', 'red']
-topics = ["Politics", "World"]
+colors = ['#1f77b4', '#ff7f0e', "green"]
+colors_reg = ['blue', 'red', "black"]
+topics = ["Politics", "World", "Opinion"]
 for i, topic in enumerate(topics):
     cursor.execute(f"SELECT * FROM monthly_totals WHERE topic_id = {i}")
     rows = cursor.fetchall()

@@ -4,7 +4,7 @@ import sqlite3
 data_root = "data/articles"
 start_year = 2020
 amount_years = 2
-topics = ["politics", "world"]
+topics = ["politics", "world", "opinion"]
 
 conn = sqlite3.connect("Analysing/Articlecount/articlecount.db")
 cursor = conn.cursor()
