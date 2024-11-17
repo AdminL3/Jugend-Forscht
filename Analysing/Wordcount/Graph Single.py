@@ -15,7 +15,7 @@ colors_reg = ['red', 'blue', "e6e600"]
 for i in range(len(topics)):
     topic = topics[i]
     color = colors[i]
-    regression_color = colors_reg[1]
+    regression_color = colors_reg[i]
 
 
 
