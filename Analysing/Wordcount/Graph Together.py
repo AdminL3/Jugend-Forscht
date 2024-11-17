@@ -52,5 +52,5 @@ plt.ylabel("Word Count")
 plt.legend(legend1 + legend2)
 plt.title("Word Count Analysis")
 
-plt.savefig("Analysing\Wordcount\output\Both.png")
-plt.show()
+plt.savefig("Analysing\Wordcount\output\Together.png")
+plt.close()
