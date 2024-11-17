@@ -7,6 +7,26 @@ Word count: 6
 Title: In pictures: Preparations for the inauguration.
 
 
+Date: 2021-01-20-20
+Word count: 8
+Title: Journey to the presidency: photos of Biden’s life. 
+
+
+Date: 2020-10-14-8
+Word count: 9
+Title: The Senate Judiciary Committee is taking a short break.
+
+
+Date: 2021-01-06-46
+Word count: 10
+Title: Watch live: House reconvenes to debate challenges of Biden’s victory.
+
+
+Date: 2020-10-12-5
+Word count: 13
+Title: The Senate Judiciary Committee is resuming the hearing after taking a lunch break.
+
+
 
 WORLD:
 
@@ -15,12 +35,52 @@ Word count: 158
 Title: In pictures: Looking back at Trump on the world stage.
 
 
+Date: 2021-11-10-8
+Word count: 158
+Title: In video: Razor wire, soldiers and desperation at the border.
+
+
+Date: 2021-05-16-5
+Word count: 191
+Title: In pictures: A wave of violence grips the Middle East.
+
+
+Date: 2021-04-28-14
+Word count: 193
+Title: Scene outside a Delhi hospital this month.
+
+
+Date: 2021-04-17-8
+Word count: 210
+Title: In counties that voted for Trump, fewer people are getting vaccinated.
+
+
 
 OPINION:
 
 Date: 2020-07-20-9
 Word count: 18
 Title: I Am Stuck Between Two Lives During This Pandemic
+
+
+Date: 2020-04-04-6
+Word count: 27
+Title: Joe Maccarone is an illustrator living and working in Baltimore.
+
+
+Date: 2020-06-16-6
+Word count: 30
+Title: Ms. Rothman
+
+
+Date: 2020-12-30-11
+Word count: 38
+Title: Mr. 
+
+
+Date: 2020-12-09-7
+Word count: 66
+Title: Name One Good Thing About 2020
 
 
 
