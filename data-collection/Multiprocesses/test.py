@@ -9,5 +9,6 @@ def sleep(n):
 
 numbers = [1, 2, 3, 4, 5]
 
-with multiprocessing.Pool() as pool:
-    pool.map(sleep, numbers)
+if __name__ == "__main__":
+    with multiprocessing.Pool() as pool:
+        pool.map(sleep, numbers)
