@@ -8,9 +8,9 @@ from sklearn.linear_model import LinearRegression
 connection = sqlite3.connect("Analysing\Wordcount\wordcount.db")
 cursor = connection.cursor()
 
-colors = ['#1f77b4', '#ff7f0e']
-colors_reg = ['blue', 'red']
-topics = ["Politics", "World"]
+colors = ['#1f77b4', '#ff7f0e', "green"]
+colors_reg = ['blue', 'red', "black"]
+topics = ["Politics", "World", "Opinion"]
 
 for i, topic in enumerate(topics):
     cursor.execute(f"SELECT * FROM {topic};")
@@ -24,7 +24,7 @@ for i, topic in enumerate(topics):
     Dataframe.set_index('date', inplace=True)
 
     plt.plot(Dataframe.index,
-             Dataframe['wordcount'], 'o', markersize=2, color=colors[i])
+             Dataframe['wordcount'], 'o', markersize=1, color=colors[i])
 
 
 for i, topic in enumerate(topics):
