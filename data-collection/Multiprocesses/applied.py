@@ -48,16 +48,13 @@ def sleep(n):
                         last_date = date
                         continue
 
-                    while True:
-                        try:
-                            driver.get(url)
-                            page_source = driver.execute_script(
-                                "return document.documentElement.outerHTML;")
-                            break
-                        except Exception as e:
-                            print("Error: ", e)
-                            time.sleep(2)
-                            driver.refresh()
+                    try:
+                        driver.get(url)
+                        page_source = driver.execute_script(
+                            "return document.documentElement.outerHTML;")
+                    except Exception as e:
+                        print("Error: ", e)
+                        break
 
                     with open(output_file, "w", encoding="utf-8") as f:
                         f.write(page_source)
@@ -72,7 +69,7 @@ def sleep(n):
     print("and the Topics: " + str(topics))
 
 
-numbers = [4, 5, 6, 7, 8, 9, 10, 11, 12]
+numbers = [3, 4, 5, 6, 7]
 
 if __name__ == "__main__":
     with multiprocessing.Pool() as pool:
