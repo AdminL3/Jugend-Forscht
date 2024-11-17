@@ -4,12 +4,12 @@ import os
 
 start_year = 2020
 amount_years = 1
-topics = ["opinion"]
 start_month = 1
-amount_month = 4
+amount_month = 12
+topics = ["opinion"]
+
+
 last_date = 0
-
-
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
 options.add_argument("--disable-search-engine-choice-screen")

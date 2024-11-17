@@ -4,7 +4,7 @@ import multiprocessing
 import time
 
 
-def sleep(n):
+def Selenium(n):
     start_year = 2020
     amount_years = 1
     topics = ["world", "politics", "opinion"]
@@ -69,8 +69,8 @@ def sleep(n):
     print("and the Topics: " + str(topics))
 
 
-numbers = [3, 4, 5, 6, 7]
+numbers = [9, 10, 11, 12]
 
 if __name__ == "__main__":
     with multiprocessing.Pool() as pool:
-        pool.map(sleep, numbers)
+        pool.map(Selenium, numbers)
