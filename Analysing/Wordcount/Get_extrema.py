@@ -1,4 +1,3 @@
-from operator import le, length_hint
 from pydoc import text
 import sqlite3
 
@@ -60,11 +59,11 @@ topics = ["Politics", "World", "Opinion"]
 output = "Analysing/Wordcount/output/"
 options = ["Maxima", "Minima"]
 for i, option in enumerate(options):
+    text = f"{option}:\n\n"
+    for topic in topics:
+        if i == 0:
+            text += get_maxima(topic.lower(), length)
+        else:
+            text += get_minima(topic.lower(), length)
     with open(f"{output}{option}.txt", "w", encoding="utf-8") as file:
-        text = f"{option}:\n\n"
-        for topic in topics:
-            if i == 0:
-                text += get_maxima(topic.lower(), length)
-            else:
-                text += get_minima(topic.lower(), length)
         file.write(text)
