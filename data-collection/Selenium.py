@@ -4,7 +4,7 @@ import os
 
 start_year = 2020
 amount_years = 2
-topics = ["world", "politics", "opinion"]
+topics = ["world", "politics"]
 start_month = 1
 amount_month = 12
 last_date = 0
@@ -44,6 +44,7 @@ for topic in topics:
                 output_file = os.path.join(output_dir, file_name)
                 if os.path.exists(output_file):
                     print(f"File {file_name} already exists. Skipping...")
+                    last_date = date
                     continue
 
                 while True:

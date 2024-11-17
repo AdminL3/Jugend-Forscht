@@ -45,6 +45,7 @@ def sleep(n):
                     output_file = os.path.join(output_dir, file_name)
                     if os.path.exists(output_file):
                         print(f"File {file_name} already exists. Skipping...")
+                        last_date = date
                         continue
 
                     while True:
