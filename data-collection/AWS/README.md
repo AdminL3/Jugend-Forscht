@@ -31,7 +31,7 @@
 
 2. Access your **AWS** Folder
 
-   ```
+   ```sh
    cd C:\Users\Path\to\AWS
    ```
 
@@ -41,7 +41,7 @@
 
    - Use the public DNS or IP address from your EC2 instance.
 
-   ```
+   ```sh
    ssh -i key.pem ubuntu@ec2-XX-XX-XXX-XXX.compute-1.amazonaws.com
    ```
 
@@ -57,7 +57,7 @@ Now that you are connected you can do your usual setup:
 
    - Run the following to make sure your package lists are up to date:
 
-   ```
+   ```sh
    sudo apt update
    ```
 
@@ -65,26 +65,26 @@ Now that you are connected you can do your usual setup:
 
    - Install Python 3 and the necessary packages:
 
-   ```
+   ```sh
    sudo apt install python3 python3-pip
    ```
 
 3. **Install Venv** (optional):
-   ```
+   ```sh
    python3-venv
    ```
 4. **Install Chromium and ChromeDriver** (to use selenium):
 
    - Install Chromium and ChromeDriver on your EC2 instance (ensure they are compatible):
 
-   ```
+   ```sh
    sudo apt install chromium-browser
    sudo apt install chromedriver
    ```
 
    - Create a symlink to make `chromedriver` accessible globally:
 
-   ```
+   ```sh
    sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
    ```
 
@@ -96,7 +96,7 @@ Now that you are connected you can do your usual setup:
 
    - Navigate to your project directory or create a new directory for your project:
 
-   ```
+   ```sh
    mkdir my_project
    cd my_project
    python3 -m venv venv
@@ -106,7 +106,7 @@ Now that you are connected you can do your usual setup:
 
    - Activate the virtual environment to isolate your Python dependencies:
 
-   ```
+   ```sh
    source venv/bin/activate
    ```
 
@@ -115,7 +115,7 @@ Now that you are connected you can do your usual setup:
    - Install all the dependencies you want in your project:
    - I am going to install Selenium
 
-   ```
+   ```sh
    pip install selenium
    ```
 
@@ -127,7 +127,7 @@ Now that you are connected you can do your usual setup:
 
    - On your local machine, navigate to the directory where your `main.py` / **code** is located. Use `scp` (SecureCopy) to copy files to your EC2 instance:
 
-   ```
+   ```sh
    scp -i key.pem main.py ec2-XX-XX-XXX-XXX.compute-1.amazonaws.com:/home/ubuntu/your_project/
    ```
 
@@ -139,19 +139,19 @@ Now that you are connected you can do your usual setup:
 
 1. **SSH Into Your EC2 Instance** (if not already connected):
 
-   ```
+   ```sh
    ssh -i key.pem ubuntu@ec2-XX-XX-XXX-XXX.compute-1.amazonaws.com
    ```
 
 2. **Navigate to the Project Directory**:
 
-   ```
+   ```sh
    cd /home/ubuntu/your_project
    ```
 
 3. **Run the Python Script**:
 
-   ```
+   ```sh
    python3 main.py
    ```
 
@@ -167,7 +167,7 @@ Now that you are connected you can do your usual setup:
 
    - Ensure that the version of `chromedriver` is compatible with the version of Google Chrome/Chromium installed on the instance. You can check your `chromedriver` version by running:
 
-   ```
+   ```sh
    chromedriver --version
    ```
 

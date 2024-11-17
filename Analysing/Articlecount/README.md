@@ -15,7 +15,7 @@ topic_totals
 
 inside
 
-```
+```python
 conn = sqlite3.connect("Analysing/Articlecount/articlecount.db")
 ```
 
@@ -23,7 +23,7 @@ conn = sqlite3.connect("Analysing/Articlecount/articlecount.db")
 
 ###### Add to Database step by step
 
-```
+```python
 cursor.execute("""
     INSERT INTO articles (topic_id, year, month, day, count)
     VALUES (?, ?, ?, ?, ?)

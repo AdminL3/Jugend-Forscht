@@ -6,14 +6,14 @@ In previous steps we gathered all the Data from the Articles and extracted the T
 
 ### 1. **Connect** to DB
 
-```
+```python
 conn = sqlite3.connect("Analysing\Wordcount\wordcount.db")
 cursor = conn.cursor()
 ```
 
 ### 2. **Create** Table
 
-```
+```python
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS Wordcount (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -40,7 +40,7 @@ def word_count(text):
 
 ### 4. **Insert** into DB
 
-```
+```python
 cursor.executemany(
     "INSERT INTO Wordcount (date, number) VALUES (?, ?)", data)
 conn.commit()
@@ -48,7 +48,7 @@ conn.commit()
 
 #### 5. Close Connection
 
-```
+```python
 conn.close()
 ```
 

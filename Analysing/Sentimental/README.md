@@ -6,14 +6,14 @@ In previous steps we gathered all the Data from the Articles and extracted the T
 
 ### 1. **Connect** to DB
 
-```
+```python
 conn = sqlite3.connect("Analysing\Sentimental\polarity.db")
 cursor = conn.cursor()
 ```
 
 ### 2. **Create** Table
 
-```
+```python
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS World (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -39,7 +39,7 @@ def get_sentiment(text):
 
 ### 4. **Insert** into DB
 
-```
+```python
 cursor.executemany(
         f"INSERT INTO {topic} (date, polarity, subjectivity) VALUES (?, ?, ?)", data)
     conn.commit()
@@ -47,7 +47,7 @@ cursor.executemany(
 
 #### 5. Close Connection
 
-```
+```python
 conn.close()
 ```
 
@@ -65,7 +65,7 @@ See [Analysing the Wordcount](https://github.com/AdminL3/Jugend-Forscht/tree/mai
 
 ###### Differentiate between Subjectivity and Polarity
 
-```
+```python
 sentiment_polarity = blob.sentiment.polarity
 sentiment_subjectivity = blob.sentiment.subjectivity
 ```

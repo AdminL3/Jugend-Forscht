@@ -11,13 +11,13 @@
 
 - First for Getting the data from the Database
 
-```
+```python
 import sqlite3
 ```
 
 - Then import modules for Plotting
 
-```
+```python
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -27,21 +27,21 @@ import numpy as np
 
 - Accessing Database from before
 
-```
+```python
 connection = sqlite3.connect("Analysing\Wordcount\wordcount.db")
 cursor = connection.cursor()
 ```
 
 - Loading data
 
-```
+```python
 cursor.execute("SELECT * FROM Politics;")
 rows = cursor.fetchall()
 ```
 
 - Close connection
 
-```
+```python
 connection.close()
 ```
 
@@ -51,13 +51,13 @@ connection.close()
 
 - Create Dataframe
 
-```
+```python
 Dataframe = pd.DataFrame(rows, columns=[column[0] for column in cursor.description])
 ```
 
 - Plot Data
 
-```
+```python
 rows.plot()
 plt.close()
 ```
@@ -68,9 +68,9 @@ Pandas automatically does the rest
 
 ### Saving the Plot
 
-```python
+````python
 plt.savefig("Analysing\Wordcount\Pandas_Documentation\img1.png")
-```
+```python
 
 - Make sure to add this line before **plt.close()**
 
@@ -78,9 +78,9 @@ plt.savefig("Analysing\Wordcount\Pandas_Documentation\img1.png")
 
 1. The **ID line** is annoying me. Let's remove it
 
-```
+```python
 Dataframe = Dataframe.drop(columns=['id'])
-```
+````
 
 ---
 
@@ -89,13 +89,13 @@ Dataframe = Dataframe.drop(columns=['id'])
 - Remove Lines
 - Reduce Dot Size
 
-```
+```python
 Dataframe.plot(style='o', markersize=2)
 ```
 
 instead of:
 
-```
+```python
 Dataframe.plot()
 ```
 
@@ -103,7 +103,7 @@ Dataframe.plot()
 
 4. **Custom Legend**
 
-```
+```python
 plt.legend(['Wordcount'])
 ```
 
@@ -111,7 +111,7 @@ plt.legend(['Wordcount'])
 
 5. **Custom X-Axis**
 
-```
+```python
 # Convert date column to datetime
 Dataframe['date'] = pd.to_datetime(Dataframe['date'])
 
@@ -125,7 +125,7 @@ plt.ylabel("")
 
 5. **Custom Title**
 
-```
+```python
 plt.title("Word Count Analysis")
 ```
 
@@ -141,20 +141,20 @@ plt.title("Word Count Analysis")
 
 #### Prepare Regression
 
-```
+```python
 pip install scikit-learn
 ```
 
 #### Prepare data for regression model
 
-```
+```python
 X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
 y = Dataframe['wordcount']
 ```
 
 #### Set up the model and fit ot
 
-```
+```python
 from sklearn.linear_model import LinearRegression
 model = LinearRegression()
 model.fit(X, y)
@@ -162,13 +162,13 @@ model.fit(X, y)
 
 #### Get the parameters
 
-```
+```python
 y_pred = model.predict(X)
 ```
 
 #### Plot it
 
-```
+```python
 plt.plot(Dataframe.index, y_pred, color='red')
 ```
 
@@ -176,7 +176,7 @@ Make sure to plot the line after you plot the Graph!
 
 #### Update Legend
 
-```
+```python
 plt.legend(["Word Count", "Regression Line"])
 ```
 
@@ -192,7 +192,7 @@ plt.legend(["Word Count", "Regression Line"])
 
 #### Looping through the creation of the scatter plots
 
-```
+```python
 for i, topic in enumerate(topics):
     cursor.execute(f"SELECT * FROM {topic};")
     rows = cursor.fetchall()
@@ -210,7 +210,7 @@ for i, topic in enumerate(topics):
 
 #### Then Graph the Regression line on top
 
-```
+```python
 for i, topic in enumerate(topics):
     cursor.execute(f"SELECT * FROM {topic};")
     rows = cursor.fetchall()
@@ -232,7 +232,7 @@ for i, topic in enumerate(topics):
 
 #### Update Legend
 
-```
+```python
 legend1 = [f"Word Count for {topic}" for topic in topics]
 legend2 = [f"Regression Line for {topic}" for topic in topics]
 plt.xlabel("Date")
