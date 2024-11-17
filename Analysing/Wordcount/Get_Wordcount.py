@@ -3,6 +3,12 @@ import sqlite3
 from datetime import date
 
 
+def get_idx(path):
+    path_parts = path.split('/')
+    idx = path_parts[-1][:-4]
+    return idx
+
+
 def get_date(path):
     path_parts = path.split('/')
     year = path_parts[3]
@@ -35,6 +41,7 @@ for topic in topics:
         CREATE TABLE IF NOT EXISTS {topic} (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             date TEXT NOT NULL,
+            idx INTEGER NOT NULL,
             wordcount INTEGER NOT NULL
         )
     ''')
@@ -66,16 +73,15 @@ for topic in topics:
                     article_text = f.read()
                 path = file.replace("\\", "/")
 
-                # print(path)
                 date = get_date(path)
-
+                index = get_idx(path)
                 word_counter = word_count(article_text)
 
-                data.append((date, word_counter))
+                data.append((date, word_counter, index))
 # Step 3: Insert sample data into the table
-    print(data)
+    # print(data)
     cursor.executemany(
-        f"INSERT INTO {topic} (date, wordcount) VALUES (?, ?)", data)
+        f"INSERT INTO {topic} (date, wordcount, idx) VALUES (?, ?, ?)", data)
     conn.commit()
     data = []
 

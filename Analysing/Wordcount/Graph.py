@@ -27,6 +27,7 @@ for i in range(len(topics)):
 
 
     Dataframe = Dataframe.drop(columns=['id'])
+    Dataframe = Dataframe.drop(columns=['idx'])
 
     Dataframe['date'] = pd.to_datetime(Dataframe['date'])
     Dataframe.set_index('date', inplace=True)
