@@ -19,7 +19,7 @@ This step involves collecting article links from the New York Times (NYT) API. Y
 
    * Example Request
 
-```
+```python
 URL = f"https://api.nytimes.com/svc/archive/v1/{year}/{month}.json?api-key={API_KEY}"
 ```
 
@@ -28,19 +28,19 @@ URL = f"https://api.nytimes.com/svc/archive/v1/{year}/{month}.json?api-key={API_
 - Now we get a long json string, where we have to extract the url
 - Choose the data you want to collect (links or titles).
 
-```
+```python
 url = article.get("web_url", "No URL")
 ```
 
 - And remove the articles you dont want
 
-```
+```python
 if any(format in url for format in ["/interactive/", "/slideshow/", "/video/", "/crossword/"]):
 ```
 
 - Save the data as a file.
 
-```
+```python
 file.write(url + '\n')
 ```
 
@@ -54,7 +54,7 @@ In this step, you can choose from different methods to extract the source code f
 
 1. **Install** Selenium:
 
-   ```
+   ```sh
    pip install selenium
    ```
 
@@ -62,7 +62,7 @@ In this step, you can choose from different methods to extract the source code f
 
    - Create Options
 
-   ```
+   ```python
    options = webdriver.ChromeOptions()
    options.add_argument("--start-maximized")
    options.add_argument("--disable-search-engine-choice-screen")
@@ -73,13 +73,13 @@ In this step, you can choose from different methods to extract the source code f
 
    - Create Driver
 
-   ```
+   ```python
    driver = webdriver.Chrome(options=options)
    ```
 
    - Access Content
 
-   ```
+   ```python
    while True:
       try:
          driver.get(url)
@@ -99,7 +99,7 @@ The Error was a Captcha:
 
 1. **Install** Requests:
 
-   ```
+   ```sh
    pip install requests
    ```
 
@@ -107,7 +107,7 @@ The Error was a Captcha:
 
    - Access HTML Code
 
-   ```
+   ```python
    response = requests.get(url)
    page_source = response.text
    ```
@@ -124,13 +124,13 @@ The Error was a Captcha:
 
 1. **Install** Requests:
 
-   ```
+   ```sh
    pip install requests
    ```
 
 2. Access **API**:
 
-   ```
+   ```python
    payload = {'api_key': api_key,
                'url': url}
    r = requests.get('https://api.scraperapi.com/', params=payload)
@@ -143,7 +143,7 @@ The Error was a Captcha:
 
 1. **Install** Requests:
 
-   ```
+   ```sh
    pip install requests
    ```
 
@@ -202,11 +202,11 @@ The Error was a Captcha:
 
 1. **Install** Requests:
 
-   ```
+   ```sh
    pip install requests beautifulsoup4
    ```
 
-   ```
+   ```sh
    import requests
    from bs4 import BeautifulSoup
    ```
@@ -215,15 +215,15 @@ The Error was a Captcha:
 
 - This totally depends on your HTML Code
 
-  ```
+  ```python
   response = requests.get(url)
   ```
 
-  ```
+  ```python
   soup = BeautifulSoup(response.text, 'html.parser')
   ```
 
-  ```
+  ```python
   text = soup.get_text(separator='\n', strip=True)
   ```
 
@@ -234,11 +234,11 @@ The Error was a Captcha:
 
 - See "Extract_Text\.py"
 
-  ```
+  ```python
   import re
   ```
 
-  ```
+  ```python
   def get_text_from_html(html):
     matches = re.findall(r'"text":"(.*?)"', html)
 
@@ -259,7 +259,7 @@ The Error was a Captcha:
 
    - Sometimes the content wasnt downloaded correcly so i checked where there where empty files without content.
 
-     ```
+     ```python
      for dirpath, dirnames, filenames in os.walk(base, topdown=False):
         # Check if the directory is empty
         if not os.listdir(dirpath):  # If the folder is empty
