@@ -1,6 +1,6 @@
+import time
 from selenium import webdriver
 import os
-
 
 start_year = 2020
 amount_years = 2
@@ -18,7 +18,6 @@ options.add_argument("--headless")
 driver = webdriver.Chrome(options=options)
 
 
-driver = webdriver.Chrome(options=options)
 for topic in topics:
     for i in range(amount_years):
         year = start_year + i
@@ -55,9 +54,8 @@ for topic in topics:
                         break
                     except Exception as e:
                         print("Error: ", e)
+                        time.sleep(2)
                         driver.refresh()
-
-                # print(page_source)
 
                 with open(output_file, "w", encoding="utf-8") as f:
                     f.write(page_source)

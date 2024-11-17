@@ -31,7 +31,7 @@ for topic in topics:
                 articles = data.get("response", {}).get("docs", [])
             except requests.exceptions.RequestException as e:
                 print(f"Error fetching data: {e}")
-                time.sleep(5)
+                time.sleep(7)
                 continue
             except ValueError:
                 print("Error parsing JSON response.")
