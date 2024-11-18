@@ -1,4 +1,5 @@
 import os
+# Save your API key in a file called config.py
 import config
 import requests
 

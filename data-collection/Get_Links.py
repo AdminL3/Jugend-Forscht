@@ -1,6 +1,7 @@
 import requests
 import time
 import os
+# Save your API key in a file called config.py
 import config
 
 # start variables
