@@ -9,7 +9,7 @@ cursor = connection.cursor()
 
 name = "All"
 color = "#339933"
-regression_color = "#000"
+color_reg = "#000"
 topics = ["politics", "world", "opinion"]
 
 rows = []
@@ -36,7 +36,7 @@ y = Dataframe['wordcount']
 model = LinearRegression()
 model.fit(X, y)
 y_pred = model.predict(X)
-plt.plot(Dataframe.index, y_pred, color=f'{regression_color}')
+plt.plot(Dataframe.index, y_pred, color=f'{color_reg}')
 
 
 plt.xlabel("Date")
