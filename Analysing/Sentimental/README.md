@@ -107,3 +107,31 @@ cursor.execute(f'''
 ###### Politics
 
 ![Analysing Subjectivity - Politics](.\output\subjectivity\Politics.png)
+
+## 3. Extracting the longest Articles
+
+###### See my Documentation: "[Getting Extrema](../Extrema_Documentation/)"
+
+Output:
+
+```
+Maxima:
+
+POLITICS:
+
+Date: 2020-10-07-45
+polarity: 0.40477994227994235
+Title: A fly landed on Mike Pence’s head during the V.P. debate, and social media erupted.
+
+...
+```
+
+```
+Maxima:
+
+POLITICS:
+
+Date: 2020-11-06-10
+subjectivity: 1
+Title: In photos: A festive atmosphere starts brewing in Wilmington.
+```
