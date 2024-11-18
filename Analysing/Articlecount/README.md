@@ -1,6 +1,10 @@
 # Analysing Article Count
 
-In previous steps we gathered all the Data from the Articles and extracted the Text, now we will analyse the text
+In previous steps we gathered all the Data from the Articles and extracted the Text, now we will Analyse it
+
+- See overview of all Analysation Methods [here](../)
+
+We will be looking at the Article count in this documentation
 
 ## Get Article Count
 
@@ -33,5 +37,3 @@ cursor.execute("""
 ## Visualize
 
 ###### See "[Plotting the Wordcount in Pandas](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Pandas_Documentation/)"
-
-#### Results:

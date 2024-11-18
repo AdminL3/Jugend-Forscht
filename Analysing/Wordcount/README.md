@@ -56,10 +56,21 @@ conn.close()
 
 ## 2. Visualisation in Pandas
 
-###### See "[Plotting the Wordcount in Pandas](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Pandas_Documentation/)"
+###### See my Documentation: "[Plotting the Wordcount in Pandas](../Pandas_Documentation/)"
 
 ## 3. Extracting the longest Articles
 
-See _Get_Extrema.py_
+###### See my Documentation: "[Getting Extrema](../Extrema_Documentation/)"
+
 Output:
-![Minima](output/Maxima.txt)
+```
+Maxima:
+
+POLITICS:
+
+Date: 2021-01-06-24
+Word count: 11912
+Title: Protestors clashed with police outside of the Capitol on Wednesday.
+
+...
+```
