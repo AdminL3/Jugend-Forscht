@@ -55,11 +55,9 @@ conn.close()
 
 ## 2. Visualisation in Pandas
 
-#### See "[Plotting the Wordcount in Pandas Documentation](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Pandas_Documentation/)"
+###### See my Documentation: "[Plotting the Wordcount in Pandas](../Pandas_Documentation/)"
 
-###### This is almost the same to the Wordcount
-
-See [Analysing the Wordcount](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Wordcount/)
+###### This is almost the same to the Wordcount as seen in Documentation
 
 #### Differences to Wordcount
 
@@ -68,6 +66,20 @@ See [Analysing the Wordcount](https://github.com/AdminL3/Jugend-Forscht/tree/mai
 ```python
 sentiment_polarity = blob.sentiment.polarity
 sentiment_subjectivity = blob.sentiment.subjectivity
+```
+
+###### Different Database structure
+
+```python
+cursor.execute(f'''
+        CREATE TABLE IF NOT EXISTS {topic} (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            date TEXT NOT NULL,
+            idx INTEGER NOT NULL,
+            polarity INTEGER NOT NULL,
+            subjectivity INTEGER NOT NULL
+            )
+    ''')
 ```
 
 ---
@@ -80,18 +92,18 @@ sentiment_subjectivity = blob.sentiment.subjectivity
 
 ###### World
 
-![Analysing Polarity - World](\output\polarity\World.png)
+![Analysing Polarity - World](.\output\polarity\World.png)
 
 ###### Politics
 
-![Analysing Polarity - Politics](\output\polarity\Politics.png)
+![Analysing Polarity - Politics](.\output\polarity\Politics.png)
 
 #### Subjectivity
 
 ###### World
 
-![Analysing Subjectivity - World](\output\subjectivity\World.png)
+![Analysing Subjectivity - World](.\output\subjectivity\World.png)
 
 ###### Politics
 
-![Analysing Subjectivity - Politics](\output\subjectivity\Politics.png)
+![Analysing Subjectivity - Politics](.\output\subjectivity\Politics.png)

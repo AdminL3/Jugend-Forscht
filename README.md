@@ -1,5 +1,7 @@
 # Analysing the New York Times Articles
+
 This is just an overview over the different steps. Details are linked inside the topics.
+
 ## Preparation
 
 Install dependencies:
@@ -30,15 +32,16 @@ Used Packages:
 
    - Collect article links using the New York Times API.
    - More at [Data-Collection](./data-collection/)
-   - File: [_Get_Links.py_](data-collection/Get_Links.py).
+   - File: [`Get_Links.py`](data-collection/Get_Links.py).
 
 2. **Extract Source Code from URLs**:
 
    - Use Selenium, Requests to extract the source code.
    - More at [Data-Collection](./data-collection/)
-   - Files [_Selenium.py_](data-collection/Selenium.py) and [_Requests_](data-collection/Requests/).
+   - Files [`Selenium.py`](data-collection/Selenium.py) and [`Requests`](data-collection/Requests/).
 
 3. **Optimize Data Collection** with AWS and Multiprocessing
+
    - More at [AWS](./data-collection/AWS/)
    - and [Multiprocessing](./data-collection/Multiprocessing/)
 
@@ -46,9 +49,7 @@ Used Packages:
 
    - Parse HTML to extract text using BeautifulSoup or regular expressions.
    - More at [Data-Collection](./data-collection/)
-   - File: [Extract_Text.py](data-collection/Extract_Text.py).
-
-
+   - File: [`Extract_Text.py`](data-collection/Extract_Text.py).
 
 ## 2. Analysing Data
 

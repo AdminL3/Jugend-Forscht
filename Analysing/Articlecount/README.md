@@ -34,6 +34,6 @@ cursor.execute("""
 """, (topic_id, year, month, day, daily_count))
 ```
 
-## Visualize
+## Visualize Article Count
 
-###### See "[Plotting the Wordcount in Pandas](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Pandas_Documentation/)"
+###### See my Documentation: "[Plotting the Wordcount in Pandas](../Pandas_Documentation/)"

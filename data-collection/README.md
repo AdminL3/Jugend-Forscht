@@ -4,7 +4,7 @@
 
 ## Step 1: Get Links from **NYT API**
 
-This step involves collecting article links from the New York Times (NYT) API. You can find the code for this step in the [Get_Links.py](https://github.com/AdminL3/Jugend-Forscht/blob/main/data-collection/Get_Links.py) file.
+This step involves collecting article links from the New York Times (NYT) API. You can find the code for this step in the [`Get_Links.py`](https://github.com/AdminL3/Jugend-Forscht/blob/main/data-collection/Get_Links.py) file.
 
 1. **Get NYT API Key**:
 
@@ -48,7 +48,8 @@ file.write(url + '\n')
 
 ## Step 2: Extract Source Code from URLs
 
-In this step, you can choose from different methods to extract the source code from URLs. 
+In this step, you can choose from different methods to extract the source code from URLs.
+
 ###### The option I used:
 
 ### Selenium
@@ -98,11 +99,12 @@ In this step, you can choose from different methods to extract the source code f
 ![Captcha Test Selenium](./Errors/Error%201.png)
 
 ###### Even in headless browser:
+
 As HMTL:
 ![Captcha Test Headless Selenium](./Errors/Error%206.png)
 
-
 ## Other Options:
+
 ### 2. Requests
 
 - This Works for some time until you get blocked. Then you should use Proxys or External APIs --> See [**Proxyrotation**](#4-proxyrotation) and [**ExternalAPIs**](#3-external-api)
@@ -242,7 +244,7 @@ As HMTL:
 - But Since NYT really tries to prevent me from getting their data
 - I had to use RE to parse the data from some javascript encoding
 
-- File: [_Extract_Text.py_](./Extract_Text.py)
+- File: [`Extract_Text.py`](./Extract_Text.py)
 
   ```python
   import re
@@ -290,7 +292,7 @@ As HMTL:
 
    - To check what files are missing i used a simple script
    - Thanks Copilot 😃
-   - See _file_checker.py_
+   - See `file_checker.py`
 
 ---
 
