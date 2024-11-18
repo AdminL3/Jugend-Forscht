@@ -51,7 +51,7 @@ def Selenium(n):
     start_month = n
 ```
 
-3. Specifying the Month to run
+3. Specifying the Months to run
 
 ```
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]

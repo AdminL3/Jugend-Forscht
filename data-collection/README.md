@@ -48,9 +48,10 @@ file.write(url + '\n')
 
 ## Step 2: Extract Source Code from URLs
 
-In this step, you can choose from different methods to extract the source code from URLs. Here are the options:
+In this step, you can choose from different methods to extract the source code from URLs. 
+###### The option I used:
 
-### 1. Selenium
+### Selenium
 
 1. **Install** Selenium:
 
@@ -97,9 +98,11 @@ In this step, you can choose from different methods to extract the source code f
 ![Captcha Test Selenium](./Errors/Error%201.png)
 
 ###### Even in headless browser:
-
+As HMTL:
 ![Captcha Test Headless Selenium](./Errors/Error%206.png)
 
+
+## Other Options:
 ### 2. Requests
 
 - This Works for some time until you get blocked. Then you should use Proxys or External APIs --> See [**Proxyrotation**](#4-proxyrotation) and [**ExternalAPIs**](#3-external-api)
@@ -127,7 +130,7 @@ In this step, you can choose from different methods to extract the source code f
 ### 3. External API
 
 - I am using [ScraperAPI](https://www.scraperapi.com/)
-- This Works, but you are limited tokens and its slower
+- This Works, but you have limited tokens and its slower
 
 1. **Install** Requests:
 
@@ -191,13 +194,13 @@ In this step, you can choose from different methods to extract the source code f
 
 ##### 1. Use AWS to run Python in the cloud
 
-- See my Subfolder [Run Python in the Cloud](./AWS/)
+- See my Subfolder [AWS - How to Run Python in the Cloud](./AWS/)
 
 - Run your scripts in the Cloud to reduce computer usage
 
-##### 2. Use Multiprocessing to run Multiple Threads at onece
+##### 2. Use Multiprocessing to run Multiple Threads at once
 
-- See my Subfolder and Documentation at [Multiprocessing](./Multiprocesses/)
+- See my Subfolder and Documentation at [Multiprocessing](./Multiprocessing/)
 
 ---
 
@@ -239,7 +242,7 @@ In this step, you can choose from different methods to extract the source code f
 - But Since NYT really tries to prevent me from getting their data
 - I had to use RE to parse the data from some javascript encoding
 
-- See "Extract_Text\.py"
+- File: [_Extract_Text.py_](./Extract_Text.py)
 
   ```python
   import re
@@ -286,6 +289,7 @@ In this step, you can choose from different methods to extract the source code f
 2. **Find missing files**:
 
    - To check what files are missing i used a simple script
+   - Thanks Copilot 😃
    - See _file_checker.py_
 
 ---
@@ -294,6 +298,6 @@ In this step, you can choose from different methods to extract the source code f
 
 - This is only a part of the full project!
 
-- The part, where we extract the full NYT Source Code
+- The part, where we extract the full NYT Article Text
 
 - View the whole Projekt at [Github](https://github.com/AdminL3/Jugend-Forscht/)
