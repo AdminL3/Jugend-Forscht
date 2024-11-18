@@ -46,7 +46,7 @@ for i in range(len(topics)):
     plt.xlabel("Date")
     plt.ylabel("")
     plt.legend([f"{topic} Word Count", "Regression Line"])
-    plt.title(f"Word Count Analysis  - {topic}")
+    plt.title(f"Word Count Analysis - {topic}")
     plt.savefig(f"Analysing\Wordcount\output\{topic}.png")
 
     plt.close()
