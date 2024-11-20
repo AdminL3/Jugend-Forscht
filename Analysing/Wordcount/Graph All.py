@@ -1,5 +1,5 @@
 import sqlite3
-import Analysing.Wordcount.Functions as Functions
+from Analysing.Plotting import graph
 
 
 connection = sqlite3.connect(r"Analysing\Wordcount\wordcount.db")
@@ -17,5 +17,5 @@ for topic in topics:
 
 columns = [column[0] for column in cursor.description]
 
-Functions.graph(rows, columns, "wordcount", "Wordcount", "Wordcount of all three topics", ["id", "idx"],
-                color, color_reg, True, 2, r"Analysing\Wordcount\output\All.png")
+graph(rows, columns, "wordcount", "Wordcount", "Wordcount of all three topics", ["id", "idx"],
+      color, color_reg, True, 2, r"Analysing\Wordcount\output\All.png")

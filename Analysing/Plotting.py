@@ -42,6 +42,7 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
     # Customize plot labels and title
     plt.xlabel("Date")
     plt.ylabel("")
+    legend = [{title1, "Regression Line"}] if regression else [title1]
     plt.legend([title1, "Regression Line"])
     plt.title(title2)
     plt.savefig(output)
