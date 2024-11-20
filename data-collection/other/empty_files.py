@@ -1,4 +1,5 @@
 import os
+from re import S
 
 base = r'data/articles'
 
@@ -17,6 +18,21 @@ def clean_empty_files_and_folders(base_path):
                     print(f"Deleting empty file: {file_path}")
                     os.remove(file_path)
                     files_removed += 1
+
+                    str = file_path.replace("\\", "/")
+                    parts = str.split('/')
+                    topic = parts[2]
+                    year = parts[3]
+                    month = parts[4]
+                    day = parts[5]
+                    index = parts[6].split('.')[0]
+                    month_number = month.split('month')
+                    day_number = day.split('day')
+                    source_path = f"data/source/{topic}/{year}/month{month_number[1]}/{
+                        year}_{month_number[1]}_{day_number[1]}_{index}.txt"
+
+                    os.remove(source_path)
+
             except OSError as e:
                 print(f"Error processing file {file_path}: {e}")
 

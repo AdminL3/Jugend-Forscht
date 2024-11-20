@@ -6,7 +6,7 @@ start_year = 2020
 amount_years = 2
 start_month = 1
 amount_month = 12
-topics = ["politics", "world", "opinion"]
+topics = ["world", "politics", "opinion"]
 
 
 last_date = 0
@@ -57,7 +57,8 @@ for topic in topics:
                         print("Error: ", e)
                         time.sleep(2)
                         driver.refresh()
-
+                # print(page_source)
+                # input()
                 with open(output_file, "w", encoding="utf-8") as f:
                     f.write(page_source)
 

@@ -5,10 +5,10 @@ import os
 import config
 
 # start variables
-start_year = 2020
+start_year = 2021
 amount_years = 2
 
-topics = ["world", "politics", "opinion"]
+topics = ["politics"]
 API_KEY = config.NYT_API_KEY
 for topic in topics:
     for i in range(amount_years):

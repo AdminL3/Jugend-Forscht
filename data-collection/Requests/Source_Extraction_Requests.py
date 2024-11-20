@@ -10,7 +10,7 @@ headers = {
 
 start_year = 2021
 amount_years = 1
-topics = ["world"]
+topics = ["opinion"]
 start_month = 12
 amount_month = 1
 last_date = 0
@@ -41,6 +41,7 @@ for topic in topics:
                 output_file = os.path.join(output_dir, file_name)
                 if os.path.exists(output_file):
                     print(f"File {file_name} already exists. Skipping...")
+                    last_date = date
                     continue
 
                 try:

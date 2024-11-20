@@ -2,21 +2,19 @@ import os
 from datetime import datetime
 from glob import glob
 
-# Directory where the articles are stored
+
 base_dir = r"data/articles/"
 
-# Define the range of years, months, topics to check
-topics = ["politics", "world"]  # Customize based on your structure
+
+topics = ["politics", "world", "opinion"]
 year_range = range(2020, 2022)
 month_range = range(1, 13)
 day_range = range(1, 32)
 
-# List of files to skip
-files_to_skip = [
-    "politics/2021/month08/day01",
-    "politics/2021/month12/day25",
-    "politics/2021/month12/day31"
-]
+
+files_to_skip = ["politics/2021/month08/day01",
+                 "politics/2021/month12/day25",
+                 "politics/2021/month12/day31"]
 
 missing_dates = []
 

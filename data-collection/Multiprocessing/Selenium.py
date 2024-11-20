@@ -5,9 +5,9 @@ import time
 
 
 def Selenium(n):
-    start_year = 2020
+    start_year = 2022
     amount_years = 1
-    topics = ["world", "politics", "opinion"]
+    topics = ["politics"]
     start_month = n
     amount_month = 1
     last_date = 0
@@ -69,7 +69,7 @@ def Selenium(n):
     print("and the Topics: " + str(topics))
 
 
-numbers = [9, 10, 11, 12]
+numbers = [1, 2, 3, 4]
 
 if __name__ == "__main__":
     with multiprocessing.Pool() as pool:

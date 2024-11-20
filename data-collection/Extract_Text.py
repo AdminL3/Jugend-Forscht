@@ -1,6 +1,11 @@
 import os
 import re
 
+start_year = 2020
+amount_years = 2
+
+topics = ["politics", "world", "opinion"]
+
 
 def get_text_from_html(html):
     matches = re.findall(r'"text":"(.*?)"', html)
@@ -24,10 +29,6 @@ def get_output_path(path):
     return [f"data/articles/{topic}/{year}/month{month}/day{day}/", f"{index}.txt"]
 
 
-start_year = 2020
-amount_years = 2
-
-topics = ["politics", "world", "opinion"]
 for topic in topics:
     print(topic)
     for i in range(amount_years):
@@ -49,8 +50,8 @@ for topic in topics:
                 output_file_path = output[0] + output[1]
 
                 if os.path.exists(output_file_path):
-                    print(
-                        f"File {output_file_path} already exists. Skipping...")
+                    # print(
+                    # f"File {output_file_path} already exists. Skipping...")
                     continue
 
                 with open(file, 'r', encoding='utf-8') as f:
