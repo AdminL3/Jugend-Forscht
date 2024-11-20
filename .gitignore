@@ -8,4 +8,6 @@ data
 data-collection/AWS/key.pem
 data-collection/config.py
 data-collection/Scraperapi/config.py
+# pycache
 /data-collection/__pycache__
+/Analysing/__pycache__
