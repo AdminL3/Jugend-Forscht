@@ -12,9 +12,8 @@ def fetch_guardian_links(year, month):
         "from-date": f"{year}-{month:02}-01",
         "to-date": (datetime.date(year, month, 1) + datetime.timedelta(days=31)).replace(day=1).isoformat(),
         "api-key": GUARDIAN_API_KEY,
-        "page-size": 50,  # Maximum results per page
-        "page": 1,  # Start from page 1
-        "show-fields": "trailText",  # Optional: fetch summary
+        "page-size": 50,
+        "page": 1,
     }
 
     all_links = []
@@ -47,14 +46,11 @@ def fetch_guardian_links(year, month):
     return all_links
 
 
-# Define your API key
 GUARDIAN_API_KEY = config.GUARDIAN_API_KEY
 
-# Define the start year, amount of years, and topics
+
 start_year = 2020
 amount_years = 2
-topics = ["politics", "world", "opinion"]
-titles = ["Politics", "World", "commentisfree"]
 
 # Define the Guardian API base URL
 BASE_URL = "https://content.guardianapis.com/search"
@@ -69,20 +65,13 @@ except ValueError:
 for i in range(amount_years):
     year = start_year + i
     for month in range(1, 13):
-
+        file_path = f"data/guardian/links/all/{year}/"
+        file_name = f"month{month:02}.txt"
+        if os.path.exists(file_path + file_name):
+            print(f"File {file_path + file_name} already exists. Skipping...")
+            continue
         all_links = fetch_guardian_links(year, month)
-
-        for t, topic in enumerate(topics):
-            counter = 0
-            file_path = f"data/guardian/links/{
-                topic}/{year}/"
-            file_name = f"month{month:02}.txt"
-            os.makedirs(file_path, exist_ok=True)
-            with open(file_path + file_name, "w", encoding="utf-8") as file:
-                for link in all_links:
-                    if (titles[t].lower() in link.lower()):
-                        file.write(link + "\n")
-                        counter += 1
-
-            print(f"Saved {counter} links for {
-                  topic}, {year}-{month:02}.")
+        os.makedirs(file_path, exist_ok=True)
+        with open(file_path + file_name, "w", encoding="utf-8") as file:
+            for link in all_links:
+                file.write(link + "\n")
