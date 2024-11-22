@@ -15,7 +15,7 @@ for topic in topics:
         year = start_year + i
         for month in range(1, 13):
             file_exists = os.path.exists(
-                f"data/links/{topic}/{year}/month{month}.txt")
+                f"data/NYT/links/{topic}/{year}/month{month}.txt")
 
             if file_exists:
                 print(f"File for month {month} in year {
@@ -38,7 +38,7 @@ for topic in topics:
                 print("Error parsing JSON response.")
                 continue
 
-            file_path = f"data/links/{topic}/{year}/month{month}.txt"
+            file_path = f"data/NYT/links/{topic}/{year}/month{month}.txt"
             os.makedirs(os.path.dirname(file_path), exist_ok=True)
             with open(file_path, "w", encoding="utf-8") as file:
                 for article in articles:

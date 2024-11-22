@@ -4,8 +4,8 @@ import sqlite3
 
 def get_title(date, topic):
     parts = date.split("-")
-    path = f"data/articles/{topic}/{parts[0]
-                                    }/month{parts[1]}/day{parts[2]}/{parts[3]}.txt"
+    path = f"data/NYT/articles/{topic}/{parts[0]
+                                        }/month{parts[1]}/day{parts[2]}/{parts[3]}.txt"
     with open(path, "r", encoding="utf-8") as file:
         return file.read().splitlines()[0]
 

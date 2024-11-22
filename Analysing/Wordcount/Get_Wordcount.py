@@ -53,7 +53,7 @@ for topic in topics:
             numbers = [str(h).zfill(2) for h in range(1, 13)]
             month = numbers[j]
             print(month)
-            files_path = f"data/articles/{topic}/{year}/month{month}/"
+            files_path = f"data/NYT/articles/{topic}/{year}/month{month}/"
             days = []
             if os.path.exists(files_path):
                 for item in os.listdir(files_path):

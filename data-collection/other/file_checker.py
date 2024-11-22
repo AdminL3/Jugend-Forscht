@@ -3,7 +3,7 @@ from datetime import datetime
 from glob import glob
 
 
-base_dir = r"data/articles/"
+base_dir = r"data/NYT/articles/"
 
 
 topics = ["politics", "world", "opinion"]

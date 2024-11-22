@@ -36,7 +36,8 @@ for topic in topics:
             month = k + 1
             # Format month to always have two digits (01, 02, ..., 12)
             formatted_month = f"{month:02d}"
-            folder_path = f'data/source/{topic}/{year}/month{formatted_month}'
+            folder_path = f'data/NYT/source/{
+                topic}/{year}/month{formatted_month}'
 
             # Check if the folder exists before proceeding
             if os.path.exists(folder_path):

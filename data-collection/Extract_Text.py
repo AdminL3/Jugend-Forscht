@@ -26,7 +26,7 @@ def get_output_path(path):
     day = date[2]
     month = date[1]
     year = set[3]
-    return [f"data/articles/{topic}/{year}/month{month}/day{day}/", f"{index}.txt"]
+    return [f"data/NYT/articles/{topic}/{year}/month{month}/day{day}/", f"{index}.txt"]
 
 
 for topic in topics:
@@ -38,7 +38,7 @@ for topic in topics:
             numbers = [str(h).zfill(2) for h in range(1, 13)]
             month = numbers[j]
             print(month)
-            files_path = f"data/source/{topic}/{year}/month{month}/"
+            files_path = f"data/NYT/source/{topic}/{year}/month{month}/"
             files = []
             if os.path.exists(files_path):
                 for file in os.listdir(files_path):

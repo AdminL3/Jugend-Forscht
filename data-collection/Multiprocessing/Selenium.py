@@ -24,7 +24,7 @@ def Selenium(n):
             year = start_year + i
             for i in range(amount_month):
                 month = start_month + i
-                urls_path = f"data/links/{topic}/{year}/month{month}.txt"
+                urls_path = f"data/NYT/links/{topic}/{year}/month{month}.txt"
                 with open(urls_path, 'r', encoding='utf-8') as file:
                     urls = file.read().splitlines()
                 index = 0
@@ -40,7 +40,8 @@ def Selenium(n):
                         index = 1
                     file_name = f"{date}{index}.txt"
 
-                    output_dir = f"data/source/{topic}/{year}/month{month}/"
+                    output_dir = f"data/NYT/source/{
+                        topic}/{year}/month{month}/"
                     os.makedirs(output_dir, exist_ok=True)
                     output_file = os.path.join(output_dir, file_name)
                     if os.path.exists(output_file):

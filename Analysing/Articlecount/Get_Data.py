@@ -1,7 +1,7 @@
 import os
 import sqlite3
 
-data_root = "data/articles"
+data_root = "data/NYT/articles"
 start_year = 2020
 amount_years = 2
 topics = ["politics", "world", "opinion"]

@@ -1,7 +1,7 @@
 import os
 from re import S
 
-base = r'data/articles'
+base = r'data/NYT/articles'
 
 
 def clean_empty_files_and_folders(base_path):
@@ -28,7 +28,7 @@ def clean_empty_files_and_folders(base_path):
                     index = parts[6].split('.')[0]
                     month_number = month.split('month')
                     day_number = day.split('day')
-                    source_path = f"data/source/{topic}/{year}/month{month_number[1]}/{
+                    source_path = f"data/NYT/source/{topic}/{year}/month{month_number[1]}/{
                         year}_{month_number[1]}_{day_number[1]}_{index}.txt"
 
                     os.remove(source_path)
