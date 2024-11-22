@@ -1,16 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from pyparsing import col
 from sklearn.linear_model import LinearRegression
 
 
 def graph(rows, column_names, name, title1, title2, drop_columns, color, color_reg, regression, size, output):
-    # Create DataFrame with rows and provided column names
     Dataframe = pd.DataFrame(rows, columns=column_names)
-
-    # Debugging: Check column names
-    print("Columns in DataFrame:", Dataframe.columns)
 
     # Drop specified columns if they exist
     for col in drop_columns:
@@ -29,7 +24,6 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
 
     # Add regression line if enabled
     if regression:
-        print("DataFrame columns:", Dataframe.columns)
         name_lower = name.lower()
         if name_lower in Dataframe.columns:
             X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
@@ -86,12 +80,12 @@ def multiple(all_rows, all_columns, name, all_titles, drop_columns, colors, colo
             y_pred = model.predict(X)
             plt.plot(Dataframe.index, y_pred, color=colors_reg[i])
 
-        legend1 = [f"Word Count for {topic}" for topic in all_titles]
+        legend1 = [f"{name.capitalize()} for {topic}" for topic in all_titles]
         legend2 = [f"Regression Line for {topic}" for topic in all_titles]
         plt.xlabel("Date")
         plt.ylabel(name.capitalize())
         plt.legend(legend1 + legend2 if regression else legend1)
-        plt.title("Word Count Analysis")
+        plt.title(f"{name.capitalize()} Analysis")
 
         plt.savefig(output)
         plt.close()
