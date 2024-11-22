@@ -17,10 +17,11 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
         Dataframe['date'] = pd.to_datetime(Dataframe['date'])
         Dataframe.set_index('date', inplace=True)
     else:
-        raise KeyError("'date' column is missing in the DataFrame")
+        Dataframe['date'] = pd.to_datetime(Dataframe[['year', 'month']].assign(day=1))
 
     # Plot the data
-    Dataframe.plot(style='o', markersize=size, color=color)
+    plt.plot(Dataframe.index,
+             Dataframe[name], 'o', markersize=size, color=color)
 
     # Add regression line if enabled
     if regression:
