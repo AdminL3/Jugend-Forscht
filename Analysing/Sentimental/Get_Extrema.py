@@ -13,7 +13,7 @@ def get_title(date, topic):
 def get_maxima(topic, length, option):
     option_idx = 0 if option == "polarity" else 1
     text = ""
-    connection = sqlite3.connect("Analysing\Sentimental\sentiment.db")
+    connection = sqlite3.connect("Analysing/Sentimental/sentiment.db")
     cursor = connection.cursor()
 
     cursor.execute(f"SELECT * FROM {topic};")
@@ -37,7 +37,7 @@ def get_maxima(topic, length, option):
 def get_minima(topic, length, option):
     option_idx = 0 if option == "polarity" else 1
     text = ""
-    connection = sqlite3.connect("Analysing\Sentimental\sentiment.db")
+    connection = sqlite3.connect("Analysing/Sentimental/sentiment.db")
     cursor = connection.cursor()
 
     cursor.execute(f"SELECT * FROM {topic};")

@@ -1,5 +1,5 @@
 import sqlite3
-from Analysing.Plotting import graph, multiple
+from Analysing.Plotting import graph
 
 
 # Database connection
@@ -11,7 +11,6 @@ topics = ["Politics", "World", "Opinion"]
 options = ['polarity', 'subjectivity']
 colors = ['#1f77b4', '#ff7f0e', 'green']
 colors_reg = ['blue', 'red', 'black']
-
 
 
 for o, option in enumerate(options):

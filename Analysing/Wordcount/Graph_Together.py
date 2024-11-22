@@ -1,7 +1,7 @@
 import sqlite3
 from Analysing.Plotting import multiple
 
-connection = sqlite3.connect("Analysing\Wordcount\wordcount.db")
+connection = sqlite3.connect("Analysing/Wordcount/wordcount.db")
 cursor = connection.cursor()
 
 colors = ['#1f77b4', '#ff7f0e', "green"]
@@ -17,7 +17,7 @@ for i, topic in enumerate(topics):
 all_titles = ["Politics", "World", "Opinion"]
 drop_columns = ["id", "idx"]
 size = 2
-output = "Analysing\Wordcount\output\Together.png"
+output = "Analysing/Wordcount/output/Together.png"
 name = "wordcount"
 regression = True
 

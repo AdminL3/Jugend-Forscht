@@ -3,7 +3,7 @@ import os
 import sqlite3
 from Analysing.Plotting import graph
 
-connection = sqlite3.connect("Analysing\Sentimental\sentiment.db")
+connection = sqlite3.connect("Analysing/Sentimental/sentiment.db")
 cursor = connection.cursor()
 
 title = "All"
@@ -25,4 +25,5 @@ for o, option in enumerate(options):
     title2 = option.capitalize()
     output = f"Analysing/Sentimental/output/{option}/{title}.png"
     drop_columns = [f'{options[1-o]}', "id", "idx"]
-    graph(rows, column_names, option, title1, title2, drop_columns, color, color_reg, regression, size, output)
+    graph(rows, column_names, option, title1, title2,
+          drop_columns, color, color_reg, regression, size, output)
