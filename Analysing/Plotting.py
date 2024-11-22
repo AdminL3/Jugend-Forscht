@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from pyparsing import col
 from sklearn.linear_model import LinearRegression
 
 
@@ -17,7 +18,8 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
         Dataframe['date'] = pd.to_datetime(Dataframe['date'])
         Dataframe.set_index('date', inplace=True)
     else:
-        Dataframe['date'] = pd.to_datetime(Dataframe[['year', 'month']].assign(day=1))
+        Dataframe['date'] = pd.to_datetime(
+            Dataframe[['year', 'month']].assign(day=1))
 
     # Plot the data
     plt.plot(Dataframe.index,
@@ -49,7 +51,6 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
 
 
 def multiple(all_rows, all_columns, name, all_titles, drop_columns, colors, colors_reg, regression, size, output):
-    # Iterate over each dataset
     for i, rows in enumerate(all_rows):
         color = colors[i]
 
@@ -58,47 +59,74 @@ def multiple(all_rows, all_columns, name, all_titles, drop_columns, colors, colo
 
         # Drop specified columns if they exist
         for column in drop_columns:
-            Dataframe = Dataframe.drop(columns=[f'{column}'])
+            if column in Dataframe.columns:
+                Dataframe = Dataframe.drop(columns=[column])
 
-        # Convert 'date' column to datetime and set as index
+        # Handle the 'date' column
+        if 'date' not in Dataframe.columns:
+            try:
+                Dataframe['date'] = pd.to_datetime(
+                    Dataframe[['year', 'month']].assign(day=1)
+                )
+            except KeyError as e:
+                print(f"Could not create 'date' column: {e}")
+                continue
+
+        # Ensure 'date' column is a datetime and set as index
         Dataframe['date'] = pd.to_datetime(Dataframe['date'])
         Dataframe.set_index('date', inplace=True)
 
         # Plot the data points
-        plt.plot(Dataframe.index, Dataframe[f"{name.lower()}"], 'o', markersize=size, color=color)
+        if name.lower() in Dataframe.columns:
+            plt.plot(Dataframe.index, Dataframe[name.lower()],
+                     'o', markersize=size, color=color)
+        else:
+            print(f"'{name}' column is missing in the DataFrame for dataset {
+                  all_titles[i]}")
 
     # Add regression lines if enabled
     if regression:
         for i, rows in enumerate(all_rows):
-            # Create DataFrame for the current dataset
             Dataframe = pd.DataFrame(rows, columns=all_columns[i])
-            
-            # Drop specified columns if they exist
-            for column in drop_columns:
-                Dataframe = Dataframe.drop(columns=[f'{column}'])
 
-            # Convert 'date' column to datetime and set as index
+            for column in drop_columns:
+                if column in Dataframe.columns:
+                    Dataframe = Dataframe.drop(columns=[column])
+
+            if 'date' not in Dataframe.columns:
+                try:
+                    Dataframe['date'] = pd.to_datetime(
+                        Dataframe[['year', 'month']].assign(day=1)
+                    )
+                except KeyError as e:
+                    print(f"Could not create 'date' column: {e}")
+                    continue
+
             Dataframe['date'] = pd.to_datetime(Dataframe['date'])
             Dataframe.set_index('date', inplace=True)
 
-            # Prepare data for regression
-            X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
-            y = Dataframe[f'{name}']
-            model = LinearRegression()
-            model.fit(X, y)
-            y_pred = model.predict(X)
+            if name.lower() in Dataframe.columns:
+                # Prepare data for regression
+                X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
+                y = Dataframe[name.lower()]
+                model = LinearRegression()
+                model.fit(X, y)
+                y_pred = model.predict(X)
 
-            # Plot the regression line
-            plt.plot(Dataframe.index, y_pred, color=colors_reg[i])
+                # Plot the regression line
+                plt.plot(Dataframe.index, y_pred, color=colors_reg[i])
+            else:
+                print(f"'{name}' column is missing in the DataFrame for regression in dataset {
+                      all_titles[i]}")
 
-        # Create legends for the plot
-        legend1 = [f"{name.capitalize()} for {topic}" for topic in all_titles]
-        legend2 = [f"Regression Line for {topic}" for topic in all_titles]
-        plt.xlabel("Date")
-        plt.ylabel(name.capitalize())
-        plt.legend(legend1 + legend2 if regression else legend1)
-        plt.title(f"{name.capitalize()} Analysis")
+    # Create legends for the plot
+    legend1 = [f"{name.capitalize()} for {topic}" for topic in all_titles]
+    legend2 = [f"Regression Line for {topic}" for topic in all_titles]
+    plt.xlabel("Date")
+    plt.ylabel(name.capitalize())
+    plt.legend(legend1 + legend2 if regression else legend1)
+    plt.title(f"{name.capitalize()} Analysis")
 
-        # Save the plot to the specified output file
-        plt.savefig(output)
-        plt.close()
+    # Save the plot to the specified output file
+    plt.savefig(output)
+    plt.close()
