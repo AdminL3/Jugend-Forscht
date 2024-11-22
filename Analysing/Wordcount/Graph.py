@@ -20,4 +20,3 @@ for i in range(len(topics)):
 
     graph(rows, columns, "wordcount", f"{topic} Wordcount", f"Wordcount of {topic}", ["id", "idx"],
                     color, regression_color, True, 2, f"Analysing\Wordcount\output\{topic}.png")
-
