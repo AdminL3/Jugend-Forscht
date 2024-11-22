@@ -29,9 +29,11 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
 
     # Add regression line if enabled
     if regression:
-        if name in Dataframe.columns:
+        print("DataFrame columns:", Dataframe.columns)
+        name_lower = name.lower()
+        if name_lower in Dataframe.columns:
             X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
-            y = Dataframe[name]
+            y = Dataframe[name_lower]
             model = LinearRegression()
             model.fit(X, y)
             y_pred = model.predict(X)
@@ -43,8 +45,8 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
     # Customize plot labels and title
     plt.xlabel("Date")
     plt.ylabel("")
-    legend = [{title1, "Regression Line"}] if regression else [title1]
-    plt.legend([title1, "Regression Line"])
+    legend = [title1, "Regression Line"] if regression else [title1]
+    plt.legend(legend)
     plt.title(title2)
     plt.savefig(output)
 
@@ -65,7 +67,7 @@ def multiple(all_rows, all_columns, name, all_titles, drop_columns, colors, colo
         Dataframe.set_index('date', inplace=True)
 
         plt.plot(Dataframe.index,
-                 Dataframe[f'{name}'], 'o', markersize=size, color=color)
+                 Dataframe[f"{name.lower()}"], 'o', markersize=size, color=color)
 
     if regression:
         for i, rows in enumerate(all_rows):
@@ -88,7 +90,7 @@ def multiple(all_rows, all_columns, name, all_titles, drop_columns, colors, colo
         legend2 = [f"Regression Line for {topic}" for topic in all_titles]
         plt.xlabel("Date")
         plt.ylabel(name.capitalize())
-        plt.legend(legend1 + legend2)
+        plt.legend(legend1 + legend2 if regression else legend1)
         plt.title("Word Count Analysis")
 
         plt.savefig(output)
