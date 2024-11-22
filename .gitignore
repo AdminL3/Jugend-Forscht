@@ -11,3 +11,5 @@ data-collection/Scraperapi/config.py
 # pycache
 /data-collection/__pycache__
 /Analysing/__pycache__
+/Analysing/Sentimental/__pycache__
+/Analysing/Wordcount/__pycache__
