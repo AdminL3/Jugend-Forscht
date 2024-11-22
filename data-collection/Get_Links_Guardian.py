@@ -6,10 +6,6 @@ import config  # Your API key stored here
 
 
 def fetch_guardian_links(year, month):
-    """
-    Fetches article links from The Guardian for a given topic, year, and month.
-    Saves links to a text file in the appropriate directory.
-    """
 
     # Define API parameters
     params = {
@@ -58,6 +54,7 @@ GUARDIAN_API_KEY = config.GUARDIAN_API_KEY
 start_year = 2020
 amount_years = 2
 topics = ["politics", "world", "opinion"]
+titles = ["Politics", "World", "commentisfree"]
 
 # Define the Guardian API base URL
 BASE_URL = "https://content.guardianapis.com/search"
@@ -69,21 +66,23 @@ try:
 except ValueError:
     end_date = start_date + datetime.timedelta(days=amount_years * 365)
 
-
 for i in range(amount_years):
     year = start_year + i
     for month in range(1, 13):
 
         all_links = fetch_guardian_links(year, month)
 
-        for topic in topics:
+        for t, topic in enumerate(topics):
+            counter = 0
             file_path = f"data/guardian/links/{
-                topic}/{year}/month{month:02}.txt"
+                topic}/{year}/"
+            file_name = f"month{month:02}.txt"
             os.makedirs(file_path, exist_ok=True)
-            with open(file_path, "w", encoding="utf-8") as file:
+            with open(file_path + file_name, "w", encoding="utf-8") as file:
                 for link in all_links:
-                    # if (topic.lower() in link.lower()):
-                    file.write(link + "\n")
+                    if (titles[t].lower() in link.lower()):
+                        file.write(link + "\n")
+                        counter += 1
 
-        print(f"Saved {len(all_links)} links for {
-            topic}, {year}-{month:02}.")
+            print(f"Saved {counter} links for {
+                  topic}, {year}-{month:02}.")
