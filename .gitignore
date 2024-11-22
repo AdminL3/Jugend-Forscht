@@ -6,7 +6,6 @@
 data
 # EC2 Instance key
 data-collection/AWS/key.pem
-data-collection/config.py
 data-collection/Scraperapi/config.py
 # pycache
 /data-collection/__pycache__
@@ -14,3 +13,7 @@ data-collection/Scraperapi/config.py
 /Analysing/Sentimental/__pycache__
 /Analysing/Wordcount/__pycache__
 /Analysing/Articlecount/__pycache__
+# NYT and Guardian API keys
+data-collection/Guardian/config.py
+data-collection/NYT/config.py
+/data-collection/Guardian/__pycache__
