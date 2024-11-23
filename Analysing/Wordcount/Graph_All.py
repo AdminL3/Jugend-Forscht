@@ -1,23 +1,23 @@
 import sqlite3
 from Analysing.Plotting import graph
 
-
-connection = sqlite3.connect("Analysing/Wordcount/wordcount.db")
-cursor = connection.cursor()
-
 name = "All"
 color = "#ff33ff"
 color_reg = "#660066"
 topics = ["politics", "world", "opinion"]
 
-rows = []
-for topic in topics:
-    cursor.execute(f"SELECT * FROM {topic};")
-    rows.extend(cursor.fetchall())
+news = ["NYT", "Guardian"]
+for new in news:
+    connection = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
+    cursor = connection.cursor()
+    rows = []
+    for topic in topics:
+        cursor.execute(f"SELECT * FROM {topic};")
+        rows.extend(cursor.fetchall())
 
-columns = [column[0] for column in cursor.description]
+    columns = [column[0] for column in cursor.description]
 
-output = "Output/Wordcount/All.png"
+    output = f"Output/Wordcount/Graphs/{new}/All.png"
 
-graph(rows, columns, "wordcount", "Wordcount", "Wordcount of all three topics", ["id", "idx"],
-      color, color_reg, True, 2, output)
+    graph(rows, columns, "wordcount", "Wordcount", "Wordcount of all three topics", ["id", "idx"],
+          color, color_reg, True, 2, output)

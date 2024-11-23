@@ -17,59 +17,29 @@ def get_title(date, index, topic, new):
         return file.read().splitlines()[0]
 
 
-def get_maxima(topic, length, new, o):
+def get_extrema(topic, length, new, o, typ):
     conn = sqlite3.connect(f"Analysing/Sentimental/{new}.db")
     cursor = conn.cursor()
     cursor.execute(f"SELECT * FROM {topic}")
     rows = cursor.fetchall()
 
-    # Sort by word count in ascending order
-    # Assuming x[3] is the word count column
-    rows.sort(key=lambda x: x[3+o], reverse=True)
-    bottom_articles = rows[:length]
+    rows.sort(key=lambda x: x[3+0], reverse=True if typ == 0 else False)
+    top_articles = rows[:length]
     text = ""
-    for r, row in enumerate(bottom_articles):
+    for r, row in enumerate(top_articles):
         date = row[1]
         word_count = row[3]
         index = row[2]
         title = get_title(date, index, topic, new)
-        text += f"{emojis[r+2]}️: {date}\n"
+        text += f"{emojis[r+1]}️: {date}-{index}\n"
         text += f"{title}\n"
         text += f"{options[o]}: {word_count}\n\n"
 
     conn.close()
-    path = f"Output/Wordcount/Extrema/{new}/{options[o]}/"
+    path = f"Output/Sentiment/Extrema/{options[o]}/{new}/"
     os.makedirs(path, exist_ok=True)
-    with open(f"{path}Minima-{topic}.txt", "w", encoding="utf-8") as file:
-        file.write(f"{emojis[0]} Bottom {length} Minima for {
-                   topic.capitalize()}\n\n\n")
-        file.write(text)
-
-
-def get_minima(topic, length, new, o):
-    conn = sqlite3.connect(f"Analysing/Sentimental/{new}.db")
-    cursor = conn.cursor()
-    cursor.execute(f"SELECT * FROM {topic}")
-    rows = cursor.fetchall()
-
-    # Sort by word count in ascending order
-    rows.sort(key=lambda x: x[3+o])  # Assuming x[3] is the word count column
-    bottom_articles = rows[:length]
-    text = ""
-    for r, row in enumerate(bottom_articles):
-        date = row[1]
-        word_count = row[3]
-        index = row[2]
-        title = get_title(date, index, topic, new)
-        text += f"{emojis[r+2]}️: {date}\n"
-        text += f"{title}\n"
-        text += f"{options[o]}: {word_count}\n\n"
-
-    conn.close()
-    path = f"Output/Wordcount/Extrema/{new}/{options[o]}/"
-    os.makedirs(path, exist_ok=True)
-    with open(f"{path}Minima-{topic}.txt", "w", encoding="utf-8") as file:
-        file.write(f"{emojis[0]} Bottom {length} Minima for {
+    with open(f"{path}{typen[typ]}-{topic}.txt", "w", encoding="utf-8") as file:
+        file.write(f"{emojis[0]} Top {length} {typen[typ]} for {
                    topic.capitalize()}\n\n\n")
         file.write(text)
 
@@ -78,8 +48,9 @@ length = 5
 topics = ["Politics", "World", "Opinion"]
 news = ["NYT", "Guardian"]
 options = ["polarity", "subjectivity"]
+typen = ["Maxima", "Minima"]
 for new in news:
     for topic in topics:
         for o in range(len(options)):
-            get_maxima(topic.lower(), length, new, o)
-            get_minima(topic.lower(), length, new, o)
+            for i in range(len(typen)):
+                get_extrema(topic.lower(), length, new, o, i)

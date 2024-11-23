@@ -32,9 +32,12 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
             X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
             y = Dataframe[name_lower]
             model = LinearRegression()
-            model.fit(X, y)
-            y_pred = model.predict(X)
-            plt.plot(Dataframe.index, y_pred, color=color_reg)
+            try:
+                model.fit(X, y)
+                y_pred = model.predict(X)
+                plt.plot(Dataframe.index, y_pred, color=color_reg)
+            except:
+                print("Could not fit regression model")
         else:
             raise KeyError(
                 f"'{name}' column is missing in the DataFrame for regression")
@@ -110,11 +113,12 @@ def multiple(all_rows, all_columns, name, all_titles, drop_columns, colors, colo
                 X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
                 y = Dataframe[name.lower()]
                 model = LinearRegression()
-                model.fit(X, y)
-                y_pred = model.predict(X)
-
-                # Plot the regression line
-                plt.plot(Dataframe.index, y_pred, color=colors_reg[i])
+                try:
+                    model.fit(X, y)
+                    y_pred = model.predict(X)
+                    plt.plot(Dataframe.index, y_pred, color=colors_reg[i])
+                except:
+                    print("Could not fit regression model")
             else:
                 print(f"'{name}' column is missing in the DataFrame for regression in dataset {
                       all_titles[i]}")

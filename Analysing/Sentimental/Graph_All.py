@@ -2,17 +2,17 @@ import os
 import sqlite3
 from Analysing.Plotting import graph
 
-connection = sqlite3.connect("Analysing/Sentimental/sentiment.db")
-cursor = connection.cursor()
 
 title = "All"
 color = "#339933"
 color_reg = "#000"
 topics = ["Politics", "World", "Opinion"]
 options = ['polarity', 'subjectivity']
-
 news = ["NYT", "Guardian"]
+
 for new in news:
+    connection = sqlite3.connect(f"Analysing/Sentimental/{new}.db")
+    cursor = connection.cursor()
     for o, option in enumerate(options):
         rows = []
         for i, topic in enumerate(topics):
