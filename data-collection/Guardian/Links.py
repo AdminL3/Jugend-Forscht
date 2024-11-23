@@ -4,6 +4,9 @@ import datetime
 import requests
 import config  # Your API key stored here
 
+start_year = 2020
+amount_years = 2
+
 
 def fetch_guardian_links(year, month):
 
@@ -42,15 +45,11 @@ def fetch_guardian_links(year, month):
         except requests.exceptions.RequestException as e:
             print(f"Error fetching data for {year}-{month:02}: {e}")
             time.sleep(7)  # Wait before retrying
-            break
+            exit(1)
     return all_links
 
 
 GUARDIAN_API_KEY = config.GUARDIAN_API_KEY
-
-
-start_year = 2020
-amount_years = 2
 
 # Define the Guardian API base URL
 BASE_URL = "https://content.guardianapis.com/search"

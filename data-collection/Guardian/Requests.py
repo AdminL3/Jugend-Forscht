@@ -29,8 +29,8 @@ headers = {
 error_html = "<head><title>429 Too Many Requests</title></head>"
 
 start_year = 2020
-amount_years = 1
-topics = ["politics"]
+amount_years = 2
+topics = ["politics", "world", "opinion"]
 start_month = 1
 amount_month = 12
 last_date = 0
@@ -84,7 +84,7 @@ for topic in topics:
                         print(f"Success {output_file}")
                     else:
                         print(f"Error 429: {url}")
-                        time.sleep(5)
+                        time.sleep(2)
 
                 except requests.exceptions.RequestException as e:
                     print(f"Error fetching webpage: {e}")

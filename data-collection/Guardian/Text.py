@@ -16,7 +16,7 @@ def get_text_from_html(html):
         paragraphs = target_div.find_all('p')
     except:
         return ""
-    text_content = ""
+    text_content = soup.title.get_text() + "\n"
     for p in paragraphs:
         text_content += p.get_text() + "\n"
 
@@ -66,7 +66,6 @@ for topic in topics:
 
                 with open(file, 'r', encoding='utf-8') as f:
                     html_content = f.read()
-
                 article_text = get_text_from_html(html_content)
                 if article_text != "":
                     # Remove the first line if it is empty

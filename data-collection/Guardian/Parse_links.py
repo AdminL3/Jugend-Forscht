@@ -3,7 +3,7 @@ import os
 start_year = 2020
 amount_years = 2
 start_month = 1
-amount_months = 10
+amount_months = 12
 topics = ["politics", "world", "opinion"]
 titles = ["Politics", "World", "commentisfree"]
 for i in range(amount_years):

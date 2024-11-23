@@ -33,12 +33,12 @@ start_year = 2020
 amount_years = 2
 topics = ["politics", "world", "opinion"]
 
-data = []
 news = ["NYT", "Guardian"]
 for n, new in enumerate(news):
     print(new)
     conn = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
     cursor = conn.cursor()
+    data = []
     for topic in topics:
         print(topic)
         cursor.execute(f'''
