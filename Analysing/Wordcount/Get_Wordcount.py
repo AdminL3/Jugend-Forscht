@@ -28,63 +28,65 @@ def word_count(text):
     return str(word_count)
 
 
-conn = sqlite3.connect("Analysing\Wordcount\wordcount.db")
-cursor = conn.cursor()
 start_year = 2020
 amount_years = 2
 topics = ["politics", "world", "opinion"]
 
 data = []
-for topic in topics:
-    print(topic)
-    cursor.execute(f'''
-        CREATE TABLE IF NOT EXISTS {topic} (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            date TEXT NOT NULL,
-            idx INTEGER NOT NULL,
-            wordcount INTEGER NOT NULL
-        )
-    ''')
-    conn.commit()
-    for i in range(amount_years):
-        year = start_year + i
-        print(year)
-        for j in range(12):
-            numbers = [str(h).zfill(2) for h in range(1, 13)]
-            month = numbers[j]
-            print(month)
-            files_path = f"data/NYT/articles/{topic}/{year}/month{month}/"
-            days = []
-            if os.path.exists(files_path):
-                for item in os.listdir(files_path):
-                    item_path = os.path.join(files_path, item)
-                    days.append(item_path)
-            else:
-                print(f"Folder does not exist: {files_path}")
+news = ["NYT", "Guardian"]
+for n, new in enumerate(news):
+    print(new)
+    conn = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
+    cursor = conn.cursor()
+    for topic in topics:
+        print(topic)
+        cursor.execute(f'''
+            CREATE TABLE IF NOT EXISTS {topic} (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                date TEXT NOT NULL,
+                idx INTEGER NOT NULL,
+                wordcount INTEGER NOT NULL
+            )
+        ''')
+        conn.commit()
+        for i in range(amount_years):
+            year = start_year + i
+            print(year)
+            for j in range(12):
+                numbers = [str(h).zfill(2) for h in range(1, 13)]
+                month = numbers[j]
+                print(month)
+                files_path = f"data/{new}/articles/{topic}/{year}/month{month}/"
+                days = []
+                if os.path.exists(files_path):
+                    for item in os.listdir(files_path):
+                        item_path = os.path.join(files_path, item)
+                        days.append(item_path)
+                else:
+                    print(f"Folder does not exist: {files_path}")
 
-            files = []
-            for day in days:
-                for file in os.listdir(day):
-                    if file.endswith('.txt'):
-                        files.append(os.path.join(day, file))
+                files = []
+                for day in days:
+                    for file in os.listdir(day):
+                        if file.endswith('.txt'):
+                            files.append(os.path.join(day, file))
 
-            for file in files:
-                with open(file, 'r', encoding='utf-8') as f:
-                    article_text = f.read()
-                path = file.replace("\\", "/")
+                for file in files:
+                    with open(file, 'r', encoding='utf-8') as f:
+                        article_text = f.read()
+                    path = file.replace("\\", "/")
 
-                date = get_date(path)
-                index = get_idx(path)
-                word_counter = word_count(article_text)
+                    date = get_date(path)
+                    index = get_idx(path)
+                    word_counter = word_count(article_text)
 
-                data.append((date, word_counter, index))
-# Step 3: Insert sample data into the table
-    # print(data)
-    cursor.executemany(
-        f"INSERT INTO {topic} (date, wordcount, idx) VALUES (?, ?, ?)", data)
-    conn.commit()
-    data = []
+                    data.append((date, word_counter, index))
+    # Step 3: Insert sample data into the table
+        # print(data)
+        cursor.executemany(
+            f"INSERT INTO {topic} (date, wordcount, idx) VALUES (?, ?, ?)", data)
+        conn.commit()
+        data = []
 
-
-# Step 4: Close the connection
-conn.close()
+    # Step 4: Close the connection
+    conn.close()

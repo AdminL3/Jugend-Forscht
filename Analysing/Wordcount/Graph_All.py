@@ -17,5 +17,7 @@ for topic in topics:
 
 columns = [column[0] for column in cursor.description]
 
+output = "Output/Wordcount/All.png"
+
 graph(rows, columns, "wordcount", "Wordcount", "Wordcount of all three topics", ["id", "idx"],
-      color, color_reg, True, 2, "Analysing/Wordcount/output/All.png")
+      color, color_reg, True, 2, output)
