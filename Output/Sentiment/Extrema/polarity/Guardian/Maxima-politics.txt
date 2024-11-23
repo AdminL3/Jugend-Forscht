@@ -1,0 +1,23 @@
+📊 Top 5 Maxima for Politics
+
+
+1️⃣️: 2020-09-28-5
+Letter: Lord O’Neill of Clackmannan obituary | Tom Pendry | The Guardian
+polarity: 0.5666666666666668
+
+2️⃣️: 2020-03-09-3
+Boris and Boudicca: a perfect match? | Letters | The Guardian
+polarity: 0.37884615384615383
+
+3️⃣️: 2020-05-14-3
+Letter: Lord Graham of Edmonton obituary | Mary O’Sullivan | The Guardian
+polarity: 0.3499999999999999
+
+4️⃣️: 2020-01-04-4
+David Lammy rules himself out of Labour leadership race | David Lammy | The Guardian
+polarity: 0.3315644654088051
+
+5️⃣️: 2020-03-18-3
+A beacon for Europe | Letters | The Guardian
+polarity: 0.2982202982202982
+

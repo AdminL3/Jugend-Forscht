@@ -1,0 +1,23 @@
+📊 Top 5 Minima for World
+
+
+1️⃣️: 2020-02-18-16
+The scene of the blaze in the Camp Hill suburb of Brisbane, Australia, on Wednesday.
+polarity: -0.17894736842105263
+
+2️⃣️: 2020-12-21-11
+A police cordon around the truck where the bodies were found in Grays, England, in 2019.
+polarity: -0.1736111111111111
+
+3️⃣️: 2021-10-15-12
+An earlier version of this article misspelled the suspect's middle name. He is Espen Andersen Brathen, not Espen Anderson Brathen. The error was repeated in a subheading.
+polarity: -0.17334455667788995
+
+4️⃣️: 2021-04-28-2
+Richard Pusey, who filmed the scene of a truck crash involving four police officers, in Melbourne, Australia, last year.
+polarity: -0.16024242424242424
+
+5️⃣️: 2020-11-18-29
+A soldier patrolling a mining area in the village of Buenos Aires last year after a crackdown on illegal mining.
+polarity: -0.15265827922077918
+

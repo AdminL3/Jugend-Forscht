@@ -1,0 +1,23 @@
+📊 Top 5 Minima for Politics
+
+
+1️⃣️: 2020-05-24-9
+Anger across Britain at Dominic Cummings's 260-mile lockdown trek | Dominic Cummings | The Guardian
+subjectivity: -0.19065371762740183
+
+2️⃣️: 2020-01-19-5
+PM to address US diplomats’ driving after near miss at base where Harry Dunn died | UK news | The Guardian
+subjectivity: -0.1780911680911681
+
+3️⃣️: 2020-02-08-3
+Bids on Tracy Brabin's off-the-shoulder dress pass £14,000 | Women in politics | The Guardian
+subjectivity: -0.13452380952380955
+
+4️⃣️: 2020-02-23-5
+George Eustice refuses to guarantee ban on chlorinated chicken | Trade policy | The Guardian
+subjectivity: -0.10590119524081784
+
+5️⃣️: 2020-01-02-4
+Chef wrongly branded sex offender faces removal from UK | Immigration and asylum | The Guardian
+subjectivity: -0.09510073260073258
+
