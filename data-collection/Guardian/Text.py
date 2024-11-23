@@ -3,16 +3,19 @@ import re
 from bs4 import BeautifulSoup
 
 start_year = 2020
-amount_years = 2
+amount_years = 1
 
 topics = ["politics"]
 
 
 def get_text_from_html(html):
-    # input("Press Enter to continue...")
     soup = BeautifulSoup(html, 'html.parser')
 
-    paragraphs = soup.find_all("p", class_="css-at9mc1 evys1bk0")
+    try:
+        target_div = soup.find('div', id="maincontent")
+        paragraphs = target_div.find_all('p')
+    except:
+        return ""
     text_content = ""
     for p in paragraphs:
         text_content += p.get_text() + "\n"
@@ -28,8 +31,7 @@ def get_output_path(path):
     index = date[3]
     day = date[2]
     month = date[1]
-    year = set[3]
-    index.replace(" ", "")
+    year = set[4]
     path = f"data/Guardian/articles/{topic}/{
         year}/month{month}/day{day}/"
     filename = f"{index}.txt"
@@ -45,6 +47,7 @@ for topic in topics:
             numbers = [str(h).zfill(2) for h in range(1, 13)]
             month = numbers[j]
             print(month)
+
             files_path = f"data/Guardian/source/{topic}/{year}/month{month}/"
             files = []
             if os.path.exists(files_path):
@@ -65,16 +68,11 @@ for topic in topics:
                     html_content = f.read()
 
                 article_text = get_text_from_html(html_content)
-
-                print(article_text)
-                print(file)
-                print(output_file_path)
-                # input("Press Enter to continue...")
-
-                # Remove the first line if it is empty
-                lines = article_text.split('\n')
-                if lines[0].strip() == '':
-                    article_text = '\n'.join(lines[1:])
-
-                with open(output_file_path, "w", encoding="utf-8") as f:
-                    f.write(article_text)
+                if article_text != "":
+                    # Remove the first line if it is empty
+                    lines = article_text.split('\n')
+                    if lines[0].strip() == '':
+                        article_text = '\n'.join(lines[1:])
+                    print(output_file_path)
+                    with open(output_file_path, "w", encoding="utf-8") as f:
+                        f.write(article_text)
