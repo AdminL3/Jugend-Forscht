@@ -75,3 +75,4 @@ for i in range(amount_years):
         with open(file_path + file_name, "w", encoding="utf-8") as file:
             for link in all_links:
                 file.write(link + "\n")
+        print(f"Saved {len(all_links)} links to {file_path + file_name}")

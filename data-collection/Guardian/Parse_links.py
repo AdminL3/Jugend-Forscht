@@ -22,7 +22,6 @@ for i in range(amount_years):
                 with open(file_path.replace("all", topic) + file_name, "w", encoding="utf-8") as file:
                     for link in all_links:
                         if (titles[t].lower() in link.lower()):
-                            file.write(link + "\n")
                             parts = link.split("/")
                             if titles[t].lower() == parts[3] or titles[t].lower() == parts[4]:
                                 file.write(link + "\n")

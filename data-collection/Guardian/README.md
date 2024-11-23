@@ -1,14 +1,14 @@
 # Data Collection from the New York Times
 
-## Step 1: Get Links from **NYT API**
+## Step 1: Get Links from **Guradian API**
 
-This step involves collecting article links from the New York Times (NYT) API. You can find the code for this step in the [`Get_Links.py`](https://github.com/AdminL3/Jugend-Forscht/blob/main/data-collection/Get_Links.py) file.
+This step involves collecting article links from the New York Times (NYT) API. You can find the code for this step in the [`Links.py`](Links.py) file.
 
 1. **Get NYT API Key**:
 
-   - Create a developer account on the [NYT Developer Portal](https://developer.nytimes.com/).
-   - Go to the [NYT Apps](https://developer.nytimes.com/my-apps) page.
-   - Get your API key.
+   - Create a developer account on the [NYT Developer Portal](https://open-platform.theguardian.com/).
+   - Register for an API key.
+   - You will receive it via email.
 
 2. **Use API**:
 
