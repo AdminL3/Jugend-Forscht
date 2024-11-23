@@ -1,71 +1,79 @@
-from pydoc import text
+import os
 import sqlite3
+emojis = ["📊", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣",
+          "6️⃣", "7️⃣", "8️⃣", "9️⃣", "🔟",
+          "1️⃣1️⃣", "1️⃣2️⃣", "1️⃣3️⃣", "1️⃣4️⃣", "1️⃣5️⃣",
+          "1️⃣6️⃣", "1️⃣7️⃣", "1️⃣8️⃣", "1️⃣9️⃣", "2️⃣0️⃣"
+          ]
 
 
-def get_title(date, topic, new):
+def get_title(date, index, topic, new):
     parts = date.split("-")
     path = f"data/{new}/articles/{topic}/{parts[0]
-                                          }/month{parts[1]}/day{parts[2]}/{parts[3]}.txt"
+                                          }/month{parts[1]}/day{parts[2]}/{index}.txt"
     with open(path, "r", encoding="utf-8") as file:
         return file.read().splitlines()[0]
 
 
-def get_maxima(topic, length):
-    text = ""
-    connection = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
-    cursor = connection.cursor()
-
-    cursor.execute(f"SELECT * FROM {topic};")
+def get_maxima(topic, length, new):
+    conn = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT * FROM {topic}")
     rows = cursor.fetchall()
 
-    text += f"{topic.upper()}:\n\n"
+    rows.sort(key=lambda x: x[1], reverse=True)
+    top_articles = rows[:length]
+    text = ""
+    for r, row in enumerate(top_articles):
+        date = row[1]
+        word_count = row[3]
+        index = row[2]
+        title = get_title(date, index, topic, new)
+        text += f"{emojis[r+2]}️: {date}\n"
+        text += f"{title}\n"
+        text += f"Wordcount: {word_count}\n\n"
 
-    word_counts = [(row[1], row[2], row[3]) for row in rows]
-    word_counts.sort(key=lambda x: x[2], reverse=True)
-
-    for element in word_counts[:length]:
-        identifier = f"{element[0]}-{element[1]}"
-        title = get_title(identifier, topic, new)
-        text += f"Date: {identifier}\nWord count: {
-            element[2]}\nTitle: {title}\n\n\n"
-    text += "\n"
-    return text
+    conn.close()
+    path = f"Output/Wordcount/Extrema/{new}/"
+    os.makedirs(path, exist_ok=True)
+    with open(f"{path}Maxima-{topic}.txt", "w", encoding="utf-8") as file:
+        file.write(f"{emojis[0]} Top {length} Maxima for {
+                   topic.capitalize()}\n\n\n")
+        file.write(text)
 
 
 def get_minima(topic, length, new):
-    text = ""
-    connection = sqlite3.connect("Analysing/Wordcount/{new}.db")
-    cursor = connection.cursor()
-
-    cursor.execute(f"SELECT * FROM {topic};")
+    conn = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
+    cursor = conn.cursor()
+    cursor.execute(f"SELECT * FROM {topic}")
     rows = cursor.fetchall()
 
-    text += f"{topic.upper()}:\n\n"
+    # Sort by word count in ascending order
+    rows.sort(key=lambda x: x[3])  # Assuming x[3] is the word count column
+    bottom_articles = rows[:length]
+    text = ""
+    for r, row in enumerate(bottom_articles):
+        date = row[1]
+        word_count = row[3]
+        index = row[2]
+        title = get_title(date, index, topic, new)
+        text += f"{emojis[r+2]}️: {date}\n"
+        text += f"{title}\n"
+        text += f"Wordcount: {word_count}\n\n"
 
-    word_counts = [(row[1], row[2], row[3]) for row in rows]
-    word_counts.sort(key=lambda x: x[2])
-
-    for element in word_counts[:length]:
-        identifier = f"{element[0]}-{element[1]}"
-        title = get_title(identifier, topic, new)
-        text += f"Date: {identifier}\nWord count: {
-            element[2]}\nTitle: {title}\n\n\n"
-    text += "\n"
-    return text
+    conn.close()
+    path = f"Output/Wordcount/Extrema/{new}/"
+    os.makedirs(path, exist_ok=True)
+    with open(f"{path}Minima-{topic}.txt", "w", encoding="utf-8") as file:
+        file.write(f"{emojis[0]} Bottom {length} Minima for {
+                   topic.capitalize()}\n\n\n")
+        file.write(text)
 
 
 length = 5
 topics = ["Politics", "World", "Opinion"]
-options = ["Maxima", "Minima"]
 news = ["NYT", "Guardian"]
-for n, new in enumerate(news):
-    output = f"Output/Wordcount/{new}/"
-    for i, option in enumerate(options):
-        text = f"{option}:\n\n"
-        for topic in topics:
-            if i == 0:
-                text += get_maxima(topic.lower(), length, new)
-            else:
-                text += get_minima(topic.lower(), length, new)
-        with open(f"{output}{option}.txt", "w", encoding="utf-8") as file:
-            file.write(text)
+for new in news:
+    for topic in topics:
+        get_maxima(topic.lower(), length, new)
+        get_minima(topic.lower(), length, new)

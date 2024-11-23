@@ -10,10 +10,11 @@ def get_idx(path):
 
 
 def get_date(path):
+    print(path)
     path_parts = path.split('/')
-    year = path_parts[3]
-    month = path_parts[4][5:]
-    day = path_parts[5][3:]
+    year = path_parts[4]
+    month = path_parts[5][5:]
+    day = path_parts[6][3:]
     return f"{year}-{month}-{day}"
 
 

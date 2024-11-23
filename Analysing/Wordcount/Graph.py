@@ -1,3 +1,4 @@
+import os
 import sqlite3
 from Analysing.Plotting import graph
 
@@ -18,7 +19,9 @@ for n, new in enumerate(news):
         cursor.execute(f"SELECT * FROM {topic};")
         rows = cursor.fetchall()
 
-        columns = [column[0] for column in cursor.description]
+        output = f"Output/Wordcount/Graphs/{new}/{topic}.png"
+        os.makedirs(os.path.dirname(output), exist_ok=True)
 
+        columns = [column[0] for column in cursor.description]
         graph(rows, columns, "wordcount", f"{topic} Wordcount", f"Wordcount of {topic}", ["id", "idx"],
-              color, regression_color, True, 2, f"Output/{new}/{topic}.png")
+              color, regression_color, True, 2, output)
