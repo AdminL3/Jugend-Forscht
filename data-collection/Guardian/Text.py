@@ -73,6 +73,10 @@ for topic in topics:
                     lines = article_text.split('\n')
                     if lines[0].strip() == '':
                         article_text = '\n'.join(lines[1:])
+
                     print(output_file_path)
                     with open(output_file_path, "w", encoding="utf-8") as f:
                         f.write(article_text)
+                else:
+                    print(f"Error in {file}")
+                    print("Skipping...")

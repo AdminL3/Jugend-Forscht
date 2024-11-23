@@ -26,6 +26,7 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
 }
 
+error_html = "<head><title>429 Too Many Requests</title></head>"
 
 start_year = 2020
 amount_years = 1
@@ -77,9 +78,13 @@ for topic in topics:
                 try:
                     response = requests.get(url)
                     page_source = response.text
-                    with open(output_file, "w", encoding="utf-8") as f:
-                        f.write(page_source)
-                    print(f"Success {output_file}")
+                    if error_html not in page_source:
+                        with open(output_file, "w", encoding="utf-8") as f:
+                            f.write(page_source)
+                        print(f"Success {output_file}")
+                    else:
+                        print(f"Error 429: {url}")
+                        time.sleep(5)
 
                 except requests.exceptions.RequestException as e:
                     print(f"Error fetching webpage: {e}")
