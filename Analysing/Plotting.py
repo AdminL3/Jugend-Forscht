@@ -20,6 +20,7 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
     else:
         Dataframe['date'] = pd.to_datetime(
             Dataframe[['year', 'month']].assign(day=1))
+        Dataframe.set_index('date', inplace=True)
 
     # Plot the data
     plt.plot(Dataframe.index,
@@ -43,6 +44,9 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
                 f"'{name}' column is missing in the DataFrame for regression")
 
     # Customize plot labels and title
+    plt.xticks(rotation=25)
+    plt.subplots_adjust(left=0.1, right=0.95, top=0.9, bottom=0.2)
+
     plt.xlabel("Date")
     plt.ylabel(name.capitalize())
     legend = [title1, "Regression Line"] if regression else [title1]
@@ -123,7 +127,9 @@ def multiple(all_rows, all_columns, name, all_titles, drop_columns, colors, colo
                 print(f"'{name}' column is missing in the DataFrame for regression in dataset {
                       all_titles[i]}")
 
-    # Create legends for the plot
+    # Customize plot labels and title
+    plt.xticks(rotation=25)
+    plt.subplots_adjust(left=0.1, right=0.95, top=0.9, bottom=0.2)
     legend1 = [f"{name.capitalize()} for {topic}" for topic in all_titles]
     legend2 = [f"Regression Line for {topic}" for topic in all_titles]
     plt.xlabel("Date")

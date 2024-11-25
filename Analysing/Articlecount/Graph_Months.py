@@ -1,3 +1,4 @@
+import os
 import sqlite3
 from Analysing.Plotting import graph, multiple
 
@@ -17,9 +18,11 @@ for i in range(len(topics)):
     rows = cursor.fetchall()
 
     columns = [column[0] for column in cursor.description]
+    output = f"Output/Articlecount/Month/{topic}.png"
+    os.makedirs(os.path.dirname(output), exist_ok=True)
 
     graph(rows, columns, "total_count", f"{topic} Articlecount", f"Articlecount of {topic}", ["id", "topic_id"],
-          color, regression_color, True, 2, f"Analysing/Articlecount/output/Month/{topic}.png")
+          color, regression_color, True, 2, output)
 
 
 # Together
@@ -35,7 +38,9 @@ for i, topic in enumerate(topics):
 all_titles = ["Politics", "World", "Opinion"]
 drop_columns = ["id", "topic_id"]
 size = 2
-output = "Analysing/Articlecount/output/Month/Together.png"
+
+output = "Output/Articlecount/Month/Together.png"
+os.makedirs(os.path.dirname(output), exist_ok=True)
 name = "total_count"
 regression = True
 
