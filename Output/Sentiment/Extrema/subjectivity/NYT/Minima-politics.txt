@@ -5,19 +5,19 @@
 Kamala Harris drew immediate attacks from President Trump and other Republicans. 
 subjectivity: -0.22934782608695653
 
-2️⃣️: 2020-08-13-6
-Kamala Harris drew immediate attacks from President Trump and other Republicans. 
-subjectivity: -0.22934782608695653
-
-3️⃣️: 2020-08-13-6
-Kamala Harris drew immediate attacks from President Trump and other Republicans. 
-subjectivity: -0.22934782608695653
-
-4️⃣️: 2021-08-05-5
+2️⃣️: 2021-08-05-5
 The naval base at Guantánamo Bay has managed to avoid any major coronavirus outbreaks so far, but has recently detected seven cases among residents and visitors. Members of the military and their relatives, base workers and journalists debarked from a ferry at Guantánamo Bay in 2019.
 subjectivity: -0.1827689678742312
 
-5️⃣️: 2021-08-05-5
-The naval base at Guantánamo Bay has managed to avoid any major coronavirus outbreaks so far, but has recently detected seven cases among residents and visitors. Members of the military and their relatives, base workers and journalists debarked from a ferry at Guantánamo Bay in 2019.
-subjectivity: -0.1827689678742312
+3️⃣️: 2021-06-10-5
+The Supreme Court in Washington. Justice Elena Kagan, writing for four justices, said the law excluded crimes in which the defendant had merely been reckless.
+subjectivity: -0.17021276595744678
+
+4️⃣️: 2021-11-26-2
+Because of an editing error, an earlier version of a picture caption with this article misstated the name of the radio station on Guantánamo Bay. It is known as Radio GTMO, not Radio Gitmo.
+subjectivity: -0.15162574604882312
+
+5️⃣️: 2021-05-20-10
+“Of all the good that the law can do, we have to change our hearts,” President Biden said at the signing ceremony at the White House on Thursday. “Hate can be given no safe harbor in America.”
+subjectivity: -0.1490194149285059
 

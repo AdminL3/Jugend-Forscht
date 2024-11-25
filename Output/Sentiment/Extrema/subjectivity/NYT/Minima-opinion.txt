@@ -5,19 +5,19 @@
 Mr. Russell is an artist living and working in Indianapolis.
 subjectivity: -0.65
 
-2️⃣️: 2021-10-30-7
-Mr. Russell is an artist living and working in Indianapolis.
-subjectivity: -0.65
-
-3️⃣️: 2021-10-30-7
-Mr. Russell is an artist living and working in Indianapolis.
-subjectivity: -0.65
-
-4️⃣️: 2020-12-30-11
+2️⃣️: 2020-12-30-11
 Mr. 
 subjectivity: -0.25
 
-5️⃣️: 2020-12-30-11
-Mr. 
-subjectivity: -0.25
+3️⃣️: 2021-01-19-11
+Seeking Pardons as Trump Leaves Office
+subjectivity: -0.23099999999999998
+
+4️⃣️: 2021-01-03-1
+An Empathy Lesson for Teens Amid a Pandemic
+subjectivity: -0.2147435897435897
+
+5️⃣️: 2020-01-08-9
+A Brief History of John Baldessari
+subjectivity: -0.20946969696969697
 

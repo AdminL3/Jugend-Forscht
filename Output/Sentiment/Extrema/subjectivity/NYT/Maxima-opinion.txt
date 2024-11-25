@@ -5,19 +5,19 @@
 ‘Senators, Do Your Duty’
 subjectivity: 0.4148148148148148
 
-2️⃣️: 2021-02-08-8
-‘Senators, Do Your Duty’
-subjectivity: 0.4148148148148148
-
-3️⃣️: 2021-02-08-8
-‘Senators, Do Your Duty’
-subjectivity: 0.4148148148148148
-
-4️⃣️: 2021-11-09-8
+2️⃣️: 2021-11-09-8
 Co-Create the Soundtrack of our Moment
 subjectivity: 0.3053719008264463
 
-5️⃣️: 2021-11-09-8
-Co-Create the Soundtrack of our Moment
-subjectivity: 0.3053719008264463
+3️⃣️: 2020-08-11-12
+Former Vice President Joseph R. Biden Jr. committed in March to choosing a woman as his running mate.
+subjectivity: 0.3023445304695305
+
+4️⃣️: 2021-01-23-1
+Mr. Methven is a novelist.
+subjectivity: 0.29715617715617715
+
+5️⃣️: 2021-05-12-10
+Adversity and the College Admissions Process
+subjectivity: 0.2842447916666666
 
