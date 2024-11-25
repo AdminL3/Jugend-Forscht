@@ -5,19 +5,19 @@
 Letter: Lord O’Neill of Clackmannan obituary | Tom Pendry | The Guardian
 subjectivity: 0.5666666666666668
 
-2️⃣️: 2020-03-09-3
-Boris and Boudicca: a perfect match? | Letters | The Guardian
-subjectivity: 0.37884615384615383
+2️⃣️: 2020-09-28-5
+Letter: Lord O’Neill of Clackmannan obituary | Tom Pendry | The Guardian
+subjectivity: 0.5666666666666668
 
-3️⃣️: 2020-05-14-3
-Letter: Lord Graham of Edmonton obituary | Mary O’Sullivan | The Guardian
-subjectivity: 0.3499999999999999
+3️⃣️: 2020-09-28-5
+Letter: Lord O’Neill of Clackmannan obituary | Tom Pendry | The Guardian
+subjectivity: 0.5666666666666668
 
-4️⃣️: 2020-01-04-4
-David Lammy rules himself out of Labour leadership race | David Lammy | The Guardian
-subjectivity: 0.3315644654088051
+4️⃣️: 2021-07-02-2
+‘Labour’s coming home’: Keir Starmer slogan harks back to happier times | Labour | The Guardian
+subjectivity: 0.38
 
-5️⃣️: 2020-03-18-3
-A beacon for Europe | Letters | The Guardian
-subjectivity: 0.2982202982202982
+5️⃣️: 2021-07-02-2
+‘Labour’s coming home’: Keir Starmer slogan harks back to happier times | Labour | The Guardian
+subjectivity: 0.38
 

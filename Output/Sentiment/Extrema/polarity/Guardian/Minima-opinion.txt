@@ -1,3 +1,23 @@
 📊 Top 5 Minima for Opinion
 
 
+1️⃣️: 2021-06-09-11
+Sadly there is too much hate in the world. Why not save yours for the ultrawealthy! | First Dog on the Moon | The Guardian
+polarity: -0.4166666666666667
+
+2️⃣️: 2021-06-09-11
+Sadly there is too much hate in the world. Why not save yours for the ultrawealthy! | First Dog on the Moon | The Guardian
+polarity: -0.4166666666666667
+
+3️⃣️: 2020-03-19-11
+Coronavirus has made things crazy and scary and they were already crazy and scary before! | First Dog on the Moon | The Guardian
+polarity: -0.41500000000000004
+
+4️⃣️: 2020-03-19-11
+Coronavirus has made things crazy and scary and they were already crazy and scary before! | First Dog on the Moon | The Guardian
+polarity: -0.41500000000000004
+
+5️⃣️: 2020-07-27-14
+The hapless, extremely annoying shock troops of the culture wars are picking a fight about facemasks | First Dog on the Moon | The Guardian
+polarity: -0.3833333333333333
+

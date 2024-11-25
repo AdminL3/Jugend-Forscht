@@ -1,3 +1,23 @@
 📊 Top 5 Minima for World
 
 
+1️⃣️: 2020-06-29-21
+Cox's Bazar refugee camps: where social distancing is impossible | World news | The Guardian
+subjectivity: -0.31666666666666665
+
+2️⃣️: 2020-06-29-21
+Cox's Bazar refugee camps: where social distancing is impossible | World news | The Guardian
+subjectivity: -0.31666666666666665
+
+3️⃣️: 2021-10-14-10
+Norway bow and arrow attack: what we know so far about Kongsberg killings | Norway | The Guardian
+subjectivity: -0.23624338624338626
+
+4️⃣️: 2021-06-08-9
+Relatives of Muslim family killed in truck attack urge Canadians to stand against hate | Canada | The Guardian
+subjectivity: -0.22809523809523807
+
+5️⃣️: 2020-03-02-14
+The Guardian en Europa: nos gustaría contar con tu opinión | World news | The Guardian
+subjectivity: -0.2
+

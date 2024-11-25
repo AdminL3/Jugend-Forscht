@@ -1,3 +1,23 @@
 📊 Top 5 Maxima for Opinion
 
 
+1️⃣️: 2021-01-20-14
+We made it! Happy United States presidential inauguration day everyone! | First Dog on the Moon | The Guardian
+polarity: 0.625
+
+2️⃣️: 2021-06-16-12
+Peanuts! What is going on with nature’s delicious miracle legume? Climate change that’s what | First Dog on the Moon | The Guardian
+polarity: 0.625
+
+3️⃣️: 2021-06-23-10
+Who does Unesco think they are? Listing the Great Barrier Reef as ‘in danger’! After all we have done for it! | First Dog on the Moon | The Guardian
+polarity: 0.625
+
+4️⃣️: 2021-01-20-14
+We made it! Happy United States presidential inauguration day everyone! | First Dog on the Moon | The Guardian
+polarity: 0.625
+
+5️⃣️: 2021-06-16-12
+Peanuts! What is going on with nature’s delicious miracle legume? Climate change that’s what | First Dog on the Moon | The Guardian
+polarity: 0.625
+

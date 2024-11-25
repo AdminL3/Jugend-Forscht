@@ -1,0 +1,6 @@
+data/NYT/articles/politics/2021/month08/day01/
+data/NYT/articles/politics/2021/month12/day25/
+data/NYT/articles/politics/2021/month12/day31/
+data/Guardian/articles/politics/2020/month04/day11/
+data/Guardian/articles/politics/2020/month08/day15/
+data/Guardian/articles/politics/2020/month08/day22/

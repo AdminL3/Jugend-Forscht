@@ -1,3 +1,23 @@
 📊 Top 5 Maxima for World
 
 
+1️⃣️: 2020-03-03-1
+Israel election 2020: latest results | Israel | The Guardian
+polarity: 0.5
+
+2️⃣️: 2020-03-03-1
+Israel election 2020: latest results | Israel | The Guardian
+polarity: 0.5
+
+3️⃣️: 2021-02-08-7
+Moved to tears by a frontline doctor | Letters | The Guardian
+polarity: 0.38181818181818183
+
+4️⃣️: 2020-08-21-5
+The bias of blessings that are blind to love | Letters | The Guardian
+polarity: 0.35359848484848494
+
+5️⃣️: 2020-08-21-5
+The bias of blessings that are blind to love | Letters | The Guardian
+polarity: 0.35359848484848494
+
