@@ -60,22 +60,25 @@ for topic in topics:
                 output_file_path = output[0] + output[1]
 
                 if os.path.exists(output_file_path):
-                    print(
-                        f"File {output_file_path} already exists. Skipping...")
+                    # print(
+                    #     f"File {output_file_path} already exists. Skipping...")
                     continue
 
                 with open(file, 'r', encoding='utf-8') as f:
                     html_content = f.read()
                 article_text = get_text_from_html(html_content)
-                if article_text != "":
-                    # Remove the first line if it is empty
-                    lines = article_text.split('\n')
-                    if lines[0].strip() == '':
-                        article_text = '\n'.join(lines[1:])
 
-                    # print(output_file_path)
-                    with open(output_file_path, "w", encoding="utf-8") as f:
-                        f.write(article_text)
-                else:
+                # check if empty except for the title
+                article_lines = article_text.split('\n')
+                try:
+                    line = article_lines[1].strip()
+                    for i in range(3):
+                        if line == "":
+                            line = article_lines[i+2].strip()
+                        else:
+                            with open(output_file_path, "w", encoding="utf-8") as f:
+                                f.write(article_text)
+                except:
                     print(f"Error in {file}")
+                    print(article_text)
                     print("Skipping...")
