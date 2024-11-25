@@ -19,13 +19,13 @@ def get_text_from_html(html):
 
 def get_output_path(path):
     set = path.split(r'/')
-    topic = set[2]
-    filename = set[5].split(".")[0]
+    topic = set[3]
+    filename = set[6].split(".")[0]
     date = filename.split("_")
     index = date[3]
     day = date[2]
     month = date[1]
-    year = set[3]
+    year = set[4]
     return [f"data/NYT/articles/{topic}/{year}/month{month}/day{day}/", f"{index}.txt"]
 
 

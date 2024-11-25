@@ -35,17 +35,19 @@ start_month = 1
 amount_month = 12
 last_date = 0
 for topic in topics:
-    for i in range(amount_years):
-        year = start_year + i
-        print(year)
-        for i in range(amount_month):
-            month = start_month + i
+    print(topic)
+    for y in range(amount_years):
+        yeaar = start_year + y
+        print(yeaar)
+        for m in range(amount_month):
+            month = start_month + m
             print(month)
             urls_path = f"data/Guardian/links/{
-                topic}/{year}/month{month:02}.txt"
+                topic}/{yeaar}/month{month:02}.txt"
             with open(urls_path, 'r', encoding='utf-8') as file:
                 urls = file.read().splitlines()
             index = 0
+
             for url in urls:
                 info = extract_info(url)
                 if info:
@@ -71,7 +73,8 @@ for topic in topics:
                 os.makedirs(output_dir, exist_ok=True)
                 output_file = os.path.join(output_dir, file_name)
                 if os.path.exists(output_file):
-                    print(f"File {file_name} already exists. Skipping...")
+                    # print(f"File {output_file} already exists. Skipping...")
+                    # print(f"URL: {url}")
                     last_date = date
                     continue
 

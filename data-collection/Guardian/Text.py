@@ -3,9 +3,9 @@ import re
 from bs4 import BeautifulSoup
 
 start_year = 2020
-amount_years = 1
+amount_years = 2
 
-topics = ["politics"]
+topics = ["politics", "world", "opinion"]
 
 
 def get_text_from_html(html):
@@ -73,7 +73,7 @@ for topic in topics:
                     if lines[0].strip() == '':
                         article_text = '\n'.join(lines[1:])
 
-                    print(output_file_path)
+                    # print(output_file_path)
                     with open(output_file_path, "w", encoding="utf-8") as f:
                         f.write(article_text)
                 else:

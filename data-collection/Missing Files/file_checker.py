@@ -9,13 +9,8 @@ month_range = range(1, 13)
 day_range = range(1, 32)
 
 
-files_to_skip = ["politics/2021/month08/day01",
-                 "politics/2021/month12/day25",
-                 "politics/2021/month12/day31"]
-
 missing_dates = []
 for news_source in news:
-    base_dir = f"data/{news}/articles/"
     # Iterate over each topic, year, month, and day
     for topic in topics:
         for year in year_range:
@@ -26,29 +21,20 @@ for news_source in news:
                         date_str = f"{year}_{month:02}_{day:02}"
                         datetime.strptime(date_str, "%Y_%m_%d")
 
-                        # Skip the specific files mentioned
-                        if f"{topic}/{year}/month{month:02}/day{day:02}" in files_to_skip:
-                            continue
-
-                        # Create the directory path to check
-                        dir_path = os.path.join(
-                            base_dir,
-                            topic,
-                            str(year),
-                            f"month{month:02}",
-                            f"day{day:02}"
-                        )
+                        path = f"data/{news_source}/articles/{
+                            topic}/{year}/month{month:02}/day{day:02}"
 
                         # Check if directory exists and contains any files
-                        if not os.path.exists(dir_path) or not os.listdir(dir_path):
+                        if not os.path.exists(path) or not os.listdir(path):
                             missing_dates.append(
-                                f"{topic}/{year}/month{month:02}/day{day:02}"
+                                f"data/{news_source}/articles/{topic}/{
+                                    year}/month{month:02}/day{day:02}/"
                             )
 
                     except ValueError:
                         continue  # Skip invalid dates
 
     # Write missing dates to file
-    with open("data-collection/other/missing_files.txt", "w") as f:
+    with open("data-collection/Missing Files/missing_files.txt", "w") as f:
         for date in missing_dates:
             f.write(date + "\n")
