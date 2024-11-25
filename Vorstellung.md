@@ -74,10 +74,3 @@ Beide gelten als qualitativ hochwertige, einflussreiche Medien. Der globale Verg
 Das Projekt zeigt, wie journalistische Perspektiven und Darstellungsformen sich über die Zeit verändern und welche Muster sich in der Berichterstattung qualitativ hochwertiger Medien erkennen lassen.
 
 ---
-
-\[
-\tan(\theta) = \frac{\text{Gegenkathete}}{\text{Ankathete}}
-\]
-\[
-\tan(60^\circ) = \sqrt{3} \approx 1,732
-\]
