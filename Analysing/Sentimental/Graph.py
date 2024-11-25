@@ -22,7 +22,7 @@ for new in news:
             rows = cursor.fetchall()
             column_names = [col[0] for col in cursor.description]
 
-            output = f"Output/Sentiment/{option}/{new}/Together.png"
+            output = f"Output/Sentiment/{option}/{new}/{topic}.png"
             os.makedirs(os.path.dirname(output), exist_ok=True)
             # Plot using the graph function
             graph(
