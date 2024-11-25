@@ -23,7 +23,7 @@ for n, new in enumerate(news):
     output = f"Output/Wordcount/Graphs/{new}/Together.png"
     os.makedirs(os.path.dirname(output), exist_ok=True)
     name = "wordcount"
-    regression = True
+    regression = False if new == "Guardian" else True
 
     multiple(all_rows, all_columns, name, all_titles, drop_columns,
              colors, colors_reg, regression, size, output)

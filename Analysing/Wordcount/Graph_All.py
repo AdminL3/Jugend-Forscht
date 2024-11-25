@@ -1,3 +1,4 @@
+import os
 import sqlite3
 from Analysing.Plotting import graph
 
@@ -18,6 +19,6 @@ for new in news:
     columns = [column[0] for column in cursor.description]
 
     output = f"Output/Wordcount/Graphs/{new}/All.png"
-
+    os.makedirs(os.path.dirname(output), exist_ok=True)
     graph(rows, columns, "wordcount", "Wordcount", "Wordcount of all three topics", ["id", "idx"],
           color, color_reg, True, 2, output)
