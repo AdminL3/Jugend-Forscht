@@ -71,7 +71,7 @@ Beide gelten als qualitativ hochwertige, einflussreiche Medien. Der globale Verg
 
 ## **Gesellschaftlicher Nutzen**
 
-##### Siehe [Vorstellung](Vorstellung.md)
+##### Siehe [Geselschaftlicher Vorteil](Gesellschaftl.md)
 
 ---
 
