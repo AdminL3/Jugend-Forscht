@@ -69,8 +69,12 @@ Beide gelten als qualitativ hochwertige, einflussreiche Medien. Der globale Verg
 
 ---
 
+## **Gesellschaftlicher Nutzen**
+
+##### Siehe [Vorstellung](Vorstellung.md)
+
+---
+
 ## Fazit:
 
 Das Projekt zeigt, wie journalistische Perspektiven und Darstellungsformen sich über die Zeit verändern und welche Muster sich in der Berichterstattung qualitativ hochwertiger Medien erkennen lassen.
-
----
