@@ -27,21 +27,29 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
              Dataframe[name], 'o', markersize=size, color=color)
 
     # Add regression line if enabled
+    corr_coefficient = None
+    slope = None
     if regression:
         name_lower = name.lower()
         if name_lower in Dataframe.columns:
-            X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
+
+            # Prepare data for regression and correlation
+            # Convert dates to a numeric scale in years instead of nanoseconds
+            X = (Dataframe.index.astype(np.int64) / 1e9 / (60 * 60 * 24 * 365)
+                 ).values.reshape(-1, 1)  # Convert to years
+
             y = Dataframe[name_lower]
+
+            # Calculate correlation coefficient
+            corr_coefficient = np.corrcoef(X.flatten(), y)[0, 1]
+
+            # Fit regression model
             model = LinearRegression()
             try:
                 model.fit(X, y)
                 y_pred = model.predict(X)
                 plt.plot(Dataframe.index, y_pred, color=color_reg)
-
-                # Calculate and display the correlation coefficient
-                # corr_coef, _ = pearsonr(y, y_pred)
-                # plt.gcf().text(0.95, 0.95, f'Correlation: {
-                #     corr_coef:.2f}', fontsize=12, verticalalignment='top', horizontalalignment='right')
+                slope = model.coef_[0]  # Extract the slope
             except:
                 print("Could not fit regression model")
         else:
@@ -56,10 +64,17 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
     plt.ylabel(name.capitalize())
     legend = [title1, "Regression Line"] if regression else [title1]
     plt.legend(legend)
+
+    # Display correlation coefficient and slope on the plot (if calculated)
+    if corr_coefficient is not None:
+        plt.gcf().text(0.93, 0.94, f'Slope: {
+            slope:.0f} (words per year)', fontsize=12, verticalalignment='top', horizontalalignment='right')
+        plt.gcf().text(0.93, 0.98, f"Correlation: {round(
+            corr_coefficient*100, 2)}%", fontsize=12, verticalalignment='top', horizontalalignment='right')
+
     plt.text(0, 1.07, title2, fontsize=14, verticalalignment='top',
              horizontalalignment='left', transform=plt.gca().transAxes)
     plt.savefig(output)
-
     plt.close()
 
 
