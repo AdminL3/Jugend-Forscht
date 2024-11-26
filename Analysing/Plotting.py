@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from pyparsing import col
 from sklearn.linear_model import LinearRegression
+from scipy.stats import pearsonr
 
 
 def graph(rows, column_names, name, title1, title2, drop_columns, color, color_reg, regression, size, output):
@@ -37,6 +37,11 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
                 model.fit(X, y)
                 y_pred = model.predict(X)
                 plt.plot(Dataframe.index, y_pred, color=color_reg)
+
+                # Calculate and display the correlation coefficient
+                # corr_coef, _ = pearsonr(y, y_pred)
+                # plt.gcf().text(0.95, 0.95, f'Correlation: {
+                #     corr_coef:.2f}', fontsize=12, verticalalignment='top', horizontalalignment='right')
             except:
                 print("Could not fit regression model")
         else:
@@ -45,13 +50,14 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
 
     # Customize plot labels and title
     plt.xticks(rotation=25)
-    plt.subplots_adjust(left=0.1, right=0.95, top=0.9, bottom=0.2)
+    plt.subplots_adjust(left=0.15, right=0.95, top=0.9, bottom=0.2)
 
     plt.xlabel("Date")
     plt.ylabel(name.capitalize())
     legend = [title1, "Regression Line"] if regression else [title1]
     plt.legend(legend)
-    plt.title(title2)
+    plt.text(0, 1.07, title2, fontsize=14, verticalalignment='top',
+             horizontalalignment='left', transform=plt.gca().transAxes)
     plt.savefig(output)
 
     plt.close()
@@ -129,7 +135,7 @@ def multiple(all_rows, all_columns, name, all_titles, drop_columns, colors, colo
 
     # Customize plot labels and title
     plt.xticks(rotation=25)
-    plt.subplots_adjust(left=0.1, right=0.95, top=0.9, bottom=0.2)
+    plt.subplots_adjust(left=0.15, right=0.95, top=0.9, bottom=0.2)
     legend1 = [f"{name.capitalize()} for {topic}" for topic in all_titles]
     legend2 = [f"Regression Line for {topic}" for topic in all_titles]
     plt.xlabel("Date")
