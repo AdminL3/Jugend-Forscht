@@ -4,8 +4,8 @@ from Analysing.Plotting import graph
 
 
 title = "All"
-color = "#339933"
-color_reg = "#000"
+color = "#ff33ff"
+color_reg = "#660066"
 topics = ["Politics", "World", "Opinion"]
 options = ['polarity', 'subjectivity']
 news = ["NYT", "Guardian"]
