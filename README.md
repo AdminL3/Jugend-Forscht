@@ -1,6 +1,13 @@
-# Analysing the New York Times Articles
+# Evolution of Words
+## Long-Term Data Analysis of Journalistic Perspectives
 
 This is just an overview over the different steps. Details are linked inside the topics.
+
+
+#### See my [Trello Board](https://trello.com/w/jugend_forscht/)
+
+#### Deutsch? Schau meine [Deutsche Dokumentation](./Dokumentation/) an
+
 
 ## Preparation
 
@@ -16,7 +23,7 @@ Used Packages:
 - Requests
 - Pandas
 - Matplotlib
-- scikit-learn
+- Scikit-learn
 - TextBlob
 - ...
 
