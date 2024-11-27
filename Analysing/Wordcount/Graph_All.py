@@ -20,5 +20,5 @@ for new in news:
 
     output = f"Output/Wordcount/Graphs/{new}/All.png"
     os.makedirs(os.path.dirname(output), exist_ok=True)
-    graph(rows, columns, "wordcount", "Wordcount", "Wordcount of all three topics", ["id", "idx"],
+    graph(rows, columns, "wordcount", "Wordcount", "Wordcount of all topics", ["id", "idx"],
           color, color_reg, True, 2, output)

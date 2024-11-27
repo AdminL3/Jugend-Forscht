@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-from pyparsing import col
 from sklearn.linear_model import LinearRegression
+from scipy.stats import pearsonr
 
 
 def graph(rows, column_names, name, title1, title2, drop_columns, color, color_reg, regression, size, output):
@@ -27,16 +27,29 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
              Dataframe[name], 'o', markersize=size, color=color)
 
     # Add regression line if enabled
+    corr_coefficient = None
+    slope = None
     if regression:
         name_lower = name.lower()
         if name_lower in Dataframe.columns:
-            X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
+
+            # Prepare data for regression and correlation
+            # Convert dates to a numeric scale in years instead of nanoseconds
+            X = (Dataframe.index.astype(np.int64) / 1e9 / (60 * 60 * 24 * 365)
+                 ).values.reshape(-1, 1)  # Convert to years
+
             y = Dataframe[name_lower]
+
+            # Calculate correlation coefficient
+            corr_coefficient = np.corrcoef(X.flatten(), y)[0, 1]
+
+            # Fit regression model
             model = LinearRegression()
             try:
                 model.fit(X, y)
                 y_pred = model.predict(X)
                 plt.plot(Dataframe.index, y_pred, color=color_reg)
+                slope = model.coef_[0]  # Extract the slope
             except:
                 print("Could not fit regression model")
         else:
@@ -45,15 +58,23 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
 
     # Customize plot labels and title
     plt.xticks(rotation=25)
-    plt.subplots_adjust(left=0.1, right=0.95, top=0.9, bottom=0.2)
+    plt.subplots_adjust(left=0.15, right=0.95, top=0.9, bottom=0.2)
 
     plt.xlabel("Date")
     plt.ylabel(name.capitalize())
     legend = [title1, "Regression Line"] if regression else [title1]
     plt.legend(legend)
-    plt.title(title2)
-    plt.savefig(output)
 
+    # Display correlation coefficient and slope on the plot (if calculated)
+    if corr_coefficient is not None:
+        plt.gcf().text(0.93, 0.94, f'Slope: {
+            slope:.0f} (words per year)', fontsize=12, verticalalignment='top', horizontalalignment='right')
+        plt.gcf().text(0.93, 0.98, f"Correlation: {round(
+            corr_coefficient*100, 2)}%", fontsize=12, verticalalignment='top', horizontalalignment='right')
+
+    plt.text(0, 1.07, title2, fontsize=14, verticalalignment='top',
+             horizontalalignment='left', transform=plt.gca().transAxes)
+    plt.savefig(output)
     plt.close()
 
 
@@ -129,7 +150,7 @@ def multiple(all_rows, all_columns, name, all_titles, drop_columns, colors, colo
 
     # Customize plot labels and title
     plt.xticks(rotation=25)
-    plt.subplots_adjust(left=0.1, right=0.95, top=0.9, bottom=0.2)
+    plt.subplots_adjust(left=0.15, right=0.95, top=0.9, bottom=0.2)
     legend1 = [f"{name.capitalize()} for {topic}" for topic in all_titles]
     legend2 = [f"Regression Line for {topic}" for topic in all_titles]
     plt.xlabel("Date")
