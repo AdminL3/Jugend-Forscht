@@ -15,13 +15,13 @@
 - Wenn die Analyse eine einheitliche Berichterstattung belegt, wird das Vertrauen in die Arbeit von Qualitätsjournalisten gefördert.
 - Wichtige Erkenntnis in Zeiten von wachsendem Misstrauen gegenüber der Medienlandschaft.
 
+Menschen werden täglich mit einer riesigen Menge an Informationen konfrontiert. Dein Projekt hilft ihnen zu erkennen, dass sie sich auf seriöse Medien wie die New York Times und den Guardian verlassen können, da diese nicht übermäßig polarisieren oder emotionalisieren. Das spart Zeit und gibt Sicherheit bei der Auswahl verlässlicher Nachrichtenquellen.
+
 ### 3. **Ansatz für zukünftige Forschung**
 
 - Warum gibt es (wenn überhaupt) keine großen Unterschiede zwischen den Zeitungen?
 - Welche Rolle spielen globale Nachrichtenagenturen und Standards in der Gleichförmigkeit der Berichterstattung?
 - Analyse könnte einen neuen **Forschungsschwerpunkt** in der Medienwissenschaft etablieren.
-
----
 
 ## Bildung und Wissenschaft
 
