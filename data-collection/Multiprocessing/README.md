@@ -33,7 +33,7 @@ New output every second
 
 ### 2. Applying to Selenium gathering
 
-1. Setting up the function
+#### 1. Setting up the function
 
 ```python
 def Selenium(n):
@@ -45,19 +45,19 @@ def Selenium(n):
     ...
 ```
 
-2. Setting the start month to **n**
+#### 2. Setting the start month to **n**
 
 ```python
     start_month = n
 ```
 
-3. Specifying the Months to run
+#### 3. Specifying the Months to run
 
 ```
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 ```
 
-4. Running the functions at the same time
+#### 4. Running the functions at the same time
 
 ```
 if **name** == "**main**":
