@@ -1,93 +1,80 @@
-# Data Collection from the New York Times
+# Data Collection from "The Guardian"
 
-## Step 1: Get Links from **Guradian API**
+## Step 1: Get Links from **Guardian API**
 
 This step involves collecting article links from the New York Times (NYT) API. You can find the code for this step in the [`Links.py`](Links.py) file.
 
-1. **Get NYT API Key**:
+#### 1. **Get NYT API Key**:
 
-   - Create a developer account on the [NYT Developer Portal](https://open-platform.theguardian.com/).
-   - Register for an API key.
-   - You will receive it via email.
+- Create a developer account on the [NYT Developer Portal](https://open-platform.theguardian.com/).
+- Register for an API key.
+- You will receive it via email.
+- I recommend using [Temp Mail](https://temp-mail.org/en/) to generate multiple at once.
 
-2. **Use API**:
+#### 2. **Use API**:
 
-   - Go to the [NYT APIs](https://developer.nytimes.com/apis) page.
-   - Explore the API structure.
+- Go to the [Guardian Documentation](https://open-platform.theguardian.com/documentation/) page.
+- Explore the API structure.
 
-   * Example Request
+- Example Request with tag "environment/recycling":
 
 ```python
-URL = f"https://api.nytimes.com/svc/archive/v1/{year}/{month}.json?api-key={API_KEY}"
+URL = "https://content.guardianapis.com/search?tag=environment/recycling&api-key=test"
+response = requests.get(BASE_URL, params=params)
 ```
 
-3. Parse json
+#### 3. Parse json
 
 - Now we get a long json string, where we have to extract the url
 - Choose the data you want to collect (links or titles).
 
 ```python
-url = article.get("web_url", "No URL")
+links = [result["webUrl"] for result in results]
 ```
 
-- And remove the articles you dont want
+---
+
+## Step 2: Sort Links by Category
+
+- Lets remove the articles you dont want
+- And sort them in the correct categories
+- See [`Parse_Links.py`](./Parse_Links.py)
 
 ```python
 if any(format in url for format in ["/interactive/", "/slideshow/", "/video/", "/crossword/"]):
 ```
 
-- Save the data as a file.
+- Save the data as a new file in the correct folder.
 
 ```python
-file.write(url + '\n')
+file.write(link + "\n")
 ```
 
 ---
 
-## Step 2: Extract Source Code from URLs
+## Step 3: Extract Source Code from URLs
 
 In this step, you can choose from different methods to extract the source code from URLs.
 
 ###### The option I used:
 
-### Selenium
+### Requests
 
-1. **Install** Selenium:
+1. **Install** Requests:
+
+   - If not already done
 
    ```sh
-   pip install selenium
+   pip install requests
    ```
 
-2. Use **Selenium**:
+2. Use **Requests**:
 
-   - Create Options
-
-   ```python
-   options = webdriver.ChromeOptions()
-   options.add_argument("--start-maximized")
-   options.add_argument("--disable-search-engine-choice-screen")
-   options.add_experimental_option("detach", True)
-   options.add_argument("--headless")
-   driver = webdriver.Chrome(options=options)
-   ```
-
-   - Create Driver
+   - Access HTML Code
 
    ```python
-   driver = webdriver.Chrome(options=options)
-   ```
-
-   - Access Content
-
-   ```python
-   while True:
-      try:
-         driver.get(url)
-         page_source = driver.execute_script(
-               "return document.documentElement.outerHTML;")
-         break
-      except:
-         print("Error")
+   response = requests.get(url)
+   page_source = response.text
    ```
 
 ---

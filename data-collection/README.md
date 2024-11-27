@@ -1,68 +1,53 @@
 # Data Collection from the NYT
 
----
-
-## New York Times Data Collection
-
-#### Check out NYT Documentation [here](./NYT/)
+###### This is just an overview over the different steps. There are detailed explanations inside the topics.
 
 ---
 
-## Guardian Data Collection
+## 1. New York Times
 
-#### Check out NYT Documentation [here](./Guardian/)
-
----
-
-## Step 2.5: Optimize Data Collection
-
-##### 1. Use AWS to run Python in the cloud
-
-- See my Subfolder [AWS - How to Run Python in the Cloud](./AWS/)
-
-- Run your scripts in the Cloud to reduce computer usage
-
-##### 2. Use Multiprocessing to run Multiple Threads at once
-
-- See my Subfolder and Documentation at [Multiprocessing](./Multiprocessing/)
+- Getting the data from the New York Times
+- Check out the "NYT" Data-Collection [here](./NYT/)
 
 ---
 
-## 3. Extra Functionality
+## 2. Guardian
 
-1. **Find empty files**:
-
-   - Sometimes the content wasnt downloaded correcly so i checked where there where empty files without content.
-
-     ```python
-     for dirpath, dirnames, filenames in os.walk(base, topdown=False):
-        # Check if the directory is empty
-        if not os.listdir(dirpath):  # If the folder is empty
-              print(f"Deleting empty folder: {dirpath}")
-              os.rmdir(dirpath)  # Delete the empty folder
-
-        # Also check for empty files and delete them
-        for file in filenames:
-              file_path = os.path.join(dirpath, file)
-              if os.path.getsize(file_path) == 0:  # If the file is empty
-                 print(f"Deleting empty file: {file_path}")
-                 os.remove(file_path)
-     ```
-
-   - Again, this depends on your folder structure.
-
-2. **Find missing files**:
-
-   - To check what files are missing i used a simple script
-   - Thanks Copilot 😃
-   - See `file_checker.py`
+- Getting the data from the New York Times
+- Check out "the Guardian" Data-Collection [here](./Guardian/)
 
 ---
 
-## Result
+## 3. AWS
+
+- Automate Processes with Amazon Web Services
+- Run Python in the Cloud
+- Check out the AWS Documentation [here](./AWS/)
+
+---
+
+## 4. Multiprocessing
+
+- Optimize your Python Scripts with Multiprocessing
+- Run Multiple Threads at once
+- Check out the Multiprocessing Documentation [here](./Multiprocessing/)
+
+---
+
+## 5. Other Functions
+
+- Finding Missing Dates: [Documentation](./Missing-Files/)
+- Use an API to get the Source Code: [Scraperapi](./Scraperapi/)
+- Use Requests to get the Source Code: [Requests](./Requests/)
+- Use Proxyrotation to avoid IP-Bans: [Proxyrotation](./Proxyrotation/)
+- Check out my Error messages [here](./Errors/)
+
+---
+
+## Important Note
 
 - This is only a part of the full project!
 
-- The part, where we extract the full NYT Article Text
+- The part, where we extract the Article Text
 
 - View the whole Projekt at [Github](https://github.com/AdminL3/Jugend-Forscht/)
