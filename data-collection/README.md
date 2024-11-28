@@ -1,7 +1,7 @@
+# Data Collection
 
-# Data Collection from the NYT
-
-###### This is just an overview over the different steps. There are detailed explanations inside the topics.
+- Collecting all the Data from the [NYT](./NYT/) and [The Guardian](./Guardian/)
+- This is just an overview over the different steps. There are detailed explanations inside the topics.
 
 ---
 
@@ -15,32 +15,30 @@
 ## 2. Guardian
 
 - Getting the data from the New York Times
-- Check out "the Guardian" Data-Collection [here](./Guardian/)
+- Check out "The Guardian" Data-Collection [here](./Guardian/)
 
 ---
 
-## 3. AWS
+## 3. Extras
+
+#### 1. AWS
 
 - Automate Processes with Amazon Web Services
 - Run Python in the Cloud
 - Check out the AWS Documentation [here](./AWS/)
 
----
-
-## 4. Multiprocessing
+#### 2. Multiprocessing
 
 - Optimize your Python Scripts with Multiprocessing
 - Run Multiple Threads at once
 - Check out the Multiprocessing Documentation [here](./Multiprocessing/)
 
----
+### 3. Other Functions
 
-## 5. Other Functions
-
-- Finding Missing Dates: [Documentation](./Missing-Files/)
+- Finding [Missing Dates](./Missing-Files/)
 - Use an API to get the Source Code: [Scraperapi](./Scraperapi/)
-- Use Requests to get the Source Code: [Requests](./Requests/)
-- Use Proxyrotation to avoid IP-Bans: [Proxyrotation](./Proxyrotation/)
+- Use [Requests](./Requests/) to get the Source Code
+- Use [Proxyrotation](./Proxyrotation/) to avoid IP-Bans
 - Check out my Error messages [here](./Errors/)
 
 ---
