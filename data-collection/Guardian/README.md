@@ -55,10 +55,11 @@ file.write(link + "\n")
 
 ## Step 3: Extract Source Code from URLs
 
-- In comparison to the NYT, getting the Source Code was a lot easier. 
--The option I used:
+- In comparison to the NYT, getting the Source Code was a lot easier.
+  -The option I used:
 
 ### Requests
+
 - See [`Requests.py`](./Requests.py)
 
 1. **Install** Requests:
@@ -85,10 +86,23 @@ file.write(link + "\n")
 - Now we have the source code, we can extract the text.
 - I used the **BeautifulSoup** library for this task.
 
+#### 1. **Install** Requests and BeautifulSoup:
+
+```sh
+pip install requests beautifulsoup4
+```
+
+```sh
+import requests
+from bs4 import BeautifulSoup
+```
+
+#### 2. **Use** BS4:
+
+- This totally depends on your HTML Code
+
 ```python
 soup = BeautifulSoup(html, 'html.parser')
-```
-```python
 try:
    target_div = soup.find('div', id="maincontent")
    paragraphs = target_div.find_all('p')
