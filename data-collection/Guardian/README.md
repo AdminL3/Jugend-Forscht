@@ -41,7 +41,8 @@ links = [result["webUrl"] for result in results]
 - See [`Parse_Links.py`](./Parse_Links.py)
 
 ```python
-if any(format in url for format in ["/interactive/", "/slideshow/", "/video/", "/crossword/"]):
+if titles[t].lower() == parts[4]:
+   ...
 ```
 
 - Save the data as a new file in the correct folder.
@@ -54,11 +55,11 @@ file.write(link + "\n")
 
 ## Step 3: Extract Source Code from URLs
 
-In this step, you can choose from different methods to extract the source code from URLs.
-
-###### The option I used:
+- In comparison to the NYT, getting the Source Code was a lot easier. 
+-The option I used:
 
 ### Requests
+- See [`Requests.py`](./Requests.py)
 
 1. **Install** Requests:
 
@@ -79,100 +80,21 @@ In this step, you can choose from different methods to extract the source code f
 
 ---
 
-###### Error in Selenium:
+## Extract Text from Source Code
 
-![Captcha Test Selenium](../Errors/Error%201.png)
+- Now we have the source code, we can extract the text.
+- I used the **BeautifulSoup** library for this task.
 
-###### Even in headless browser:
-
-As HMTL:
-![Captcha Test Headless Selenium](../Errors/Error%206.png)
-
-## Other Options:
-
-### 2. Requests
-
-- This Works for some time until you get blocked. Then you should use Proxys or External APIs --> See [**Proxyrotation**](#4-proxyrotation) and [**ExternalAPIs**](#3-external-api)
-
-1. **Install** Requests:
-
-   ```sh
-   pip install requests
-   ```
-
-2. Use **Requests**:
-
-   - Access HTML Code
-
-   ```python
-   response = requests.get(url)
-   page_source = response.text
-   ```
-
-   The Error:
-
-   - Result of Data was a captcha
-     ![Requests Error](../Errors/Error%205.png)
-
-### 3. External API
-
-- I am using [ScraperAPI](https://www.scraperapi.com/)
-- This Works, but you have limited tokens and its slower
-
-1. **Install** Requests:
-
-   ```sh
-   pip install requests
-   ```
-
-2. Access **API**:
-
-   ```python
-   payload = {'api_key': api_key,
-               'url': url}
-   r = requests.get('https://api.scraperapi.com/', params=payload)
-   ```
-
-### 4. Proxyrotation
-
-- You can get free Proxys at [Free Proxy List](https://free-proxy-list.net/)
-- Some Proxys do not work!
-
-1. **Install** Requests:
-
-   ```sh
-   pip install requests
-   ```
-
-2. Check which Proxies work:
-
-   - Download Proxies
-   - Loop through them and save the working ones as a file
-
-3. Use working proxies to access HTML
-
-   - See [**2. Requests**](#2-requests)
-
-###### Free Proxies are unfortunately very unreliable
-
-### 5. Other Errors i had to deal with
-
-#### Another Blocker on Selenium:
-
-![Requests Error](../Errors/Error%202.png)
-
----
-
-#### And countless paywalls:
-
-1.  ![Paywall Error 1](../Errors/Error%203.png)
-
----
-
-2.  ![Paywall Error 2](../Errors/Error%204.png)
-
----
-
-3. <img src="../Errors/Error%206.jpg" alt="Login Wall" width="300"/>
-
----
+```python
+soup = BeautifulSoup(html, 'html.parser')
+```
+```python
+try:
+   target_div = soup.find('div', id="maincontent")
+   paragraphs = target_div.find_all('p')
+except:
+   text_content = ""
+text_content = soup.title.get_text() + "\n"
+for p in paragraphs:
+   text_content += p.get_text() + "\n"
+```

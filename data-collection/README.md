@@ -1,3 +1,4 @@
+
 # Data Collection from the NYT
 
 ###### This is just an overview over the different steps. There are detailed explanations inside the topics.
