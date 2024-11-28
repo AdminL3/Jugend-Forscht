@@ -1,5 +1,24 @@
 # **Wandel der Worte: Langzeitdatenanalyse journalistischer Perspektiven**
 
+###### Siehe [Powerpoint](./Präsentation.pptx)
+
+## Einstieg:
+
+- Es gibt viele Vorurteile über Medien und ihre Berichterstattung
+- So etwas muss man doch überprüfen können
+- Aber wie?
+- So kam mein Projekt zustande
+  --> siehe Titel
+
+#### Vergleich zwischen zwei Zeitungen
+
+- **The New York Times** (USA)
+- **The Guardian** (Großbritannien)
+
+Beide gelten als qualitativ hochwertige, einflussreiche Medien. Der globale Vergleich ermöglicht interessante Einblicke in nationale Unterschiede.
+
+---
+
 ## **Name genauer anschauen**
 
 ### 1. Journalistische Perspektiven
@@ -10,15 +29,6 @@
 - Weitere Aspekte möglich: **Themenwahl, Sprache, Stil**
 
 ###### Angewandt an einen Text
-
----
-
-#### Vergleich zwischen zwei Zeitungen
-
-- **The New York Times** (USA)
-- **The Guardian** (Großbritannien)
-
-Beide gelten als qualitativ hochwertige, einflussreiche Medien. Der globale Vergleich ermöglicht interessante Einblicke in nationale Unterschiede.
 
 ---
 
@@ -41,7 +51,7 @@ Beide gelten als qualitativ hochwertige, einflussreiche Medien. Der globale Verg
 
 ---
 
-## **Besonderheiten & Herausforderungen**
+## Vorgang
 
 ###### **Datenbeschaffung**: Die Artikel der letzten zwei Jahre zu sammeln, war bereits ein aufwändiger Prozess.
 
@@ -71,10 +81,22 @@ Beide gelten als qualitativ hochwertige, einflussreiche Medien. Der globale Verg
 
 ## **Gesellschaftlicher Nutzen**
 
-##### Siehe [Geselschaftlicher Vorteil](Gesellschaftl.md)
+- Siehe [Geselschaftlicher Vorteil](../Gesellschaftlicher_Vorteil.md)
 
----
+#### Ausgang unbekannt
 
-## Fazit:
+Trotzdem: **Erkenntnisse** erlangen
+In allen Fällen kann ein Ergebnis aussagekräftig sein:
 
-Das Projekt zeigt, wie journalistische Perspektiven und Darstellungsformen sich über die Zeit verändern und welche Muster sich in der Berichterstattung qualitativ hochwertiger Medien erkennen lassen.
+- Überprüfung von Vorurteilen
+- Stärkung des Vertrauens in Qualitätsmedien
+- Sicherheit bei der Auswahl von Medien
+- Ansatz für zukünftige Forschung
+- Bildungswert
+
+Erklärt:
+
+- Überprüfung von Vorurteilen: Widerlegung der Annahme, dass amerikanische und britische Zeitungen grundlegend unterschiedlich berichten.
+- Stärkung des Vertrauens in Qualitätsmedien: Beleg für objektive und einheitliche Berichterstattung in seriösen Medien.
+- Ansatz für zukünftige Forschung: Untersuchung globaler Standards und Agenturen in der Gleichförmigkeit der Berichterstattung.
+- Bildungswert: Förderung kritischen Denkens und Integration in Schulen/Universitäten als Beispiel für datenbasierte Argumentation.
