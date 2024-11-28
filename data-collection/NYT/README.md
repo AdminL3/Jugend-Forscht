@@ -2,7 +2,7 @@
 
 ## Step 1: Get Links from **NYT API**
 
-This step involves collecting article links from the New York Times (NYT) API. You can find the code for this step in the [`Get_Links.py`](https://github.com/AdminL3/Jugend-Forscht/blob/main/data-collection/Get_Links.py) file.
+This step involves collecting article links from the New York Times (NYT) API. You can find the code for this step in the [`Get_Links.py`](./Get_Links.py) file.
 
 1. **Get NYT API Key**:
 
@@ -48,7 +48,11 @@ file.write(url + '\n')
 
 In this step, you can choose from different methods to extract the source code from URLs.
 
-###### The option I used:
+- This is a very tedious process, as NYT tries to prevent you from getting their data
+- [Here](../Errors/) are the Errors i encountered
+- I tried multiple methods, but they all got blocked after some time
+
+###### The option that worked in the end:
 
 ### Selenium
 
@@ -92,138 +96,34 @@ In this step, you can choose from different methods to extract the source code f
 
 ---
 
-###### Error in Selenium:
+## Other Options to get Source Code:
 
-![Captcha Test Selenium](../Errors/Error%201.png)
+### 1. Requests
 
-###### Even in headless browser:
+- This worked well with [The Guardian](../The%20Guardian/).
+- More Documentation for Requests can be found [here](../Requests/)
+- For the [NYT](../NYT/), this works for some time until you get blocked.
 
-As HMTL:
-![Captcha Test Headless Selenium](../Errors/Error%206.png)
+### 2. External API
 
-## Other Options:
+###### [ScraperAPI](../Scraperapi/)
 
-### 2. Requests
-
-- This Works for some time until you get blocked. Then you should use Proxys or External APIs --> See [**Proxyrotation**](#4-proxyrotation) and [**ExternalAPIs**](#3-external-api)
-
-1. **Install** Requests:
-
-   ```sh
-   pip install requests
-   ```
-
-2. Use **Requests**:
-
-   - Access HTML Code
-
-   ```python
-   response = requests.get(url)
-   page_source = response.text
-   ```
-
-   The Error:
-
-   - Result of Data was a captcha
-     ![Requests Error](../Errors/Error%205.png)
-
-### 3. External API
-
-- I am using [ScraperAPI](https://www.scraperapi.com/)
 - This Works, but you have limited tokens and its slower
+- Check my Docs out [here](../Scraperapi/)
+- And their website [here](https://www.scraperapi.com/)
 
-1. **Install** Requests:
+### 3. Proxyrotation
 
-   ```sh
-   pip install requests
-   ```
-
-2. Access **API**:
-
-   ```python
-   payload = {'api_key': api_key,
-               'url': url}
-   r = requests.get('https://api.scraperapi.com/', params=payload)
-   ```
-
-### 4. Proxyrotation
-
-- You can get free Proxys at [Free Proxy List](https://free-proxy-list.net/)
-- Some Proxys do not work!
-
-1. **Install** Requests:
-
-   ```sh
-   pip install requests
-   ```
-
-2. Check which Proxies work:
-
-   - Download Proxies
-   - Loop through them and save the working ones as a file
-
-3. Use working proxies to access HTML
-
-   - See [**2. Requests**](#2-requests)
-
-###### Free Proxies are unfortunately very unreliable
-
-### 5. Other Errors i had to deal with
-
-#### Another Blocker on Selenium:
-
-![Requests Error](../Errors/Error%202.png)
-
----
-
-#### And countless paywalls:
-
-1.  ![Paywall Error 1](../Errors/Error%203.png)
-
----
-
-2.  ![Paywall Error 2](../Errors/Error%204.png)
-
----
-
-3. <img src="../Errors/Error%206.jpg" alt="Login Wall" width="300"/>
+- Rotate Proxys to avoid getting blocked
+- More Documentation can be found [here](../Proxyrotation/)
+- Free Proxies are unfortunately very unreliable
 
 ---
 
 ## Step 3: Convert HTML to Text
 
-#### 1. Use **BeautifulSoup** to Parse HTML:
-
 - Usually I would just use Beautiful Soup to parse HTML
-
-1. **Install** Requests:
-
-   ```sh
-   pip install requests beautifulsoup4
-   ```
-
-   ```sh
-   import requests
-   from bs4 import BeautifulSoup
-   ```
-
-1. **Use** BS4:
-
-- This totally depends on your HTML Code
-
-  ```python
-  response = requests.get(url)
-  ```
-
-  ```python
-  soup = BeautifulSoup(response.text, 'html.parser')
-  ```
-
-  ```python
-  text = soup.get_text(separator='\n', strip=True)
-  ```
-
-#### 2. Use **Re** to Parse HTML:
+- See [The Guardian](../The%20Guardian/) for more information
 
 - But Since NYT really tries to prevent me from getting their data
 - I had to use RE to parse the data from some javascript encoding
