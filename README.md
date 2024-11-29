@@ -1,7 +1,7 @@
 # Overview
 
-> **The goal is to compare the news from two different news sources and to find out if they are biased or not as well as other information.
-> If you want to learn more about what this project is, you can read my introduction [here](./)**
+> [!NOTE] > **The goal is to compare the NYT and the Guardian, to find out if they are biased or not as well as other information.
+> If you want to learn more about what this project is, you can read my introduction [here](./Präsentationen/Introduction.md)**
 
 ---
 
@@ -29,7 +29,7 @@
 
 ---
 
-## 1. Data Collection
+## [1. Data Collection](./data-collection/)
 
 - Collecting Data from the two different News Sources
 
@@ -41,7 +41,7 @@
 
 ---
 
-## 2. Analysing Data / Visualizing
+## 2. [Analysing](./Analysing/) Data / Visualizing
 
 - Analysing the Data from the two different News Sources
 - Comparing the Data
@@ -61,12 +61,16 @@ pip install -r requirements.txt
 
 Used Packages:
 
-- Selenium
-- Requests
-- Pandas
-- Matplotlib
-- Scikit-learn
-- TextBlob
+- BeautifulSoup (beautifulsoup4): For web scraping and parsing HTML/XML.
+- Matplotlib: For data visualization and plotting.
+- NLTK: For natural language processing tasks.
+- TextBlob: For simple natural language processing.
+- NumPy: For numerical computations and array handling.
+- Pandas: For data manipulation and analysis.
+- Pillow: For image processing.
+- Requests: For handling HTTP requests.
+- Scikit-learn: For machine learning tasks.
+- Selenium: For browser automation and testing.
 - ...
 
 ---
