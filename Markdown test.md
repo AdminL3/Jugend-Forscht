@@ -1,4 +1,4 @@
-## :smile:
+## 😵👵🖖🙈🙎‍♀️👅👳‍♂️🤌🤖🧓👀👀👀
 
 ---
 
@@ -8,7 +8,7 @@
 </details>
 ---
 
-[!GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
 
 ---
 
@@ -35,5 +35,7 @@ This is an example sentence with a footnote.[^1]
 > [!WARNING]
 > Critical content demanding immediate user attention.
 
-> [!NO]
+> [!CAUTION]
 > Negative potential consequences of an action.
+
+> Normal Quote
