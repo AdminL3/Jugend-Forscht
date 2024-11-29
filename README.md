@@ -1,6 +1,6 @@
 # Overview
 
-> [!NOTE] .
+> [!NOTE]
 > **The goal is to compare the NYT and the Guardian, to find out if they are biased or not as well as other information.
 > If you want to learn more about what this project is, you can read my introduction [here](./Präsentationen/Introduction.md)**
 
