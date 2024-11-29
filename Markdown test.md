@@ -1,20 +1,25 @@
 ## :smile:
 
+---
+
 <details>
   <summary>Click to expand</summary>
   Hidden content here.
 </details>
 ---
-```mermaid
-graph TD;
-  A-->B;
-  A-->C;
-```
+
+[!GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+
 ---
-![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
----
+
 - [ ] Item not complete
 - [x] Item complete
+
+---
+
+This is an example sentence with a footnote.[^1]
+
+[^1]: This is the footnote text.
 
 ---
 
@@ -32,18 +37,3 @@ graph TD;
 
 > [!NO]
 > Negative potential consequences of an action.
-
----
-
-> ```
-> def hello_world():
->     return "Hello, World!"
-> ```
-
----
-
-This is an example sentence with a footnote.[^1]
-
-[^1]: This is the footnote text.
-
----
