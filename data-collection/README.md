@@ -43,10 +43,7 @@
 
 ---
 
-## Important Note
-
-- This is only a part of the full project!
-
-- The part, where we extract the Article Text
-
-- View the whole Projekt at [Github](https://github.com/AdminL3/Jugend-Forscht/)
+> [!NOTE]
+> This is only a part of the full project!
+> The part, where we extract the Article Text
+> View the whole Projekt on [Github](https://github.com/AdminL3/Jugend-Forscht/)

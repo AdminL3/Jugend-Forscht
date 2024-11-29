@@ -30,7 +30,7 @@
 
 ---
 
-## [1. Data Collection](./data-collection/) 🗑️
+## 1. [Data Collection](./data-collection/) 🗑️
 
 - Collecting Data from the two different News Sources
 
