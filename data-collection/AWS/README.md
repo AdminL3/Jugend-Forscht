@@ -1,4 +1,4 @@
-# Automated Data Collection with AWS
+# Automated Data Collection with AWS 🌐
 
 ### Setup:
 
