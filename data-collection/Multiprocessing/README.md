@@ -1,4 +1,4 @@
-# Using Threads to Optimize Data Collection Process
+# Using Threads to Optimize Data Collection Process 🔄
 
 ### 1. Testing Different pools
 
