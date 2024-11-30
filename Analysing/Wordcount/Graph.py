@@ -6,8 +6,8 @@ from Analysing.Plotting import graph
 colors = ['#1f77b4', '#ff7f0e', "green"]
 colors_reg = ['blue', 'red', "black"]
 topics = ["Politics", "World", "Opinion"]
-
 news = ["NYT", "Guardian"]
+
 for n, new in enumerate(news):
     connection = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
     cursor = connection.cursor()
