@@ -2,17 +2,24 @@
 
 ### 1. [Data Collection](./data-collection/)
 
-- 1
-- 2
-- 3
-- 4
+- [Guardian](./data-collection/Guardian/)
+- [NYT](./data-collection/NYT/)
+- [Errors](./data-collection/Errors/)
+- [Multiprocessing](./data-collection/Multiprocessing/)
+- [AWS](./data-collection/AWS/)
+- Other
+  - [Missing Files](./data-collection/Missing%20Files/)
+  - [ScraperAPI](./data-collection/ScraperAPI/)
+  - [Proxyrotation](./data-collection/Proxyrotation/)
 
 ### 2. [Analysing](./Analysing/)
 
-- 1
-- 2
-- 3
-- 4
+- [Wordcount](./Analysing/Wordcount/)
+- [Sentimental](./Analysing/Sentimental/)
+- [Articlecount](./Analysing/Articlecount/)
+- [Pandas Documentation](./Analysing/Pandas%20Documentation/)
+- [Extrema Documentation](./Analysing/Extrema%20Documentation/)
+- [Wordcloud](./Analysing/Wordcloud/)
 
 ### 3. Other
 
