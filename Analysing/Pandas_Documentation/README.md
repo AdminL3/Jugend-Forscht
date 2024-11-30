@@ -1,42 +1,161 @@
 # How to Create Plots in Pandas
 
-- Using the Wordcount Example
+- Creating a Function to graph the data
+- See the function here: [`Plotting.py`](../Plotting.py)
 
-* See Analysing\Wordcount\Graph Single\.py
-* Docs: [Analysing\Wordcount\README](https://github.com/AdminL3/Jugend-Forscht/blob/main/Analysing/Wordcount/)
+> [!NOTE]
+> If you want a simple introduction to Pandas, without the function, you can find it [here](./simple.md)
 
-- Can be used with Sentimental Analysation
+---
 
-## Importing
+## Input
 
-- First for Getting the data from the Database
+- What do we need to create a plot?
 
 ```python
-import sqlite3
+def graph(rows, column_names, name, legend_title, title, drop_columns, color, color_reg, regression, size, output):
 ```
 
-- Then import modules for Plotting
+Above is the function signature
+We need the following parameters:
+
+- **rows**: The data to be plotted
+- **column_names**: The names of the columns
+- **name**: The name of the data to be plotted
+- **legend_title**: The title of the legend
+- **title**: The title of the plot
+- **drop_columns**: Columns to be dropped
+- **color**: The color of the scatter plot
+- **color_reg**: The color of the regression line
+- **regression**: Whether to plot the regression line
+- **size**: The size of the markers
+- **output**: The output file
+
+---
+
+## Creating the Plot
+
+#### Create a DataFrame
+
+- using the given rows and column names
 
 ```python
-import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
+Dataframe = pd.DataFrame(rows, columns=column_names)
 ```
 
-## Getting from database
+---
 
-- Accessing Database from before
+#### Drop Columns
+
+- Drop the columns that are not needed
 
 ```python
-connection = sqlite3.connect("Analysing\Wordcount\wordcount.db")
-cursor = connection.cursor()
+    for col in drop_columns:
+        if col in Dataframe.columns:
+            Dataframe = Dataframe.drop(columns=[col])
 ```
 
-- Loading data
+---
+
+#### Convert the date column to datetime
+
+- Convert the date column to datetime
 
 ```python
-cursor.execute("SELECT * FROM Politics;")
-rows = cursor.fetchall()
+if 'date' in Dataframe.columns:
+        Dataframe['date'] = pd.to_datetime(Dataframe['date'])
+        Dataframe.set_index('date', inplace=True)
+    else:
+        Dataframe['date'] = pd.to_datetime(
+            Dataframe[['year', 'month']].assign(day=1))
+        Dataframe.set_index('date', inplace=True)
+```
+
+---
+
+#### Plot the Data
+
+```python
+plt.plot(Dataframe.index, Dataframe[name], 'o', markersize=size, color=color)
+```
+
+---
+
+#### Plot the Regression Line
+
+```python
+if regression:
+    ...
+    model = LinearRegression()
+    model.fit(X, y)
+    y_pred = model.predict(X)
+    plt.plot(Dataframe.index, y_pred, color=color_reg)
+```
+
+---
+
+#### Update the Legend and title
+
+```python
+plt.xticks(rotation=25)
+plt.subplots_adjust(left=0.15, right=0.95, top=0.9, bottom=0.2)
+
+plt.xlabel("Date")
+plt.ylabel(name.capitalize())
+legend = [legend_title, "Regression Line"] if regression else [legend_title]
+plt.legend(legend)
+plt.text(0, 1.07, title, fontsize=14, verticalalignment='top',
+             horizontalalignment='left', transform=plt.gca().transAxes)
+```
+
+---
+
+#### Save the Plot
+
+```python
+plt.savefig(output)
+plt.close()
+```
+
+---
+
+## Accessing the function
+
+- Used Example: [`Wordcount`](../Wordcount/)
+
+#### Import the function
+
+```python
+from Analysing.Plotting import graph
+```
+
+### Prepare the data
+
+##### Set up the values
+
+```python
+colors = ['#1f77b4', '#ff7f0e', "green"]
+colors_reg = ['blue', 'red', "black"]
+topics = ["Politics", "World", "Opinion"]
+news = ["NYT", "Guardian"]
+```
+
+##### Get the Data from the Database
+
+- Access the database for each newspaper
+
+```python
+for n, new in enumerate(news):
+    connection = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
+    cursor = connection.cursor()
+```
+
+- Loading the data
+
+```python
+for i in range(len(topics)):
+    cursor.execute(f"SELECT * FROM {topic};")
+    rows = cursor.fetchall()
 ```
 
 - Close connection
@@ -45,205 +164,46 @@ rows = cursor.fetchall()
 connection.close()
 ```
 
-## Plotting Basics
+##### Specificy the parameters
 
-### Quick Visual Representation of the Data
-
-- Create Dataframe
+- Set the colors for each topic
 
 ```python
-Dataframe = pd.DataFrame(rows, columns=[column[0] for column in cursor.description])
+    for i in range(len(topics)):
+        topic = topics[i]
+        color = colors[i]
+        regression_color = colors_reg[i]
 ```
 
-- Plot Data
+- Set output file
 
 ```python
-rows.plot()
-plt.close()
+output = f"Output/Wordcount/Graphs/{new}/{topic}.png"
+os.makedirs(os.path.dirname(output), exist_ok=True)
 ```
 
-Pandas automatically does the rest
-
-![Quick Data Overview Plot](img1.png)
-
-### Saving the Plot
-
-````python
-plt.savefig("Analysing\Wordcount\Pandas_Documentation\img1.png")
-```python
-
-- Make sure to add this line before **plt.close()**
-
-## Configure Custom Setting
-
-1. The **ID line** is annoying me. Let's remove it
+- Create column names
 
 ```python
-Dataframe = Dataframe.drop(columns=['id'])
-````
-
----
-
-2.  Customize **Plotting**:
-
-- Remove Lines
-- Reduce Dot Size
-
-```python
-Dataframe.plot(style='o', markersize=2)
+columns = [column[0] for column in cursor.description]
 ```
 
-instead of:
+### Create the Plot
+
+- Call the function
 
 ```python
-Dataframe.plot()
+graph(
+    rows=rows,
+    column_names=columns,
+    name="wordcount",
+    title1=f"Wordcount of {topic}",
+    title2=f"Wordcount of {topic}",
+    drop_columns=drop_columns,
+    color=color,
+    color_reg=regression_color,
+    regression=True,
+    size=2,
+    output=output
+)
 ```
-
----
-
-4. **Custom Legend**
-
-```python
-plt.legend(['Wordcount'])
-```
-
----
-
-5. **Custom X-Axis**
-
-```python
-# Convert date column to datetime
-Dataframe['date'] = pd.to_datetime(Dataframe['date'])
-
-# Set the date as the index
-Dataframe.set_index('date', inplace=True)
-
-# Update Labels
-plt.xlabel("Date")
-plt.ylabel("")
-```
-
-5. **Custom Title**
-
-```python
-plt.title("Word Count Analysis")
-```
-
----
-
-- Looks a lot better now:
-
-  ![Result of changes](img2.png)
-
----
-
-# Regression
-
-#### Prepare Regression
-
-```python
-pip install scikit-learn
-```
-
-#### Prepare data for regression model
-
-```python
-X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
-y = Dataframe['wordcount']
-```
-
-#### Set up the model and fit ot
-
-```python
-from sklearn.linear_model import LinearRegression
-model = LinearRegression()
-model.fit(X, y)
-```
-
-#### Get the parameters
-
-```python
-y_pred = model.predict(X)
-```
-
-#### Plot it
-
-```python
-plt.plot(Dataframe.index, y_pred, color='red')
-```
-
-Make sure to plot the line after you plot the Graph!
-
-#### Update Legend
-
-```python
-plt.legend(["Word Count", "Regression Line"])
-```
-
-![Regression](img3.png)
-
----
-
----
-
-# Plotting Multiple Graphs
-
-### 1. Create Duplicates of everything
-
-#### Looping through the creation of the scatter plots
-
-```python
-for i, topic in enumerate(topics):
-    cursor.execute(f"SELECT * FROM {topic};")
-    rows = cursor.fetchall()
-
-    Dataframe = pd.DataFrame(
-        rows, columns=[column[0] for column in cursor.description])
-
-    Dataframe = Dataframe.drop(columns=['id'])
-    Dataframe['date'] = pd.to_datetime(Dataframe['date'])
-    Dataframe.set_index('date', inplace=True)
-
-    plt.plot(Dataframe.index,
-             Dataframe['wordcount'], 'o', markersize=2, color=colors[i])
-```
-
-#### Then Graph the Regression line on top
-
-```python
-for i, topic in enumerate(topics):
-    cursor.execute(f"SELECT * FROM {topic};")
-    rows = cursor.fetchall()
-
-    Dataframe = pd.DataFrame(
-        rows, columns=[column[0] for column in cursor.description])
-
-    Dataframe = Dataframe.drop(columns=['id'])
-    Dataframe['date'] = pd.to_datetime(Dataframe['date'])
-    Dataframe.set_index('date', inplace=True)
-
-    X = Dataframe.index.astype(np.int64).values.reshape(-1, 1)
-    y = Dataframe['wordcount']
-    model = LinearRegression()
-    model.fit(X, y)
-    y_pred = model.predict(X)
-    plt.plot(Dataframe.index, y_pred, color=colors_reg[i])
-```
-
-#### Update Legend
-
-```python
-legend1 = [f"Word Count for {topic}" for topic in topics]
-legend2 = [f"Regression Line for {topic}" for topic in topics]
-plt.xlabel("Date")
-plt.ylabel("Word Count")
-plt.legend(legend1 + legend2)
-plt.title("Word Count Analysis")
-
-plt.savefig("Analysing\Wordcount\output\Both.png")
-plt.show()
-```
-
-### Result:
-
-![Two Graphs Combined](img4.png)
