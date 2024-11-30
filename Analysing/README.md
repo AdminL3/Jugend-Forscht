@@ -1,10 +1,10 @@
-# Analysing the NYT data
+# Analysing 🔎
 
 Analysing the data, which we collected in [Step 2: Data Collection](../data-collection/)
 
 ##### There are a lot of things you can analyse, but they all follow the same [Structure](#structure).
 
-## Option 1: Wordcount (Article Length)
+## Option 1: Wordcount (Article Length) 📏
 
 See [Wordcount - README](./Wordcount/)
 
@@ -15,7 +15,7 @@ See [Wordcount - README](./Wordcount/)
 
 ---
 
-## Option 2: Sentimental Analysis
+## Option 2: Sentimental Analysis ✨
 
 See [Sentimental - README](./Sentimental/)
 
@@ -26,7 +26,7 @@ See [Sentimental - README](./Sentimental/)
 
 ---
 
-## Option 3: Article Amount
+## Option 3: Article Amount 📈
 
 Development of the amount of articles over time
 
@@ -41,7 +41,7 @@ See [Articlecount - README](./Articlecount//)
 
 ## Other Options
 
-- [Wordcloud](./Wordcloud/)
+- [Wordcloud](./Wordcloud/) ☁️
 - Other Options not yet implemented
 
 ---

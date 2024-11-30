@@ -1,6 +1,6 @@
-# Analysing the Word Count of the New York Times Articles
+# Analysing the Sentiment ⬆✨
 
-In previous steps we gathered all the Data from the Articles and extracted the Text, now we will analyse the Sentiment
+Analysing the data, which we collected in [Step 2: Data Collection](../data-collection/)
 
 ## 1. Save data in Database
 
@@ -45,7 +45,7 @@ cursor.executemany(
     conn.commit()
 ```
 
-#### 5. Close Connection
+### 5. Close Connection
 
 ```python
 conn.close()
@@ -57,81 +57,8 @@ conn.close()
 
 ###### See my Documentation: "[Plotting the Wordcount in Pandas](../Pandas_Documentation/)"
 
-###### This is almost the same to the Wordcount as seen in Documentation
-
-#### Differences to Wordcount
-
-###### Differentiate between Subjectivity and Polarity
-
-```python
-sentiment_polarity = blob.sentiment.polarity
-sentiment_subjectivity = blob.sentiment.subjectivity
-```
-
-###### Different Database structure
-
-```python
-cursor.execute(f'''
-        CREATE TABLE IF NOT EXISTS {topic} (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            date TEXT NOT NULL,
-            idx INTEGER NOT NULL,
-            polarity INTEGER NOT NULL,
-            subjectivity INTEGER NOT NULL
-            )
-    ''')
-```
-
 ---
-
-## Graphing the data
-
-#### See "[Plotting the Wordcount in Pandas Documentation](https://github.com/AdminL3/Jugend-Forscht/tree/main/Analysing/Pandas_Documentation/)"
-
-#### Polarity
-
-###### World
-
-![Analysing Polarity - World](.\output\polarity\World.png)
-
-###### Politics
-
-![Analysing Polarity - Politics](.\output\polarity\Politics.png)
-
-#### Subjectivity
-
-###### World
-
-![Analysing Subjectivity - World](.\output\subjectivity\World.png)
-
-###### Politics
-
-![Analysing Subjectivity - Politics](.\output\subjectivity\Politics.png)
 
 ## 3. Extracting the longest Articles
 
 ###### See my Documentation: "[Getting Extrema](../Extrema_Documentation/)"
-
-Output:
-
-```
-Maxima:
-
-POLITICS:
-
-Date: 2020-10-07-45
-polarity: 0.40477994227994235
-Title: A fly landed on Mike Pence’s head during the V.P. debate, and social media erupted.
-
-...
-```
-
-```
-Maxima:
-
-POLITICS:
-
-Date: 2020-11-06-10
-subjectivity: 1
-Title: In photos: A festive atmosphere starts brewing in Wilmington.
-```
