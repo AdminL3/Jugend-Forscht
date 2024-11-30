@@ -1,4 +1,4 @@
-# Find Missing Files
+# Find Missing Files 🛠️
 
 This script identifies missing or empty directories for storing the articles in my folder structure. Here's how it works:
 
