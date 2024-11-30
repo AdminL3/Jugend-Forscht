@@ -1,3 +1,8 @@
+Guardian💂
+New York Times 🏢
+
+---
+
 > [!NOTE]
 > This is only a part of the full project!
 > The part, where we ...(add what the part is about)
@@ -7,8 +12,6 @@
 
 > [!TIP]
 > Find the Table of Contents [here](https://github.com/AdminL3/Jugend-Forscht/blob/main/Table_of_contents.md)
-
----
 
 ---
 
@@ -28,6 +31,9 @@
 > Negative potential consequences of an action.
 
 ---
+
+Sick Website for Emojis:
+[https://emoji.muan.co/](https://emoji.muan.co/)
 
 ### Smileys & People
 
