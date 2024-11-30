@@ -1,6 +1,6 @@
-# Analysing the Word Count of the New York Times Articles
+# Analysing the Word Count (Article Length)📏
 
-In previous steps we gathered all the Data from the Articles and extracted the Text, now we will analyse the Wordcount
+Analysing the data, which we collected in [Step 2: Data Collection](../data-collection/)
 
 ## 1. Save data in Database
 
@@ -61,16 +61,3 @@ conn.close()
 ## 3. Extracting the longest Articles
 
 ###### See my Documentation: "[Getting Extrema](../Extrema_Documentation/)"
-
-Output:
-```
-Maxima:
-
-POLITICS:
-
-Date: 2021-01-06-24
-Word count: 11912
-Title: Protestors clashed with police outside of the Capitol on Wednesday.
-
-...
-```
