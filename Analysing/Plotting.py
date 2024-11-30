@@ -5,7 +5,7 @@ from sklearn.linear_model import LinearRegression
 from scipy.stats import pearsonr
 
 
-def graph(rows, column_names, name, title1, title2, drop_columns, color, color_reg, regression, size, output):
+def graph(rows, column_names, name, legend_title, title, drop_columns, color, color_reg, regression, size, output):
     Dataframe = pd.DataFrame(rows, columns=column_names)
 
     # Drop specified columns if they exist
@@ -62,7 +62,7 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
 
     plt.xlabel("Date")
     plt.ylabel(name.capitalize())
-    legend = [title1, "Regression Line"] if regression else [title1]
+    legend = [legend_title, "Regression Line"] if regression else [legend_title]
     plt.legend(legend)
 
     # Display correlation coefficient and slope on the plot (if calculated)
@@ -72,7 +72,7 @@ def graph(rows, column_names, name, title1, title2, drop_columns, color, color_r
         plt.gcf().text(0.93, 0.98, f"Correlation: {round(
             corr_coefficient*100, 2)}%", fontsize=12, verticalalignment='top', horizontalalignment='right')
 
-    plt.text(0, 1.07, title2, fontsize=14, verticalalignment='top',
+    plt.text(0, 1.07, title, fontsize=14, verticalalignment='top',
              horizontalalignment='left', transform=plt.gca().transAxes)
     plt.savefig(output)
     plt.close()
