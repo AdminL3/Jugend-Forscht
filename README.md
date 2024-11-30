@@ -27,11 +27,11 @@
 > 1. **German**? Schau meine [Deutsche Dokumentation](./Dokumentation/) an.
 > 2. Want an Overview? Check out the [Table of Contents](./Table_of_contents.md)
 > 3. This is a **Jugend-Forscht** Project, check out the [official website](https://www.jugend-forscht.de/)
-> 4. Want to see my Presentations? Check out the [Presentations](./Presentations/) and their Scripts.
+> 4. Want to see my Presentations? Check out the [Presentations](./Presentations/) and their Scripts. 📊
 
 ---
 
-## 1. [Data Collection](./data-collection/) 🗑️
+## 1. [Data Collection](./data-collection/) 🗂️
 
 - Collecting Data from the two different News Sources
 
@@ -43,7 +43,7 @@
 
 ---
 
-## 2. [Analysing](./Analysing/) Data / Visualizing 👀
+## 2. [Analysing](./Analysing/) Data / Visualizing 🔎
 
 - Analysing the Data from the two different News Sources
 - Comparing the Data
@@ -53,7 +53,7 @@
 
 ---
 
-## Preparation 📚
+## Preparation 📖
 
 Install dependencies:
 
