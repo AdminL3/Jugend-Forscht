@@ -1,4 +1,4 @@
-# Analysing the Sentiment ⬆✨
+# Analysing the Sentiment ✨
 
 Analysing the data, which we collected in [Step 2: Data Collection](../data-collection/)
 
@@ -53,12 +53,6 @@ conn.close()
 
 ---
 
-## 2. Visualisation in Pandas
-
-###### See my Documentation: "[Plotting the Wordcount in Pandas](../Pandas_Documentation/)"
-
----
-
-## 3. Extracting the longest Articles
+## 2. Extracting the longest Articles
 
 ###### See my Documentation: "[Getting Extrema](../Extrema_Documentation/)"

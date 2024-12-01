@@ -54,10 +54,6 @@ conn.close()
 
 ---
 
-## 2. Visualisation in Pandas
-
-###### See my Documentation: "[Plotting the Wordcount in Pandas](../Pandas_Documentation/)"
-
-## 3. Extracting the longest Articles
+## 1. Extracting the longest Articles
 
 ###### See my Documentation: "[Getting Extrema](../Extrema_Documentation/)"

@@ -1,14 +1,10 @@
 # Analysing Article Count 📈
 
-In previous steps we gathered all the Data from the Articles and extracted the Text, now we will Analyse it
-
-- See overview of all Analysation Methods [here](../)
-
-We will be looking at the Article count in this documentation
+See overview of all Analysation Methods [here](../)
 
 ## Get Article Count
 
-###### Create 4 new Tables
+#### Create 4 new Tables
 
 ```
 articles
@@ -17,15 +13,15 @@ yearly_totals
 topic_totals
 ```
 
-inside
+#### Inside of the database
 
 ```python
 conn = sqlite3.connect("Database/Articlecount/articlecount.db")
 ```
 
-###### Cycle through files
+#### Cycle through files
 
-###### Add to Database step by step
+- Add the files to the Database step by step
 
 ```python
 cursor.execute("""
@@ -33,7 +29,3 @@ cursor.execute("""
     VALUES (?, ?, ?, ?, ?)
 """, (topic_id, year, month, day, daily_count))
 ```
-
-## Visualize Article Count
-
-###### See my Documentation: "[Plotting the Wordcount in Pandas](../Pandas_Documentation/)"
