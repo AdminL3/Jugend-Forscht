@@ -90,7 +90,7 @@ title = get_title("2023-11-01-1", "politics")
 
 ### Maxima Output
 
-File: `Analysing/Wordcount/output/Maxima.txt`
+File: `Output/Wordcount/Extrema/Maxima.txt`
 
 **Example**:
 
@@ -158,7 +158,7 @@ return text
 ```python
 length = 5
 topics = ["Politics", "World", "Opinion"]
-output = "Analysing/Wordcount/output/"
+output = "Database/Wordcount/output/"
 options = ["Maxima", "Minima"]
 for i, option in enumerate(options):
    text = f"{option}:\n\n"

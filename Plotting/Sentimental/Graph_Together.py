@@ -10,7 +10,7 @@ colors_reg = ['blue', 'red', 'black']
 
 news = ["NYT", "Guardian"]
 for new in news:
-    connection = sqlite3.connect(f"Analysing/Sentimental/{new}.db")
+    connection = sqlite3.connect(f"Database/Sentimental/{new}.db")
     cursor = connection.cursor()
     for option in options:
         all_rows = []

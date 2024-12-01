@@ -146,7 +146,7 @@ news = ["NYT", "Guardian"]
 
 ```python
 for n, new in enumerate(news):
-    connection = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
+    connection = sqlite3.connect(f"Database/Wordcount/{new}.db")
     cursor = connection.cursor()
 ```
 

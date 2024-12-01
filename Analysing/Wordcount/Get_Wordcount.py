@@ -36,7 +36,7 @@ topics = ["politics", "world", "opinion"]
 news = ["NYT", "Guardian"]
 for n, new in enumerate(news):
     print(new)
-    conn = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
+    conn = sqlite3.connect(f"Database/Wordcount/{new}.db")
     cursor = conn.cursor()
     data = []
     for topic in topics:

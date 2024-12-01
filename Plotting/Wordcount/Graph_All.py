@@ -9,7 +9,7 @@ topics = ["politics", "world", "opinion"]
 
 news = ["NYT", "Guardian"]
 for new in news:
-    connection = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
+    connection = sqlite3.connect(f"Database/Wordcount/{new}.db")
     cursor = connection.cursor()
     rows = []
     for topic in topics:

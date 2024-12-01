@@ -18,7 +18,7 @@ def get_title(date, index, topic, new):
 
 
 def get_extrema(topic, length, new, o, typ):
-    conn = sqlite3.connect(f"Analysing/Sentimental/{new}.db")
+    conn = sqlite3.connect(f"Database/Sentimental/{new}.db")
     cursor = conn.cursor()
     cursor.execute(f"SELECT * FROM {topic}")
     rows = cursor.fetchall()

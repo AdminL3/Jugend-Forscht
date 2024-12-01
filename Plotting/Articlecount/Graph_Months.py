@@ -3,7 +3,7 @@ import sqlite3
 from Plotting.Plotting import graph, multiple
 
 
-connection = sqlite3.connect("Analysing/Articlecount/articlecount.db")
+connection = sqlite3.connect("Database/Articlecount/articlecount.db")
 cursor = connection.cursor()
 
 colors = ['#1f77b4', '#ff7f0e', "green"]

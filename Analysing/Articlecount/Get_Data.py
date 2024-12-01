@@ -6,7 +6,7 @@ start_year = 2020
 amount_years = 2
 topics = ["politics", "world", "opinion"]
 
-conn = sqlite3.connect("Analysing/Articlecount/articlecount.db")
+conn = sqlite3.connect("Database/Articlecount/articlecount.db")
 cursor = conn.cursor()
 
 # Create tables

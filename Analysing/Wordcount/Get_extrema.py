@@ -16,7 +16,7 @@ def get_title(date, index, topic, new):
 
 
 def get_extrema(topic, length, new, typ):
-    conn = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
+    conn = sqlite3.connect(f"Database/Wordcount/{new}.db")
     cursor = conn.cursor()
     cursor.execute(f"SELECT * FROM {topic}")
     rows = cursor.fetchall()
@@ -43,7 +43,7 @@ def get_extrema(topic, length, new, typ):
 
 
 # def get_minima(topic, length, new):
-#     conn = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
+#     conn = sqlite3.connect(f"Database/Wordcount/{new}.db")
 #     cursor = conn.cursor()
 #     cursor.execute(f"SELECT * FROM {topic}")
 #     rows = cursor.fetchall()

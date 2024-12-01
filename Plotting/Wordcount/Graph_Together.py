@@ -10,7 +10,7 @@ news = ["NYT", "Guardian"]
 for n, new in enumerate(news):
     all_rows = []
     all_columns = []
-    connection = sqlite3.connect(f"Analysing/Wordcount/{new}.db")
+    connection = sqlite3.connect(f"Database/Wordcount/{new}.db")
     cursor = connection.cursor()
     for i, topic in enumerate(topics):
         cursor.execute(f"SELECT * FROM {topic};")

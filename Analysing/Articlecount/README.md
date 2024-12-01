@@ -20,7 +20,7 @@ topic_totals
 inside
 
 ```python
-conn = sqlite3.connect("Analysing/Articlecount/articlecount.db")
+conn = sqlite3.connect("Database/Articlecount/articlecount.db")
 ```
 
 ###### Cycle through files
