@@ -1,17 +1,14 @@
 # Analysing 🔎
 
-Analysing the data, which we collected in [Step 2: Data Collection](../data-collection/)
-
-##### There are a lot of things you can analyse, but they all follow the same [Structure](#structure).
+Analysing the data, which we collected in [Step 1: Data Collection](../data-collection/)
 
 ## Option 1: Wordcount (Article Length) 📏
 
 See [Wordcount - README](./Wordcount/)
 
 - Counting The Words
-- Visualizing them in a Graph
+- Saving them in a Database
 - Extracting longest articles
-- Getting Korrelation Koefficient
 
 ---
 
@@ -19,10 +16,10 @@ See [Wordcount - README](./Wordcount/)
 
 See [Sentimental - README](./Sentimental/)
 
-- Counting The Words
-- Visualizing them in a Graph
-- Extracting longest articles
-- Getting Korrelation Koefficient
+- Getting the Sentiment of the Articles
+- Getting the Polarity of the Articles
+- Saving it in a Database
+- Extracting extreme Articles
 
 ---
 
@@ -33,32 +30,17 @@ Development of the amount of articles over time
 See [Articlecount - README](./Articlecount//)
 
 - Counting The Articles
-- Visualizing them in a Graph
-- Extracting longest articles
-- Getting Correlation Coefficient
 
 ---
 
 ## Other Options
 
 - [Wordcloud](./Wordcloud/) ☁️
-- Other Options not yet implemented
-
----
-
-## Structure
-
-This is used in every step.
-
-#### 1. Getting the data from the articles
-
-#### 2. Saving them in a database:
-
-#### 3. Visualizing the data
+- not yet implemented
 
 ---
 
 > [!NOTE]
 > This is only a part of the full project!
-> The part, where we extract the Article Text
+> The part, where we analyse the data
 > View the whole Projekt on [Github](https://github.com/AdminL3/Jugend-Forscht/)
