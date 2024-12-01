@@ -126,5 +126,8 @@ filtered_top_data['Title'] = filtered_top_data.apply(
 
 # Display top 10 filtered articles
 st.subheader(f"Top 10 {selected_topic} Articles for {selected_news}")
-st.dataframe(filtered_top_data[['ID', 'Date', 'Index', 'Wordcount', 'Title']].head(
-    10), use_container_width=True)
+st.dataframe(
+    filtered_top_data[['Date', 'Index', 'Wordcount', 'Title']].head(
+        10).set_index('Wordcount'),
+    use_container_width=True
+)
