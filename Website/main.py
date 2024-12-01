@@ -34,3 +34,14 @@ fig.update_traces(marker=dict(size=5, opacity=0.7, color='blue'))
 fig.update_layout(dragmode="pan")
 
 st.plotly_chart(fig, use_container_width=True)
+
+st.divider()
+
+# Top data
+cursor.execute(f'SELECT * FROM {selected_topic} ORDER BY wordcount DESC')
+rows = cursor.fetchall()
+data = pd.DataFrame(rows, columns=["ID", "Date", "Index", "Wordcount"])
+
+st.subheader(f"Top 10 {selected_topic} Articles for the {selected_news}")
+# Display the dataframe with full width
+st.dataframe(data.head(10), use_container_width=True)
