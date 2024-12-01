@@ -15,3 +15,5 @@ data-collection/AWS/key.pem
 /Analysing/Wordcount/__pycache__
 /data-collection/Guardian/__pycache__
 /data-collection/__pycache__
+# streamlit
+/devcontainer
