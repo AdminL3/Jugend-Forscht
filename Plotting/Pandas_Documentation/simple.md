@@ -1,26 +1,26 @@
 # How to Create Plots in Pandas
 
+- Creating Plots in Pandas without accessing the function I created ([`Plotting.py`](../Plotting.py))
+
 - Using the Wordcount Example
 
-* See Analysing\Wordcount\Graph Single\.py
-* Docs: [Analysing\Wordcount\README](https://github.com/AdminL3/Jugend-Forscht/blob/main/Analysing/Wordcount/)
-
-- Can be used with Sentimental Analysation
+* See `Analysing/Wordcount/Graph.py`
+* Docs: [Wordcount](../Wordcount/)
 
 ## Importing
 
-- First for Getting the data from the Database
-
-```python
-import sqlite3
-```
-
-- Then import modules for Plotting
+- First import modules for Plotting
 
 ```python
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+```
+
+- Then getting the data from the Database
+
+```python
+import sqlite3
 ```
 
 ## Getting from database
