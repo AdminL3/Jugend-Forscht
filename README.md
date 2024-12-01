@@ -27,7 +27,7 @@
 > 1. **German**? Schau meine [Deutsche Dokumentation](./Dokumentation/) an.
 > 2. Want an Overview? Check out the [Table of Contents](./Table_of_contents.md)
 > 3. This is a **Jugend-Forscht** Project, check out the [official website](https://www.jugend-forscht.de/)
-> 4. Want to see my Presentations? Check out the [Presentations](./Presentations/) and their Scripts. 📊
+> 4. Want to see my Presentations? Check out the [Presentations](./Presentations/) and their Scripts.
 
 ---
 

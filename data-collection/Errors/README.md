@@ -1,4 +1,4 @@
-# Errors when collecting Source Code
+# Errors when collecting Source Code⚠️
 
 ---
 

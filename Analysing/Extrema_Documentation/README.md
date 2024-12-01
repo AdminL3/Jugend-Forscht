@@ -1,4 +1,4 @@
-# Documentation for Word Count Analysis Script
+# Getting the Extramas of values🔝
 
 This script analyzes word counts from an SQLite database, identifies the maximum and minimum word counts for given topics, and generates text files summarizing the results. The script also retrieves article titles from a directory structure based on the provided date and topic.
 

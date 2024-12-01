@@ -1,4 +1,4 @@
-# How to Create Plots in Pandas
+# How to Create Plots in Pandas🐼
 
 - Creating a Function to graph the data
 - See the function here: [`Plotting.py`](../Plotting.py)

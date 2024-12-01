@@ -34,5 +34,4 @@
 
 3. Use working proxies to access HTML
 
-   - See [**2. Requests**](../Requests/)
-   - See [The Guardian](../The%20Guardian/) for an example
+   - See [The Guardian](../The%20Guardian/)💂, where I used Requests as my main method.

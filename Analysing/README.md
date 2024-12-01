@@ -23,7 +23,7 @@ See [Sentimental - README](./Sentimental/)
 
 ---
 
-## Option 3: Article Amount 📈
+## Option 3: Article Count 📈
 
 Development of the amount of articles over time
 

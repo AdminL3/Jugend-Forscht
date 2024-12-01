@@ -38,7 +38,7 @@
 - Finding [Missing Dates](./Missing-Files/)
 - Use an API to get the Source Code: [Scraperapi](./Scraperapi/)
 - Use [Proxyrotation](./Proxyrotation/) to avoid IP-Bans
-- Check out my Error messages [here](./Errors/)
+- Check out my Error messages [here](./Errors/)⚠️
 
 ---
 

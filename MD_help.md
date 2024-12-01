@@ -1,8 +1,3 @@
-Guardian💂
-New York Times 🏢
-
----
-
 > [!NOTE]
 > This is only a part of the full project!
 > The part, where we ...(add what the part is about)

@@ -1,4 +1,4 @@
-# Data Collection from the New York Times
+# Data Collection from the New York Times 🏢
 
 ## Step 1: Get Links from **NYT API**
 
@@ -49,7 +49,7 @@ file.write(url + '\n')
 In this step, you can choose from different methods to extract the source code from URLs.
 
 - This is a very tedious process, as NYT tries to prevent you from getting their data
-- [Here](../Errors/) are the Errors i encountered
+- [Here](../Errors/) are the Errors I encountered
 - I tried multiple methods, but they all got blocked after some time
 
 ###### The option that worked in the end:
@@ -100,9 +100,8 @@ In this step, you can choose from different methods to extract the source code f
 
 ### 1. Requests
 
-- This worked well with [The Guardian](../The%20Guardian/).
-- More Documentation for Requests can be found [here](../Requests/)
-- For the [NYT](../NYT/), this works for some time until you get blocked.
+- This worked well with [The Guardian](../The%20Guardian/).💂
+- For the [NYT🏢](../NYT/), this works for some time until you get blocked.
 
 ### 2. External API
 

@@ -1,6 +1,6 @@
 # Analysing the Word Count (Article Length)📏
 
-Analysing the data, which we collected in [Step 2: Data Collection](../data-collection/)
+Analysing the data, which we collected in [Step 1: Data Collection](../data-collection/)🗂️
 
 ## 1. Save data in Database
 
@@ -56,4 +56,4 @@ conn.close()
 
 ## 1. Extracting the longest Articles
 
-###### See my Documentation: "[Getting Extrema](../Extrema_Documentation/)"
+###### See my Documentation: "[Getting Extrema](../Extrema_Documentation/)"🔝
