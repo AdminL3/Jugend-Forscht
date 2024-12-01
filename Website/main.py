@@ -33,23 +33,45 @@ year_range = st.slider(
     value=(int(min_year), int(max_year)),
     step=1
 )
-if year_range[1]-year_range[0] < 2:
-    st.text("Your selected range is smaller than 2 years.")
+
+# if year range is less than 1 year, allow month range selection
+st.markdown(
+    f"<h4 style='text-align: center;'>From {
+        year_range[0]} to {year_range[1]}</h4>",
+    unsafe_allow_html=True
+)
+if year_range[1]-year_range[0] < 1:
+    one_year = True
+else:
+    one_year = False
+if one_year:
+    st.text("Your selected range is smaller than 1 year. You can specify a month range instead: ")
     month_range = st.slider(
-        "You can specify a month range instead",
+        "Select Month Range",
         min_value=1,
         max_value=12,
         value=(1, 12),
         step=1
     )
+    st.markdown(
+        f"<h4 style='text-align: center;'>Year: {year_range[0]}, Month: {
+            month_range[0]} to {month_range[1]}</h4>",
+        unsafe_allow_html=True
+    )
 else:
     month_range = (1, 12)
 
+
+st.divider()
 # Filter data based on selected year range
 filtered_data = data[(data['date'].dt.year >= year_range[0])
                      & (data['date'].dt.year <= year_range[1])]
 
-st.subheader(f"Scatter Plot for {selected_news} - {selected_topic}")
+
+# Show scatter plot
+st.subheader("Scatter Plot:")
+st.write(f"{selected_news} - {selected_topic} - {
+         year_range[0]} - {month_range[0]} to {month_range[1]}" if one_year else f"{selected_news} - {selected_topic} - {year_range[0]} to {year_range[1]}")
 fig = px.scatter(
     filtered_data,
     x='date',
@@ -63,6 +85,7 @@ fig.update_layout(dragmode="pan")
 st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
+
 
 # Get top 10 articles
 cursor.execute(f'SELECT * FROM {selected_topic} ORDER BY wordcount DESC')
