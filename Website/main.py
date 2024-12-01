@@ -1,8 +1,10 @@
-from calendar import month
 import streamlit as st
 import sqlite3
 import pandas as pd
 import plotly.express as px
+
+
+st.set_page_config(layout="wide")
 
 
 # Function to get the article title
@@ -104,7 +106,7 @@ st.divider()
 # Get top 10 articles with applied filters
 cursor.execute(f'SELECT * FROM {selected_topic} ORDER BY wordcount DESC')
 rows = cursor.fetchall()
-data = pd.DataFrame(rows, columns=["ID", "Date", "Index", "Wordcount"])
+data = pd.DataFrame(rows, columns=["ID", "Date", "Day Index", "Wordcount"])
 data['Date'] = pd.to_datetime(data['Date'])
 
 filtered_top_data = data[
@@ -118,16 +120,18 @@ filtered_top_data = data[
 filtered_top_data['Date'] = filtered_top_data['Date'].dt.date
 
 # Add a Title column using the get_title function
-filtered_top_data['Title'] = filtered_top_data.apply(
-    lambda row: get_title(row['Date'].strftime(
-        "%Y-%m-%d"), row['Index'], selected_topic, selected_news),
-    axis=1
-)
+
+with st.spinner("Fetching Articles..."):
+    filtered_top_data['Title'] = filtered_top_data.apply(
+        lambda row: get_title(row['Date'].strftime(
+            "%Y-%m-%d"), row['Day Index'], selected_topic, selected_news),
+        axis=1
+    )
 
 # Display top 10 filtered articles
 st.subheader(f"Top 10 {selected_topic} Articles for {selected_news}")
 st.dataframe(
-    filtered_top_data[['Date', 'Index', 'Wordcount', 'Title']].head(
+    filtered_top_data[['Date', 'Day Index', 'Wordcount', 'Title']].head(
         10).set_index('Wordcount'),
     use_container_width=True
 )
