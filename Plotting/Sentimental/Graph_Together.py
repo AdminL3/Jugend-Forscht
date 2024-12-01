@@ -1,6 +1,6 @@
 import os
 import sqlite3
-from Analysing.Plotting import graph, multiple
+from Plotting.Plotting import graph, multiple
 
 
 topics = ["Politics", "World", "Opinion"]

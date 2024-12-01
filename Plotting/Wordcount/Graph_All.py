@@ -1,6 +1,6 @@
 import os
 import sqlite3
-from Analysing.Plotting import graph
+from Plotting.Plotting import graph
 
 name = "All"
 color = "#ff33ff"

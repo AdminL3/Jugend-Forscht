@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
-from scipy.stats import pearsonr
 
 
 def graph(rows, column_names, name, legend_title, title, drop_columns, color, color_reg, regression, size, output):

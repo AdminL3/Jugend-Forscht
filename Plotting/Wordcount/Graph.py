@@ -1,6 +1,6 @@
 import os
 import sqlite3
-from Analysing.Plotting import graph
+from Plotting.Plotting import graph
 
 
 colors = ['#1f77b4', '#ff7f0e', "green"]

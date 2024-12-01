@@ -1,6 +1,6 @@
 import os
 import sqlite3
-from Analysing.Plotting import graph
+from Plotting.Plotting import graph
 
 topics = ["Politics", "World", "Opinion"]
 options = ['polarity', 'subjectivity']
