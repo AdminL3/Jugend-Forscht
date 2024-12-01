@@ -73,6 +73,7 @@ Used Packages:
 - Requests: For handling HTTP requests.
 - Scikit-learn: For machine learning tasks.
 - Selenium: For browser automation and testing.
+- Streamlit: For creating web applications.
 - ...
 
 ---
