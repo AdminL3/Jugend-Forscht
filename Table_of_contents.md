@@ -17,11 +17,23 @@
 - [Wordcount](./Analysing/Wordcount/)
 - [Sentimental](./Analysing/Sentimental/)
 - [Articlecount](./Analysing/Articlecount/)
-- [Pandas Documentation](./Analysing/Pandas%20Documentation/)
 - [Extrema Documentation](./Analysing/Extrema%20Documentation/)
-- [Wordcloud](./Analysing/Wordcloud/)
 
-### 3. Other
+### 3. Plotting Graphs
+
+- [Pandas Documentation](./Analysing/Pandas%20Documentation/)
+- [Wordcount](./Analysing/Wordcount/)
+- [Sentimental](./Analysing/Sentimental/)
+- [Articlecount](./Analysing/Articlecount/)
+
+### 4. Visualizing in Website
+
+- [Pandas Documentation](./Analysing/Pandas%20Documentation/)
+- [Wordcount](./Analysing/Wordcount/)
+- [Sentimental](./Analysing/Sentimental/)
+- [Articlecount](./Analysing/Articlecount/)
+
+### 5. Other
 
 - [Overview](./)
 - [Project Introduction](./Presentations/Introduction.md)

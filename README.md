@@ -43,13 +43,33 @@
 
 ---
 
-## 2. [Analysing](./Analysing/) Data / Visualizing 🔎
+## 2. [Analysing](./Analysing/) Data 🔎
 
 - Analysing the Data from the two different News Sources
 - Comparing the Data
 - Visualizing the Data
 
-###### See [Analysing Data](Analysing/)
+###### See [Analysing Data](./Analysing/)
+
+---
+
+## 3. [Plotting](./Plotting/) Graphs 📈
+
+- Analysing the Data from the two different News Sources
+- Comparing the Data
+- Visualizing the Data
+
+###### See [Plotting Graphs](./Plotting/)
+
+---
+
+## 4. [Visualizing](./Website/) in Website 🌐
+
+- Analysing the Data from the two different News Sources
+- Comparing the Data
+- Visualizing the Data
+
+###### See [Website](./Website/)
 
 ---
 
