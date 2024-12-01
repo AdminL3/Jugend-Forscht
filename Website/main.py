@@ -4,6 +4,16 @@ import sqlite3
 import pandas as pd
 import plotly.express as px
 
+
+# Function to get the article title
+def get_title(date, index, topic, new):
+    parts = date.split("-")
+    path = f"data/{new}/articles/{topic}/{parts[0]
+                                          }/month{parts[1]}/day{parts[2]}/{index}.txt"
+    with open(path, "r", encoding="utf-8") as file:
+        return file.read().splitlines()[0]
+
+
 st.title('Wordcount')
 
 news_options = ["NYT", "Guardian"]
@@ -107,6 +117,14 @@ filtered_top_data = data[
 # Format the Date column to exclude time
 filtered_top_data['Date'] = filtered_top_data['Date'].dt.date
 
+# Add a Title column using the get_title function
+filtered_top_data['Title'] = filtered_top_data.apply(
+    lambda row: get_title(row['Date'].strftime(
+        "%Y-%m-%d"), row['Index'], selected_topic, selected_news),
+    axis=1
+)
+
 # Display top 10 filtered articles
 st.subheader(f"Top 10 {selected_topic} Articles for {selected_news}")
-st.dataframe(filtered_top_data.head(10), use_container_width=True)
+st.dataframe(filtered_top_data[['ID', 'Date', 'Index', 'Wordcount', 'Title']].head(
+    10), use_container_width=True)
