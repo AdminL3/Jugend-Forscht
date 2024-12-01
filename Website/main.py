@@ -70,6 +70,9 @@ filtered_data = data[
     (data['date'].dt.month <= month_range[1])
 ]
 
+# Format the date column to exclude time
+filtered_data['date'] = filtered_data['date'].dt.date
+
 # Scatter plot
 st.subheader("Scatter Plot:")
 st.write(f"{selected_news} - {selected_topic} - {year_range[0]} - {month_range[0]} to {
@@ -100,6 +103,9 @@ filtered_top_data = data[
     (data['Date'].dt.month >= month_range[0]) &
     (data['Date'].dt.month <= month_range[1])
 ]
+
+# Format the Date column to exclude time
+filtered_top_data['Date'] = filtered_top_data['Date'].dt.date
 
 # Display top 10 filtered articles
 st.subheader(f"Top 10 {selected_topic} Articles for {selected_news}")
