@@ -12,6 +12,7 @@ topics = ["Politics", "World", "Opinion"]
 selected_news = st.selectbox("Select News Source", news_options)
 selected_topic = st.selectbox("Select Topic", topics)
 
+# Connect to the database
 conn = sqlite3.connect(f'Database/Wordcount/{selected_news}.db')
 cursor = conn.cursor()
 
@@ -34,18 +35,15 @@ year_range = st.slider(
     step=1
 )
 
-# if year range is less than 1 year, allow month range selection
-st.markdown(
-    f"<h4 style='text-align: center;'>From {
-        year_range[0]} to {year_range[1]}</h4>",
-    unsafe_allow_html=True
-)
-if year_range[1]-year_range[0] < 1:
+# Filter for a single year
+if year_range[1] - year_range[0] < 1:
     one_year = True
 else:
     one_year = False
+
 if one_year:
-    st.text("Your selected range is smaller than 1 year. You can specify a month range instead: ")
+    st.divider()
+    st.text("Your selected range is smaller than 1 year. You can specify a month range instead:")
     month_range = st.slider(
         "Select Month Range",
         min_value=1,
@@ -53,25 +51,29 @@ if one_year:
         value=(1, 12),
         step=1
     )
-    st.markdown(
-        f"<h4 style='text-align: center;'>Year: {year_range[0]}, Month: {
-            month_range[0]} to {month_range[1]}</h4>",
-        unsafe_allow_html=True
-    )
 else:
     month_range = (1, 12)
 
+st.markdown(
+    f"<h4 style='text-align: center;'>Year: {year_range[0]} to {
+        year_range[1]}, Month: {month_range[0]} to {month_range[1]}</h4>",
+    unsafe_allow_html=True
+)
 
 st.divider()
-# Filter data based on selected year range
-filtered_data = data[(data['date'].dt.year >= year_range[0])
-                     & (data['date'].dt.year <= year_range[1])]
 
+# Filter data based on selected year and month range
+filtered_data = data[
+    (data['date'].dt.year >= year_range[0]) &
+    (data['date'].dt.year <= year_range[1]) &
+    (data['date'].dt.month >= month_range[0]) &
+    (data['date'].dt.month <= month_range[1])
+]
 
-# Show scatter plot
+# Scatter plot
 st.subheader("Scatter Plot:")
-st.write(f"{selected_news} - {selected_topic} - {
-         year_range[0]} - {month_range[0]} to {month_range[1]}" if one_year else f"{selected_news} - {selected_topic} - {year_range[0]} to {year_range[1]}")
+st.write(f"{selected_news} - {selected_topic} - {year_range[0]} - {month_range[0]} to {
+         month_range[1]}" if one_year else f"{selected_news} - {selected_topic} - {year_range[0]} to {year_range[1]}")
 fig = px.scatter(
     filtered_data,
     x='date',
@@ -86,18 +88,19 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
 
-
-# Get top 10 articles
+# Get top 10 articles with applied filters
 cursor.execute(f'SELECT * FROM {selected_topic} ORDER BY wordcount DESC')
 rows = cursor.fetchall()
 data = pd.DataFrame(rows, columns=["ID", "Date", "Index", "Wordcount"])
 data['Date'] = pd.to_datetime(data['Date'])
 
-# Filter for the same year range
 filtered_top_data = data[
-    (data['Date'].dt.year >= year_range[0]) & (
-        data['Date'].dt.year <= year_range[1])
+    (data['Date'].dt.year >= year_range[0]) &
+    (data['Date'].dt.year <= year_range[1]) &
+    (data['Date'].dt.month >= month_range[0]) &
+    (data['Date'].dt.month <= month_range[1])
 ]
 
-st.subheader(f"Top 10 {selected_topic} Articles for the {selected_news}")
+# Display top 10 filtered articles
+st.subheader(f"Top 10 {selected_topic} Articles for {selected_news}")
 st.dataframe(filtered_top_data.head(10), use_container_width=True)
