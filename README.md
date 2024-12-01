@@ -94,6 +94,7 @@ Used Packages:
 - Scikit-learn: For machine learning tasks.
 - Selenium: For browser automation and testing.
 - Streamlit: For creating web applications.
+- Plotly: For interactive data visualization.
 - ...
 
 ---
