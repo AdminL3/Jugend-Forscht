@@ -4,9 +4,6 @@ import pandas as pd
 import plotly.express as px
 
 
-st.set_page_config(layout="wide")
-
-
 # Function to get the article title
 def get_title(date, index, topic, new):
     parts = date.split("-")
@@ -16,6 +13,7 @@ def get_title(date, index, topic, new):
         return file.read().splitlines()[0]
 
 
+st.set_page_config(layout="wide")
 st.title('Wordcount')
 
 news_options = ["NYT", "Guardian"]
@@ -75,7 +73,7 @@ st.markdown(
 st.divider()
 
 # Filter data based on selected year and month range
-filtered_data = data[
+plot_data = data[
     (data['date'].dt.year >= year_range[0]) &
     (data['date'].dt.year <= year_range[1]) &
     (data['date'].dt.month >= month_range[0]) &
@@ -83,14 +81,16 @@ filtered_data = data[
 ]
 
 # Format the date column to exclude time
-filtered_data['date'] = filtered_data['date'].dt.date
+plot_data['date'] = plot_data['date'].dt.date
 
 # Scatter plot
+
+# title
 st.subheader("Scatter Plot:")
 st.write(f"{selected_news} - {selected_topic} - {year_range[0]} - {month_range[0]} to {
          month_range[1]}" if one_year else f"{selected_news} - {selected_topic} - {year_range[0]} to {year_range[1]}")
 fig = px.scatter(
-    filtered_data,
+    plot_data,  # plot with filtered data
     x='date',
     y='wordcount',
     labels={'date': 'Date', 'wordcount': 'Word Count'},
@@ -106,10 +106,14 @@ st.divider()
 # Get top 10 articles with applied filters
 cursor.execute(f'SELECT * FROM {selected_topic} ORDER BY wordcount DESC')
 rows = cursor.fetchall()
-data = pd.DataFrame(rows, columns=["ID", "Date", "Day Index", "Wordcount"])
+
+# create a dataframe
+top_data = pd.DataFrame(rows, columns=["ID", "Date", "Day Index", "Wordcount"])
+# convert the Date column to datetime
 data['Date'] = pd.to_datetime(data['Date'])
 
-filtered_top_data = data[
+# filter it by the selected year and month range
+filtered_top_data = top_data[
     (data['Date'].dt.year >= year_range[0]) &
     (data['Date'].dt.year <= year_range[1]) &
     (data['Date'].dt.month >= month_range[0]) &
@@ -128,10 +132,22 @@ with st.spinner("Fetching Articles..."):
         axis=1
     )
 
-# Display top 10 filtered articles
 st.subheader(f"Top 10 {selected_topic} Articles for {selected_news}")
+
+
+top_data = filtered_top_data.head(10)
+styled_df = top_data.style.applymap(
+    lambda x: 'color: yellow', subset=['Wordcount'])
+
 st.dataframe(
-    filtered_top_data[['Date', 'Day Index', 'Wordcount', 'Title']].head(
-        10).set_index('Wordcount'),
-    use_container_width=True
+    styled_df,
+    use_container_width=True,
+    hide_index=True,
+    column_config={
+        "ID": st.column_config.Column(width=-100),
+        "Wordcount": st.column_config.Column(width=-100),
+        "Date": st.column_config.Column(width=-100),
+        "Day Index": st.column_config.Column(width=-10),
+        "Title": st.column_config.Column(width=600)
+    }
 )
