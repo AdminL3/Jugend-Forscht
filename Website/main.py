@@ -1,3 +1,4 @@
+import numpy as np
 import streamlit as st
 import sqlite3
 import pandas as pd
@@ -73,7 +74,7 @@ st.markdown(
 st.divider()
 
 # Filter data based on selected year and month range
-plot_data = data[
+filtered_data = data[
     (data['date'].dt.year >= year_range[0]) &
     (data['date'].dt.year <= year_range[1]) &
     (data['date'].dt.month >= month_range[0]) &
@@ -81,7 +82,7 @@ plot_data = data[
 ]
 
 # Format the date column to exclude time
-plot_data['date'] = plot_data['date'].dt.date
+filtered_data['date'] = filtered_data['date'].dt.date
 
 # Scatter plot
 
@@ -90,7 +91,7 @@ st.subheader("Scatter Plot:")
 st.write(f"{selected_news} - {selected_topic} - {year_range[0]} - {month_range[0]} to {
          month_range[1]}" if one_year else f"{selected_news} - {selected_topic} - {year_range[0]} to {year_range[1]}")
 fig = px.scatter(
-    plot_data,  # plot with filtered data
+    filtered_data,
     x='date',
     y='wordcount',
     labels={'date': 'Date', 'wordcount': 'Word Count'},
@@ -106,14 +107,12 @@ st.divider()
 # Get top 10 articles with applied filters
 cursor.execute(f'SELECT * FROM {selected_topic} ORDER BY wordcount DESC')
 rows = cursor.fetchall()
-
 # create a dataframe
-top_data = pd.DataFrame(rows, columns=["ID", "Date", "Day Index", "Wordcount"])
 # convert the Date column to datetime
+data = pd.DataFrame(rows, columns=["ID", "Date", "Day Index", "Wordcount"])
 data['Date'] = pd.to_datetime(data['Date'])
 
-# filter it by the selected year and month range
-filtered_top_data = top_data[
+filtered_top_data = data[
     (data['Date'].dt.year >= year_range[0]) &
     (data['Date'].dt.year <= year_range[1]) &
     (data['Date'].dt.month >= month_range[0]) &
