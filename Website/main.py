@@ -30,13 +30,13 @@ cursor = conn.cursor()
 cursor.execute(f'SELECT date, wordcount FROM {selected_topic}')
 rows = cursor.fetchall()
 
-data = pd.DataFrame(rows, columns=['date', 'wordcount'])
-data['date'] = pd.to_datetime(data['date'])
+graph_data = pd.DataFrame(rows, columns=['date', 'wordcount'])
+graph_data['date'] = pd.to_datetime(graph_data['date'])
 
 # Year range selector
 st.subheader("Filter by Year Range")
-min_year = data['date'].dt.year.min()
-max_year = data['date'].dt.year.max()
+min_year = graph_data['date'].dt.year.min()
+max_year = graph_data['date'].dt.year.max()
 
 year_range = st.slider(
     "Select Year Range",
@@ -74,15 +74,15 @@ st.markdown(
 st.divider()
 
 # Filter data based on selected year and month range
-filtered_data = data[
-    (data['date'].dt.year >= year_range[0]) &
-    (data['date'].dt.year <= year_range[1]) &
-    (data['date'].dt.month >= month_range[0]) &
-    (data['date'].dt.month <= month_range[1])
+filtered_graph_data = graph_data[
+    (graph_data['date'].dt.year >= year_range[0]) &
+    (graph_data['date'].dt.year <= year_range[1]) &
+    (graph_data['date'].dt.month >= month_range[0]) &
+    (graph_data['date'].dt.month <= month_range[1])
 ]
 
 # Format the date column to exclude time
-filtered_data['date'] = filtered_data['date'].dt.date
+filtered_graph_data['date'] = filtered_graph_data['date'].dt.date
 
 # Scatter plot
 
@@ -91,7 +91,7 @@ st.subheader("Scatter Plot:")
 st.write(f"{selected_news} - {selected_topic} - {year_range[0]} - {month_range[0]} to {
          month_range[1]}" if one_year else f"{selected_news} - {selected_topic} - {year_range[0]} to {year_range[1]}")
 fig = px.scatter(
-    filtered_data,
+    filtered_graph_data,
     x='date',
     y='wordcount',
     labels={'date': 'Date', 'wordcount': 'Word Count'},
@@ -108,15 +108,15 @@ st.divider()
 cursor.execute(f'SELECT * FROM {selected_topic} ORDER BY wordcount DESC')
 rows = cursor.fetchall()
 # create a dataframe
+top_data = pd.DataFrame(rows, columns=["ID", "Date", "Day Index", "Wordcount"])
 # convert the Date column to datetime
-data = pd.DataFrame(rows, columns=["ID", "Date", "Day Index", "Wordcount"])
-data['Date'] = pd.to_datetime(data['Date'])
+top_data['Date'] = pd.to_datetime(top_data['Date'])
 
-filtered_top_data = data[
-    (data['Date'].dt.year >= year_range[0]) &
-    (data['Date'].dt.year <= year_range[1]) &
-    (data['Date'].dt.month >= month_range[0]) &
-    (data['Date'].dt.month <= month_range[1])
+filtered_top_data = top_data[
+    (top_data['Date'].dt.year >= year_range[0]) &
+    (top_data['Date'].dt.year <= year_range[1]) &
+    (top_data['Date'].dt.month >= month_range[0]) &
+    (top_data['Date'].dt.month <= month_range[1])
 ]
 
 # Format the Date column to exclude time
@@ -134,12 +134,12 @@ with st.spinner("Fetching Articles..."):
 st.subheader(f"Top 10 {selected_topic} Articles for {selected_news}")
 
 
-top_data = filtered_top_data.head(10)
-styled_df = top_data.style.applymap(
+filtered_top_data = filtered_top_data.head(10)
+styled_dataframe = filtered_top_data.style.applymap(
     lambda x: 'color: yellow', subset=['Wordcount'])
 
 st.dataframe(
-    styled_df,
+    styled_dataframe,
     use_container_width=True,
     hide_index=True,
     column_config={
