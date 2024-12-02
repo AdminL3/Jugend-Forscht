@@ -147,7 +147,7 @@ st.dataframe(
         "ID": st.column_config.Column(width=-100),
         "Wordcount": st.column_config.Column(width=-100),
         "Date": st.column_config.Column(width=-100),
-        "Day Index": st.column_config.Column(width=-10),
+        "Day Index": st.column_config.Column(width=-100),
         "Title": st.column_config.Column(width=600)
     }
 )
