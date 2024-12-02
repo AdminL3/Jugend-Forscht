@@ -4,8 +4,8 @@ import datetime
 import requests
 import config  # Your API key stored here
 
-start_year = 2020
-amount_years = 1
+start_year = 2010
+amount_years = 2
 
 
 def fetch_guardian_links(year, month):

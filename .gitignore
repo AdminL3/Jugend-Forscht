@@ -13,9 +13,10 @@ data-collection/AWS/key.pem
 # pycache
 /Analysing/__pycache__
 /Analysing/Wordcount/__pycache__
-/data-collection/Guardian/__pycache__
-/data-collection/__pycache__
 /Analysing/Sentimental/__pycache__
 /Analysing/Articlecount/__pycache__
+/data-collection/__pycache__
+/data-collection/NYT/__pycache__
+/data-collection/Guardian/__pycache__
 # streamlit
 /devcontainer
