@@ -2,10 +2,10 @@ import time
 from selenium import webdriver
 import os
 
-start_year = 2020
-amount_years = 2
-start_month = 1
-amount_month = 12
+start_year = 2010
+amount_years = 1
+start_month = 9
+amount_month = 1
 topics = ["world", "politics", "opinion"]
 
 
