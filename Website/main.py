@@ -85,6 +85,7 @@ filtered_graph_data = graph_data[
 # Format the date column to exclude time
 filtered_graph_data['date'] = filtered_graph_data['date'].dt.date
 
+
 # Scatter plot
 
 # title
@@ -96,17 +97,34 @@ fig = px.scatter(
     x='date',
     y='wordcount',
     labels={'date': 'Date', 'wordcount': 'Word Count'},
-    title='Word Count Development',
-    template='plotly_white'
+    title='Word Count Development'
 )
+
 
 # Linear Regression
 model = LinearRegression()
-x = filtered_graph_data[['x']]
-y = filtered_graph_data['y']
+
+# Convert dates to numerical format
+x = (pd.to_datetime(filtered_graph_data['date']) - pd.Timestamp("1970-01-01")).dt.days.values.reshape(-1, 1)
+y = filtered_graph_data['wordcount'].values
+
+# Fit the model
 model.fit(x, y)
+
+# Predict values
 y_pred = model.predict(x)
-fig.add_trace(go.Scatter(x=filtered_graph_data['date'], y=y_pred.flatten(), mode='lines', name='Regression line'))
+
+# Convert x back to datetime for plotting
+regression_dates = pd.to_datetime("1970-01-01") + pd.to_timedelta(x.flatten(), unit="D")
+
+# Add regression line to scatter plot
+fig.add_trace(go.Scatter(
+    x=regression_dates,
+    y=y_pred,
+    mode='lines',
+    name='Regression line',
+    line=dict(color='red')
+))
 
 
 # Update the layout
