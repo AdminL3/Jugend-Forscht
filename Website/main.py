@@ -1,7 +1,9 @@
+from sklearn.linear_model import LinearRegression
 import streamlit as st
 import sqlite3
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 
 
 # Function to get the article title
@@ -94,8 +96,20 @@ fig = px.scatter(
     x='date',
     y='wordcount',
     labels={'date': 'Date', 'wordcount': 'Word Count'},
+    title='Word Count Development',
     template='plotly_white'
 )
+
+# Linear Regression
+model = LinearRegression()
+x = filtered_graph_data[['x']]
+y = filtered_graph_data['y']
+model.fit(x, y)
+y_pred = model.predict(x)
+fig.add_trace(go.Scatter(x=filtered_graph_data['date'], y=y_pred.flatten(), mode='lines', name='Regression line'))
+
+
+# Update the layout
 fig.update_traces(marker=dict(size=5, opacity=0.7, color='blue'))
 fig.update_layout(dragmode="pan")
 
