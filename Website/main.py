@@ -1,7 +1,9 @@
+from sklearn.linear_model import LinearRegression
 import streamlit as st
 import sqlite3
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 
 
 # Function to get the article title
@@ -83,6 +85,7 @@ filtered_graph_data = graph_data[
 # Format the date column to exclude time
 filtered_graph_data['date'] = filtered_graph_data['date'].dt.date
 
+
 # Scatter plot
 
 # title
@@ -94,8 +97,37 @@ fig = px.scatter(
     x='date',
     y='wordcount',
     labels={'date': 'Date', 'wordcount': 'Word Count'},
-    template='plotly_white'
+    title='Word Count Development'
 )
+
+
+# Linear Regression
+model = LinearRegression()
+
+# Convert dates to numerical format
+x = (pd.to_datetime(filtered_graph_data['date']) - pd.Timestamp("1970-01-01")).dt.days.values.reshape(-1, 1)
+y = filtered_graph_data['wordcount'].values
+
+# Fit the model
+model.fit(x, y)
+
+# Predict values
+y_pred = model.predict(x)
+
+# Convert x back to datetime for plotting
+regression_dates = pd.to_datetime("1970-01-01") + pd.to_timedelta(x.flatten(), unit="D")
+
+# Add regression line to scatter plot
+fig.add_trace(go.Scatter(
+    x=regression_dates,
+    y=y_pred,
+    mode='lines',
+    name='Regression line',
+    line=dict(color='red')
+))
+
+
+# Update the layout
 fig.update_traces(marker=dict(size=5, opacity=0.7, color='blue'))
 fig.update_layout(dragmode="pan")
 
@@ -103,49 +135,50 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
 
+
 # Get top 10 articles with applied filters
-cursor.execute(f'SELECT * FROM {selected_topic} ORDER BY wordcount DESC')
-rows = cursor.fetchall()
-# create a dataframe
-top_data = pd.DataFrame(rows, columns=["ID", "Date", "Day Index", "Wordcount"])
-# convert the Date column to datetime
-top_data['Date'] = pd.to_datetime(top_data['Date'])
+# cursor.execute(f'SELECT * FROM {selected_topic} ORDER BY wordcount DESC')
+# rows = cursor.fetchall()
+# # create a dataframe
+# top_data = pd.DataFrame(rows, columns=["ID", "Date", "Day Index", "Wordcount"])
+# # convert the Date column to datetime
+# top_data['Date'] = pd.to_datetime(top_data['Date'])
 
-filtered_top_data = top_data[
-    (top_data['Date'].dt.year >= year_range[0]) &
-    (top_data['Date'].dt.year <= year_range[1]) &
-    (top_data['Date'].dt.month >= month_range[0]) &
-    (top_data['Date'].dt.month <= month_range[1])
-]
+# filtered_top_data = top_data[
+#     (top_data['Date'].dt.year >= year_range[0]) &
+#     (top_data['Date'].dt.year <= year_range[1]) &
+#     (top_data['Date'].dt.month >= month_range[0]) &
+#     (top_data['Date'].dt.month <= month_range[1])
+# ]
 
-# Format the Date column to exclude time
-filtered_top_data['Date'] = filtered_top_data['Date'].dt.date
+# # Format the Date column to exclude time
+# filtered_top_data['Date'] = filtered_top_data['Date'].dt.date
 
-# Add a Title column using the get_title function
+# # Add a Title column using the get_title function
 
-with st.spinner("Fetching Articles..."):
-    filtered_top_data['Title'] = filtered_top_data.apply(
-        lambda row: get_title(row['Date'].strftime(
-            "%Y-%m-%d"), row['Day Index'], selected_topic, selected_news),
-        axis=1
-    )
+# with st.spinner("Fetching Articles..."):
+#     filtered_top_data['Title'] = filtered_top_data.apply(
+#         lambda row: get_title(row['Date'].strftime(
+#             "%Y-%m-%d"), row['Day Index'], selected_topic, selected_news),
+#         axis=1
+#     )
 
-st.subheader(f"Top 10 {selected_topic} Articles for {selected_news}")
+# st.subheader(f"Top 10 {selected_topic} Articles for {selected_news}")
 
 
-filtered_top_data = filtered_top_data.head(10)
-styled_dataframe = filtered_top_data.style.applymap(
-    lambda x: 'color: yellow', subset=['Wordcount'])
+# filtered_top_data = filtered_top_data.head(10)
+# styled_dataframe = filtered_top_data.style.applymap(
+#     lambda x: 'color: yellow', subset=['Wordcount'])
 
-st.dataframe(
-    styled_dataframe,
-    use_container_width=True,
-    hide_index=True,
-    column_config={
-        "ID": st.column_config.Column(width=-100),
-        "Wordcount": st.column_config.Column(width=-100),
-        "Date": st.column_config.Column(width=-100),
-        "Day Index": st.column_config.Column(width=-100),
-        "Title": st.column_config.Column(width=600)
-    }
-)
+# st.dataframe(
+#     styled_dataframe,
+#     use_container_width=True,
+#     hide_index=True,
+#     column_config={
+#         "ID": st.column_config.Column(width=-100),
+#         "Wordcount": st.column_config.Column(width=-100),
+#         "Date": st.column_config.Column(width=-100),
+#         "Day Index": st.column_config.Column(width=-100),
+#         "Title": st.column_config.Column(width=600)
+#     }
+# )
