@@ -178,3 +178,52 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width=True)
 
 st.divider()
+
+
+# Get top 10 articles with applied filters
+
+cursor.execute(f'SELECT * FROM {selected_topic} ORDER BY wordcount DESC')
+rows = cursor.fetchall()
+# create a dataframe
+top_data = pd.DataFrame(rows, columns=["ID", "Date", "Day Index", "Wordcount"])
+# convert the Date column to datetime
+top_data['Date'] = pd.to_datetime(top_data['Date'])
+
+filtered_top_data = top_data[
+    (top_data['Date'].dt.year >= year_range[0]) &
+    (top_data['Date'].dt.year <= year_range[1]) &
+    (top_data['Date'].dt.month >= month_range[0]) &
+    (top_data['Date'].dt.month <= month_range[1])
+]
+
+# Format the Date column to exclude time
+filtered_top_data['Date'] = filtered_top_data['Date'].dt.date
+
+# Add a Title column using the get_title function
+
+with st.spinner("Fetching Articles..."):
+    filtered_top_data['Title'] = filtered_top_data.apply(
+        lambda row: get_title(row['Date'].strftime(
+            "%Y-%m-%d"), row['Day Index'], selected_topic, selected_news),
+        axis=1
+    )
+
+st.subheader(f"Top 10 {selected_topic} Articles for {selected_news}")
+
+
+filtered_top_data = filtered_top_data.head(10)
+styled_dataframe = filtered_top_data.style.applymap(
+    lambda x: 'color: yellow', subset=['Wordcount'])
+
+st.dataframe(
+    styled_dataframe,
+    use_container_width=True,
+    hide_index=True,
+    column_config={
+        "ID": st.column_config.Column(width=-100),
+        "Wordcount": st.column_config.Column(width=-100),
+        "Date": st.column_config.Column(width=-100),
+        "Day Index": st.column_config.Column(width=-100),
+        "Title": st.column_config.Column(width=600)
+    }
+)
