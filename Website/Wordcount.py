@@ -19,10 +19,21 @@ st.set_page_config(layout="wide")
 st.title('Wordcount')
 
 st.divider()
+st.subheader(
+    "Recommended less than 3 Plots")
+st.write("- for better visualization and performance.")
+st.write("- and to avoid overlapping data points.")
+st.write("- as well as preset colors.")
 
-amount_of_plots = st.slider("Amount of Plots", 1, 5)
+# make some space
+for i in range(4):
+    st.write("")
+
+amount_of_plots = st.slider("Amount of Plots", 1, 7)
 
 st.divider()
+colors = ['#1f77b4', '#ff7f0e', "green"]
+colors_reg = ['#0000ff', '#ff0000', "#000"]
 news_options = ["NYT", "Guardian", "Both"]
 topics = ["Politics", "World", "Opinion", "Neutral", "All"]
 
@@ -33,9 +44,10 @@ for i in range(amount_of_plots):
     selected_news = st.selectbox("Select News Source", news_options, key=i)
     selected_topic = st.selectbox(
         "Select Topic", topics, key=i+amount_of_plots)
-    selected_color = st.color_picker("Select Color", key=i+2*amount_of_plots)
+    selected_color = st.color_picker(
+        "Select Color", key=i+2*amount_of_plots, value=colors[i])
     selected_reg_color = st.color_picker(
-        "Select Regression Color", key=i+3*amount_of_plots)
+        "Select Regression Color", key=i+3*amount_of_plots, value=colors_reg[i])
     # Connect to the database
     if selected_news == "Both":
         for i in ["NYT", "Guardian"]:
