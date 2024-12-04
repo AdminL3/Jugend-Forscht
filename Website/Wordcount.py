@@ -192,48 +192,76 @@ st.divider()
 
 # Get top 10 articles with applied filters
 
-cursor.execute(f'SELECT * FROM {selected_topic} ORDER BY wordcount DESC')
-rows = cursor.fetchall()
-# create a dataframe
-top_data = pd.DataFrame(rows, columns=["ID", "Date", "Day Index", "Wordcount"])
-# convert the Date column to datetime
-top_data['Date'] = pd.to_datetime(top_data['Date'])
+st.header(f"Top 10 Articles for {year_range[0]} - {month_range[0]} to {
+    month_range[1]}" if one_year else f"Top 10 Articles for {year_range[0]} to {year_range[1]}")
+for i in range(amount_of_plots):
+    selected_news = news_selectors[i]
+    selected_topic = topic_selectors[i]
 
-filtered_top_data = top_data[
-    (top_data['Date'].dt.year >= year_range[0]) &
-    (top_data['Date'].dt.year <= year_range[1]) &
-    (top_data['Date'].dt.month >= month_range[0]) &
-    (top_data['Date'].dt.month <= month_range[1])
-]
+    if selected_news == "Both":
+        for i in ["NYT", "Guardian"]:
+            conn = sqlite3.connect(f'Database/Wordcount/{i}.db')
+            cursor = conn.cursor()
+            if selected_topic == "All":
+                rows = cursor.execute(
+                    'SELECT * FROM Politics UNION SELECT * FROM World UNION SELECT * FROM Opinion ORDER BY wordcount DESC').fetchall()
+            elif selected_topic == "Neutral":
+                rows = cursor.execute(
+                    'SELECT * FROM Politics UNION SELECT * FROM World ORDER BY wordcount DESC').fetchall()
+            else:
+                rows = cursor.execute(f'SELECT * FROM {
+                                      selected_topic} ORDER BY wordcount DESC').fetchall()
 
-# Format the Date column to exclude time
-filtered_top_data['Date'] = filtered_top_data['Date'].dt.date
+    else:
+        conn = sqlite3.connect(f'Database/Wordcount/{selected_news}.db')
+        cursor = conn.cursor()
+        if selected_topic == "All":
+            rows = cursor.execute(
+                'SELECT * FROM Politics UNION SELECT * FROM World UNION SELECT * FROM Opinion ORDER BY wordcount DESC').fetchall()
+        elif selected_topic == "Neutral":
+            rows = cursor.execute(
+                'SELECT * FROM Politics UNION SELECT * FROM World ORDER BY wordcount DESC').fetchall()
+        else:
+            rows = cursor.execute(f'SELECT * FROM {
+                                  selected_topic} ORDER BY wordcount DESC').fetchall()
 
-# Add a Title column using the get_title function
+    # create a dataframe
+    top_data = pd.DataFrame(
+        rows, columns=["ID", "Date", "Day Index", "Wordcount"])
+    # convert the Date column to datetime
+    top_data['Date'] = pd.to_datetime(top_data['Date'])
 
-with st.spinner("Fetching Articles..."):
-    filtered_top_data['Title'] = filtered_top_data.apply(
-        lambda row: get_title(row['Date'].strftime(
-            "%Y-%m-%d"), row['Day Index'], selected_topic, selected_news),
-        axis=1
+    filtered_top_data = top_data[
+        (top_data['Date'].dt.year >= year_range[0]) &
+        (top_data['Date'].dt.year <= year_range[1]) &
+        (top_data['Date'].dt.month >= month_range[0]) &
+        (top_data['Date'].dt.month <= month_range[1])
+    ]
+
+    # Format the Date column to exclude time
+    filtered_top_data['Date'] = filtered_top_data['Date'].dt.date
+
+    # Add a Title column using the get_title function
+    st.write(f"Top Articles for {selected_news} - {selected_topic}")
+    with st.spinner("Fetching Articles..."):
+        filtered_top_data['Title'] = filtered_top_data.apply(
+            lambda row: get_title(row['Date'].strftime(
+                "%Y-%m-%d"), row['Day Index'], selected_topic, selected_news),
+            axis=1
+        )
+
+    filtered_top_data = filtered_top_data.head(10)
+    styled_dataframe = filtered_top_data.style.applymap(
+        lambda x: 'color: yellow', subset=['Wordcount'])
+    st.dataframe(
+        styled_dataframe,
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "ID": st.column_config.Column(width=-100),
+            "Wordcount": st.column_config.Column(width=-100),
+            "Date": st.column_config.Column(width=-100),
+            "Day Index": st.column_config.Column(width=-100),
+            "Title": st.column_config.Column(width=600)
+        }
     )
-
-st.subheader(f"Top 10 {selected_topic} Articles for {selected_news}")
-
-
-filtered_top_data = filtered_top_data.head(10)
-styled_dataframe = filtered_top_data.style.applymap(
-    lambda x: 'color: yellow', subset=['Wordcount'])
-
-st.dataframe(
-    styled_dataframe,
-    use_container_width=True,
-    hide_index=True,
-    column_config={
-        "ID": st.column_config.Column(width=-100),
-        "Wordcount": st.column_config.Column(width=-100),
-        "Date": st.column_config.Column(width=-100),
-        "Day Index": st.column_config.Column(width=-100),
-        "Title": st.column_config.Column(width=600)
-    }
-)
