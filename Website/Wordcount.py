@@ -78,7 +78,7 @@ for i in range(amount_of_plots):
     graph_data = pd.DataFrame(rows, columns=['date', 'wordcount'])
     graph_data['date'] = pd.to_datetime(graph_data['date'])
     all_data.append([graph_data, selected_news, selected_topic,
-                    selected_color, selected_reg_color, len(rows)])
+                    selected_color, selected_reg_color])
     st.divider()
 
 # Year range selector
@@ -183,9 +183,6 @@ fig.update_layout(
 
 st.plotly_chart(fig, use_container_width=True)
 
-for i in range(amount_of_plots):
-    cur_info = all_data[i]
-    st.write(f"{cur_info[1]} - {cur_info[2]}: {cur_info[5]} Articles")
 st.divider()
 
 
