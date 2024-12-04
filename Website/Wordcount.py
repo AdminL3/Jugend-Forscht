@@ -26,11 +26,14 @@ st.divider()
 news_options = ["NYT", "Guardian", "Both"]
 topics = ["Politics", "World", "Opinion", "Neutral", "All"]
 
+all_data = []
+
 for i in range(amount_of_plots):
     st.write(f"Plot {i+1}")
     selected_news = st.selectbox("Select News Source", news_options, key=i)
     selected_topic = st.selectbox("Select Topic", topics, key=i+amount_of_plots)
-
+    selected_color = st.color_picker("Select Color", key=i+2*amount_of_plots)
+    selected_reg_color = st.color_picker("Select Regression Color", key=i+3*amount_of_plots)
     # Connect to the database
     if selected_news == "Both":
         for i in ["NYT", "Guardian"]:
@@ -51,7 +54,7 @@ for i in range(amount_of_plots):
 
     graph_data = pd.DataFrame(rows, columns=['date', 'wordcount'])
     graph_data['date'] = pd.to_datetime(graph_data['date'])
-
+    all_data.append([graph_data, selected_news, selected_topic, selected_color, selected_reg_color])
     st.divider()
 
 # Year range selector
@@ -95,15 +98,16 @@ st.markdown(
 st.divider()
 
 # Filter data based on selected year and month range
-filtered_graph_data = graph_data[
-    (graph_data['date'].dt.year >= year_range[0]) &
-    (graph_data['date'].dt.year <= year_range[1]) &
-    (graph_data['date'].dt.month >= month_range[0]) &
-    (graph_data['date'].dt.month <= month_range[1])
-]
+for i in range(amount_of_plots):
+    all_data[i][0] = all_data[i][0][
+        (graph_data['date'].dt.year >= year_range[0]) &
+        (graph_data['date'].dt.year <= year_range[1]) &
+        (graph_data['date'].dt.month >= month_range[0]) &
+        (graph_data['date'].dt.month <= month_range[1])
+    ]
 
-# Format the date column to exclude time
-filtered_graph_data['date'] = filtered_graph_data['date'].dt.date
+    # Format the date column to exclude time
+    all_data[i][0]['date'] = all_data[i][0]['date'].dt.date
 
 
 # Scatter plot
@@ -116,30 +120,32 @@ st.write(f"{selected_news} - {selected_topic} - {year_range[0]} - {month_range[0
 fig = go.Figure()
 
 # Add scatter points
-fig.add_trace(go.Scatter(
-    x=filtered_graph_data['date'],
-    y=filtered_graph_data['wordcount'],
-    mode='markers',
-    name='Article',
-    marker=dict(color='white', size=5)
-))
+for i in range(amount_of_plots):
+    fig.add_trace(go.Scatter(
+        x=all_data[i][0]['date'],
+        y=all_data[i][0]['wordcount'],
+        mode='markers',
+        name='Article',
+        marker=dict(color=all_data[i][3], size=5)
+    ))
 
-# Linear Regression
-model = LinearRegression()
-X = pd.to_numeric(filtered_graph_data['date'].map(datetime.datetime.toordinal)).values.reshape(-1, 1)
-y = filtered_graph_data['wordcount'].values
+for i in range(amount_of_plots):
+    # Linear Regression
+    model = LinearRegression()
+    X = pd.to_numeric(all_data[i][0]['date'].map(datetime.datetime.toordinal)).values.reshape(-1, 1)
+    y = all_data[i][0]['wordcount'].values
 
-model.fit(X, y)
-y_pred = model.predict(X)
+    model.fit(X, y)
+    y_pred = model.predict(X)
 
-# Add regression line
-fig.add_trace(go.Scatter(
-    x=filtered_graph_data['date'],
-    y=y_pred,
-    mode='lines',
-    name='Regression Line',
-    line=dict(color='red', width=2)
-))
+    # Add regression line
+    fig.add_trace(go.Scatter(
+        x=all_data[i][0]['date'],
+        y=y_pred,
+        mode='lines',
+        name='Regression Line',
+        line=dict(color=all_data[i][4], width=2)
+    ))
 
 # Update layout
 fig.update_layout(
