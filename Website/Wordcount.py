@@ -38,7 +38,8 @@ news_options = ["NYT", "Guardian", "Both"]
 topics = ["Politics", "World", "Opinion", "Neutral", "All"]
 
 all_data = []
-
+news_selectors = []
+topic_selectors = []
 for i in range(amount_of_plots):
     st.write(f"Dataset number {i+1}")
     selected_news = st.selectbox("Select News Source", news_options, key=i)
@@ -48,6 +49,9 @@ for i in range(amount_of_plots):
         "Select Color", key=i+2*amount_of_plots, value=colors[i])
     selected_reg_color = st.color_picker(
         "Select Regression Color", key=i+3*amount_of_plots, value=colors_reg[i])
+
+    news_selectors.append(selected_news)
+    topic_selectors.append(selected_topic)
     # Connect to the database
     if selected_news == "Both":
         for i in ["NYT", "Guardian"]:
