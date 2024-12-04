@@ -5,6 +5,7 @@ This tutorial will guide you through creating a Streamlit application that conne
 ## Prerequisites
 
 Ensure you have the following libraries installed:
+
 - `streamlit`
 - `sqlite3`
 - `pandas`
@@ -15,6 +16,7 @@ Ensure you have the following libraries installed:
 ### 1. Import Libraries
 
 Start by importing the necessary libraries:
+
 ```python
 from sklearn.linear_model import LinearRegression
 import streamlit as st
@@ -29,6 +31,7 @@ import datetime
 ### 2. Configure Streamlit Page
 
 Set the page layout to wide:
+
 ```python
 st.set_page_config(layout="wide")
 st.title('Wordcount')
@@ -39,6 +42,7 @@ st.title('Wordcount')
 ### 3. Define Helper Function
 
 Create a function to get the article title:
+
 ```python
 def get_title(date, index, topic, news):
     parts = date.split("-")
@@ -52,6 +56,7 @@ def get_title(date, index, topic, news):
 ### 4. Streamlit Title and Selectors
 
 Select the news source and topic:
+
 ```python
 news_options = ["NYT", "Guardian"]
 topics = ["Politics", "World", "Opinion"]
@@ -65,6 +70,7 @@ selected_topic = st.selectbox("Select Topic", topics)
 ### 5. Connect to Database
 
 Connect to the SQLite database and fetch data for the selected news and topic:
+
 ```python
 conn = sqlite3.connect(f'Database/Wordcount/{selected_news}.db')
 cursor = conn.cursor()
@@ -81,6 +87,7 @@ graph_data['date'] = pd.to_datetime(graph_data['date']
 ### 6. Year Range Selector
 
 Add a year range selector:
+
 ```python
 st.subheader("Filter by Year Range")
 min_year = graph_data['date'].dt.year.min()
@@ -100,6 +107,7 @@ year_range = st.slider(
 ### 7. Month Range Selector
 
 Add a month range selector if the year range is less than one year:
+
 ```python
 if year_range[1] - year_range[0] < 1:
     one_year = True
@@ -125,6 +133,7 @@ else:
 ### 8. Filter Data
 
 Filter the data based on the selected year and month range:
+
 ```python
 filtered_graph_data = graph_data[
     (graph_data['date'].dt.year >= year_range[0]) &
@@ -140,6 +149,7 @@ filtered_graph_data['date'] = filtered_graph_data['date'].dt.date
 ### 9. Scatter Plot
 
 Create and display a scatter plot:
+
 ```python
 # title
 st.subheader("Scatter Plot:")
@@ -164,6 +174,7 @@ fig.add_trace(go.Scatter(
 ### 10. Regression Line
 
 Add a regression line to the scatter plot:
+
 ```python
 model = LinearRegression()
 X = pd.to_numeric(filtered_graph_data['date'].map(datetime.datetime.toordinal)).values.reshape(-1, 1)
@@ -187,6 +198,7 @@ fig.add_trace(go.Scatter(
 ## 11. Display Plot
 
 Display the plot:
+
 ```python
 fig.update_layout(
     title='Word Count Development',
@@ -204,6 +216,7 @@ st.divider()
 ### 12. Top 10 Articles
 
 Fetch and display the top 10 articles in a table:
+
 ```python
 cursor.execute(f'SELECT * FROM {selected_topic} ORDER BY wordcount DESC')
 rows = cursor.fetchall()
@@ -251,6 +264,7 @@ st.dataframe(
     }
 )
 ```
+
 ---
 
 > [!NOTE]  

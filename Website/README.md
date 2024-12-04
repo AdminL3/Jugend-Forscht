@@ -1,4 +1,4 @@
-# Creating a Website to visualize the data 
+# Creating a Website to visualize the data
 
 - See [The Official Streamlit Website](https://www.streamlit.io/)
 

@@ -31,20 +31,25 @@ all_data = []
 for i in range(amount_of_plots):
     st.write(f"Plot {i+1}")
     selected_news = st.selectbox("Select News Source", news_options, key=i)
-    selected_topic = st.selectbox("Select Topic", topics, key=i+amount_of_plots)
+    selected_topic = st.selectbox(
+        "Select Topic", topics, key=i+amount_of_plots)
     selected_color = st.color_picker("Select Color", key=i+2*amount_of_plots)
-    selected_reg_color = st.color_picker("Select Regression Color", key=i+3*amount_of_plots)
+    selected_reg_color = st.color_picker(
+        "Select Regression Color", key=i+3*amount_of_plots)
     # Connect to the database
     if selected_news == "Both":
         for i in ["NYT", "Guardian"]:
             conn = sqlite3.connect(f'Database/Wordcount/{i}.db')
             cursor = conn.cursor()
             if selected_topic == "All":
-                rows = cursor.execute('SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World UNION SELECT date, wordcount FROM Opinion').fetchall()
+                rows = cursor.execute(
+                    'SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World UNION SELECT date, wordcount FROM Opinion').fetchall()
             elif selected_topic == "Neutral":
-                rows = cursor.execute('SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World').fetchall()
+                rows = cursor.execute(
+                    'SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World').fetchall()
             else:
-                rows = cursor.execute(f'SELECT date, wordcount FROM {selected_topic}').fetchall()
+                rows = cursor.execute(f'SELECT date, wordcount FROM {
+                                      selected_topic}').fetchall()
 
     else:
         conn = sqlite3.connect(f'Database/Wordcount/{selected_news}.db')
@@ -54,7 +59,8 @@ for i in range(amount_of_plots):
 
     graph_data = pd.DataFrame(rows, columns=['date', 'wordcount'])
     graph_data['date'] = pd.to_datetime(graph_data['date'])
-    all_data.append([graph_data, selected_news, selected_topic, selected_color, selected_reg_color])
+    all_data.append([graph_data, selected_news, selected_topic,
+                    selected_color, selected_reg_color])
     st.divider()
 
 # Year range selector
@@ -132,7 +138,8 @@ for i in range(amount_of_plots):
 for i in range(amount_of_plots):
     # Linear Regression
     model = LinearRegression()
-    X = pd.to_numeric(all_data[i][0]['date'].map(datetime.datetime.toordinal)).values.reshape(-1, 1)
+    X = pd.to_numeric(all_data[i][0]['date'].map(
+        datetime.datetime.toordinal)).values.reshape(-1, 1)
     y = all_data[i][0]['wordcount'].values
 
     model.fit(X, y)
@@ -152,7 +159,7 @@ fig.update_layout(
     title='Word Count Development',
     xaxis_title='Date',
     yaxis_title='Word Count',
-    dragmode="pan" 
+    dragmode="pan"
 )
 
 st.plotly_chart(fig, use_container_width=True)
