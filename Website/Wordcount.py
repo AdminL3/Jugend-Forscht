@@ -32,15 +32,15 @@ for i in range(4):
 amount_of_plots = st.slider("Amount of Plots", 1, 7)
 
 st.divider()
-colors = ['#1f77b4', '#ff7f0e', "green"]
-colors_reg = ['#0000ff', '#ff0000', "#000"]
+colors = ['#1f77b4', '#ff7f0e', "#008000", "#fff", "#fff", "#fff", "#fff"]
+colors_reg = ['#0000ff', '#ff0000', "#000000", "#000", "#000", "#000", "#000"]
 news_options = ["NYT", "Guardian", "Both"]
 topics = ["Politics", "World", "Opinion", "Neutral", "All"]
 
 all_data = []
 
 for i in range(amount_of_plots):
-    st.write(f"Plot {i+1}")
+    st.write(f"Dataset number {i+1}")
     selected_news = st.selectbox("Select News Source", news_options, key=i)
     selected_topic = st.selectbox(
         "Select Topic", topics, key=i+amount_of_plots)
@@ -96,7 +96,8 @@ else:
 
 if one_year:
     st.divider()
-    st.text("Your selected range is smaller than 1 year. You can specify a month range instead:")
+    st.text(f"Your selected range is smaller than 1 year. You can specify a month range for {
+            year_range[0]}:")
     month_range = st.slider(
         "Select Month Range",
         min_value=1,
@@ -131,8 +132,8 @@ for i in range(amount_of_plots):
 # Scatter plot
 # title
 st.subheader("Scatter Plot:")
-st.write(f"{selected_news} - {selected_topic} - {year_range[0]} - {month_range[0]} to {
-         month_range[1]}" if one_year else f"{selected_news} - {selected_topic} - {year_range[0]} to {year_range[1]}")
+st.write(f"{year_range[0]} - {month_range[0]} to {
+         month_range[1]}" if one_year else f"{year_range[0]} to {year_range[1]}")
 
 # Create scatter plot
 fig = go.Figure()
@@ -143,7 +144,7 @@ for i in range(amount_of_plots):
         x=all_data[i][0]['date'],
         y=all_data[i][0]['wordcount'],
         mode='markers',
-        name='Article',
+        name='Article Count: ' + all_data[i][1] + " - " + all_data[i][2],
         marker=dict(color=all_data[i][3], size=5)
     ))
 
@@ -162,7 +163,7 @@ for i in range(amount_of_plots):
         x=all_data[i][0]['date'],
         y=y_pred,
         mode='lines',
-        name='Regression Line',
+        name='Regression Line: ' + all_data[i][1] + " - " + all_data[i][2],
         line=dict(color=all_data[i][4], width=2)
     ))
 
@@ -175,4 +176,5 @@ fig.update_layout(
 )
 
 st.plotly_chart(fig, use_container_width=True)
+
 st.divider()
