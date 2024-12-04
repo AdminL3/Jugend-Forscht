@@ -8,11 +8,12 @@
 
 ## Features
 
-- [x] Decide between the two News sites
-- [x] Decide between the three Topics
+- [x] Select the amount of data to display
+- [x] Decide between the two News sites and Both
+- [x] Decide between the three Topics and All
 - [x] Select the range of years to display
-- [x] If year is less than 2 years, you can select the range of months
-- [ ] Graph multiple topics/news sites next to each other
+- [x] If year is 1 year, you can select a range of months
+- [x] Graph multiple topics/news sites next to each other
 - [x] Display the data in a graph
 - [x] Add a regression line
-- [x] Display the top data in a table
+- [x] Display the all the top data in a table
