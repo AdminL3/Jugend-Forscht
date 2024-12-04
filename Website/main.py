@@ -4,6 +4,7 @@ import sqlite3
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
+import datetime
 
 
 # Function to get the article title
@@ -92,44 +93,41 @@ filtered_graph_data['date'] = filtered_graph_data['date'].dt.date
 st.subheader("Scatter Plot:")
 st.write(f"{selected_news} - {selected_topic} - {year_range[0]} - {month_range[0]} to {
          month_range[1]}" if one_year else f"{selected_news} - {selected_topic} - {year_range[0]} to {year_range[1]}")
-fig = px.scatter(
-    filtered_graph_data,
-    x='date',
-    y='wordcount',
-    labels={'date': 'Date', 'wordcount': 'Word Count'},
-    title='Word Count Development'
-)
 
+# Create scatter plot
+fig = go.Figure()
+
+# Add scatter points
+fig.add_trace(go.Scatter(
+    x=filtered_graph_data['date'],
+    y=filtered_graph_data['wordcount'],
+    mode='markers',
+    name='Data Points'
+))
 
 # Linear Regression
 model = LinearRegression()
-
-# Convert dates to numerical format
-x = (pd.to_datetime(filtered_graph_data['date']) - pd.Timestamp("1970-01-01")).dt.days.values.reshape(-1, 1)
+X = pd.to_numeric(filtered_graph_data['date'].map(datetime.datetime.toordinal)).values.reshape(-1, 1)
 y = filtered_graph_data['wordcount'].values
 
-# Fit the model
-model.fit(x, y)
+model.fit(X, y)
+y_pred = model.predict(X)
 
-# Predict values
-y_pred = model.predict(x)
-
-# Convert x back to datetime for plotting
-regression_dates = pd.to_datetime("1970-01-01") + pd.to_timedelta(x.flatten(), unit="D")
-
-# Add regression line to scatter plot
+# Add regression line
 fig.add_trace(go.Scatter(
-    x=regression_dates,
+    x=filtered_graph_data['date'],
     y=y_pred,
     mode='lines',
-    name='Regression line',
-    line=dict(color='red')
+    name='Regression Line',
+    line=dict(color='red', width=2)
 ))
 
-
-# Update the layout
-fig.update_traces(marker=dict(size=5, opacity=0.7, color='blue'))
-fig.update_layout(dragmode="pan")
+# Update layout
+fig.update_layout(
+    title='Word Count Development',
+    xaxis_title='Date',
+    yaxis_title='Word Count'
+)
 
 st.plotly_chart(fig, use_container_width=True)
 
