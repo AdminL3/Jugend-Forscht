@@ -1,13 +1,12 @@
 from selenium import webdriver
 import os
 import multiprocessing
-import time
 
 
 def Selenium(n):
-    start_year = 2022
+    start_year = 2010
     amount_years = 1
-    topics = ["politics"]
+    topics = ["politics", "world", "opinion"]
     start_month = n
     amount_month = 1
     last_date = 0
@@ -70,7 +69,7 @@ def Selenium(n):
     print("and the Topics: " + str(topics))
 
 
-numbers = [1, 2, 3, 4]
+numbers = [5, 6, 7, 8]
 
 if __name__ == "__main__":
     with multiprocessing.Pool() as pool:
