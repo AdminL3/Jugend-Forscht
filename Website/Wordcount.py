@@ -17,36 +17,42 @@ def get_title(date, index, topic, new):
 
 st.set_page_config(layout="wide")
 st.title('Wordcount')
+
 st.divider()
 
+amount_of_plots = st.slider("Amount of Plots", 1, 5)
 
-
+st.divider()
 news_options = ["NYT", "Guardian", "Both"]
 topics = ["Politics", "World", "Opinion", "Neutral", "All"]
 
-selected_news = st.selectbox("Select News Source", news_options)
-selected_topic = st.selectbox("Select Topic", topics)
+for i in range(amount_of_plots):
+    st.write(f"Plot {i+1}")
+    selected_news = st.selectbox("Select News Source", news_options, key=i)
+    selected_topic = st.selectbox("Select Topic", topics, key=i+amount_of_plots)
 
-# Connect to the database
-if selected_news == "Both":
-    for i in ["NYT", "Guardian"]:
-        conn = sqlite3.connect(f'Database/Wordcount/{i}.db')
+    # Connect to the database
+    if selected_news == "Both":
+        for i in ["NYT", "Guardian"]:
+            conn = sqlite3.connect(f'Database/Wordcount/{i}.db')
+            cursor = conn.cursor()
+            if selected_topic == "All":
+                rows = cursor.execute('SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World UNION SELECT date, wordcount FROM Opinion').fetchall()
+            elif selected_topic == "Neutral":
+                rows = cursor.execute('SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World').fetchall()
+            else:
+                rows = cursor.execute(f'SELECT date, wordcount FROM {selected_topic}').fetchall()
+
+    else:
+        conn = sqlite3.connect(f'Database/Wordcount/{selected_news}.db')
         cursor = conn.cursor()
-        if selected_topic == "All":
-            rows = cursor.execute('SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World UNION SELECT date, wordcount FROM Opinion').fetchall()
-        elif selected_topic == "Neutral":
-            rows = cursor.execute('SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World').fetchall()
-        else:
-            rows = cursor.execute(f'SELECT date, wordcount FROM {selected_topic}').fetchall()
+        cursor.execute(f'SELECT date, wordcount FROM {selected_topic}')
+        rows = cursor.fetchall()
 
-else:
-    conn = sqlite3.connect(f'Database/Wordcount/{selected_news}.db')
-    cursor = conn.cursor()
-    cursor.execute(f'SELECT date, wordcount FROM {selected_topic}')
-    rows = cursor.fetchall()
+    graph_data = pd.DataFrame(rows, columns=['date', 'wordcount'])
+    graph_data['date'] = pd.to_datetime(graph_data['date'])
 
-graph_data = pd.DataFrame(rows, columns=['date', 'wordcount'])
-graph_data['date'] = pd.to_datetime(graph_data['date'])
+    st.divider()
 
 # Year range selector
 st.subheader("Filter by Year Range")
