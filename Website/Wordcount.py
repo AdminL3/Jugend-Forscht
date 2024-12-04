@@ -17,19 +17,33 @@ def get_title(date, index, topic, new):
 
 st.set_page_config(layout="wide")
 st.title('Wordcount')
+st.divider()
 
-news_options = ["NYT", "Guardian"]
-topics = ["Politics", "World", "Opinion"]
+
+
+news_options = ["NYT", "Guardian", "Both"]
+topics = ["Politics", "World", "Opinion", "Neutral", "All"]
 
 selected_news = st.selectbox("Select News Source", news_options)
 selected_topic = st.selectbox("Select Topic", topics)
 
 # Connect to the database
-conn = sqlite3.connect(f'Database/Wordcount/{selected_news}.db')
-cursor = conn.cursor()
+if selected_news == "Both":
+    for i in ["NYT", "Guardian"]:
+        conn = sqlite3.connect(f'Database/Wordcount/{i}.db')
+        cursor = conn.cursor()
+        if selected_topic == "All":
+            rows = cursor.execute('SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World UNION SELECT date, wordcount FROM Opinion').fetchall()
+        elif selected_topic == "Neutral":
+            rows = cursor.execute('SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World').fetchall()
+        else:
+            rows = cursor.execute(f'SELECT date, wordcount FROM {selected_topic}').fetchall()
 
-cursor.execute(f'SELECT date, wordcount FROM {selected_topic}')
-rows = cursor.fetchall()
+else:
+    conn = sqlite3.connect(f'Database/Wordcount/{selected_news}.db')
+    cursor = conn.cursor()
+    cursor.execute(f'SELECT date, wordcount FROM {selected_topic}')
+    rows = cursor.fetchall()
 
 graph_data = pd.DataFrame(rows, columns=['date', 'wordcount'])
 graph_data['date'] = pd.to_datetime(graph_data['date'])
@@ -87,7 +101,6 @@ filtered_graph_data['date'] = filtered_graph_data['date'].dt.date
 
 
 # Scatter plot
-
 # title
 st.subheader("Scatter Plot:")
 st.write(f"{selected_news} - {selected_topic} - {year_range[0]} - {month_range[0]} to {
@@ -101,7 +114,7 @@ fig.add_trace(go.Scatter(
     x=filtered_graph_data['date'],
     y=filtered_graph_data['wordcount'],
     mode='markers',
-    name='Data Points',
+    name='Article',
     marker=dict(color='white', size=5)
 ))
 
@@ -127,7 +140,7 @@ fig.update_layout(
     title='Word Count Development',
     xaxis_title='Date',
     yaxis_title='Word Count',
-    dragmode="pan"
+    dragmode="pan" 
 )
 
 st.plotly_chart(fig, use_container_width=True)
