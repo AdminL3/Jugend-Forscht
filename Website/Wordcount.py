@@ -118,10 +118,10 @@ st.divider()
 # Filter data based on selected year and month range
 for i in range(amount_of_plots):
     all_data[i][0] = all_data[i][0][
-        (graph_data['date'].dt.year >= year_range[0]) &
-        (graph_data['date'].dt.year <= year_range[1]) &
-        (graph_data['date'].dt.month >= month_range[0]) &
-        (graph_data['date'].dt.month <= month_range[1])
+        (all_data[i][0]['date'].dt.year >= year_range[0]) &
+        (all_data[i][0]['date'].dt.year <= year_range[1]) &
+        (all_data[i][0]['date'].dt.month >= month_range[0]) &
+        (all_data[i][0]['date'].dt.month <= month_range[1])
     ]
 
     # Format the date column to exclude time
