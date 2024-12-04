@@ -20,10 +20,10 @@ st.title('Wordcount')
 
 st.divider()
 st.subheader(
-    "Recommended less than 3 Plots")
-st.write("- for better visualization and performance.")
+    "I recommended 2 Plots at a time")
+st.write("- for better visualization,")
+st.write("- performance,")
 st.write("- and to avoid overlapping data points.")
-st.write("- as well as preset colors.")
 
 # make some space
 for i in range(4):
@@ -66,13 +66,19 @@ for i in range(amount_of_plots):
     else:
         conn = sqlite3.connect(f'Database/Wordcount/{selected_news}.db')
         cursor = conn.cursor()
-        cursor.execute(f'SELECT date, wordcount FROM {selected_topic}')
-        rows = cursor.fetchall()
-
+        if selected_topic == "All":
+            rows = cursor.execute(
+                'SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World UNION SELECT date, wordcount FROM Opinion').fetchall()
+        elif selected_topic == "Neutral":
+            rows = cursor.execute(
+                'SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World').fetchall()
+        else:
+            rows = cursor.execute(f'SELECT date, wordcount FROM {
+                                  selected_topic}').fetchall()
     graph_data = pd.DataFrame(rows, columns=['date', 'wordcount'])
     graph_data['date'] = pd.to_datetime(graph_data['date'])
     all_data.append([graph_data, selected_news, selected_topic,
-                    selected_color, selected_reg_color])
+                    selected_color, selected_reg_color, len(rows)])
     st.divider()
 
 # Year range selector
@@ -177,6 +183,9 @@ fig.update_layout(
 
 st.plotly_chart(fig, use_container_width=True)
 
+for i in range(amount_of_plots):
+    cur_info = all_data[i]
+    st.write(f"{cur_info[1]} - {cur_info[2]}: {cur_info[5]} Articles")
 st.divider()
 
 
