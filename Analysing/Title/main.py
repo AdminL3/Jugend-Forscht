@@ -17,12 +17,13 @@ for n in news:
     cursor = conn.cursor()
     for topic in topics:
         cursor.execute(f'''
-                       CREATE TABLE IF NOT EXISTS {topic}
-                       (
-                       date TEXT,
-                       index INTEGER,
-                       title TEXT
-                       )''')
+            CREATE TABLE IF NOT EXISTS {topic} (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                date TEXT NOT NULL,
+                idx INTEGER NOT NULL,
+                title TEXT NOT NULL
+            )
+        ''')
         topic_path = os.path.join(base_path, n, 'articles', topic)
         for year in os.listdir(topic_path):
             year_path = os.path.join(topic_path, year)
@@ -35,7 +36,7 @@ for n in news:
                             index = int(file_name.split('.')[0])
                             date = f"{year}-{month[5:]}-{day[3:]}"
                             title = get_title(date, index, topic, n)
-                            cursor.execute("INSERT INTO titles (date, index, title) VALUES (?, ?, ?)",
+                            cursor.execute(f"INSERT INTO {n} (date, idx, title) VALUES (?, ?, ?)",
                                             (date, index, title))
                             conn.commit()
 print('Done')
