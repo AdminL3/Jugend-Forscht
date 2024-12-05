@@ -32,6 +32,8 @@ start_year = 2010
 amount_years = 1
 topics = ["politics", "world", "opinion"]
 start_month = 1
+
+
 amount_month = 12
 last_date = 0
 for topic in topics:

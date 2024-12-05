@@ -1,7 +1,7 @@
 import os
 
-start_year = 2020
-amount_years = 2
+start_year = 2010
+amount_years = 1
 start_month = 1
 amount_months = 12
 topics = ["politics", "world", "opinion"]
