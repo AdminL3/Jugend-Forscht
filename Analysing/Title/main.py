@@ -38,8 +38,11 @@ for n in news:
                             index = int(file_name.split('.')[0])
                             date = f"{year}-{month[5:]}-{day[3:]}"
                             title = get_title(date, index, topic, n)
-                            cursor.execute(f"INSERT INTO {n} (date, idx, title) VALUES (?, ?, ?)",
+                            cursor.execute(f"INSERT INTO {topic} (date, idx, title) VALUES (?, ?, ?)",
                                            (date, index, title))
-                            conn.commit()
+                    conn.commit()
+                    print(day)
+                print(month)
+            print(year)
 print('Done')
 conn.close()
