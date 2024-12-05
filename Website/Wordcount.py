@@ -197,7 +197,6 @@ st.header(f"Top 10 Articles for {year_range[0]} - {month_range[0]} to {
 for i in range(amount_of_plots):
     selected_news = news_selectors[i]
     selected_topic = topic_selectors[i]
-
     if selected_news == "Both":
         for i in ["NYT", "Guardian"]:
             conn = sqlite3.connect(f'Database/Wordcount/{i}.db')
@@ -244,11 +243,16 @@ for i in range(amount_of_plots):
     # Add a Title column using the get_title function
     st.write(f"Top Articles for {selected_news} - {selected_topic}")
     with st.spinner("Fetching Articles..."):
-        filtered_top_data['Title'] = filtered_top_data.apply(
-            lambda row: get_title(row['Date'].strftime(
-                "%Y-%m-%d"), row['Day Index'], selected_topic, selected_news),
-            axis=1
-        )
+        conn2 = sqlite3.connect(f'Database/Titles/{selected_news}.db')
+        cursor2 = conn2.cursor()
+        titles = []
+        for _, row in filtered_top_data.iterrows():
+            date = row['Date'].strftime("%Y-%m-%d")
+            cursor2.execute(
+                f"SELECT title FROM {selected_topic.lower()} WHERE date=? AND idx=?", (date, row['Day Index']))
+            title = cursor2.fetchone()[0]
+            titles.append(title)
+        filtered_top_data['Title'] = titles
 
     filtered_top_data = filtered_top_data.head(10)
     styled_dataframe = filtered_top_data.style.applymap(
