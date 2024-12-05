@@ -1,9 +1,11 @@
 import os
 import sqlite3
 
+
 def get_title(date, index, topic, new):
     parts = date.split("-")
-    path = f"data/{new}/articles/{topic}/{parts[0]}/month{parts[1]}/day{parts[2]}/{index}.txt"
+    path = f"data/{new}/articles/{topic}/{parts[0]
+                                          }/month{parts[1]}/day{parts[2]}/{index}.txt"
     with open(path, "r", encoding="utf-8") as file:
         return file.read().splitlines()[0]
 
@@ -37,7 +39,7 @@ for n in news:
                             date = f"{year}-{month[5:]}-{day[3:]}"
                             title = get_title(date, index, topic, n)
                             cursor.execute(f"INSERT INTO {n} (date, idx, title) VALUES (?, ?, ?)",
-                                            (date, index, title))
+                                           (date, index, title))
                             conn.commit()
 print('Done')
 conn.close()
