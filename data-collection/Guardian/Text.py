@@ -1,7 +1,7 @@
 import os
 from bs4 import BeautifulSoup
 
-start_year = 2020
+start_year = 2010
 amount_years = 2
 
 topics = ["politics", "world", "opinion"]

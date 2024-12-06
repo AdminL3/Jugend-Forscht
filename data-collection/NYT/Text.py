@@ -1,8 +1,8 @@
 import os
 import re
 
-start_year = 2020
-amount_years = 2
+start_year = 2010
+amount_years = 1
 
 topics = ["politics", "world", "opinion"]
 
@@ -62,6 +62,6 @@ for topic in topics:
                 lines = article_text.split('\n')
                 if lines[0].strip() == '':
                     article_text = '\n'.join(lines[1:])
-
+                print("Writing to file:", output_file_path)
                 with open(output_file_path, "w", encoding="utf-8") as f:
                     f.write(article_text)

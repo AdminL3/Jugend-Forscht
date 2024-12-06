@@ -5,6 +5,12 @@ import time
 import requests
 
 
+start_year = 2010
+amount_years = 1
+start_month = 1
+amount_month = 12
+
+
 patterns = [
     r'theguardian\.com/(?P<topic>[^/]+)/(?P<year>\d{4})/(?P<month>[a-z]{3})/(?P<day>\d{2})',
     r'theguardian\.com/(?P<topic>[^/]+)/[^/]+/(?P<year>\d{4})/(?P<month>[a-z]{3})/(?P<day>\d{2})',
@@ -28,13 +34,8 @@ headers = {
 
 error_html = "<head><title>429 Too Many Requests</title></head>"
 
-start_year = 2010
-amount_years = 1
+
 topics = ["politics", "world", "opinion"]
-start_month = 1
-
-
-amount_month = 12
 last_date = 0
 for topic in topics:
     print(topic)

@@ -6,9 +6,9 @@ start_year = 2010
 amount_years = 1
 start_month = 1
 amount_month = 12
+
+
 topics = ["politics", "world", "opinion"]
-
-
 last_date = 0
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
