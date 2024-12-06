@@ -29,8 +29,8 @@ def word_count(text):
     return str(word_count)
 
 
-start_year = 2020
-amount_years = 2
+start_year = 2010
+amount_years = 1
 topics = ["politics", "world", "opinion"]
 
 news = ["NYT", "Guardian"]

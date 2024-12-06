@@ -15,6 +15,7 @@ topics = ['Politics', 'World', 'Opinion']
 news = ['NYT', 'Guardian']
 for n in news:
     database_path = f'Database/Titles/{n}.db'
+    os.makedirs(os.path.dirname(database_path), exist_ok=True)
     conn = sqlite3.connect(database_path)
     cursor = conn.cursor()
     for topic in topics:

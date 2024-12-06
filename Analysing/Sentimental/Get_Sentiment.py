@@ -27,12 +27,14 @@ def get_sentiment(text):
     return [sentiment_polarity, sentiment_subjectivity]
 
 
-start_year = 2020
-amount_years = 2
+start_year = 2010
+amount_years = 1
 topics = ["politics", "world", "opinion"]
 news = ["NYT", "Guardian"]
 for new in news:
-    conn = sqlite3.connect(f"Database/Sentimental/{new}.db")
+    database_path = f"Database/Sentiment/{new}.db"
+    os.makedirs(os.path.dirname(database_path), exist_ok=True)
+    conn = sqlite3.connect(database_path)
     cursor = conn.cursor()
     data = []
     for topic in topics:
