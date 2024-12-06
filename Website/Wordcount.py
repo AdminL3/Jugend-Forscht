@@ -190,7 +190,12 @@ st.plotly_chart(fig, use_container_width=True)
 st.divider()
 
 
-# Get top 10 articles with applied filters
+def get_title(selected_news, selected_topic, name, selectors):
+    if selected_news == "Both":
+        for i in ["NYT", "Guardian"]:
+            conn = sqlite3.connect(f'Database/{name}/{i}.db')
+            cursor = conn.cursor()
+            if selected_topic == "All":
 
 st.header(f"Top 10 Articles for {year_range[0]} - {month_range[0]} to {
     month_range[1]}" if one_year else f"Top 10 Articles for {year_range[0]} to {year_range[1]}")
@@ -221,15 +226,7 @@ for i in range(amount_of_plots):
     # Add a Title column using the get_title function
     st.write(f"Top Articles for {selected_news} - {selected_topic}")
     with st.spinner("Fetching Articles..."):
-        conn2 = sqlite3.connect(f'Database/Titles/{selected_news}.db')
-        cursor2 = conn2.cursor()
-        titles = []
-        for _, row in filtered_top_data.iterrows():
-            date = row['Date'].strftime("%Y-%m-%d")
-            cursor2.execute(
-                f"SELECT title FROM {selected_topic.lower()} WHERE date=? AND idx=?", (date, row['Day Index']))
-            title = cursor2.fetchone()[0]
-            titles.append(title)
+        titles = get_title(selected_news, selected_topic, "Titles", "title")
         filtered_top_data['Title'] = titles
 
     filtered_top_data = filtered_top_data.head(10)
