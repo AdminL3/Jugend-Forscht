@@ -1,6 +1,10 @@
 # **Change of Words: Long-term Data Analysis of Journalistic Perspectives**
 
-###### See [PowerPoint](./Presentation.pptx)
+> [!NOTE]
+> This is the tranlation of a Script I used for this [PowerPoint](./Presentation.pptx)
+> That means there are no complete sentences and the text is not structured in a way that it can be read as a text.
+> The original script is in German, so the translation may not be perfect.
+> The original script can be found [here](./Lehrer_Vorstellung/Script.md)
 
 ## Introduction:
 
@@ -81,7 +85,7 @@ Both are considered high-quality, influential media. The global comparison provi
 
 ## **Societal Benefit**
 
-- See [Societal Benefit](../Societal_Benefit.md)
+- See [`Gesellschaftlicher Vorteil`](./Gesellschaftlicher_Vorteil.md) (German)
 
 #### Outcome unknown
 
