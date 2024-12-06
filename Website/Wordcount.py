@@ -249,9 +249,22 @@ for i in range(amount_of_plots):
 
     # Add a Title column using the get_title function
     st.write(f"Top Articles for {selected_news} - {selected_topic}")
-    with st.spinner("Fetching Articles..."):
-        titles = get_title(selected_news, selected_topic, "Titles", "title")
-        filtered_top_data['Title'] = titles
+
+    if selected_news == "Both" or selected_topic == "All" or selected_topic == "Neutral":
+        st. write(
+            "Unable to display article titles. Please select one news source and topic to view titles.")
+    else:
+        with st.spinner("Fetching Articles..."):
+            conn2 = sqlite3.connect(f'Database/Titles/{selected_news}.db')
+            cursor2 = conn2.cursor()
+            titles = []
+            for _, row in filtered_top_data.iterrows():
+                date = row['Date'].strftime("%Y-%m-%d")
+                cursor2.execute(
+                    f"SELECT title FROM {selected_topic.lower()} WHERE date=? AND idx=?", (date, row['Day Index']))
+                title = cursor2.fetchone()[0]
+                titles.append(title)
+            filtered_top_data['Title'] = titles
 
     filtered_top_data = filtered_top_data.head(10)
     styled_dataframe = filtered_top_data.style.applymap(
