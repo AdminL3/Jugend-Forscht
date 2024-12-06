@@ -6,13 +6,35 @@ import plotly.graph_objects as go
 import datetime
 
 
-# Function to get the article title
-def get_title(date, index, topic, new):
-    parts = date.split("-")
-    path = f"data/{new}/articles/{topic}/{parts[0]
-                                          }/month{parts[1]}/day{parts[2]}/{index}.txt"
-    with open(path, "r", encoding="utf-8") as file:
-        return file.read().splitlines()[0]
+# dont judge the name of the function
+def get_data_from_db_with_filter(selected_news, selected_topic, name, selectors, order=""):
+    if selected_news == "Both":
+        for i in ["NYT", "Guardian"]:
+            conn = sqlite3.connect(f'Database/{name}/{i}.db')
+            cursor = conn.cursor()
+            if selected_topic == "All":
+                rows = cursor.execute(
+                    f'SELECT {selectors} FROM Politics UNION SELECT {selectors} FROM World UNION SELECT {selectors} FROM Opinion {order}').fetchall()
+            elif selected_topic == "Neutral":
+                rows = cursor.execute(
+                    f'SELECT {selectors} FROM Politics UNION SELECT {selectors} FROM World {order}').fetchall()
+            else:
+                rows = cursor.execute(f'SELECT {selectors} FROM {
+                                      selected_topic} {order}').fetchall()
+
+    else:
+        conn = sqlite3.connect(f'Database/{name}/{selected_news}.db')
+        cursor = conn.cursor()
+        if selected_topic == "All":
+            rows = cursor.execute(
+                f'SELECT {selectors} FROM Politics UNION SELECT {selectors} FROM World UNION SELECT {selectors} FROM Opinion {order}').fetchall()
+        elif selected_topic == "Neutral":
+            rows = cursor.execute(
+                f'SELECT {selectors} FROM Politics UNION SELECT{selectors} FROM World {order}').fetchall()
+        else:
+            rows = cursor.execute(f'SELECT {selectors} FROM {
+                                  selected_topic} {order}').fetchall()
+    return rows
 
 
 st.set_page_config(layout="wide")
