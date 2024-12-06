@@ -11,6 +11,8 @@ Ensure you have the following libraries installed:
 - `pandas`
 - `plotly`
 
+---
+
 ### The Database Structure
 
 1. Create a `Database` folder in your project directory
@@ -25,6 +27,8 @@ Ensure you have the following libraries installed:
    - `date`
    - `wordcount`
    - `day_index`
+
+---
 
 ## Creating the Streamlit Application
 
@@ -67,6 +71,8 @@ Create a flexible function that:
 2. Implement month range selection
 3. Filter data dynamically based on user selections
 
+---
+
 ## Visualization
 
 ### 1: Create Scatter Plot
@@ -81,6 +87,8 @@ Create a flexible function that:
 2. Overlay trend lines on scatter plot
 3. Provide insights into word count trends
 
+---
+
 ## Article Exploration
 
 ### Top Articles Table
@@ -89,19 +97,23 @@ Create a flexible function that:
 2. Display in an interactive table
 3. Include article titles, dates, and word counts
 
+---
+
 ## Final Touches
 
-### Step 13: Error Handling
+### Error Handling
 
 1. Add try-except blocks
 2. Implement user-friendly error messages
 3. Provide guidance for database connection issues
 
-### Step 14: Performance Optimization
+### Performance Optimization
 
 1. Use Streamlit caching
 2. Optimize database queries
 3. Minimize computational overhead
+
+---
 
 ## Running the Application
 
@@ -126,6 +138,8 @@ streamlit run main.py
 2. Check library versions
 3. Validate data formatting
 4. Use print statements for tracking
+
+---
 
 ## Best Practices
 
