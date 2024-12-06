@@ -74,33 +74,11 @@ for i in range(amount_of_plots):
 
     news_selectors.append(selected_news)
     topic_selectors.append(selected_topic)
-    # Connect to the database
-    if selected_news == "Both":
-        for i in ["NYT", "Guardian"]:
-            conn = sqlite3.connect(f'Database/Wordcount/{i}.db')
-            cursor = conn.cursor()
-            if selected_topic == "All":
-                rows = cursor.execute(
-                    'SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World UNION SELECT date, wordcount FROM Opinion').fetchall()
-            elif selected_topic == "Neutral":
-                rows = cursor.execute(
-                    'SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World').fetchall()
-            else:
-                rows = cursor.execute(f'SELECT date, wordcount FROM {
-                                      selected_topic}').fetchall()
 
-    else:
-        conn = sqlite3.connect(f'Database/Wordcount/{selected_news}.db')
-        cursor = conn.cursor()
-        if selected_topic == "All":
-            rows = cursor.execute(
-                'SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World UNION SELECT date, wordcount FROM Opinion').fetchall()
-        elif selected_topic == "Neutral":
-            rows = cursor.execute(
-                'SELECT date, wordcount FROM Politics UNION SELECT date, wordcount FROM World').fetchall()
-        else:
-            rows = cursor.execute(f'SELECT date, wordcount FROM {
-                                  selected_topic}').fetchall()
+    # Get data from database based on selected news and topic
+    rows = get_data_from_db_with_filter(
+        selected_news, selected_topic, "wordcount", "date, wordcount")
+
     graph_data = pd.DataFrame(rows, columns=['date', 'wordcount'])
     graph_data['date'] = pd.to_datetime(graph_data['date'])
     all_data.append([graph_data, selected_news, selected_topic,
@@ -219,32 +197,10 @@ st.header(f"Top 10 Articles for {year_range[0]} - {month_range[0]} to {
 for i in range(amount_of_plots):
     selected_news = news_selectors[i]
     selected_topic = topic_selectors[i]
-    if selected_news == "Both":
-        for i in ["NYT", "Guardian"]:
-            conn = sqlite3.connect(f'Database/Wordcount/{i}.db')
-            cursor = conn.cursor()
-            if selected_topic == "All":
-                rows = cursor.execute(
-                    'SELECT * FROM Politics UNION SELECT * FROM World UNION SELECT * FROM Opinion ORDER BY wordcount DESC').fetchall()
-            elif selected_topic == "Neutral":
-                rows = cursor.execute(
-                    'SELECT * FROM Politics UNION SELECT * FROM World ORDER BY wordcount DESC').fetchall()
-            else:
-                rows = cursor.execute(f'SELECT * FROM {
-                                      selected_topic} ORDER BY wordcount DESC').fetchall()
 
-    else:
-        conn = sqlite3.connect(f'Database/Wordcount/{selected_news}.db')
-        cursor = conn.cursor()
-        if selected_topic == "All":
-            rows = cursor.execute(
-                'SELECT * FROM Politics UNION SELECT * FROM World UNION SELECT * FROM Opinion ORDER BY wordcount DESC').fetchall()
-        elif selected_topic == "Neutral":
-            rows = cursor.execute(
-                'SELECT * FROM Politics UNION SELECT * FROM World ORDER BY wordcount DESC').fetchall()
-        else:
-            rows = cursor.execute(f'SELECT * FROM {
-                                  selected_topic} ORDER BY wordcount DESC').fetchall()
+    # Get data from database based on selected news and topic
+    rows = get_data_from_db_with_filter(
+        selected_news, selected_topic, "wordcount", "*", "ORDER BY wordcount DESC")
 
     # create a dataframe
     top_data = pd.DataFrame(
