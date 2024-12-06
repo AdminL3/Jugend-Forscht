@@ -1,115 +1,146 @@
-# News Article Word Count Analysis App
-
-## Overview
-
-A Streamlit-powered web application for analyzing word count trends across different news sources and topics. This interactive tool allows users to:
-
-- Visualize word count trends for multiple news sources
-- Apply custom filters for years and months
-- Generate scatter plots with regression analysis
-- Explore top articles based on word count
-
-## Features
-
-- **Multi-Source Analysis**: Compare word count trends across NYT and Guardian
-- **Topic-Based Filtering**: Analyze data from Politics, World, and Opinion sections
-- **Interactive Visualization**:
-  - Customizable plot colors
-  - Dynamic year and month range selection
-  - Linear regression trend lines
-- **Top Articles Exploration**:
-  - View top 10 articles by word count
-  - Filtered by news source and topic
+# Step-by-Step Guide: News Article Word Count Analysis App
 
 ## Prerequisites
 
 ### Required Libraries
 
-- streamlit
-- sqlite3
-- pandas
-- plotly
-- scikit-learn
+Ensure you have the following libraries installed:
 
-### Database Structure
+- `streamlit`
+- `sqlite3`
+- `pandas`
+- `plotly`
 
-Create a `Database` folder with the following structure:
+### The Database Structure
 
+1. Create a `Database` folder in your project directory
+2. Organize your SQLite databases:
+   - `/Database/wordcount/NYT.db`
+   - `/Database/wordcount/Guardian.db`
+3. Ensure databases have these tables:
+   - Politics
+   - World
+   - Opinion
+4. Tables should include columns:
+   - `date`
+   - `wordcount`
+   - `day_index`
+
+## Creating the Streamlit Application
+
+In your preffered IDE, create a new Python file.
+
+### Step 1: Import Essential Libraries
+
+Ensure you have the following libraries installed:
+
+- `streamlit`
+- `sqlite3`
+- `pandas`
+- `plotly`
+
+### Step 2: Configure Streamlit Interface
+
+1. Set page layout to wide
+2. Add a descriptive title
+3. Provide usage guidance
+
+### Step 3: Plot Configuration
+
+1. Add a slider to control the number of plots (1-7)
+2. Create selectors for:
+   - News Source (NYT, Guardian, Both)
+   - Topic (Politics, World, Opinion)
+   - Plot Colors
+
+### Step 4: Data Retrieval Function
+
+Create a flexible function that:
+
+- Connects to SQLite databases
+- Retrieves data based on selected filters
+- Supports multiple news sources and topics
+
+### Step 5: Implement Data Filtering
+
+1. Add year range selector
+2. Implement month range selection
+3. Filter data dynamically based on user selections
+
+## Visualization
+
+### 1: Create Scatter Plot
+
+1. Use Plotly to generate interactive graph
+2. Plot word count against date
+3. Add customizable color schemes
+
+### 2. Add Regression Analysis
+
+1. Calculate linear regression for each dataset
+2. Overlay trend lines on scatter plot
+3. Provide insights into word count trends
+
+## Article Exploration
+
+### Top Articles Table
+
+1. Retrieve top 10 articles by word count
+2. Display in an interactive table
+3. Include article titles, dates, and word counts
+
+## Final Touches
+
+### Step 13: Error Handling
+
+1. Add try-except blocks
+2. Implement user-friendly error messages
+3. Provide guidance for database connection issues
+
+### Step 14: Performance Optimization
+
+1. Use Streamlit caching
+2. Optimize database queries
+3. Minimize computational overhead
+
+## Running the Application
+
+### Step 15: Launch the App
+
+```bash
+streamlit run main.py
 ```
-Database/
-│
-├── wordcount/
-│   ├── NYT.db
-│   └── Guardian.db
-│
-└── Titles/
-    ├── NYT.db
-    └── Guardian.db
-```
 
-#### Database Tables
+## Troubleshooting
 
-Each database should include tables:
+### Common Issues
 
-- `Politics`
-- `World`
-- `Opinion`
+- Incorrect database path
+- Missing libraries
+- Incompatible Python version
+- Insufficient database structure
 
-Required columns:
+### Recommended Debugging
 
-- `date`
-- `wordcount`
-- `day_index`
-- `title`
+1. Verify database connections
+2. Check library versions
+3. Validate data formatting
+4. Use print statements for tracking
 
-## Installation
+## Best Practices
 
-1. Clone the repository
-2. Install required libraries:
-   ```bash
-   pip install streamlit pandas plotly scikit-learn
-   ```
-3. Ensure your SQLite databases are properly configured
-4. Run the application:
-   ```bash
-   streamlit run app.py
-   ```
+### Data Preparation
 
-## Usage Guide
+- Consistent date formatting
+- Clean, normalized word count data
+- Comprehensive topic coverage
 
-1. Select number of plots (1-7)
-2. For each plot:
-   - Choose news source
-   - Select topic
-   - Pick visualization colors
-3. Use year and month range selectors to filter data
-4. View scatter plot with word count trends
-5. Explore top articles in the table below
+### Visualization Tips
 
-## Customization
+- Limit to 2-3 plots for clarity
+- Choose contrasting colors
+- Consider data density
 
-- Adjust color schemes
-- Modify plot styles
-- Add additional data sources
+## Conclusion
 
-## Limitations
-
-- Requires pre-populated SQLite databases
-- Performance may degrade with large datasets
-- Limited to word count analysis
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a pull request
-
-## License
-
-[Specify your license here]
-
-## Contact
-
-[Your contact information or project maintainer details]
+This step-by-step guide provides a comprehensive approach to building and utilizing the News Article Word Count Analysis application. Each step builds upon the previous one, creating a robust and flexible data exploration tool.
