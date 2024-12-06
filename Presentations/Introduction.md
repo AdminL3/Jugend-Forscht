@@ -9,7 +9,7 @@
 ## Introduction:
 
 - There are many prejudices about media and their reporting
-- This should be verifiable
+- But this should be verifiable
 - But how?
 - That's how my project came about
   --> see title
@@ -23,7 +23,7 @@ Both are considered high-quality, influential media. The global comparison provi
 
 ---
 
-## **Take a closer look at the name**
+## **Let's take a closer look at the name**
 
 ### 1. Journalistic Perspectives
 
