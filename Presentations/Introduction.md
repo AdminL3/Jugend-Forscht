@@ -1,7 +1,7 @@
 # **Change of Words: Long-term Data Analysis of Journalistic Perspectives**
 
 > [!NOTE]
-> This is the tranlation of a Script I used for this [PowerPoint](./Presentation.pptx)
+> This is the tranlation of a Script I used for this [PowerPoint](./Presentation.pptx)<br>
 > That means there are no complete sentences and the text is not structured in a way that it can be read as a text.
 > The original script is in German, so the translation may not be perfect.
 > The original script can be found [here](./Lehrer_Vorstellung/Script.md)
