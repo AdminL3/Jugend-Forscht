@@ -1,7 +1,7 @@
 # Overview 🔍
 
 > [!NOTE]  
-> **The goal is to compare the NYT and the Guardian, to find out if they are biased or not as well as other information.
+> **The goal is to compare the NYT and the Guardian, to find out if they are biased or not as well as other information.<br>
 > If you want to learn more about what this project is, you can read my introduction [here](./Presentations/Introduction.md)**
 
 **This is just an overview over the different steps. There are detailed explanations inside the topics.**
