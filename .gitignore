@@ -20,3 +20,4 @@ data-collection/AWS/key.pem
 /data-collection/Guardian/__pycache__
 # streamlit
 /devcontainer
+/Plotting/__pycache__
