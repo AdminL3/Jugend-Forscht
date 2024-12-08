@@ -256,6 +256,7 @@ for i in range(amount_of_plots):
 
     st.write(f"Top Articles for {selected_news} - {selected_topic}")
     if st.button("Generate Table", key=i+4*amount_of_plots):
+        filtered_top_data = filtered_top_data.head(10)
         if selected_news == "Both" or selected_topic == "All" or selected_topic == "Neutral":
             st. write(
                 "Currently, we only support fetching titles for a single news source and a single topic.")
@@ -272,9 +273,17 @@ for i in range(amount_of_plots):
                     titles.append(title)
                 filtered_top_data['Title'] = titles
 
-        filtered_top_data = filtered_top_data.head(10)
+        filtered_top_data['Content ID'] = filtered_top_data.apply(
+            lambda row: f"{selected_news}_{selected_topic}_{
+                row['Date']}_{row['Day Index']}",
+            axis=1
+        )
+
+        # Apply styles and show the dataframe
         styled_dataframe = filtered_top_data.style.applymap(
-            lambda x: 'color: yellow', subset=['Wordcount'])
+            lambda x: 'color: yellow', subset=['Wordcount']
+        )
+
         st.dataframe(
             styled_dataframe,
             use_container_width=True,
@@ -284,6 +293,9 @@ for i in range(amount_of_plots):
                 "Wordcount": st.column_config.Column(width=-100),
                 "Date": st.column_config.Column(width=-100),
                 "Day Index": st.column_config.Column(width=-100),
-                "Title": st.column_config.Column(width=600)
+                "Title": st.column_config.Column(width=600),
+                "Content ID": st.column_config.Column(width=100)
             }
         )
+
+st.write("Tip: Copy the last column to the Get Article Content page to get the content of the article.")
