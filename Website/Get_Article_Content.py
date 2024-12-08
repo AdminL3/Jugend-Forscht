@@ -84,3 +84,4 @@ try:
         sentiment_subjectivity*100, 2), "%")
 except:
     st.error("Error: File not found  \nPlease check the input again.")
+    st.write("File Path: ", file_path)

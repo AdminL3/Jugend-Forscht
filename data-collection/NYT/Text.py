@@ -1,7 +1,7 @@
 import os
 import re
 
-start_year = 2010
+start_year = 2021
 amount_years = 1
 
 topics = ["politics", "world", "opinion"]
