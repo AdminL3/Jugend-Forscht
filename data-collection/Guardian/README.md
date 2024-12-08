@@ -112,3 +112,8 @@ text_content = soup.title.get_text() + "\n"
 for p in paragraphs:
    text_content += p.get_text() + "\n"
 ```
+
+---
+
+> [!TIP]
+> Find the Table of Contents [here](https://github.com/AdminL3/Jugend-Forscht/blob/main/Table_of_contents.md)

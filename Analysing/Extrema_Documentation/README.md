@@ -170,3 +170,8 @@ for i, option in enumerate(options):
       with open(f"{output}{option}.txt", "w", encoding="utf-8") as file:
          file.write(text)
 ```
+
+---
+
+> [!TIP]
+> Find the Table of Contents [here](https://github.com/AdminL3/Jugend-Forscht/blob/main/Table_of_contents.md)

@@ -29,3 +29,8 @@ cursor.execute("""
     VALUES (?, ?, ?, ?, ?)
 """, (topic_id, year, month, day, daily_count))
 ```
+
+---
+
+> [!TIP]
+> Find the Table of Contents [here](https://github.com/AdminL3/Jugend-Forscht/blob/main/Table_of_contents.md)

@@ -64,3 +64,8 @@ if **name** == "**main**":
     with multiprocessing.Pool() as pool:
         pool.map(Selenium, numbers)
 ```
+
+---
+
+> [!TIP]
+> Find the Table of Contents [here](https://github.com/AdminL3/Jugend-Forscht/blob/main/Table_of_contents.md)

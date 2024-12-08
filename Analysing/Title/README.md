@@ -50,3 +50,8 @@
 - Call the `get_title` function to get the title of the article.
 - Insert the date, index, and title into the corresponding table in the SQLite database.
 - Commit the transaction to save the changes.
+
+---
+
+> [!TIP]
+> Find the Table of Contents [here](https://github.com/AdminL3/Jugend-Forscht/blob/main/Table_of_contents.md)

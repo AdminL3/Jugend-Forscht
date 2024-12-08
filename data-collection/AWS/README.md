@@ -39,3 +39,8 @@ scp -i /path/to/your-key.pem ec2-user@your-ec2-public-ip:/path/to/remote/file /p
 ### Most used commands
 
 - In [commands.txt](./commands.txt) you can find my most used commands for this process.
+
+---
+
+> [!TIP]
+> Find the Table of Contents [here](https://github.com/AdminL3/Jugend-Forscht/blob/main/Table_of_contents.md)
