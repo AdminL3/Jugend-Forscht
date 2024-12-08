@@ -6,9 +6,9 @@ st.title('Get Content from Data')
 st.divider()
 st.subheader("Enter the data from the article you want to get:")
 
+# make some space
 st.write("Input your content ID or manually input it down below:")
-input = st.text_input("Press Enter to submit: ", f"{news_source}_{
-                      topic}_{year}_{month}_{day}_{index}")
+input = st.text_input("Press Enter to submit: ", "NYT_politics_2010_1_1_1")
 
 parts = input.split("_")
 if len(parts) != 6:
@@ -27,15 +27,15 @@ Invalid input! Please input in the format:
 News_Topic_Year_Month_Day_Index 
 
 Example inputs: 
-- NYT_politics_2021_1_1_1 
-- NYT politics 2022 1 1 1 
+- NYT_politics_2010_1_1_1 
+- NYT politics 2010 1 1 1 
 
 Alternatively, input manually below.
 """)
 
     news_source = "NYT"
     topic = "politics"
-    year = 2021
+    year = 2010
     month = 1
     day = 1
     index = 1

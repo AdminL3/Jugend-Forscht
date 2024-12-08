@@ -273,9 +273,13 @@ for i in range(amount_of_plots):
                     titles.append(title)
                 filtered_top_data['Title'] = titles
 
+        filtered_top_data['Date'] = pd.to_datetime(filtered_top_data['Date'])
+        new_date = filtered_top_data['Date'].dt.strftime('%Y_%m_%d')
+        filtered_top_data['Date'] = filtered_top_data['Date'].dt.date
+
         filtered_top_data['Content ID'] = filtered_top_data.apply(
             lambda row: f"{selected_news}_{selected_topic}_{
-                row['Date']}_{row['Day Index']}",
+                new_date.iloc[row.name]}_{row['Day Index']}",
             axis=1
         )
 
