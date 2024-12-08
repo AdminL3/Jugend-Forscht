@@ -1,10 +1,5 @@
-from textwrap import indent
-from sklearn.linear_model import LinearRegression
 import streamlit as st
-import sqlite3
-import pandas as pd
-import plotly.graph_objects as go
-import datetime
+from textblob import TextBlob
 
 st.title('Get Content from Data')
 
@@ -33,3 +28,18 @@ with st.spinner("Getting Article Content..."):
         with open(file_path, "r", encoding="utf-8") as f:
             content = f.read()
         st.text(content)
+
+        st.divider()
+
+        st.subheader("More Information on the text:")
+        st.write("")
+        st.write("1. Number of Words: ", len(content.split()))
+        st.write("2. Number of Characters: ", len(content))
+        st.write("3. Number of Sentences: ", content.count("."))
+        blob = TextBlob(content)
+        sentiment_polarity = blob.sentiment.polarity
+        sentiment_subjectivity = blob.sentiment.subjectivity
+
+        st.write("4. Polarity: ", round(sentiment_polarity*100, 2), "%")
+        st.write("5. Subjectivity: ", round(
+            sentiment_subjectivity*100, 2), "%")
