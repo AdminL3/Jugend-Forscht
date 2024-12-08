@@ -2,7 +2,7 @@ import time
 from selenium import webdriver
 import os
 
-start_year = 2010
+start_year = 2011
 amount_years = 1
 start_month = 1
 amount_month = 12
@@ -29,7 +29,7 @@ for topic in topics:
             index = 0
             for url in urls:
                 parts = url.split('/')
-                year = parts[3]
+                year2 = parts[3]
                 month = parts[4]
                 day = parts[5]
                 date = f"{year}_{month}_{day}_"
@@ -39,7 +39,7 @@ for topic in topics:
                     index = 1
                 file_name = f"{date}{index}.txt"
 
-                output_dir = f"data/NYT/source/{topic}/{year}/month{month}/"
+                output_dir = f"data/NYT/source/{topic}/{year2}/month{month}/"
                 os.makedirs(output_dir, exist_ok=True)
                 output_file = os.path.join(output_dir, file_name)
                 if os.path.exists(output_file):
