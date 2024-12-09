@@ -14,11 +14,13 @@ base_path = 'data'
 topics = ['Politics', 'World', 'Opinion']
 news = ['NYT', 'Guardian']
 for n in news:
+    print(n)
     database_path = f'Database/Titles/{n}.db'
     os.makedirs(os.path.dirname(database_path), exist_ok=True)
     conn = sqlite3.connect(database_path)
     cursor = conn.cursor()
     for topic in topics:
+        print(topic)
         cursor.execute(f'''
             CREATE TABLE IF NOT EXISTS {topic} (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -29,10 +31,13 @@ for n in news:
         ''')
         topic_path = os.path.join(base_path, n, 'articles', topic)
         for year in os.listdir(topic_path):
+            print(year)
             year_path = os.path.join(topic_path, year)
             for month in os.listdir(year_path):
+                print(month)
                 month_path = os.path.join(year_path, month)
                 for day in os.listdir(month_path):
+                    print(day)
                     day_path = os.path.join(month_path, day)
                     for file_name in os.listdir(day_path):
                         if file_name.endswith('.txt'):
@@ -42,8 +47,5 @@ for n in news:
                             cursor.execute(f"INSERT INTO {topic} (date, idx, title) VALUES (?, ?, ?)",
                                            (date, index, title))
                     conn.commit()
-                    print(day)
-                print(month)
-            print(year)
 print('Done')
 conn.close()
