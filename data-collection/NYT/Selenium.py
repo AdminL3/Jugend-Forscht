@@ -2,8 +2,8 @@ import time
 from selenium import webdriver
 import os
 
-start_year = 2011
-amount_years = 1
+start_year = 2020
+amount_years = 2
 start_month = 1
 amount_month = 12
 
@@ -15,6 +15,7 @@ options.add_argument("--start-maximized")
 options.add_argument("--disable-search-engine-choice-screen")
 options.add_experimental_option("detach", True)
 options.add_argument("--headless")
+options.add_argument('--log-level=3')
 driver = webdriver.Chrome(options=options)
 
 

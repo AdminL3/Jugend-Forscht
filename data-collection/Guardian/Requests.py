@@ -5,10 +5,11 @@ import time
 import requests
 
 
-start_year = 2011
-amount_years = 1
+start_year = 2020
+amount_years = 2
 start_month = 1
 amount_month = 12
+topics = ["politics", "world", "opinion"]
 
 
 patterns = [
@@ -34,8 +35,6 @@ headers = {
 
 error_html = "<head><title>429 Too Many Requests</title></head>"
 
-
-topics = ["politics", "world", "opinion"]
 last_date = 0
 for topic in topics:
     print(topic)
