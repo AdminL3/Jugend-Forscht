@@ -29,14 +29,16 @@ def word_count(text):
     return str(word_count)
 
 
-start_year = 2010
-amount_years = 1
+start_year = 2020
+amount_years = 2
 topics = ["politics", "world", "opinion"]
 
 news = ["NYT", "Guardian"]
 for n, new in enumerate(news):
     print(new)
-    conn = sqlite3.connect(f"Database/Wordcount/{new}.db")
+    database = f"Database/Wordcount/{new}.db"
+    os.makedirs(os.path.dirname(database), exist_ok=True)
+    conn = sqlite3.connect(database)
     cursor = conn.cursor()
     data = []
     for topic in topics:
