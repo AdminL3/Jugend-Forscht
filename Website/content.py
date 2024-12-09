@@ -8,40 +8,39 @@ st.subheader("Enter the data from the article you want to get:")
 
 # make some space
 st.write("Input your content ID or manually input it down below:")
-input = st.text_input("Press Enter to submit: ", "NYT_politics_2010_1_1_1")
+input = st.text_input("Press Enter to submit: ", "NYT_politics_2010-1-1_1")
 
 parts = input.split("_")
-if len(parts) != 6:
+if len(parts) != 4:
     parts = input.split(" ")
+
 
 try:
     news_source = parts[0]
     topic = parts[1]
-    year = int(parts[2])
-    month = int(parts[3])
-    day = int(parts[4])
-    index = int(parts[5])
-except:
+    date = parts[2].split("-")
+    index = int(parts[3])
+    year = int(date[0])
+    month = int(date[1])
+    day = int(date[2])
+except Exception as e:
     st.error("""
 Invalid input! Please input in the format:  
-News_Topic_Year_Month_Day_Index 
-
+News_Topic_Year-Month-Day_Index 
+s
 Example inputs: 
-- NYT_politics_2010_1_1_1 
+- NYT_politics_2010-1-1_1 
 - NYT politics 2010 1 1 1 
 
 Alternatively, input manually below.
 """)
-
+    st.error(f"Error: {e}")
     news_source = "NYT"
     topic = "politics"
     year = 2010
     month = 1
     day = 1
     index = 1
-
-
-# 1a
 
 
 st.divider()
