@@ -2,17 +2,14 @@ import os
 import sqlite3
 from Plotting.Plotting import graph
 
-start_year = 2010
-amount_years = 1
+years = [2010, 2021, 2020, 2021]
 
-end_year = start_year + amount_years
 colors = ['#1f77b4', '#ff7f0e', "green"]
 colors_reg = ['blue', 'red', "black"]
 topics = ["Politics", "World", "Opinion"]
 news = ["NYT", "Guardian"]
 
-for y in range(amount_years):
-    year = start_year + y
+for year in years:
     for n, new in enumerate(news):
         connection = sqlite3.connect(f"Database/Wordcount/{new}.db")
         cursor = connection.cursor()

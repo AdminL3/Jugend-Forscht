@@ -1,8 +1,7 @@
-import os
 import subprocess
 
 
-base_path = 'Plotting/'
+base_path = 'Plotting'
 scripts = []
 
 parts = [
