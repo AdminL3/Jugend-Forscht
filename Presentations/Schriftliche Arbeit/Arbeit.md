@@ -9,8 +9,9 @@
 
 ---
 
-[Hilfe](./Vorgaben.md#iii-der-aufbau-der-naturwissenschaftlichen-arbeit)
-## [Projektüberblick](./Vorgaben.md#projekt%C3%BCberblick)
+[Aufbau](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Aufbau.md)
+[Vorgaben](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Vorgaben.md)
+## [Projektüberblick](./Aufbau.md#projekt%C3%BCberblick)
 
 - Kopiert von Einleitung Kurztext.md
 - sechs bis acht Sätz
@@ -22,11 +23,8 @@ Das Ziel dieser Forschungsarbeit ist die Überprüfung von Vorurteilen bezüglic
 
 ---
 
-## [Inhaltsverzeichnis mit Nummerierung und Seitenzahlen](./Vorgaben.md#inhaltsverzeichnis)
+## [Inhaltsverzeichnis mit Nummerierung und Seitenzahlen](./Aufbau.md#inhaltsverzeichnis)
 
-1. Deckblatt  
-2. Projektüberblick  
-3. Inhaltsverzeichnis mit Nummerierung und Seitenzahlen  
 4. Fachliche Kurzfassung  
 5. Motivation und Fragestellung  
 6. Hintergrund und theoretische Grundlagen  
@@ -39,36 +37,38 @@ Das Ziel dieser Forschungsarbeit ist die Überprüfung von Vorurteilen bezüglic
 
 ---
 
-## [Fachliche Kurzfassung](./Vorgaben.md#fachliche-kurzfassung)
+## [Fachliche Kurzfassung](./Aufbau.md#fachliche-kurzfassung)
 - Problemstellung
 ---
 
 
-## [Motivation und Fragestellung](./Vorgaben.md#motivation-und-fragestellung)
+## [Motivation und Fragestellung](./Aufbau.md#motivation-und-fragestellung)
+
+Es gibt viele Vorurteile über die Medien, die sich im Laufe der Zeit verändert haben. In meinem Projekt möchte ich die Veränderung der Medien über die letzten Jahre analysieren. Dazu habe ich zwei bedeutende Zeitungen ausgewählt: die "New York Times" (USA) und "The Guardian" (GB). Das Ziel ist, Artikel der beiden Zeitungen zu analysieren und auszuwerten, wobei ich mich bei den beiden Zeitungen auf jeweils drei Rubriken beschränkt habe. Die drei Themen - World, Politics und Opinion - sind bei beiden Zeitungen vergleichbar, und ich werde alle Artikel dieser Rubriken analysieren. Kriterien bei der Analyse sind aktuell die Objektivität und Polarisation der Artikel, sowie deren Länge und Anzahl. Der geplante Zeitraum dieser Analyse ist 10 bis 20 Jahre.
 
 ---
 
-## [Hintergrund und theoretische Grundlagen](./Vorgaben.md#hintergrund-und-theoretische-grundlagen)
+## [Hintergrund und theoretische Grundlagen](./Aufbau.md#hintergrund-und-theoretische-grundlagen)
+
+---
+
+## [Vorgehensweise, Materialien und Methoden](./Aufbau.md#vorgehensweise-materialien-und-methoden)
+
+
+---
+
+## [Ergebnisse](./Aufbau.md#ergebnisse)
+
+
+---
+
+## [Ergebnisdiskussion](./Aufbau.md#ergebnisdiskussion)
+
+
 
 ---
 
 
-## [Vorgehensweise, Materialien und Methoden](./Vorgaben.md#vorgehensweise-materialien-und-methoden)
-
----
-
-
-## [Ergebnisse](./Vorgaben.md#ergebnisse)
-
----
-
-
-## [Ergebnisdiskussion](./Vorgaben.md#ergebnisdiskussion)
-
----
-
-
-
-## [Fazit und Ausblick](./Vorgaben.md#fazit-und-ausblick)
+## [Fazit und Ausblick](./Aufbau.md#fazit-und-ausblick)
 
 ---
