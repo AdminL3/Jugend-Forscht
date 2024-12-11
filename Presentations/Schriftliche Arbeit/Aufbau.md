@@ -1,31 +1,35 @@
-### III. Der Aufbau der naturwissenschaftlichen Arbeit
+# III. Der Aufbau der naturwissenschaftlichen Arbeit
 
-Alle Arbeiten, die bei Jugend forscht und Schüler experimentieren eingereicht werden, folgen
+> [!IMPORTANT]  
+> [PDF Beispielarbeit](./Beispielarbeit_Jugend_forscht_Arbeitswelt_Rettungsschlauch.pdf)  
+> [PDF Vorlage](./Vorlage.pdf)  
+> [Word Vorlage](./Vorlage.docx)  
+> [Auf GDocs](https://docs.google.com/document/d/122ldELOhJZs6OoEa1SJyF7ggYlnsFg9bjosTr_mudeY/edit)
 
-- mit geringen Einschränkungen \- dem allgemein üblichen Aufbau einer wissenschaftlichen Arbeit.  
-    
-- Deckblatt  
-    
-- Projektüberblick  
-    
-- Inhaltsverzeichnis mit Nummerierung und Seitenzahlen  
-    
-- Fachliche Kurzfassung  
-    
-- Motivation und Fragestellung  
-    
-- Hintergrund und theoretische Grundlagen  
-    
-- Vorgehensweise, Materialien und Methoden  
-    
-- Ergebnisse  
-    
-- Ergebnisdiskussion  
-    
-- Fazit und Ausblick  
-    
-- Quellen- und Literaturverzeichnis  
-    
+## Inhalt
+
+- Deckblatt
+
+- Projektüberblick
+
+- Inhaltsverzeichnis mit Nummerierung und Seitenzahlen
+
+- Fachliche Kurzfassung
+
+- Motivation und Fragestellung
+
+- Hintergrund und theoretische Grundlagen
+
+- Vorgehensweise, Materialien und Methoden
+
+- Ergebnisse
+
+- Ergebnisdiskussion
+
+- Fazit und Ausblick
+
+- Quellen- und Literaturverzeichnis
+
 - Unterstützungsleistungen
 
 #### Projektüberblick
@@ -44,15 +48,15 @@ Die fachliche Kurzfassung fasst das Projekt kurz für die Jurymitglieder zusamme
 
 Hier werden die Jurymitglieder in das Thema eingeführt und die Fragestellung wird gezielt formuliert. Lehrbuch-/Unterrichtswissen ist dabei weniger wichtig. Die folgenden Fragen sollen beantwortet werden:
 
-- Was ist das Ziel der Arbeit?  
-- Wie wurde das Thema gefunden?  
+- Was ist das Ziel der Arbeit?
+- Wie wurde das Thema gefunden?
 - Welche Hypothese(n)/Vermutung(en) sollen mit der Arbeit überprüft werden?
 
 #### Hintergrund und theoretische Grundlagen
 
 Hier wird eine kurze Einordnung des Themas in den wissenschaftlichen Zusammenhang vorgenommen. Dabei sollen die folgenden Fragen beantwortet werden:
 
-- Was ist zu dem Thema schon bekannt?  
+- Was ist zu dem Thema schon bekannt?
 - Wo knüpft die Arbeit an?
 
 #### Vorgehensweise, Materialien und Methoden
@@ -78,10 +82,3 @@ Hier werden alle Quellen und Unterstützungsleistungen genannt, die für das Pro
 #### Unterstützungsleistungen
 
 Hier werden sämtliche Personen und Unternehmen/Institutionen aufgeführt, die in dem Projekt unterstützt haben. Die vollständige Angabe von Unterstützungsleistungen ist wichtiger Bestandteil der Dokumentation eines wissenschaftlichen Projektes. Eine detaillierte Erläuterung von Unterstützungsleistungen hilft den Jurymitgliedern bei der Einschätzung des Eigenanteils der Arbeit und erleichtert das Jurygespräch. Vielfalt und Umfang von Unterstützungsleistungen bei Projekten im Wettbewerb Jugend forscht/Schüler experimentieren variieren stark und bestimmen nicht die Qualität des Projektes.
-
----
-
-[PDF Beispielarbeit](./Beispielarbeit_Jugend_forscht_Arbeitswelt_Rettungsschlauch.pdf)
-[PDF Vorlage](./Vorlage.pdf)
-[Word Vorlage](./Vorlage.docx)
-[Auf GDocs](https://docs.google.com/document/d/122ldELOhJZs6OoEa1SJyF7ggYlnsFg9bjosTr_mudeY/edit)
