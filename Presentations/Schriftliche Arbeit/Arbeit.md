@@ -51,12 +51,16 @@ Das Ziel dieser Forschungsarbeit ist die Überprüfung von Vorurteilen bezüglic
 
 ## [Motivation und Fragestellung](./Aufbau.md#motivation-und-fragestellung)
 
-Es gibt viele Vorurteile über die Medien, die sich im Laufe der Zeit verändert haben. Werden die Medien immer kritischer und negativer. Sind Medien in den USA subjektiver als in Großbrittaniee? 
-
+- Es gibt viele Vorurteile über die Medien, die sich im Laufe der Zeit verändert haben. Werden die Medien immer kritischer und negativer.
+- Sind Medien in den USA subjektiver als in Großbrittaniee?
+- Bücher von Mama anschauen
 
 ---
 
 ## [Hintergrund und theoretische Grundlagen](./Aufbau.md#hintergrund-und-theoretische-grundlagen)
+
+- Bei mir nicht nötig?
+- Was wurde schon erforscht?
 
 ---
 
@@ -74,6 +78,9 @@ Der zweite Schritt ist das Parsen des Quellcodes. Das bedeutet, dass ich den Que
 
 ## [Ergebnisse](./Aufbau.md#ergebnisse)
 
+- längste Kapitel der schriftlichen Arbeit
+- sollte untergliedert werden
+- Kurze Texte erklären die Tabellen und Abbildungen
 
 ---
 
@@ -83,10 +90,16 @@ Der zweite Schritt ist das Parsen des Quellcodes. Das bedeutet, dass ich den Que
 
 ## [Fazit und Ausblick](./Aufbau.md#fazit-und-ausblick)
 
+- Zum Abschluss der Arbeit sollte, die zu Beginn der Arbeit gestellte Forschungsfrage bzw. das Projektziel aufgegriffen werden: Wie lautet die Antwort auf die Forschungsfrage, wurde das Ziel erreicht?
 
 ---
 
+[Quellen- und Literaturverzeichnis](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Aufbau.md#quellen--und-literaturverzeichnis)
 
-## [Fazit und Ausblick](./Aufbau.md#fazit-und-ausblick)
+Hier werden alle Quellen und Unterstützungsleistungen genannt, die für das Projekt verwendet und in Anspruch genommen wurden. Quellen sind z. B. Internetseiten, Fachzeitschriften und Bücher. Alle Angaben werden jeweils alphabetisch nach Nachnamen sortiert.
 
 ---
+
+[Unterstützungsleistungen](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Aufbau.md#unterst%C3%BCtzungsleistungen)
+
+Hier werden sämtliche Personen und Unternehmen/Institutionen aufgeführt, die in dem Projekt unterstützt haben. Die vollständige Angabe von Unterstützungsleistungen ist wichtiger Bestandteil der Dokumentation eines wissenschaftlichen Projektes. Eine detaillierte Erläuterung von Unterstützungsleistungen hilft den Jurymitgliedern bei der Einschätzung des Eigenanteils der Arbeit und erleichtert das Jurygespräch. Vielfalt und Umfang von Unterstützungsleistungen bei Projekten im Wettbewerb Jugend forscht/Schüler experimentieren variieren stark und bestimmen nicht die Qualität des Projektes.
