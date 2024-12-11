@@ -9,8 +9,13 @@
 
 ---
 
-[Aufbau](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Aufbau.md)
-[Vorgaben](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Vorgaben.md)
+> [!IMPORTANT]  
+> Wenn du auf die Titel klickst dann kommst du zu der jeweiligen Infoseite!
+> [Aufbau](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Aufbau.md)  
+> [Vorgaben](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Vorgaben.md)
+
+---
+
 ## [Projektüberblick](./Aufbau.md#projekt%C3%BCberblick)
 
 - Kopiert von Einleitung Kurztext.md
