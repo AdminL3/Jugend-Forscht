@@ -10,7 +10,7 @@ import datetime
 def get_data_from_db_with_filter(selected_news, selected_topic, name, selectors, order=""):
     if selected_news == "Both":
         for i in ["NYT", "Guardian"]:
-            conn = sqlite3.connect(f'./{i}.db')
+            conn = sqlite3.connect(f'Database/{name}/{i}.db')
             cursor = conn.cursor()
             if selected_topic == "All":
                 rows = cursor.execute(
@@ -23,7 +23,7 @@ def get_data_from_db_with_filter(selected_news, selected_topic, name, selectors,
                                       selected_topic} {order}').fetchall()
 
     else:
-        conn = sqlite3.connect(f'./{selected_news}.db')
+        conn = sqlite3.connect(f'Database/{name}/{selected_news}.db')
         cursor = conn.cursor()
         if selected_topic == "All":
             rows = cursor.execute(
