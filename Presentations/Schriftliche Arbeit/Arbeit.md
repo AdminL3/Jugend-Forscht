@@ -4,7 +4,7 @@
 
 - Photshop
 - NYT vs Guardian
-- Vergleich 
+- Vergleich
 - Ansprechend
 
 ---
@@ -19,7 +19,6 @@
 
 Wie haben sich die Medien über die letzten Jahre verändert? In meinem Projekt befasse ich mich mit der Datenanalyse von zwei bedeutenden Zeitungen. Ausgewählt habe ich die "New York Times" (USA) und "The Guardian" (GB). Das Ziel ist, Artikel der beiden Zeitungen zu analysieren und auszuwerten, wobei ich mich bei den beiden Zeitungen auf jeweils drei Rubriken beschränkt habe. Die drei Themen - World, Politics und Opinion - sind bei beiden Zeitungen vergleichbar, und ich werde alle Artikel dieser Rubriken analysieren. Kriterien bei der Analyse sind aktuell die Objektivität und Polarisation der Artikel, sowie deren Länge und Anzahl. Der geplante Zeitraum dieser Analyse ist 10 bis 20 Jahre.
 Das Ziel dieser Forschungsarbeit ist die Überprüfung von Vorurteilen bezüglich der Veränderung in der Berichterstattung sowie, je nach Ergebnis, die Glaubwürdigkeit von Qualitätsmedien zu stärken beziehungsweise die Veränderung der Medien im Laufe der Zeit nachzuweisen.
-
 
 ---
 
@@ -38,8 +37,9 @@ Das Ziel dieser Forschungsarbeit ist die Überprüfung von Vorurteilen bezüglic
 ---
 
 ## [Fachliche Kurzfassung](./Aufbau.md#fachliche-kurzfassung)
+
+> [!INFO]
 > Die fachliche Kurzfassung fasst das Projekt kurz für die Jurymitglieder zusammen. Im Unterschied zum Projektüberblick stehen hier die wissenschaftlichen Erkenntnisse im Vordergrund. Die fachliche Kurzfassung sollte immer auf dem aktuellen Stand der schriftlichen Arbeit sein.
----
 
 
 ## [Motivation und Fragestellung](./Aufbau.md#motivation-und-fragestellung)
@@ -59,10 +59,9 @@ Der Vorgang, um die Daten zu sammeln und zu analysieren, ist sehr komplex und wi
 Bei "The Guardian! war dieser Prozess viel einfacher. Ich konnte mit einer einfachen Anfrage mit dem Python Modul "Requests" den Quellcode der Webseite herunterladen. Dieser wurde dann in einer Textdatei gespeichert, sortiert nach Datum und Rubrik. Bei der New York Times war es komplizierter. Es gibt verschiedene Methoden um den Quellcode zu erreichen. Die Methode Requests, wie ich bei "The Guardian" genutz habe, hat nicht funktioniert. Nach bereits 100 Artikeln wurde meine IP-Adresse blockiert und (Fehlermeldung). Die zweite Methode ist "Selenium", welcher eine beliebter Web Crawler ist, mit dem man einen echten Browser wie Chrome simuliert. Doch auch hier gab es Probleme. Die New York Times hat schnell meine ungewöhnliche Aktivität bemerkt, und nur den ersten Absatz des Artikels angezeigt. 
 
 Nach ein wenig herumprobieren, habe ich entdeckt, dass der Artikeltext in einem komplizierten Geflecht aus Json. (Andere Fehlermeldung)
-Ich musste einen Weg finden, um die Paywall zu umgehen. 
+Ich musste einen Weg finden, um die Paywall zu umgehen.
 
 Der zweite Schritt ist das Parsen des Quellcodes. Das bedeutet, dass ich den Quellcode in Text umwandeln muss. Dieser Text ist der Artikeltext, welcher dann analysiert wird. Die Analyse des Textes ist der letz
-
 
 ---
 
@@ -73,6 +72,9 @@ Der zweite Schritt ist das Parsen des Quellcodes. Das bedeutet, dass ich den Que
 
 ## [Ergebnisdiskussion](./Aufbau.md#ergebnisdiskussion)
 
+---
+
+## [Fazit und Ausblick](./Aufbau.md#fazit-und-ausblick)
 
 
 ---
