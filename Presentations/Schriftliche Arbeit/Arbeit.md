@@ -9,8 +9,8 @@
 
 ---
 
-[Hilfe](https://github.com/AdminL3/Jugend-Forscht/edit/main/Presentations/Schriftliche%20Arbeit/Vorgaben.md#iii-der-aufbau-der-naturwissenschaftlichen-arbeit)
-## [Projektüberblick](https://github.com/AdminL3/Jugend-Forscht/edit/main/Presentations/Schriftliche%20Arbeit/Vorgaben.md#projekt%C3%BCberblick)
+[Hilfe](./Vorgaben.md#iii-der-aufbau-der-naturwissenschaftlichen-arbeit)
+## [Projektüberblick](./Vorgaben.md#projekt%C3%BCberblick)
 
 - Kopiert von Einleitung Kurztext.md
 - sechs bis acht Sätz
@@ -22,7 +22,7 @@ Das Ziel dieser Forschungsarbeit ist die Überprüfung von Vorurteilen bezüglic
 
 ---
 
-## [Inhaltsverzeichnis mit Nummerierung und Seitenzahlen](https://github.com/AdminL3/Jugend-Forscht/edit/main/Presentations/Schriftliche%20Arbeit/Vorgaben.md#inhaltsverzeichnis)
+## [Inhaltsverzeichnis mit Nummerierung und Seitenzahlen](./Vorgaben.md#inhaltsverzeichnis)
 
 1. Deckblatt  
 2. Projektüberblick  
@@ -39,36 +39,36 @@ Das Ziel dieser Forschungsarbeit ist die Überprüfung von Vorurteilen bezüglic
 
 ---
 
-## [Fachliche Kurzfassung](https://github.com/AdminL3/Jugend-Forscht/edit/main/Presentations/Schriftliche%20Arbeit/Vorgaben.md#fachliche-kurzfassung)
+## [Fachliche Kurzfassung](./Vorgaben.md#fachliche-kurzfassung)
 - Problemstellung
 ---
 
 
-## [Motivation und Fragestellung](https://github.com/AdminL3/Jugend-Forscht/edit/main/Presentations/Schriftliche%20Arbeit/Vorgaben.md#motivation-und-fragestellung)
+## [Motivation und Fragestellung](./Vorgaben.md#motivation-und-fragestellung)
 
 ---
 
-## [Hintergrund und theoretische Grundlagen](https://github.com/AdminL3/Jugend-Forscht/edit/main/Presentations/Schriftliche%20Arbeit/Vorgaben.md#hintergrund-und-theoretische-grundlagen)
-
----
-
-
-## [Vorgehensweise, Materialien und Methoden](https://github.com/AdminL3/Jugend-Forscht/edit/main/Presentations/Schriftliche%20Arbeit/Vorgaben.md#vorgehensweise-materialien-und-methoden)
+## [Hintergrund und theoretische Grundlagen](./Vorgaben.md#hintergrund-und-theoretische-grundlagen)
 
 ---
 
 
-## [Ergebnisse](https://github.com/AdminL3/Jugend-Forscht/edit/main/Presentations/Schriftliche%20Arbeit/Vorgaben.md#ergebnisse)
+## [Vorgehensweise, Materialien und Methoden](./Vorgaben.md#vorgehensweise-materialien-und-methoden)
 
 ---
 
 
-## [Ergebnisdiskussion](https://github.com/AdminL3/Jugend-Forscht/edit/main/Presentations/Schriftliche%20Arbeit/Vorgaben.md#ergebnisdiskussion)
+## [Ergebnisse](./Vorgaben.md#ergebnisse)
+
+---
+
+
+## [Ergebnisdiskussion](./Vorgaben.md#ergebnisdiskussion)
 
 ---
 
 
 
-## [Fazit und Ausblick](https://github.com/AdminL3/Jugend-Forscht/edit/main/Presentations/Schriftliche%20Arbeit/Vorgaben.md#fazit-und-ausblick)
+## [Fazit und Ausblick](./Vorgaben.md#fazit-und-ausblick)
 
 ---
