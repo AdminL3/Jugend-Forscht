@@ -72,3 +72,8 @@ Es gibt viele Vorurteile über die Medien, die sich im Laufe der Zeit verändert
 ## [Fazit und Ausblick](./Aufbau.md#fazit-und-ausblick)
 
 ---
+
+[PDF Beispielarbeit](./Beispielarbeit_Jugend_forscht_Arbeitswelt_Rettungsschlauch.pdf)
+[PDF Vorlage](./Vorlage.pdf)
+[Word Vorlage](./Vorlage.docx)
+[Auf GDocs](https://docs.google.com/document/d/122ldELOhJZs6OoEa1SJyF7ggYlnsFg9bjosTr_mudeY/edit)
