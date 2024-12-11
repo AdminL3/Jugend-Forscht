@@ -86,6 +86,11 @@ Der zweite Schritt ist das Parsen des Quellcodes. Das bedeutet, dass ich den Que
 
 ## [Ergebnisdiskussion](./Aufbau.md#ergebnisdiskussion)
 
+- Ergebnisse bewerten
+- Interpretationen und weiterführende ÜberlegungenMängel möglich
+- Hinweise auf vorhandene Literatur:
+  - Abweichungen oder Übereinstimmungen kurz diskutieren
+
 ---
 
 ## [Fazit und Ausblick](./Aufbau.md#fazit-und-ausblick)
@@ -94,12 +99,12 @@ Der zweite Schritt ist das Parsen des Quellcodes. Das bedeutet, dass ich den Que
 
 ---
 
-[Quellen- und Literaturverzeichnis](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Aufbau.md#quellen--und-literaturverzeichnis)
+## [Quellen- und Literaturverzeichnis](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Aufbau.md#quellen--und-literaturverzeichnis)
 
 Hier werden alle Quellen und Unterstützungsleistungen genannt, die für das Projekt verwendet und in Anspruch genommen wurden. Quellen sind z. B. Internetseiten, Fachzeitschriften und Bücher. Alle Angaben werden jeweils alphabetisch nach Nachnamen sortiert.
 
 ---
 
-[Unterstützungsleistungen](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Aufbau.md#unterst%C3%BCtzungsleistungen)
+## [Unterstützungsleistungen](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Aufbau.md#unterst%C3%BCtzungsleistungen)
 
 Hier werden sämtliche Personen und Unternehmen/Institutionen aufgeführt, die in dem Projekt unterstützt haben. Die vollständige Angabe von Unterstützungsleistungen ist wichtiger Bestandteil der Dokumentation eines wissenschaftlichen Projektes. Eine detaillierte Erläuterung von Unterstützungsleistungen hilft den Jurymitgliedern bei der Einschätzung des Eigenanteils der Arbeit und erleichtert das Jurygespräch. Vielfalt und Umfang von Unterstützungsleistungen bei Projekten im Wettbewerb Jugend forscht/Schüler experimentieren variieren stark und bestimmen nicht die Qualität des Projektes.
