@@ -49,6 +49,20 @@ def graph(rows, column_names, name, legend_title, title, drop_columns, color, co
                 y_pred = model.predict(X)
                 plt.plot(Dataframe.index, y_pred, color=color_reg)
                 slope = model.coef_[0]  # Extract the slope
+
+                # Calculate total change over the period
+                start_year = X.min()
+                end_year = X.max()
+                y_start = model.predict([[start_year]])[0]
+                y_end = model.predict([[end_year]])[0]
+                total_change = y_end - y_start
+
+                # Display total change on the plot
+                plt.gcf().text(
+                    0.93, 0.90, f"Total Change: {
+                        total_change:.2f}",
+                    fontsize=12, verticalalignment='top', horizontalalignment='right'
+                )
             except:
                 print("Could not fit regression model")
         else:
@@ -57,7 +71,7 @@ def graph(rows, column_names, name, legend_title, title, drop_columns, color, co
 
     # Customize plot labels and title
     plt.xticks(rotation=25)
-    plt.subplots_adjust(left=0.15, right=0.95, top=0.9, bottom=0.2)
+    plt.subplots_adjust(left=0.15, right=0.95, top=0.85, bottom=0.15)
 
     plt.xlabel("Date")
     plt.ylabel(name.capitalize())
@@ -66,10 +80,10 @@ def graph(rows, column_names, name, legend_title, title, drop_columns, color, co
 
     # Display correlation coefficient and slope on the plot (if calculated)
     if corr_coefficient is not None:
-        plt.gcf().text(0.93, 0.94, f'Slope: {
-            slope:.0f} (words per year)', fontsize=12, verticalalignment='top', horizontalalignment='right')
-        plt.gcf().text(0.93, 0.98, f"Correlation: {round(
-            corr_coefficient*100, 2)}%", fontsize=12, verticalalignment='top', horizontalalignment='right')
+        plt.gcf().text(0.93, 0.94, f'Slope: {slope:.0f} (per year)',
+                       fontsize=12, verticalalignment='top', horizontalalignment='right')
+        plt.gcf().text(0.93, 0.98, f"Correlation: {round(corr_coefficient*100, 2)}%",
+                       fontsize=12, verticalalignment='top', horizontalalignment='right')
 
     plt.text(0, 1.07, title, fontsize=14, verticalalignment='top',
              horizontalalignment='left', transform=plt.gca().transAxes)

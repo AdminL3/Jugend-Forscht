@@ -23,16 +23,16 @@ def extract_info(url):
     return None
 
 
-def requests(n):
+def requestss(n):
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
     }
 
     error_html = "<head><title>429 Too Many Requests</title></head>"
 
-    start_year = 2020
+    start_year = 2010
     amount_years = 1
-    topics = ["politics", "world", "opinion"]
+    topics = ["politics"]
     start_month = n
     amount_month = 1
     last_date = 0
@@ -98,9 +98,9 @@ def requests(n):
                     last_date = date
 
 
-numbers = [1, 2, 3, 4]
+numbers = [9, 10, 11, 12]
 
 if __name__ == "__main__":
     with multiprocessing.Pool() as pool:
-        pool.map(requests, numbers)
+        pool.map(requestss, numbers)
     print("Finished saving")

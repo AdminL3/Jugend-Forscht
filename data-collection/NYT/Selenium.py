@@ -2,19 +2,20 @@ import time
 from selenium import webdriver
 import os
 
-start_year = 2010
-amount_years = 1
-start_month = 9
-amount_month = 1
-topics = ["world", "politics", "opinion"]
+start_year = 2020
+amount_years = 2
+start_month = 1
+amount_month = 12
 
 
+topics = ["politics", "world", "opinion"]
 last_date = 0
 options = webdriver.ChromeOptions()
 options.add_argument("--start-maximized")
 options.add_argument("--disable-search-engine-choice-screen")
 options.add_experimental_option("detach", True)
 options.add_argument("--headless")
+options.add_argument('--log-level=3')
 driver = webdriver.Chrome(options=options)
 
 
@@ -29,7 +30,7 @@ for topic in topics:
             index = 0
             for url in urls:
                 parts = url.split('/')
-                year = parts[3]
+                year2 = parts[3]
                 month = parts[4]
                 day = parts[5]
                 date = f"{year}_{month}_{day}_"
@@ -39,7 +40,7 @@ for topic in topics:
                     index = 1
                 file_name = f"{date}{index}.txt"
 
-                output_dir = f"data/NYT/source/{topic}/{year}/month{month}/"
+                output_dir = f"data/NYT/source/{topic}/{year2}/month{month}/"
                 os.makedirs(output_dir, exist_ok=True)
                 output_file = os.path.join(output_dir, file_name)
                 if os.path.exists(output_file):

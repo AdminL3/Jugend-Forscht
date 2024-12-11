@@ -28,7 +28,8 @@ y_pred = model.predict(x)
 
 # Create a scatter plot with regression line using Plotly
 fig = px.scatter(data, x='x', y='y', title='Scatter Plot with Regression Line')
-fig.add_trace(go.Scatter(x=data['x'], y=y_pred.flatten(), mode='lines', name='Regression line'))
+fig.add_trace(go.Scatter(
+    x=data['x'], y=y_pred.flatten(), mode='lines', name='Regression line'))
 
 # Display the plot in Streamlit
 st.plotly_chart(fig)

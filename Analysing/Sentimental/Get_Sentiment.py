@@ -32,7 +32,9 @@ amount_years = 2
 topics = ["politics", "world", "opinion"]
 news = ["NYT", "Guardian"]
 for new in news:
-    conn = sqlite3.connect(f"Database/Sentimental/{new}.db")
+    database = f"Database/Sentiment/{new}.db"
+    os.makedirs(os.path.dirname(database), exist_ok=True)
+    conn = sqlite3.connect(database)
     cursor = conn.cursor()
     data = []
     for topic in topics:

@@ -1,18 +1,102 @@
-# Creating a Website to visualize the data 
+# Visualizing the Data in a Website 🌐
 
-- See [The Official Streamlit Website](https://www.streamlit.io/)
-
-- and my detailed guide to creating the page [here](./Streamlit.md)
-
----
+> [!IMPORTANT]
+> Find out how the Code works [here](./Streamlit.md)
 
 ## Features
 
-- [x] Decide between the two News sites
-- [x] Decide between the three Topics
-- [x] Select the range of years to display
-- [x] If year is less than 2 years, you can select the range of months
-- [ ] Graph multiple topics/news sites next to each other
-- [x] Display the data in a graph
-- [x] Add a regression line
-- [x] Display the top data in a table
+- [x] **Multi-Source Analysis**:
+  - Compare word count trends across NYT and Guardian
+- [x] **Topic-Based Filtering**:
+  - Analyze data from Politics, World, and Opinion sections
+- [x] **Interactive Visualization**:
+
+  - Customizable plot colors
+  - Dynamic year and month range selection
+  - Linear regression trend lines
+
+- [x] **Top Articles Exploration**:
+
+  - View top 10 articles by word count
+  - Filtered by news source and topic
+
+- [x] **More**
+
+---
+
+## Prerequisites
+
+### Required Libraries
+
+- streamlit
+- sqlite3
+- pandas
+- plotly
+- scikit-learn
+
+---
+
+### Database Structure
+
+Create a `Database` folder with the following structure:
+
+```
+Database/
+│
+├── wordcount/
+│   ├── NYT.db
+│   └── Guardian.db
+│
+└── Titles/
+    ├── NYT.db
+    └── Guardian.db
+```
+
+#### Database Tables
+
+Each database should include tables:
+
+- `Politics`
+- `World`
+- `Opinion`
+
+Required columns:
+
+- `date`
+- `wordcount`
+- `day_index`
+- `title`
+
+---
+
+## Usage Guide
+
+1. Select number of plots (1-7)
+2. For each plot:
+   - Choose news source
+   - Select topic
+   - Pick visualization colors
+3. Use year and month range selectors to filter data
+4. View scatter plot with word count trends
+5. Explore top articles in the table below
+
+---
+
+## Customization
+
+- Adjust color schemes
+- Modify plot styles
+- Add additional data sources
+
+---
+
+## Limitations
+
+- Requires pre-populated SQLite databases
+- Performance may degrade with large datasets
+- Limited to word count analysis
+
+---
+
+> [!TIP]
+> Find the Table of Contents [here](https://github.com/AdminL3/Jugend-Forscht/blob/main/Table_of_contents.md)

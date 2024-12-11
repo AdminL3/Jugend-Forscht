@@ -45,3 +45,8 @@ For each valid date, it:
 
 This ensures any missing data is logged systematically for review. 😊
 Thanks GPT for the inspiration!
+
+---
+
+> [!TIP]
+> Find the Table of Contents [here](https://github.com/AdminL3/Jugend-Forscht/blob/main/Table_of_contents.md)

@@ -1,5 +1,4 @@
 import os
-from re import S
 
 base = r'data/NYT/articles'
 
@@ -21,16 +20,17 @@ def clean_empty_files_and_folders(base_path):
 
                     str = file_path.replace("\\", "/")
                     parts = str.split('/')
-                    topic = parts[2]
-                    year = parts[3]
-                    month = parts[4]
-                    day = parts[5]
-                    index = parts[6].split('.')[0]
-                    month_number = month.split('month')
-                    day_number = day.split('day')
-                    source_path = f"data/NYT/source/{topic}/{year}/month{month_number[1]}/{
-                        year}_{month_number[1]}_{day_number[1]}_{index}.txt"
-
+                    print(parts)
+                    topic = parts[3]
+                    year = parts[4]
+                    month = parts[5]
+                    day = parts[6]
+                    index = parts[7].split('.')[0]
+                    month_number = month.split('month')[1]
+                    day_number = day.split('day')[1]
+                    source_path = f"data/NYT/source/{topic}/{year}/month{month_number}/{
+                        year}_{month_number}_{day_number}_{index}.txt"
+                    print(f"Deleting empty source: {source_path}")
                     os.remove(source_path)
 
             except OSError as e:

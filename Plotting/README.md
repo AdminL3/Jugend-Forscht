@@ -36,5 +36,10 @@ See [Articlecount - README](./Articlecount//)
 
 > [!NOTE]
 > This is only a part of the full project!
-> The part, where we extract Plot the Graphs
+> The part, where we Plot the Graphs
 > View the whole Projekt on [Github](https://github.com/AdminL3/Jugend-Forscht/)
+
+---
+
+> [!TIP]
+> Find the Table of Contents [here](https://github.com/AdminL3/Jugend-Forscht/blob/main/Table_of_contents.md)

@@ -10,7 +10,7 @@ colors_reg = ['blue', 'red', 'black']
 
 news = ["NYT", "Guardian"]
 for new in news:
-    connection = sqlite3.connect(f"Database/Sentimental/{new}.db")
+    connection = sqlite3.connect(f"Database/Sentiment/{new}.db")
     cursor = connection.cursor()
     for o, option in enumerate(options):
         name = option.capitalize()
@@ -26,15 +26,15 @@ for new in news:
             os.makedirs(os.path.dirname(output), exist_ok=True)
             # Plot using the graph function
             graph(
-                rows=rows,
-                column_names=column_names,
-                name=option,
-                title1=f"{name} for {topic}",
-                title2=f"{name} Analysis for {topic}",
-                drop_columns=drop_columns,
-                color=colors[i],
-                color_reg=colors_reg[i],
-                regression=True,
-                size=2,
-                output=output
+                rows,
+                column_names,
+                option,
+                f"{name} for {topic}",
+                f"{name} Analysis for {topic}",
+                drop_columns,
+                colors[i],
+                colors_reg[i],
+                True,
+                2,
+                output
             )

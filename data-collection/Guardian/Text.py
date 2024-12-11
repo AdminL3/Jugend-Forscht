@@ -59,8 +59,8 @@ for topic in topics:
                 output_file_path = output[0] + output[1]
 
                 if os.path.exists(output_file_path):
-                    # print(
-                    #     f"File {output_file_path} already exists. Skipping...")
+                    print(
+                        f"File {output_file_path} already exists. Skipping...")
                     continue
 
                 with open(file, 'r', encoding='utf-8') as f:
@@ -75,9 +75,8 @@ for topic in topics:
                         if line == "":
                             line = article_lines[i+2].strip()
                         else:
+                            print(f"Writing to {output_file_path}")
                             with open(output_file_path, "w", encoding="utf-8") as f:
                                 f.write(article_text)
                 except:
                     print(f"Error in {file}")
-                    print(article_text)
-                    print("Skipping...")

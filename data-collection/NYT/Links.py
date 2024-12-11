@@ -8,6 +8,7 @@ import config
 start_year = 2010
 amount_years = 2
 
+
 topics = ["politics", "world", "opinion"]
 API_KEY = config.NYT_API_KEY
 for topic in topics:

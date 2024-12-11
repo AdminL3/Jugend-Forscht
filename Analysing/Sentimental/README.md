@@ -56,3 +56,8 @@ conn.close()
 ## 2. Extracting the longest Articles
 
 ###### See my Documentation: "[Getting Extrema](../Extrema_Documentation/)"🔝
+
+---
+
+> [!TIP]
+> Find the Table of Contents [here](https://github.com/AdminL3/Jugend-Forscht/blob/main/Table_of_contents.md)
