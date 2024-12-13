@@ -95,6 +95,10 @@ Auch das extrahieren des Textes war einfacher bei "The Guardian". Hier habe ich 
 
 Da ich nun den Artikeltext habe, kann ich diesen nach verschiedenen ?? analysieren.
 
+###### 4.1. Häufigkeit der Wörter
+
+In meinem Code wird dies als "Wordcount" bezeichnet, und es ist ziemlich selbstverständlich. Zuerst habe ich den Text in einzelne Wörter aufgeteilt und diese gezählt. Diese Daten habe ich dann in einer SQL-Datei gespeichert.
+
 ---
 
 ## [Ergebnisse](./Aufbau.md#ergebnisse)
