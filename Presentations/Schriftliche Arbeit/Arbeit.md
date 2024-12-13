@@ -66,13 +66,32 @@ Das Ziel dieser Forschungsarbeit ist die Überprüfung von Vorurteilen bezüglic
 
 ## [Vorgehensweise, Materialien und Methoden](./Aufbau.md#vorgehensweise-materialien-und-methoden)
 
-Der Vorgang, um die Daten zu sammeln und zu analysieren, ist sehr komplex und wird in mehreren Schritten durchgeführt. Der erste Hauptschritt ist, den Artikeltext zu bekommen. Dafür muss ich als erstes Zugriff auf die kompletten Links der beiden Zeitschriften zugreifen. Dafür benutze ich die API von "The New York Times" und "The Guardian". Da nur sehr wenige Zeitschriften so eine API haben, musste ich mich auf die beiden Zeitschriften beschränken. Die API gibt mir die Möglichkeit, die Links der Artikel zu bekommen welche ich dann filtere nach dem Thema und dem Datum. Aufgrund der Unterverzeichnisse des Links kann man das Datum, sowie Rubrik des Artikels auslesen und sortieren (Beispiel?). Mithilfe der Links kann ich jetzt auf die Webseiten zugreifen. Doch um die Artikel zu analysieren, brauche ich Zugriff auf den Artikeltext. Dies wird unterteilt in zwei große Schritte. Als erstes benötige ich den Quellcode der Webseite. Das beschaffen des Quellcodes war der aufwendigste Prozess der ganzen Arbeit. Der Quellcode ist der HTML-Code der Webseite, welcher alle Informationen der Webseite enthält. Diesen Code kann ich durch verschiedene Methoden herunterladen. Der Prozess ist sehe unterschiedlich, je nachdem welche Webseite ich herunterlade.
-Bei "The Guardian! war dieser Prozess viel einfacher. Ich konnte mit einer einfachen Anfrage mit dem Python Modul "Requests" den Quellcode der Webseite herunterladen. Dieser wurde dann in einer Textdatei gespeichert, sortiert nach Datum und Rubrik. Bei der New York Times war es komplizierter. Es gibt verschiedene Methoden um den Quellcode zu erreichen. Die Methode Requests, wie ich bei "The Guardian" genutz habe, hat nicht funktioniert. Nach bereits 100 Artikeln wurde meine IP-Adresse blockiert und (Fehlermeldung). Die zweite Methode ist "Selenium", welcher eine beliebter Web Crawler ist, mit dem man einen echten Browser wie Chrome simuliert. Doch auch hier gab es Probleme. Die New York Times hat schnell meine ungewöhnliche Aktivität bemerkt, und nur den ersten Absatz des Artikels angezeigt.
+### Vorgehensweise
 
-Nach ein wenig herumprobieren, habe ich entdeckt, dass der Artikeltext in einem komplizierten Geflecht aus Json. (Andere Fehlermeldung)
-Ich musste einen Weg finden, um die Paywall zu umgehen.
+Der Vorgang, um die Daten zu sammeln und zu analysieren, ist sehr komplex und wird in mehreren Schritten durchgeführt.
+#### 1. Links sammeln
+Der erste Hauptschritt ist, den Artikeltext zu bekommen. Dafür muss ich als erstes Zugriff auf die kompletten Links der beiden Zeitschriften zugreifen. Dafür benutze ich die API von "The New York Times" und "The Guardian". Da nur sehr wenige Zeitschriften so eine API haben, musste ich mich auf die beiden Zeitschriften beschränken. Die API gibt mir die Möglichkeit, die Links der Artikel zu bekommen welche ich dann filtere nach dem Thema und dem Datum. Aufgrund der Unterverzeichnisse des Links kann man das Datum, sowie Rubrik des Artikels auslesen und sortieren (Beispiel?).
+Mithilfe der Links kann ich jetzt auf die Webseiten zugreifen. Doch um die Artikel zu analysieren, brauche ich Zugriff auf den Artikeltext. Dies wird unterteilt in zwei große Schritte:
+#### 2. Quellcode herunterladen
+Als erstes benötige ich den Quellcode der Webseite. Das beschaffen des Quellcodes war der vermutlich aufwendigste Prozess der ganzen Arbeit. Der Quellcode ist der HTML-Code der Webseite, welcher alle Informationen der Webseite enthält. Diesen Code kann ich durch verschiedene Methoden herunterladen. Der Prozess ist sehr unterschiedlich, je nachdem welche Webseite ich herunterlade.
+Bei "The Guardian" war dieser Prozess viel einfacher. Ich konnte mit einer einfachen Anfrage mit dem Python Modul "Requests" den Quellcode der Webseite herunterladen. Dieser wurde dann in einer Textdatei gespeichert, sortiert nach Datum und Rubrik.
+Bei der New York Times war es komplizierter. Es gibt verschiedene Methoden um den Quellcode zu erreichen. Die Methode Requests, wie ich bei "The Guardian" genutz habe, hat nicht funktioniert. Nach bereits 100 Artikeln wurde meine IP-Adresse blockiert und (Fehlermeldung). Die zweite Methode ist "Selenium", welcher eine beliebter Web Crawler ist, mit dem man einen echten Browser wie Chrome simuliert. Doch auch hier gab es Probleme. Die New York Times hat schnell meine ungewöhnliche Aktivität bemerkt, und nur den ersten Absatz des Artikels angezeigt. Außerdem wurde der Inhalt des Artikels hinter einer Paywall versteckt. Dies hat meine Analyse unmöglich gemacht, und ich musste einen Weg finden, um die Paywall zu umgehen. Nach ein wenig herumprobieren, habe ich entdeckt, dass der Artikeltext außer dem Front-End, im "Backend" auch vorhanden ist. Aber leider in einem komplizierten Geflecht aus JSON-ähnlichen Strukturen. Das heißt ich konnte den Quellcode mit Selenium herunterladen und nachträglich den Text extrahieren.
+#### 3. Text extrahieren
+Hierfür habe ich eine Funktion erstellt, die den Text Stück für Stück den Text aus dem Backend herausfiltert und dann zusammengefügt. (Diese Funktion ist in der Datei "../NYT/Extract_Text.py" zu finden.)
+```
+def get_text_from_html(html):
+    matches = re.findall(r'"text":"(.*?)"', html)
+    matches = list(dict.fromkeys(matches))
+    text = ""
+    for match in matches:
+        text += match + "\n"
+    return text
+```
 
-Der zweite Schritt ist das Parsen des Quellcodes. Das bedeutet, dass ich den Quellcode in Text umwandeln muss. Dieser Text ist der Artikeltext, welcher dann analysiert wird. Die Analyse des Textes ist der letz
+Auch das extrahieren des Textes war einfacher bei "The Guardian". Hier habe ich einfach die herkömmliche Methode BeautifulSoup genutzt um anhand von HTML-Tags den Text zu lokalisieren. Dieser Text wurde dann in einer Textdatei gespeichert, sortiert nach Datum und Rubrik.
+
+#### 4. Text analysieren
+
 
 ---
 
