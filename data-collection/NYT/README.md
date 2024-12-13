@@ -125,7 +125,7 @@ In this step, you can choose from different methods to extract the source code f
 - See [The Guardian](../The%20Guardian/) for more information
 
 - But Since NYT really tries to prevent me from getting their data
-- I had to use RE to parse the data from some javascript encoding
+- I had to use RE to parse the data from some JSON-like structures
 
 - File: [`Extract_Text.py`](./Extract_Text.py)
 
