@@ -18,7 +18,7 @@
 
 ## [Projektüberblick](./Aufbau.md#projekt%C3%BCberblick)
 
-- sechs bis acht Sätz
+- sechs bis acht Sätze
 - Der Lesende muss auf dieser Seite das Wesentliche der gesamten Arbeit erfassen können.
 - Fragestellung, Methode, Ergebnisse und Diskussion auf maximal einer Seite
 - Kopiert von Kurztext:
@@ -92,6 +92,8 @@ Auch das extrahieren des Textes war einfacher bei "The Guardian". Hier habe ich 
 
 #### 4. Text analysieren
 
+
+Da ich nun den Artikeltext habe, kann ich diesen nach verschiedenen ?? analysieren.
 
 ---
 
