@@ -99,6 +99,13 @@ Da ich nun den Artikeltext habe, kann ich diesen nach verschiedenen ?? analysier
 
 In meinem Code wird dies als "Wordcount" bezeichnet, und es ist ziemlich selbstverständlich. Zuerst habe ich den Text in einzelne Wörter aufgeteilt und diese gezählt. Diese Daten habe ich dann in einer SQL-Datei gespeichert.
 
+###### 4.2. Sentimentalanalyse
+
+Die Sentimentalanalyse ist ein wichtiger Bestandteil meiner Arbeit. Hierbei wird der Text auf seine Stimmung analysiert. Dies wird mithilfe des Moduls "Textblob" gemacht. Dieses Modul gibt jedem Wort eine Wertung von -1 bis 1, wobei -1 negativ und 1 positiv ist. 
+TextBlob calculates subjectivity by looking at the ‘intensity’. Intensity determines if a word modifies the next word. For English, adverbs are used as modifiers (‘very good’).
+. Dieser Wert wird dann in einer SQL-Datei gespeichert.
+
+
 ---
 
 ## [Ergebnisse](./Aufbau.md#ergebnisse)
