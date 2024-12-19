@@ -95,15 +95,20 @@ Auch das extrahieren des Textes war einfacher bei "The Guardian". Hier habe ich 
 
 Da ich nun den Artikeltext habe, kann ich diesen nach verschiedenen ?? analysieren.
 
-###### 4.1. Häufigkeit der Wörter
+###### 4.1. Wörteranzahl
 
 In meinem Code wird dies als "Wordcount" bezeichnet, und es ist ziemlich selbstverständlich. Zuerst habe ich den Text in einzelne Wörter aufgeteilt und diese gezählt. Diese Daten habe ich dann in einer SQL-Datei gespeichert.
 
 ###### 4.2. Sentimentalanalyse
 
-Die Sentimentalanalyse ist ein wichtiger Bestandteil meiner Arbeit. Hierbei wird der Text auf seine Stimmung analysiert. Dies wird mithilfe des Moduls "Textblob" gemacht. Dieses Modul gibt jedem Wort eine Wertung von -1 bis 1, wobei -1 negativ und 1 positiv ist. 
-TextBlob calculates subjectivity by looking at the ‘intensity’. Intensity determines if a word modifies the next word. For English, adverbs are used as modifiers (‘very good’).
-. Dieser Wert wird dann in einer SQL-Datei gespeichert.
+Die Sentimentanalyse ist ein wichtiger Bestandteil meiner Arbeit. Hierbei wird der Text auf Polarisation sowie Subjektivität hin analysiert. Dies wird mithilfe des Moduls ``TextBlob``]() durchgeführt.
+- **4.2.1. Polarisation**
+  - Dieses Modul gibt jedem Wort eine Wertung von -1 bis 1, wobei -1 negativ und 1 positiv ist. Daran kann man erkennen, ob ein Text positiv oder negativ ist.
+- **4.2.1. Subjektivität**
+  - TextBlob berechnet die Subjektivität, indem es die 'Intensität' betrachtet. Die Intensität bestimmt, ob ein Wort das nächste Wort modifiziert.
+
+Dieser beiden Werte werden anhand des Datums als Indikator ine einer SQL-Datei gespeichert, um späteres Abrufen zu erleichtern.
+
 
 
 ---
