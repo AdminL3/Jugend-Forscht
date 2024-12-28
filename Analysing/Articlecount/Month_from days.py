@@ -1,38 +1,51 @@
 import os
 import sqlite3
 
-topics = ["politics", "world", "opinion"]
+from altair import Y
 
+topics = ["politics", "world", "opinion"]
+years = [2010, 2011, 2020, 2021]
 news = ["NYT", "Guardian"]
 for n in news:
-    conn = sqlite3.connect(f"Database/Articlecount/Days/{n}.db")
-    cursor = conn.cursor()
+    months_conn = sqlite3.connect(f"Database/Articlecount/Months/{n}.db")
+    cursor_months = months_conn.cursor()
+
+    for t in topics:
+        # Create tables
+        cursor_months.execute(f"""
+        CREATE TABLE IF NOT EXISTS {t} (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            year INTEGER,
+            month INTEGER,
+            day INTEGER,
+            count INTEGER
+        )""")
+
+    days_conn = sqlite3.connect(f"Database/Articlecount/Days/{n}.db")
+    cursor_days = days_conn.cursor()
 
     for i, topic in enumerate(topics):
         print(f"Processing topic: {topic}")
         root_dir = f"data/{n}/articles/{topic}"
 
         count = 0
-        years = [f for f in os.listdir(
-            root_dir) if os.path.isdir(os.path.join(root_dir, f))]
         for year in years:
-            year_dir = os.path.join(root_dir, year)
-            months = [f for f in os.listdir(
-                year_dir) if os.path.isdir(os.path.join(year_dir, f))]
-            for month in months:
-                month_dir = os.path.join(year_dir, month)
-                days = [f for f in os.listdir(
-                    month_dir) if os.path.isdir(os.path.join(month_dir, f))]
-                for day in days:
-                    day_dir = os.path.join(month_dir, day)
-                    count = len(os.listdir(day_dir))
+            for month in range(1, 13):
+                cursor_days.execute(f"""
+                SELECT year, month, day, count FROM {topic}
+                WHERE year = {year} AND month = {month}
+                """)
+                rows = cursor_days.fetchall()
+                if len(rows) == 0:
+                    count = 0
+                else:
+                    for row in rows:
+                        count += row[3]
+                    print(f"{year}-{month} has {count} articles")
 
-                    month_n = int(month.split("month")[1])
-                    day_n = int(day.split("day")[1])
-                    cursor.execute(f"""
-                    INSERT INTO {topic} (year, month, day, count)
-                    VALUES ({year}, {month_n}, {day_n}, {count})
+                    cursor_months.execute(f"""
+                    INSERT INTO {topic} (year, month, count)
+                    VALUES ({year}, {month}, {count})
                     """)
-                    print(f"Inserted {count} articles for {
-                          year}-{month}-{day}")
-                    conn.commit()
+
+                    count = 0

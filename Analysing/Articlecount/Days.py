@@ -6,7 +6,7 @@ topics = ["politics", "world", "opinion"]
 
 news = ["NYT", "Guardian"]
 for n in news:
-    conn = sqlite3.connect(f"Database/Articlecount/{n}.db")
+    conn = sqlite3.connect(f"Database/Articlecount/Days/{n}.db")
     cursor = conn.cursor()
 
     for t in topics:
