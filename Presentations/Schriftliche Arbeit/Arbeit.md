@@ -69,15 +69,22 @@ Das Ziel dieser Forschungsarbeit ist die Überprüfung von Vorurteilen bezüglic
 ### Vorgehensweise
 
 Der Vorgang, um die Daten zu sammeln und zu analysieren, ist sehr komplex und wird in mehreren Schritten durchgeführt.
+
 #### 1. Links sammeln
+
 Der erste Hauptschritt ist, den Artikeltext zu bekommen. Dafür muss ich als erstes Zugriff auf die kompletten Links der beiden Zeitschriften zugreifen. Dafür benutze ich die API von "The New York Times" und "The Guardian". Da nur sehr wenige Zeitschriften so eine API haben, musste ich mich auf die beiden Zeitschriften beschränken. Die API gibt mir die Möglichkeit, die Links der Artikel zu bekommen welche ich dann filtere nach dem Thema und dem Datum. Aufgrund der Unterverzeichnisse des Links kann man das Datum, sowie Rubrik des Artikels auslesen und sortieren (Beispiel?).
 Mithilfe der Links kann ich jetzt auf die Webseiten zugreifen. Doch um die Artikel zu analysieren, brauche ich Zugriff auf den Artikeltext. Dies wird unterteilt in zwei große Schritte:
+
 #### 2. Quellcode herunterladen
+
 Als erstes benötige ich den Quellcode der Webseite. Das beschaffen des Quellcodes war der vermutlich aufwendigste Prozess der ganzen Arbeit. Der Quellcode ist der HTML-Code der Webseite, welcher alle Informationen der Webseite enthält. Diesen Code kann ich durch verschiedene Methoden herunterladen. Der Prozess ist sehr unterschiedlich, je nachdem welche Webseite ich herunterlade.
 Bei "The Guardian" war dieser Prozess viel einfacher. Ich konnte mit einer einfachen Anfrage mit dem Python Modul "Requests" den Quellcode der Webseite herunterladen. Dieser wurde dann in einer Textdatei gespeichert, sortiert nach Datum und Rubrik.
 Bei der New York Times war es komplizierter. Es gibt verschiedene Methoden um den Quellcode zu erreichen. Die Methode Requests, wie ich bei "The Guardian" genutz habe, hat nicht funktioniert. Nach bereits 100 Artikeln wurde meine IP-Adresse blockiert und (Fehlermeldung). Die zweite Methode ist "Selenium", welcher eine beliebter Web Crawler ist, mit dem man einen echten Browser wie Chrome simuliert. Doch auch hier gab es Probleme. Die New York Times hat schnell meine ungewöhnliche Aktivität bemerkt, und nur den ersten Absatz des Artikels angezeigt. Außerdem wurde der Inhalt des Artikels hinter einer Paywall versteckt. Dies hat meine Analyse unmöglich gemacht, und ich musste einen Weg finden, um die Paywall zu umgehen. Nach ein wenig herumprobieren, habe ich entdeckt, dass der Artikeltext außer dem Front-End, im "Backend" auch vorhanden ist. Aber leider in einem komplizierten Geflecht aus JSON-ähnlichen Strukturen. Das heißt ich konnte den Quellcode mit Selenium herunterladen und nachträglich den Text extrahieren.
+
 #### 3. Text extrahieren
+
 Hierfür habe ich eine Funktion erstellt, die den Text Stück für Stück den Text aus dem Backend herausfiltert und dann zusammengefügt. (Diese Funktion ist in der Datei "../NYT/Extract_Text.py" zu finden.)
+
 ```
 def get_text_from_html(html):
     matches = re.findall(r'"text":"(.*?)"', html)
@@ -92,7 +99,6 @@ Auch das extrahieren des Textes war einfacher bei "The Guardian". Hier habe ich 
 
 #### 4. Text analysieren
 
-
 Da ich nun den Artikeltext habe, kann ich diesen nach verschiedenen ?? analysieren.
 
 ###### 4.1. Wörteranzahl
@@ -101,15 +107,19 @@ In meinem Code wird dies als "Wordcount" bezeichnet, und es ist ziemlich selbstv
 
 ###### 4.2. Sentimentalanalyse
 
-Die Sentimentanalyse ist ein wichtiger Bestandteil meiner Arbeit. Hierbei wird der Text auf Polarisation sowie Subjektivität hin analysiert. Dies wird mithilfe des Moduls ``TextBlob``]() durchgeführt.
+Die Sentimentanalyse ist ein wichtiger Bestandteil meiner Arbeit. Hierbei wird der Text auf Polarisation sowie Subjektivität hin analysiert. Dies wird mithilfe des Moduls `TextBlob`]() durchgeführt.
+
 - **4.2.1. Polarisation**
   - Dieses Modul gibt jedem Wort eine Wertung von -1 bis 1, wobei -1 negativ und 1 positiv ist. Daran kann man erkennen, ob ein Text positiv oder negativ ist.
 - **4.2.1. Subjektivität**
   - TextBlob berechnet die Subjektivität, indem es die 'Intensität' betrachtet. Die Intensität bestimmt, ob ein Wort das nächste Wort modifiziert.
 
-Dieser beiden Werte werden anhand des Datums als Indikator ine einer SQL-Datei gespeichert, um späteres Abrufen zu erleichtern.
+Diese beiden Werte werden anhand des Datums als Indikator in einer SQL-Datei gespeichert, um späteres Abrufen zu erleichtern.
 
+###### 4.3. Artikelanzahl
 
+Hierbei wird die Anzahl der Artikel der verschiedenen Rubriken/Jahren/Wochentagen gezählt und in einer SQL-Datei gespeichert.
+Dadurch kann man die Entwicklung der Artikelanzahl über die Jahre hinweg sehen.
 
 ---
 
