@@ -6,6 +6,7 @@ topics = ["politics", "world", "opinion"]
 
 news = ["NYT", "Guardian"]
 for n in news:
+    print(f"Processing {n}")
     conn = sqlite3.connect(f"Database/Articlecount/Days/{n}.db")
     cursor = conn.cursor()
 
@@ -30,6 +31,7 @@ for n in news:
         years = [f for f in os.listdir(
             root_dir) if os.path.isdir(os.path.join(root_dir, f))]
         for year in years:
+            print(f"Processing year: {year}")
             year_dir = os.path.join(root_dir, year)
             months = [f for f in os.listdir(
                 year_dir) if os.path.isdir(os.path.join(year_dir, f))]
@@ -47,6 +49,8 @@ for n in news:
                     INSERT INTO {topic} (year, month, day, count)
                     VALUES ({year}, {month_n}, {day_n}, {count})
                     """)
-                    print(f"Inserted {count} articles for {
-                          year}-{month}-{day}")
+                    # print(f"Inserted {count} articles for {year}-{month}-{day}")
+                    if count == 0:
+                        print(f"Error: {year}-{month}-{day}")
+                        input()
                     conn.commit()
