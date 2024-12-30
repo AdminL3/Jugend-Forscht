@@ -182,6 +182,10 @@ Bestätigt wird dies durch die Graphen der Artikelanzahl pro Monat. Hierbei ist 
 
 ---
 
+**2. Entwicklung des Sentiments**
+
+Die Sentimentanalyse wird unterteilt in Polarisation und Subjektivität.
+
 
 ---
 
