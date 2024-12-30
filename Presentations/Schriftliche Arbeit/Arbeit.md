@@ -127,6 +127,7 @@ Die Daten, die ich in den SQL-Dateien gespeichert habe, werden in einem Graphen 
 Hierfür habe ich als erstes eine globale Funktion erstellt, die mithilfe von verschiedenen Eingabeparametern den Graphen erstellt. ([`Plotting\Plotting.py`](../../Plotting/Plotting.py)).
 Diese Funktion wird dann in den einzelnen Dateien aufgerufen, benötigt zum Zeichnen des Graphen werden die Daten aus der Datenbank, alle Spalten, die entfernt werden sollen (z.B. ID), und andere Kleinigkeiten wie der Titel und Farben benötigt.
 Innerhalb der verschiedenen Analysetypen erstelle ich weitere Wiederholungsanweisungen um die für jede Rubrik einen Graphen zu erstellen, sowie für jedes Jahr, um die Entwicklung über die Jahre und innerhalb der Jahre zu analysieren.
+#### 6. Interaktive Webseite erstellen
 ---
 
 ## [Ergebnisse](./Aufbau.md#ergebnisse)
