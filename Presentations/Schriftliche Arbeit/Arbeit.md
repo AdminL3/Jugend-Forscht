@@ -118,7 +118,7 @@ Diese beiden Werte werden anhand des Datums als Indikator in einer SQL-Datei ges
 
 ###### 4.3. Artikelanzahl
 
-Hierbei wird die Anzahl der Artikel der verschiedenen Rubriken/Jahren/Wochentagen gezählt und in einer SQL-Datei gespeichert.
+Hierbei wird die Anzahl der Artikel von jedem Tag gezählt und in einer SQL-Datei gespeichert.
 Dadurch kann man die Entwicklung der Artikelanzahl über die Jahre hinweg sehen.
 
 #### 5. Graphen erstellen
@@ -127,14 +127,19 @@ Die Daten, die ich in den SQL-Dateien gespeichert habe, werden in einem Graphen 
 Hierfür habe ich als erstes eine globale Funktion erstellt, die mithilfe von verschiedenen Eingabeparametern den Graphen erstellt. ([`Plotting\Plotting.py`](../../Plotting/Plotting.py)).
 Diese Funktion wird dann in den einzelnen Dateien aufgerufen, benötigt zum Zeichnen des Graphen werden die Daten aus der Datenbank, alle Spalten, die entfernt werden sollen (z.B. ID), und andere Kleinigkeiten wie der Titel und Farben benötigt.
 Innerhalb der verschiedenen Analysetypen erstelle ich weitere Wiederholungsanweisungen um die für jede Rubrik einen Graphen zu erstellen, sowie für jedes Jahr, um die Entwicklung über die Jahre und innerhalb der Jahre zu analysieren.
+
 #### 6. Interaktive Webseite erstellen
+
 ###### 6.1. Datenauswahl
 
 Ein weiterer Weg um meine Daten zu visualisieren war durch erstellen einer interaktiven Webseite. Diese Webseite wurde mit Streamlit erstellt. Streamlit ist ein sehr beliebtes Modul um Webseiten in Python zu erstellen. Auf der Webseite kann man als erstes auswählen, welche Option man analysieren möchte (Wordcount, Polarisation, Subjektivität, Artikelanzahl). Danach kann man die auswählen, wie viele verschiedene Graphen man übereinander angezeigt haben möchte. Je nach Anzahl kann man auswählen was für Daten der jeweilige Graph haben soll. Nach auswahl der Daten kann man auswählen in welchem Jahr-Zeitraum? die Daten angezeigt werden sollen.
+
 ###### 6.2. Graph erstellen
 
 Jetzt kann man den Graphen erst durch drücken eines Buttons erstellen, um andauerndes Laden des Graphen im Hintergrund zu vermeiden. Der Graph wird mithilfe der Interaktiven Bibliothek `plotly` erstellt, die es ermöglicht, den Graphen zu zoomen, zu verschieben und die Daten in der Legende auszublenden.
+
 ###### 6.3 . Tabelle mit Top 10
+
 ---
 
 ## [Ergebnisse](./Aufbau.md#ergebnisse)
