@@ -141,7 +141,7 @@ Jetzt kann man den Graphen erst durch drücken eines Buttons erstellen, um andau
 ###### 6.3 . Tabelle mit Top 10
 
 Zusätzlich zu den Graphen habe ich eine Tabelle erstellt, welche den Datensatz nach den in [6.2.](#61-datenauswahl) ausgewählten Kriterien sortiert und die Top 10 anzeigt.
-Angezeigt wird dann der Titel des Artikels, das Datum und auch die _Content ID_ des Artikels. Mit dieser ID kann man auf einer anderen Webseite den Artikel direkt aufrufen, und genauer anschauen. Diese Webseite ist öffentlich nicht zugänglich, da die Daten nur Lokal gespeichert sind.
+Angezeigt wird dann der Titel des Artikels, das Datum und auch die _Content ID_ des Artikels. Mit dieser ID kann man auf einer anderen Webseite den Artikel direkt aufrufen, und genauer anschauen. Diese Webseite ist öffentlich nicht zugänglich, da die Daten nur Lokal auf meinem Laptop gespeichert sind.
 
 ---
 
@@ -168,12 +168,32 @@ Angezeigt wird dann der Titel des Artikels, das Datum und auch die _Content ID_ 
 
 ---
 
-## [Quellen- und Literaturverzeichnis](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Aufbau.md#quellen--und-literaturverzeichnis)
+## [Quellen- und Literaturverzeichnis](Aufbau.md#quellen--und-literaturverzeichnis)
 
 Hier werden alle Quellen und Unterstützungsleistungen genannt, die für das Projekt verwendet und in Anspruch genommen wurden. Quellen sind z. B. Internetseiten, Fachzeitschriften und Bücher. Alle Angaben werden jeweils alphabetisch nach Nachnamen sortiert.
 
+##### **1. Python als Programmiersprache**
+
+- Python Software Foundation. _Python – Version 3.x_. [Online verfügbar](https://www.python.org/). Abgerufen am [Datum].
+
+##### **2. Verwendete externe Bibliotheken**
+
+Hier ist die Liste mit dem aktualisierten Datum:
+
+- https://www.crummy.com/software/BeautifulSoup/: 30.12.2024, Leonard Richardson, Beautiful Soup for HTML-Parsing
+- https://matplotlib.org/: 30.12.2024, © 2012 – 2024 The Matplotlib development team, Matplotlib für Graphen
+- https://numpy.org/: 30.12.2024, © 2024 NumPy team, Numpy für numerische Berechnungen
+- https://pandas.pydata.org/: 30.12.2024, © 2024 pandas, pandas zur Datenanalyse
+- https://plotly.com/: 30.12.2024, © 2024 Plotly, Plotly für interaktive Graphen
+- https://requests.readthedocs.io/en/master/: 30.12.2024, ©MMXVIX. A Kenneth Reitz Project, Requests: HTTP for Humans
+- https://scikit-learn.org/: 30.12.2024, © 2007 - 2024 scikit-learn developers (BSD License), scikit-learn for Regression
+- https://www.selenium.dev/: 30.12.2024, © 2024 Selenium Software Freedom Conservancy, Selenium für Web-Scraping
+- https://www.sqlite.org/: 30.12.2024, SQLite3 für Datenbanken
+- https://streamlit.io/: 30.12.2024, © 2024 Snowflake Inc., Streamlit für Webseiten
+- https://textblob.readthedocs.io/en/dev/: 30.12.2024, © Steven Loria, TextBlob für NLP
+
 ---
 
-## [Unterstützungsleistungen](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Aufbau.md#unterst%C3%BCtzungsleistungen)
+## [Unterstützungsleistungen](./Aufbau.md#unterst%C3%BCtzungsleistungen)
 
 Hier werden sämtliche Personen und Unternehmen/Institutionen aufgeführt, die in dem Projekt unterstützt haben. Die vollständige Angabe von Unterstützungsleistungen ist wichtiger Bestandteil der Dokumentation eines wissenschaftlichen Projektes. Eine detaillierte Erläuterung von Unterstützungsleistungen hilft den Jurymitgliedern bei der Einschätzung des Eigenanteils der Arbeit und erleichtert das Jurygespräch. Vielfalt und Umfang von Unterstützungsleistungen bei Projekten im Wettbewerb Jugend forscht/Schüler experimentieren variieren stark und bestimmen nicht die Qualität des Projektes.
