@@ -1,18 +1,18 @@
 📊 Top 5 Minima for Opinion
 
 
-1️⃣️: 2010-01-1-0
-Wordcount: 13
+1️⃣️: 2011-11-26
+Articlecount: 2
 
-2️⃣️: 2010-02-1-0
-Wordcount: 18
+2️⃣️: 2010-1-9
+Articlecount: 3
 
-3️⃣️: 2010-03-1-0
-Wordcount: 33
+3️⃣️: 2011-11-5
+Articlecount: 3
 
-4️⃣️: 2010-04-1-0
-Wordcount: 24
+4️⃣️: 2011-12-17
+Articlecount: 3
 
-5️⃣️: 2010-05-1-0
-Wordcount: 19
+5️⃣️: 2010-3-6
+Articlecount: 4
 

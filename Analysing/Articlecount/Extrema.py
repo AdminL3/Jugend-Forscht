@@ -13,15 +13,14 @@ def get_extrema(topic, length, new, typ):
     cursor.execute(f"SELECT * FROM {topic}")
     rows = cursor.fetchall()
 
-    rows.sort(key=lambda x: x[3], reverse=True if typ == 0 else False)
+    rows.sort(key=lambda x: x[2], reverse=True if typ == 0 else False)
     top_articles = rows[:length]
     text = ""
     for r, row in enumerate(top_articles):
-        date = f"{row[1]}-{row[2]:02}-{row[3]}"
-        word_count = row[4]
-        index = 0
-        text += f"{emojis[r+1]}️: {date}-{index}\n"
-        text += f"Artikelanzahl: {word_count}\n\n"
+        date = row[1]
+        word_count = row[2]
+        text += f"{emojis[r+1]}️: {date}\n"
+        text += f"Articlecount: {word_count}\n\n"
 
     conn.close()
     path = f"Output/Articlecount/Extrema/{new}/"

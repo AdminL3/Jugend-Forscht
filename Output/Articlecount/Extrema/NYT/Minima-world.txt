@@ -1,18 +1,18 @@
 📊 Top 5 Minima for World
 
 
-1️⃣️: 2010-01-1-0
-Wordcount: 4
+1️⃣️: 2010-1-1
+Articlecount: 4
 
-2️⃣️: 2010-02-1-0
-Wordcount: 12
+2️⃣️: 2010-11-1
+Articlecount: 4
 
-3️⃣️: 2010-03-1-0
-Wordcount: 9
+3️⃣️: 2021-10-23
+Articlecount: 4
 
-4️⃣️: 2010-04-1-0
-Wordcount: 13
+4️⃣️: 2011-1-1
+Articlecount: 5
 
-5️⃣️: 2010-05-1-0
-Wordcount: 8
+5️⃣️: 2020-6-21
+Articlecount: 5
 

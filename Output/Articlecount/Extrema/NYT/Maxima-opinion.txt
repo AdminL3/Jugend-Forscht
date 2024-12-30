@@ -1,18 +1,18 @@
 📊 Top 5 Maxima for Opinion
 
 
-1️⃣️: 2010-01-31-0
-Wordcount: 23
+1️⃣️: 2010-9-26
+Articlecount: 45
 
-2️⃣️: 2010-03-31-0
-Wordcount: 11
+2️⃣️: 2020-3-18
+Articlecount: 26
 
-3️⃣️: 2010-05-31-0
-Wordcount: 9
+3️⃣️: 2020-3-24
+Articlecount: 26
 
-4️⃣️: 2010-07-31-0
-Wordcount: 11
+4️⃣️: 2020-3-20
+Articlecount: 25
 
-5️⃣️: 2010-08-31-0
-Wordcount: 14
+5️⃣️: 2020-5-1
+Articlecount: 25
 
