@@ -196,6 +196,23 @@ Auch bei der New York Times ist ein ähnliches Bild zu erkennen. Die Werte sind 
 
 ---
 
+**Die Subjektivität** gibt an, wie subjektiv ein Text ist. 0 bedeutet sehr objektiv, 1 bedeutet subjektiv. Ein durschnittlicher Wert beider Zeitschriften ist 0.4, wie man an der Grafik unten erkennen kann. Hier wurden alle drei Kategorien zusammengefasst und in einem Graphen dargestellt.
+
+[Subjektivität - NYT - All]
+![Subjektivität - NYT - All](https://github.com/AdminL3/Jugend-Forscht/blob/main/Output/Sentiment/subjectivity/NYT/All.png?raw=true)
+
+Wenn man aber die einzelnen Kategorien betrachtet (Bild unten), sieht man deutliche Unterschiede. Die Kategorie "World" ist deutlich subjektiver als die anderen beiden Kategorien. Dies ist auch bei "The Guardian" zu erkennen. Die Kategorie "World" ist zu beginn deutlich subjektiver als die anderen beiden Kategorien, und die Kateogrie "Opinion" ist am subjektivsten.
+
+[Subjektivität - NYT - Together]
+![Subjektivität - NYT - Together](https://github.com/AdminL3/Jugend-Forscht/blob/main/Output/Sentiment/subjectivity/NYT/Together.png?raw=true)
+
+Interessant ist auch, dass dieses Ergebnis sehr vergleichbar mit dem Ergebnis von "The Guardian" ist. Auch hier ist die Kategorie "World" am subjektivsten, wobei sich "Politics" langsam vom eher Objektiven "Opinion" entfernt und sich "World" nähert:
+
+[Subjektivität - Guardian - Together]
+![Subjektivität - Guardian - Together](https://github.com/AdminL3/Jugend-Forscht/blob/main/Output/Sentiment/subjectivity/Guardian/Together.png?raw=true)
+
+---
+
 ---
 
 ## [Ergebnisdiskussion](./Aufbau.md#ergebnisdiskussion)
