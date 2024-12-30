@@ -1,7 +1,4 @@
-import os
 import sqlite3
-
-from altair import Y
 
 topics = ["politics", "world", "opinion"]
 years = [2010, 2011, 2020, 2021]
