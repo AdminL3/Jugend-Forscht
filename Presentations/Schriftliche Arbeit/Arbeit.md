@@ -140,6 +140,9 @@ Jetzt kann man den Graphen erst durch drücken eines Buttons erstellen, um andau
 
 ###### 6.3 . Tabelle mit Top 10
 
+Zusätzlich zu den Graphen habe ich eine Tabelle erstellt, welche den Datensatz nach den in [6.2.](#61-datenauswahl) ausgewählten Kriterien sortiert und die Top 10 anzeigt.
+Angezeigt wird dann der Titel des Artikels, das Datum und auch die _Content ID_ des Artikels. Mit dieser ID kann man auf einer anderen Webseite den Artikel direkt aufrufen, und genauer anschauen. Diese Webseite ist öffentlich nicht zugänglich, da die Daten nur Lokal gespeichert sind.
+
 ---
 
 ## [Ergebnisse](./Aufbau.md#ergebnisse)
