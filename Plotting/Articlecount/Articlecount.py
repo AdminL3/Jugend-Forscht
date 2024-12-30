@@ -19,7 +19,7 @@ for o in ["Days", "Months"]:
             rows = cursor.fetchall()
 
             columns = [column[0] for column in cursor.description]
-            output = f"Output/Articlecount/{o}/{topic}.png"
+            output = f"Output/Articlecount/{news}/{o}/{topic}.png"
             os.makedirs(os.path.dirname(output), exist_ok=True)
 
             graph(rows, columns, "count", f"{topic} Articlecount", f"Articlecount of {topic}", ["id"],
