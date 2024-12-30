@@ -151,6 +151,10 @@ Angezeigt wird dann der Titel des Artikels, das Datum und auch die _Content ID_ 
 - sollte untergliedert werden
 - Kurze Texte erklären die Tabellen und Abbildungen
 
+Ziel der Arbeit war eine Langzeitdatenanalyse aller Artikel der beiden Zeitschriften. Aufgrund der zeitlichen Bgrenzung in dieser Forschungsarbeit konnte ich nicht die kompletten Daten herunterladen. Deshalb habe ich mich darauf beschränkt die Entwicklung von 2010 - 2021 genauer zu analysieren, indem ich den Anfang des Zeitraums 2010 - 2011 und das Ende 2020 - 2021 heruntergeladen habe. Mit diesen Daten kann ich nun abschätzen, wie sich die Werte, wie in der Vorgehensweise beschrieben, entwickelt haben.
+
+Ich habe zum vorstellen der Ergebnisse besonders aussagekräftige Ergebnisse ausgewählt, die die Entwicklung der beiden Zeitungen gut darstellen. Man kann alle anderen Ergebnisse in der interaktiven Webseite nachschauen, sowie auf den generierten Graphen. (Fußnote?)
+
 ---
 
 ## [Ergebnisdiskussion](./Aufbau.md#ergebnisdiskussion)
@@ -196,4 +200,4 @@ Hier ist die Liste mit dem aktualisierten Datum:
 
 ## [Unterstützungsleistungen](./Aufbau.md#unterst%C3%BCtzungsleistungen)
 
-Hier werden sämtliche Personen und Unternehmen/Institutionen aufgeführt, die in dem Projekt unterstützt haben. Die vollständige Angabe von Unterstützungsleistungen ist wichtiger Bestandteil der Dokumentation eines wissenschaftlichen Projektes. Eine detaillierte Erläuterung von Unterstützungsleistungen hilft den Jurymitgliedern bei der Einschätzung des Eigenanteils der Arbeit und erleichtert das Jurygespräch. Vielfalt und Umfang von Unterstützungsleistungen bei Projekten im Wettbewerb Jugend forscht/Schüler experimentieren variieren stark und bestimmen nicht die Qualität des Projektes.
+- Melanie Mestl, Jugend-Forscht Projektbetreuerin, Lehrerin des Fach W-Seminar; Art der Unterstützung: Test des Programms auf einem Großrechner und Beratung bei der Themenwahl.
