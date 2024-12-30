@@ -120,6 +120,7 @@ Diese beiden Werte werden anhand des Datums als Indikator in einer SQL-Datei ges
 
 Hierbei wird die Anzahl der Artikel von jedem Tag gezählt und in einer SQL-Datei gespeichert.
 Dadurch kann man die Entwicklung der Artikelanzahl über die Jahre hinweg sehen.
+Hier wird unterteilt in die Anzahl der Artikel pro Tag sowie pro Monat.
 
 #### 5. Graphen erstellen
 
@@ -151,7 +152,7 @@ Angezeigt wird dann der Titel des Artikels, das Datum und auch die _Content ID_ 
 - sollte untergliedert werden
 - Kurze Texte erklären die Tabellen und Abbildungen
 
-Ziel der Arbeit war eine Langzeitdatenanalyse aller Artikel der beiden Zeitschriften. Aufgrund der zeitlichen Bgrenzung in dieser Forschungsarbeit konnte ich nicht die kompletten Daten herunterladen. Deshalb habe ich mich darauf beschränkt die Entwicklung von 2010 - 2021 genauer zu analysieren, indem ich den Anfang des Zeitraums 2010 - 2011 und das Ende 2020 - 2021 heruntergeladen habe. Mit diesen Daten kann ich nun abschätzen, wie sich die Werte, wie in der Vorgehensweise beschrieben, entwickelt haben.
+Ziel der Arbeit war eine Langzeitdatenanalyse aller Artikel der beiden Zeitschriften. Aufgrund der zeitlichen Bgrenzung in dieser Forschungsarbeit konnte ich nicht die kompletten Daten herunterladen. Deshalb habe ich mich darauf beschränkt die Entwicklung von 2010 - 2021 genauer zu analysieren, indem ich den Anfang des Zeitraums 2010 - 2011 und das Ende 2020 - 2021 heruntergeladen habe. Mit diesen Daten kann ich nun abschätzen, wie sich die verschiedenen Aspekte entwickelt haben.
 
 Ich habe zum vorstellen der Ergebnisse besonders aussagekräftige Ergebnisse ausgewählt, die die Entwicklung der beiden Zeitungen gut darstellen. Man kann alle anderen Ergebnisse in der interaktiven Webseite nachschauen, sowie auf den generierten Graphen. (Fußnote?)
 
