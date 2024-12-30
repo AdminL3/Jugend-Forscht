@@ -131,6 +131,9 @@ Innerhalb der verschiedenen Analysetypen erstelle ich weitere Wiederholungsanwei
 ###### 6.1. Datenauswahl
 
 Ein weiterer Weg um meine Daten zu visualisieren war durch erstellen einer interaktiven Webseite. Diese Webseite wurde mit Streamlit erstellt. Streamlit ist ein sehr beliebtes Modul um Webseiten in Python zu erstellen. Auf der Webseite kann man als erstes auswählen, welche Option man analysieren möchte (Wordcount, Polarisation, Subjektivität, Artikelanzahl). Danach kann man die auswählen, wie viele verschiedene Graphen man übereinander angezeigt haben möchte. Je nach Anzahl kann man auswählen was für Daten der jeweilige Graph haben soll. Nach auswahl der Daten kann man auswählen in welchem Jahr-Zeitraum? die Daten angezeigt werden sollen.
+###### 6.2. Graph erstellen
+
+Jetzt kann man den Graphen erst durch drücken eines Buttons erstellen, um andauerndes Laden des Graphen im Hintergrund zu vermeiden. Der Graph wird mithilfe der Interaktiven Bibliothek `plotly` erstellt, die es ermöglicht, den Graphen zu zoomen, zu verschieben und die Daten in der Legende auszublenden.
 ---
 
 ## [Ergebnisse](./Aufbau.md#ergebnisse)
