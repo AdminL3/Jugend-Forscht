@@ -7,7 +7,9 @@ topics = ["politics", "world", "opinion"]
 news = ["NYT", "Guardian"]
 for n in news:
     print(f"- {n}")
-    conn = sqlite3.connect(f"Database/Articlecount/Months/{n}.db")
+    path = f"Database/Articlecount/Months/{n}.db"
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    conn = sqlite3.connect(path)
     cursor = conn.cursor()
 
     for t in topics:
@@ -15,9 +17,7 @@ for n in news:
         cursor.execute(f"""
         CREATE TABLE IF NOT EXISTS {t} (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            year INTEGER,
-            month INTEGER,
-            day INTEGER,
+            date TEXT,
             count INTEGER
         )""")
 
@@ -47,10 +47,11 @@ for n in news:
                     count += len(os.listdir(day_dir))
 
                 month_n = int(month.split("month")[1])
+                date = f"{year}-{month_n}"
                 cursor.execute(f"""
-                INSERT INTO {topic} (year, month, count)
-                VALUES ({year}, {month_n}, {count})
-                """)
+                    INSERT INTO {topic} (date, count)
+                    VALUES (?, ?)
+                    """, (date, count))
                 # print(f"Inserted {count} articles for {year}-{month}")
                 if count == 0:
                     print(f"Error: {year}-{month}")
