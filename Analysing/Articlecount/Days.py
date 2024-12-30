@@ -6,7 +6,7 @@ topics = ["politics", "world", "opinion"]
 
 news = ["NYT", "Guardian"]
 for n in news:
-    print(f"Processing {n}")
+    print(f"- {n}")
     conn = sqlite3.connect(f"Database/Articlecount/Days/{n}.db")
     cursor = conn.cursor()
 
@@ -24,14 +24,14 @@ for n in news:
     conn.commit()
 
     for i, topic in enumerate(topics):
-        print(f"Processing topic: {topic}")
+        print(f"  - {topic}")
         root_dir = f"data/{n}/articles/{topic}"
 
         count = 0
         years = [f for f in os.listdir(
             root_dir) if os.path.isdir(os.path.join(root_dir, f))]
         for year in years:
-            print(f"Processing year: {year}")
+            print(f"    - {year}")
             year_dir = os.path.join(root_dir, year)
             months = [f for f in os.listdir(
                 year_dir) if os.path.isdir(os.path.join(year_dir, f))]
