@@ -186,6 +186,15 @@ Bestätigt wird dies durch die Graphen der Artikelanzahl pro Monat. Hierbei ist 
 
 Die Sentimentanalyse wird unterteilt in Polarisation und Subjektivität.
 
+**Die Polarisation** gibt an, ob ein Text positiv oder negativ ist. -1 bedeutet sehr negativ, 1 bedeutet positiv. Ein durschnittlicher Wert beider Zeitschriften ist 0.1.
+
+[Polarisation - Guardian - Together]
+![Polarisation - Guardian - Together](https://github.com/AdminL3/Jugend-Forscht/blob/main/Output/Sentiment/polarity/Guardian/Together.png?raw=true)
+In der Grafik werden die 3 Kategorien der Zeitschrift "The Guardian" verglichen. Es ist klar dargestellt, dass die Polarisation über die Jahre hinweg relativ konstant ist und auch zwischen den Kategorien vergleichbar ist. Es gibt keine großen Schwankungen, und die Werte sind immer um ca. 0.1.
+![Polarisation - NYT - Together](https://github.com/AdminL3/Jugend-Forscht/blob/main/Output/Sentiment/polarity/NYT/Together.png?raw=true)
+Auch bei der New York Times ist ein ähnliches Bild zu erkennen. Die Werte sind relativ konstant und auch hier gibt es keine großen Schwankungen. Die Werte sind immer um ca. 0.1.
+
+---
 
 ---
 
