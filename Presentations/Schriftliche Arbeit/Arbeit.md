@@ -121,6 +121,12 @@ Diese beiden Werte werden anhand des Datums als Indikator in einer SQL-Datei ges
 Hierbei wird die Anzahl der Artikel der verschiedenen Rubriken/Jahren/Wochentagen gezählt und in einer SQL-Datei gespeichert.
 Dadurch kann man die Entwicklung der Artikelanzahl über die Jahre hinweg sehen.
 
+#### 5. Graphen erstellen
+
+Die Daten, die ich in den SQL-Dateien gespeichert habe, werden in einem Graphen dargestellt.
+Hierfür habe ich als erstes eine globale Funktion erstellt, die mithilfe von verschiedenen Eingabeparametern den Graphen erstellt. ([`Plotting\Plotting.py`](../../Plotting/Plotting.py)).
+Diese Funktion wird dann in den einzelnen Dateien aufgerufen, benötigt zum Zeichnen des Graphen werden die Daten aus der Datenbank, alle Spalten, die entfernt werden sollen (z.B. ID), und andere Kleinigkeiten wie der Titel und Farben benötigt.
+Innerhalb der verschiedenen Analysetypen erstelle ich weitere Wiederholungsanweisungen um die für jede Rubrik einen Graphen zu erstellen, sowie für jedes Jahr, um die Entwicklung über die Jahre und innerhalb der Jahre zu analysieren.
 ---
 
 ## [Ergebnisse](./Aufbau.md#ergebnisse)
