@@ -134,6 +134,7 @@ Ein weiterer Weg um meine Daten zu visualisieren war durch erstellen einer inter
 ###### 6.2. Graph erstellen
 
 Jetzt kann man den Graphen erst durch drücken eines Buttons erstellen, um andauerndes Laden des Graphen im Hintergrund zu vermeiden. Der Graph wird mithilfe der Interaktiven Bibliothek `plotly` erstellt, die es ermöglicht, den Graphen zu zoomen, zu verschieben und die Daten in der Legende auszublenden.
+###### 6.3 . Tabelle mit Top 10
 ---
 
 ## [Ergebnisse](./Aufbau.md#ergebnisse)
