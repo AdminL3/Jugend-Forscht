@@ -213,6 +213,14 @@ Interessant ist auch, dass dieses Ergebnis sehr vergleichbar mit dem Ergebnis vo
 
 ---
 
+**3. Wörteranzhl & Artikellänge**
+
+Zuletzt noch die Wörteranzahl und die Artikellänge. "The New York Times" hat eine deutlich höhere durschnittliche Wörteranzahl mit ca. 1100 Wörtern pro Artikel. Hingegen hat "The Guardian" mit einer durschnittlichen Wörteranzahl von 800 Wörtern.
+Abgesehen von dem durschnittlichen Unterschied der Wörteranzahl, gibt es auch Entwicklungen über die Jahre. Doch diese sind nicht sehr aussagekräftig, da die Korrelation sehr gering ist, was am Korrleationskoeffizienten von nur 0.09 zu erkennen ist. (Bild unten)
+
+[Wordcount - Guardian - All]
+![Wordcount - Guardian - All](https://github.com/AdminL3/Jugend-Forscht/blob/main/Output/Wordcount/Graphs/Guardian/All.png?raw=true)
+
 ---
 
 ## [Ergebnisdiskussion](./Aufbau.md#ergebnisdiskussion)
