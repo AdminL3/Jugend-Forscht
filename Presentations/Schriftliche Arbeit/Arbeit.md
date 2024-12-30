@@ -154,7 +154,34 @@ Angezeigt wird dann der Titel des Artikels, das Datum und auch die _Content ID_ 
 
 Ziel der Arbeit war eine Langzeitdatenanalyse aller Artikel der beiden Zeitschriften. Aufgrund der zeitlichen Bgrenzung in dieser Forschungsarbeit konnte ich nicht die kompletten Daten herunterladen. Deshalb habe ich mich darauf beschränkt die Entwicklung von 2010 - 2021 genauer zu analysieren, indem ich den Anfang des Zeitraums 2010 - 2011 und das Ende 2020 - 2021 heruntergeladen habe. Mit diesen Daten kann ich nun abschätzen, wie sich die verschiedenen Aspekte entwickelt haben.
 
-Ich habe zum vorstellen der Ergebnisse besonders aussagekräftige Ergebnisse ausgewählt, die die Entwicklung der beiden Zeitungen gut darstellen. Man kann alle anderen Ergebnisse in der interaktiven Webseite nachschauen, sowie auf den generierten Graphen. (Fußnote?)
+Ich habe zum Vorstellen der Ergebnisse besonders aussagekräftige Ergebnisse ausgewählt, die die Entwicklung der beiden Zeitungen gut darstellen. Man kann alle anderen Graphen in der interaktiven Webseite nachschauen, sowie auf den generierten Graphen. (Fußnote?)
+
+**1. Entwicklung der Artikelanzahl**
+
+Auf dem dargestellten Bild kann man die Entwicklung der Artikelanzahl der Rubrik "Opinion" der Zeitung "The Guardian" sehen. Jeder Punkt stellt einen Tag dar. Die Y-Achse zeigt die Anzahl der Artikel, die an diesem Tag veröffentlicht wurden. Man erkennt, dass in der Mitte des Graphen keine Punkte vorhanden sind. Dies ist aufgrund der fehlenden Daten in diesem Zeitraum. In schwarz ist die Regressionsgerade dargestellt, welche die Entwicklung der Artikelanzahl über die Jahre hinweg darstellt. Wie auch an dem Text in der recht oberen Ecke zu erkennen ist, ist die Entwicklung der Artikelanzahl in den letzten Jahren abgesunken. Durchschnittlich sind es ca. 11 Artikel weniger im Jahr 2021 als im Jahr 2010.
+
+[Artikelanzahl - Guardian - Opinion - Days]
+![Artikelanzahl - Guardian - Opinion - Days](https://github.com/AdminL3/Jugend-Forscht/blob/main/Output/Articlecount/Guardian/Days/Opinion.png?raw=true)
+
+---
+
+Hingegen ist bei der New York Times ein starker Anstieg zu erkennen im Bereich Politik. Mit einem Anstieg von ca. 8 Artikeln ist dies auch visuell im Graphen wiederzuerkennen.
+
+[Artikelanzahl - NYT - Politics - Days]
+![Artikelanzahl - NYT - Politics - Days](https://github.com/AdminL3/Jugend-Forscht/blob/main/Output/Articlecount/NYT/Days/Politics.png?raw=true)
+
+---
+
+Bestätigt wird dies durch die Graphen der Artikelanzahl pro Monat. Hierbei ist ein starker Anstieg bei der New York Times zu erkennen, während bei "The Guardian" ein starker Abfall stattfindet.
+
+[Artikelanzahl - Guardian - Opinion - Month]
+![Artikelanzahl - Guardian - Opinion - Month](https://github.com/AdminL3/Jugend-Forscht/blob/main/Output/Articlecount/Guardian/Months/Opinion.png?raw=true)
+
+[Artikelanzahl - NYT - Politics - Days]
+![Artikelanzahl - NYT - Politics - Days](https://github.com/AdminL3/Jugend-Forscht/blob/main/Output/Articlecount/NYT/Months/Politics.png?raw=true)
+
+---
+
 
 ---
 
