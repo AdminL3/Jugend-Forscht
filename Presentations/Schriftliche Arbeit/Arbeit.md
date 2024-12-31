@@ -278,6 +278,13 @@ Hier werden alle Quellen und Unterstützungsleistungen genannt, die für das Pro
 - https://streamlit.io/: 30.12.2024, © 2024 Snowflake Inc., Streamlit für Webseiten
 - https://textblob.readthedocs.io/en/dev/: 30.12.2024, © Steven Loria, TextBlob für NLP
 
+##### **3. Literatur**
+
+- **Die vierte Gewalt** – Wie Mehrheitsmeinung gemacht wird, auch wenn sie keine ist; 2022-09-28, Richard David Precht
+- **Lückenpresse** - Das Ende des Journalismus, wie wir ihn kannten; 2016-09-01, Ulrich Teusch
+- **Die große Gereiztheit** - Wege aus der kollektiven Erregung; 2018-02-19, Bernhard Pörksen
+- **Fake Facts** - Wie Verschwörungstheorien unser Denken bestimmen; 2020-05-15, Katharina Nocun
+
 ---
 
 ## [Unterstützungsleistungen](./Aufbau.md#unterst%C3%BCtzungsleistungen)
