@@ -62,10 +62,8 @@ Diese Erkenntnisse verdeutlichen redaktionelle Unterschiede und zeigen, wie sich
 Die Suche nach meinen Thema hat begonnen, nachdem ich auf X (ehemals Twitter) bemerkt habe, wie aggressiv und polarisierend die Äußerungen der Menschen auf dieser Platform sind.
 Ich dachte mir, dass man dies doch überprüfen könnte/Ich möchte dies überprüfen. Nach ein wenig durchsuchen der Webseite viel mir schnell auf, dass die meisten Meinungen auf X in Form von Videos und Fotos dargestellt wurden. Da dies als Textanalyse nicht umsetzbar war, ging meine Suche weiter zu Facebook, wo das Auslesen der Artikel nicht unterstützt wurde, und zu Reddit, wo ein ähnliches Problem wie bei X auftrat. Daraufhin habe ich meinen Blick auf die sogenannten Leitmedien gerichtet/geworfen.
 
-Bei meiner ersten Recherche stieß ich im Buch "Die vierte Gewalt" `Fußnote` auf eine ähnliche Analyse:
-Orginal: _Eine Studie von Michael Haller, die die auf das Fluchtgeschehen bezogenen Berichte in den Leitmedien Süddeutsche Zeitung, Frankfurter Allgemeine Zeitung Und Welt über einen Zeitraum von zwanzig Wochen untersucht hat, wertete eine Stichprobe von 480 Zeitungsausgaben mit 2240 einschlägigen Zeitungsseiten aus. Die Forschungsgruppe analysierte 1687 Berichte und Kommentare._
-Micheal Haller hat die Berichterstattung von drei deutschen Zeitungen über einen Zeitraum von 20 Wochen untersucht. Er wertete 480 Zeitungsausgaben mit 2240 Seiten aus und analysierte 1687 Berichte und Kommentare.
-Mithilfe moderner Technologien wollte ich eine Analyse über einen viel größeren Zeitraum durchführen.
+Bei meiner ersten Recherche stieß ich auf eine Studie von Michael Haller aus dem Jahr 2017 `Mama?`. Er hat die Berichterstattung von drei deutschen Zeitungen über einen Zeitraum von 20 Wochen untersucht. Er wertete 480 Zeitungsausgaben mit 2240 Seiten aus und analysierte 1687 Berichte und Kommentare.
+Meine Idee war eine Langzeitanalyse durchzuführen, um die Entwicklung der Medien über die Jahre hinweg zu analysieren. Mithilfe moderner Technologien wollte ich eine Analyse über einen viel größeren Zeitraum durchführen.
 
 Hier habe ich zuerst mein Blick auf die "New York Times" geworfen. Diese ist bekannt für ihre objektive Berichterstattung und ihre kritischen Artikel.
 
