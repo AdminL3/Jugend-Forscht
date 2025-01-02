@@ -51,9 +51,14 @@ Das Ziel dieser Forschungsarbeit ist die Überprüfung von Vorurteilen bezüglic
 
 ## [Motivation und Fragestellung](./Aufbau.md#motivation-und-fragestellung)
 
-- Es gibt viele Vorurteile über die Medien, die sich im Laufe der Zeit verändert haben. Werden die Medien immer kritischer und negativer.
-- Sind Medien in den USA subjektiver als in Großbrittaniee?
-- Bücher von Mama anschauen
+Meine Suche nach meinen Thema hat begonnen, nachdem ich auf X (ehemals Twitter) bemerkt habe, wie aggressiv und polarisierend die Meinungen der Menschen sind.
+Ich dachte mir, dass man dies doch überprüfen könnte. Nach ein wenig durchsuchen der Webseite viel mir schnell auf, dass die meisten Meinungen in Form von Videos und Fotos dargestellt wurden. Also ging meine Suche weiter zu Facebook, wo das auslesen der Artikel weniger unterstützt wurde, und zu Reddit, wo ein ähnliches Problem wie bei X auftrat. Daraufhin habe ich meinen Blick auf die größten Meinungsbildner geworfen. Die Qualitätsmedien der Welt. Hier habe ich zuerst mein Blick auf die "New York Times" geworfen. Diese ist bekannt für ihre objektive Berichterstattung und ihre kritischen Artikel. Um aber die Werte objektiv zu betrachten und vergleichen brauchte ich eine zweite Zeitschrift, die meinen Anforderungen entsprach. Nach ein wenig suchen stoß ich auf "The Guardian", welche einen guten Kontrast bildet.
+
+1. Wie objektiv sind die beiden analysierten Zeitungen wirklich?
+2. Wie stark hat sich die Medienberichterstattung in den letzten Jahren verändert?
+3. Sind die Medien so objektiv, wie sie vorgeben?
+4. Wird die Welt in den Medien immer negativer dargestellt?.
+5. Sind Medien in den USA subjektiver als in Großbrittaniee?
 
 ---
 
@@ -235,6 +240,7 @@ Zuletzt noch die Wörteranzahl und die Artikellänge. "The New York Times" hat e
 Abgesehen von dem durschnittlichen Unterschied der Wörteranzahl, gibt es auch Entwicklungen über die Jahre. Doch diese sind nicht sehr aussagekräftig, da die Korrelation sehr gering ist, was am Korreleationskoeffizienten von nur 0.09 zu erkennen ist. (Bild unten)
 
 [Wordcount - Guardian - All]
+
 ![Wordcount - Guardian - All](https://github.com/AdminL3/Jugend-Forscht/blob/main/Output/Wordcount/Graphs/Guardian/All.png?raw=true)
 
 ---
