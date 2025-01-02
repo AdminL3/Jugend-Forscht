@@ -44,8 +44,16 @@ Das Ziel dieser Forschungsarbeit ist die Überprüfung von Vorurteilen bezüglic
 
 ## [Fachliche Kurzfassung](./Aufbau.md#fachliche-kurzfassung)
 
-> [!INFO]
-> Die fachliche Kurzfassung fasst das Projekt kurz für die Jurymitglieder zusammen. Im Unterschied zum Projektüberblick stehen hier die wissenschaftlichen Erkenntnisse im Vordergrund. Die fachliche Kurzfassung sollte immer auf dem aktuellen Stand der schriftlichen Arbeit sein.
+###### Die fachliche Kurzfassung fasst das Projekt kurz für die Jurymitglieder zusammen. Im Unterschied zum Projektüberblick stehen hier die wissenschaftlichen Erkenntnisse im Vordergrund. Die fachliche Kurzfassung sollte immer auf dem aktuellen Stand der schriftlichen Arbeit sein.
+
+Das Projekt untersucht die zeitliche Entwicklung von Sentiment, Artikellänge und Artikelanzahl in "The New York Times" und "The Guardian" zwischen 2010 und 2021. Mithilfe von Python wurden Artikel gesammelt und analysiert, um langfristige Trends zu identifizieren.
+
+Die Ergebnisse zeigen:
+
+Die Artikelanzahl sinkt im Guardian in der Rubrik "Opinion", während sie im Politikbereich der New York Times deutlich ansteigt.
+Das Sentiment bleibt in beiden Zeitungen konstant (durchschnittlich neutral). Jedoch zeigt die Kategorie "World" eine höhere Subjektivität als "Politics" und "Opinion".
+Die durchschnittliche Artikellänge unterscheidet sich: NYT-Artikel sind mit 1100 Wörtern länger als Guardian-Artikel (800 Wörter), ohne signifikante Entwicklung über die Jahre.
+Diese Erkenntnisse verdeutlichen redaktionelle Unterschiede und zeigen, wie sich globale Ereignisse auf die Berichterstattung beider Zeitungen auswirken.
 
 ---
 
