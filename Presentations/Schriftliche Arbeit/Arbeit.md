@@ -46,7 +46,8 @@ Das Ziel dieser Forschungsarbeit ist die Überprüfung von Vorurteilen bezüglic
 
 ###### Die fachliche Kurzfassung fasst das Projekt kurz für die Jurymitglieder zusammen. Im Unterschied zum Projektüberblick stehen hier die wissenschaftlichen Erkenntnisse im Vordergrund. Die fachliche Kurzfassung sollte immer auf dem aktuellen Stand der schriftlichen Arbeit sein.
 
-Das Projekt untersucht die zeitliche Entwicklung von Sentiment, Artikellänge und Artikelanzahl in "The New York Times" und "The Guardian" zwischen 2010 und 2021. Mithilfe von Python wurden Artikel gesammelt und analysiert, um langfristige Trends zu identifizieren.
+Das Projekt untersucht die zeitliche Entwicklung von Sentiment (Polarisation und Objektivität), Artikellänge und Artikelanzahl in "The New York Times" und "The Guardian" zwischen 2010 und 2021. Mithilfe von Python wurden Artikel gesammelt und analysiert, um langfristige Trends zu identifizieren.
+Da für die Auswertung der Analyse eine Vielzahl von Optionen möglich ist, wurde zur Veranschaulichung exemplarisch die Analyse von Artikelanzahl…..?? folgende Ergebnisse ausgewählt.
 
 Die Ergebnisse zeigen:
 
@@ -59,21 +60,30 @@ Diese Erkenntnisse verdeutlichen redaktionelle Unterschiede und zeigen, wie sich
 
 ## [Motivation und Fragestellung](./Aufbau.md#motivation-und-fragestellung)
 
-Die Suche nach meinen Thema hat begonnen, nachdem ich auf X (ehemals Twitter) bemerkt habe, wie aggressiv und polarisierend die Äußerungen der Menschen auf dieser Platform sind.
-Ich dachte mir, dass man dies doch überprüfen könnte/Ich möchte dies überprüfen. Nach ein wenig durchsuchen der Webseite viel mir schnell auf, dass die meisten Meinungen auf X in Form von Videos und Fotos dargestellt wurden. Da dies als Textanalyse nicht umsetzbar war, ging meine Suche weiter zu Facebook, wo das Auslesen der Artikel nicht unterstützt wurde, und zu Reddit, wo ein ähnliches Problem wie bei X auftrat. Daraufhin habe ich meinen Blick auf die sogenannten Leitmedien gerichtet/geworfen.
+Die Diskussion über Fake News und das schwindende Vertrauen in die Medien ist in allgegewärtig. Laut (statita.com) Edeman Trust Barometer 2024 zeigt, fasss Menschen eher in klassische Medienals in soziwle Medien vertrauen Jedoch hat „Deutschland, das Land der Qualitätspresse …auch ein Problem mit dem Vertrauen in die Leitmedien…nur 46 % gaben an, sie hätten Vertrauen in die Presse „
+…laut einer FORSA Umfrage aus dem Jahr 2022 sagen 43% der Journalismus sei schlechter geworden (Quelle) , “. Auch in den USA geben laut einer Studie aus dem Jahr 2023 gaben 60 % der Befragten an, ihr Vertrauen in die Medien sei gesunken.
+Laut (Quelle) können Leitmedien der Versuchung zu Polarisieren(…) noícht widerstehen und bringen (..)m die Demokratie in eine schwierige Lage…
+
+Doch kann man auch wissenschaftlich untersuchen, ob sich die Berichterstattung tatsächlich ins Negative verändert hat?
+Als Nutzer von sozialen Medien war meine urspüngliche Idee Artikel der Plattform X (ehemals Twitter) zu analysieren.
+
+Nach ein wenig durchsuchen der Webseite viel mir schnell auf, dass die meisten Meinungen auf X in Form von Videos und Bildern dargestellt wurden. Da dies als Textanalyse nicht umsetzbar war, ging meine Suche weiter zu Facebook, wo das Auslesen der Artikel nicht unterstützt wurde, und zu Reddit, wo ein ähnliches Problem wie bei X auftrat. Daraufhin habe ich meinen Blick auf die sogenannten Leitmedien gerichtet/geworfen.
 
 Bei meiner ersten Recherche stieß ich auf eine Studie von Michael Haller aus dem Jahr 2017 `Mama?`. Er hat die Berichterstattung von drei deutschen Zeitungen über einen Zeitraum von 20 Wochen untersucht. Er wertete 480 Zeitungsausgaben mit 2240 Seiten aus und analysierte 1687 Berichte und Kommentare.
 Meine Idee war eine Langzeitanalyse durchzuführen, um die Entwicklung der Medien über die Jahre hinweg zu analysieren. Mithilfe moderner Technologien wollte ich eine Analyse über einen viel größeren Zeitraum durchführen.
 
-Hier habe ich zuerst mein Blick auf die "New York Times" geworfen. Diese ist bekannt für ihre objektive Berichterstattung und ihre kritischen Artikel.
+Hier habe ich zuerst mein Blick auf die "New York Times" geworfen. Diese ist bekannt für ihre objektive Berichterstattung und ist eine der größten Zeitungen in den USA.
 
 Um aber die Werte objektiv zu betrachten und vergleichen brauchte ich eine zweite Zeitschrift, die meinen Anforderungen entsprach. Nach ein wenig suchen stoß ich auf "The Guardian", welche einen guten Kontrast bildet.
+`Oder:`
+Als zweite Zeitschrift haben ich the Guardian aus UK als Vergleich ausgewählt, ebenfalls wertgeschätzt für seinen unabhängigen Journalismus.
+
+Ziel meiner Arbeit ist die Überprüfung folgender Fragestellungen:
 
 1. Wie objektiv sind die beiden analysierten Zeitungen wirklich?
-2. Wie stark hat sich die Medienberichterstattung in den letzten Jahren verändert?
-3. Sind die Medien so objektiv, wie sie vorgeben?
-4. Wird die Welt in den Medien immer negativer dargestellt?.
-5. Sind Medien in den USA subjektiver als in Großbrittaniee?
+2. Wie stark hat sich die Medienberichterstattung bezogen auf Artikellänge und anzahl in den letzten Jahren verändert?
+3. Wird die Medienberichte tatsächlich immer negativer dargestellt?
+4. Sind Medien in den USA subjektiver als in Großbritannien?
 
 ---
 
