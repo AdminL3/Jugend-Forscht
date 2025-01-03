@@ -275,11 +275,16 @@ Abgesehen von dem durschnittlichen Unterschied der Wörteranzahl, gibt es auch E
 ## [Ergebnisdiskussion](./Aufbau.md#ergebnisdiskussion)
 
 - Ergebnisse bewerten
-- Interpretationen und weiterführende ÜberlegungenMängel möglich
+- Interpretationen und weiterführende Überlegungen
+- Mängel möglich
 - Hinweise auf vorhandene Literatur:
   - Abweichungen oder Übereinstimmungen kurz diskutieren
+- Was bedeuten die Ergebnisse? Sind sie so wie erwartet?
 
-Was bedeuten die Ergebnisse? Sind sie so wie erwartet?
+Polarisation von 0,1 ist ein positives Signal, es zeigt, dass es in den untersuchten Medien keine starken Spaltungen gibt, gesallschaftliche und politische Diskussiopnen bleiben gemäßigt…
+Der Anstieg der Artikelanzahl ind der Rubrik Politik bei der New york times und der Rückgang … lassen Möglichkeiten in der Interpretation. Möhgliche Ursachen könnten sein, dass die NYT aufgrung großer politischer Themen (trump/Biden/SkandaleWahlen…Ereignissse…) mehr den Fokus auf politische Berichterstattung gelegt hat, während sich the guardian zum beispiel mehr auf andere Themen wie etwa Klimawandel…foklussiert haben könnte…
+Um dies weiter genauer zu analysieren könnte man zum Beispiel die Daten spezieller Jahre (Wahljahre/Sturm des Capitol/Brexit) herausfiltern..
+Man kann sehen, dass sich die Medien an unterschiedliche Anforderungen…anpassen.
 
 ---
 
