@@ -297,7 +297,7 @@ Hier werden alle Quellen und Unterstützungsleistungen genannt, die für das Pro
 
 - https://www.python.org/: 31.12.24, Python Software Foundation, Python als Programmiersprache
 
-##### **2. Verwendete externe Bibliotheken**
+##### **2. Verwendete Python Bibliotheken**
 
 - https://www.crummy.com/software/BeautifulSoup/: 30.12.2024, Leonard Richardson, Beautiful Soup for HTML-Parsing
 - https://matplotlib.org/: 30.12.2024, © 2012 – 2024 The Matplotlib development team, Matplotlib für Graphen
@@ -311,7 +311,15 @@ Hier werden alle Quellen und Unterstützungsleistungen genannt, die für das Pro
 - https://streamlit.io/: 30.12.2024, © 2024 Snowflake Inc., Streamlit für Webseiten
 - https://textblob.readthedocs.io/en/dev/: 30.12.2024, © Steven Loria, TextBlob für NLP
 
-##### **3. Literatur**
+##### **3. Webseiten**
+
+- https://colab.google/: 03.01.25, Google, Google Colab
+- https://jupyter.org/: 03.01.25, Jupyter, Jupyter Notebook
+- https://www.theguardian.com/: 03.01.25, © 2025 Guardian News, The Guardian
+- https://www.nytimes.com/: 03.01.25, © 2025 The New York Times Company, The New York Times
+- https://aws.amazon.com/de/: 03.01.25, 2024 Amazon Web Services Inc, Amazon Web Services
+
+##### **4. Literatur**
 
 - **Die vierte Gewalt** – Wie Mehrheitsmeinung gemacht wird, auch wenn sie keine ist; 2022-09-28, Richard David Precht
 - **Lückenpresse** - Das Ende des Journalismus, wie wir ihn kannten; 2016-09-01, Ulrich Teusch
