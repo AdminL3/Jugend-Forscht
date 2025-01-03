@@ -287,6 +287,13 @@ Was bedeuten die Ergebnisse? Sind sie so wie erwartet?
 
 - Zum Abschluss der Arbeit sollte, die zu Beginn der Arbeit gestellte Forschungsfrage bzw. das Projektziel aufgegriffen werden: Wie lautet die Antwort auf die Forschungsfrage, wurde das Ziel erreicht?
 
+Ziel wurde erreicht, jedoch konnte aufgrund der begrenzten Zeit nur ein Teil der Daten heruntergeladen werden.
+Es konnte eine Veränderung der Medien über den Zeitraum von 10 Jahren festgestellt werden, jedoch hat sich die Vermutung der zunehmenden Polarisierung bei den untersuchten beiden Zeitschriften nicht bestätigt. Dies sollte das Vertrauen der Leser zumindest in diese beiden Medien stärken.
+Desweiteren konnte kein(?) signifikanter Unterschied in der Berichterstattung beider Zeitungen festfgestellt werden. Dies könnte ein Hin weis darauf dein, dass die Berichterstattung seriöser Medien unabhängig vom Herkunfsland sein könnten. Ein unterschied zwischen der amerikanischen NYT und der britsischen the guardian konnte in dieser Forschungsarbeit zumindest nicht (?) festgestellt werden.
+Mein projekt liefert ein konkretes Beispiel, wie Datenanlyse genutzt werden kann, um Vorurteile und Behauptungwn übe medien zu Überprüfen. Mit meiner Forschungsarbiet wurde für zukünftige Untersuchungen ein breáuchbares Tool erstellt, umfür Textdateien aus der NYT und the guardian zu extrahieren und für die gewünschten Zwecke aufzubereiten. So können die Texte nach Jahren oder Jahrzehnten gefiltert werden und die Analyse kann je nach Vorgabe nur eine Zeitung umfassen, oder auf beide Zeitungen ausgeweitet werden, ebenso wie die Rubriken World, Politik und opinion einzeln oder gemeinsam untersucht werden können. Des weiteren kann die Analyse in den Tools Textlänge, Atikelanzahl, Sentiment, Polarisation…je nach Belieben variiert werden. Dies bietet eine Vielzahl an Möglichkeiten für Unternehmen (Trendanalyse, Wettbewerbsvorteile..…) Bildungeinrichtungen (Medienkritik, überprüfung von Vorurteilen, Auswahl verlässlicher Medien) ….gezielte Recherchen vorzunhemen.
+Je nach Wunsch können so spezielle Fragestellungen undtersucht und analysiert werden.
+Mit meiner Forschungsarbeit möchte ich einen Beitrag zur Medienkritik leisten, denn (QUELLE)“ in einer von Medien geprägten Welt“…“kann es gar nicht genug Medienkritik geben“ und die „Mediendebatte ist in letzter Instanz auch (..) eineDebatte über den Zustand und die Zukunft der Demokratie“ (Quelle).
+
 ---
 
 ## [Quellen- und Literaturverzeichnis](Aufbau.md#quellen--und-literaturverzeichnis)
