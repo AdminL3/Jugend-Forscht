@@ -292,12 +292,19 @@ Man kann sehen, dass sich die Medien an unterschiedliche Anforderungen…anpasse
 
 - Zum Abschluss der Arbeit sollte, die zu Beginn der Arbeit gestellte Forschungsfrage bzw. das Projektziel aufgegriffen werden: Wie lautet die Antwort auf die Forschungsfrage, wurde das Ziel erreicht?
 
-Ziel wurde erreicht, jedoch konnte aufgrund der begrenzten Zeit nur ein Teil der Daten heruntergeladen werden.
-Es konnte eine Veränderung der Medien über den Zeitraum von 10 Jahren festgestellt werden, jedoch hat sich die Vermutung der zunehmenden Polarisierung bei den untersuchten beiden Zeitschriften nicht bestätigt. Dies sollte das Vertrauen der Leser zumindest in diese beiden Medien stärken.
-Desweiteren konnte kein(?) signifikanter Unterschied in der Berichterstattung beider Zeitungen festfgestellt werden. Dies könnte ein Hin weis darauf dein, dass die Berichterstattung seriöser Medien unabhängig vom Herkunfsland sein könnten. Ein unterschied zwischen der amerikanischen NYT und der britsischen the guardian konnte in dieser Forschungsarbeit zumindest nicht (?) festgestellt werden.
-Mein projekt liefert ein konkretes Beispiel, wie Datenanlyse genutzt werden kann, um Vorurteile und Behauptungwn übe medien zu Überprüfen. Mit meiner Forschungsarbiet wurde für zukünftige Untersuchungen ein breáuchbares Tool erstellt, umfür Textdateien aus der NYT und the guardian zu extrahieren und für die gewünschten Zwecke aufzubereiten. So können die Texte nach Jahren oder Jahrzehnten gefiltert werden und die Analyse kann je nach Vorgabe nur eine Zeitung umfassen, oder auf beide Zeitungen ausgeweitet werden, ebenso wie die Rubriken World, Politik und opinion einzeln oder gemeinsam untersucht werden können. Des weiteren kann die Analyse in den Tools Textlänge, Atikelanzahl, Sentiment, Polarisation…je nach Belieben variiert werden. Dies bietet eine Vielzahl an Möglichkeiten für Unternehmen (Trendanalyse, Wettbewerbsvorteile..…) Bildungeinrichtungen (Medienkritik, überprüfung von Vorurteilen, Auswahl verlässlicher Medien) ….gezielte Recherchen vorzunhemen.
-Je nach Wunsch können so spezielle Fragestellungen undtersucht und analysiert werden.
-Mit meiner Forschungsarbeit möchte ich einen Beitrag zur Medienkritik leisten, denn (QUELLE)“ in einer von Medien geprägten Welt“…“kann es gar nicht genug Medienkritik geben“ und die „Mediendebatte ist in letzter Instanz auch (..) eineDebatte über den Zustand und die Zukunft der Demokratie“ (Quelle).
+Das Ziel wurde erreicht, jedoch konnte aufgrund der begrenzten Zeit nur ein Teil der Daten heruntergeladen werden.
+Es konnte eine Veränderung der Medien über den Zeitraum von 10 Jahren festgestellt werden, jedoch konnte die Vermutung der zunehmenden Polarisierung, also extremeren Meinung `hier noch dran arbeiten`, nicht bestätigt werden.
+Eine konstante Polarisierung hat verschiedene Vorteile, denn durch eine konstante Polarisation kann das Vertrauen der Leser der Zeitungen gestärkt werden.
+Auch beim Vergleich beider Zeitungen wird deutlich, dass die Berichterstattung in beiden Zeitungen ähnlich ist. Dies zeigt auf eine seriöse Berichterstattung beider Zeitungen, unabhängig vom Herkunftsland.
+Ein deutlicher Unterschied zwischen der amerikanischen Zeitung "The New York Times" und der britischen Zeitung "The Guardian" konnte in dieser Forschungsarbeit nicht festgestellt werden.
+Mein Projekt liefert ein konkretes Beispiel, wie Datenanalyse genutzt werden kann, um Vorurteile und Behauptungen über Medien zu überprüfen. Mit meiner Forschungsarbeit wurde für zukünftige Untersuchungen ein Tool erstellt, welches genutzt werden kann, um Artikel der beiden Zeitungen herunterzuladen und zu analysieren.
+Diese Analyse kann auf weitere Zeitungen ausgeweitet werden, um so eine umfassende Analyse der Medienlandschaft zu ermöglichen.
+Außerdem kann die Analyse auf weiter Jahre erweitert werden um Trends und Entwicklungen über einen längeren Zeitraum zu untersuchen.
+Auch die verschiedenen Analysetools können erweitert werden. Weitere Ideen waren das Analysieren der Artikel auf Schlagwörter, um so die Themen der Artikel zu identifizieren, und dadurch die Entwicklung und Relevanz von Themen über die Jahre hinweg zu analysieren. Eine weitere Option war die Untersuchung der Komplexität der Artikel `Zitat, dass Menschen dummer werden?` um so die Verständlichkeit der Artikel zu analysieren.
+Mein Projekt bietet eine Vielzahl an Möglichkeiten für Unternehmen, `Trendanalyse, Wettbewerbsvorteile` Bildungeinrichtungen `Medienkritik, überprüfung von Vorurteilen, Auswahl verlässlicher Medien` um gezielte Recherchen vorzunehmen.
+Durch die Webseite kann die Auswahl der Daten speziell gefiltert werden um so spezielle Fragestellungen zu untersuchen.
+Je nach Wunsch können so spezielle Fragestellungen untersucht und analysiert werden.
+Mit meiner Forschungsarbeit möchte ich einen Beitrag zur Medienkritik leisten, denn "in einer von Medien geprägten Welt [...] kann es gar nicht genug Medienkritik geben"`Zitat` und die "Mediendebatte ist in letzter Instanz auch [...] eine Debatte über den Zustand und die Zukunft der Demokratie"`Zitat`.
 
 ---
 
