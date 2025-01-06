@@ -10,10 +10,7 @@ topics = ["politics", "world", "opinion"]
 def get_text_from_html(html):
     matches = re.findall(r'"text":"(.*?)"', html)
     matches = list(dict.fromkeys(matches))
-    text = ""
-    for match in matches:
-        text += match + "\n"
-
+    text = "\n".join(matches)
     return text
 
 

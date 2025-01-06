@@ -115,7 +115,8 @@ Bei "The Guardian" war dieser Prozess viel einfacher. Ich konnte mit einer einfa
 Bei der New York Times war es viel komplizierter. Es gibt verschiedene Methoden um den Quellcode herunterzuladen. Die Methode Requests, wie ich bei "The Guardian" genutzt habe, hat nicht funktioniert. Nach bereits 100 Artikeln wurde meine IP-Adresse blockiert und **`Fehlermeldung hier reinverlinken?`**. Die zweite Methode ist die Python Bibilothek `Selenium`, welche eine beliebte Methode ist um einen echten Browser wie Chrome zu simulieren. Doch auch hier gab es Probleme. Die New York Times hat schnell meine ungewöhnliche Aktivität bemerkt, und nur den ersten Absatz des Artikels angezeigt. Außerdem wurde der Inhalt des Artikels hinter einer Paywall versteckt. Dies hat meine Analyse unmöglich gemacht, und ich musste einen Weg finden, um die Paywall zu umgehen, sowie die vielen Captchas zu umgehen.
 Mein erster Versuch war die Maßnahmen einfach zu verhindern, durch rotieren meiner Proxy habe ich versucht die Captchas zu umgehen. Leider haben gratis Proxys oft nicht funktioniert. Eine andere Methode war das benutzen einer Externen API, zum Beispiel `Scraperapi`. Doch aufgrund limitierter Token in der Freemium Version, war dies auch keine Lösung. An diesem Punkt dachte ich das wäre das Ende meiner Arbeit, doch nach ein wenig herumprobieren, habe ich entdeckt, dass der komplette Artikeltext auch im "Backend" vorhanden ist. Aber leider in einem komplizierten Geflecht aus JSON-ähnlichen Strukturen. Das heißt ich konnte den Quellcode mit meiner vorher genannten Methode `Selenium` herunterladen und nachträglich den Text extrahieren.
 Da dieser Schritt am zeitaufwendigsten war, habe ich nach wegen gesucht um diesen Prozess zu minimieren.
-Meine erste Idee war das Projekt auf `Google Colab` als `Jupyter Notebook` auszuführen
+
+Meine erste Idee war das Projekt auf `Google Colab` als `Jupyter Notebook` auszuführen. Hier kann man nämlich Python Code online ausführen, sowie auch die `Selenium`-Methode nutzen. Aufgrund des weniger Zugriffmöglichem Dateisystem, habe ich dies jedoch verworfen. Meine zweite Idee war das Projekt auf einem `AWS (Amazon Web Services)` Server auszuführen. Hierbei habe ich einen AWS EC2-Server eingerichtet, um meine Anwendung zu hosten
 
 #### 3. Text extrahieren
 
@@ -281,8 +282,8 @@ Abgesehen von dem durschnittlichen Unterschied der Wörteranzahl, gibt es auch E
   - Abweichungen oder Übereinstimmungen kurz diskutieren
 - Was bedeuten die Ergebnisse? Sind sie so wie erwartet?
 
-Polarisation von 0,1 ist ein positives Signal, es zeigt, dass es in den untersuchten Medien keine starken Spaltungen gibt, gesallschaftliche und politische Diskussiopnen bleiben gemäßigt…
-Der Anstieg der Artikelanzahl ind der Rubrik Politik bei der New york times und der Rückgang … lassen Möglichkeiten in der Interpretation. Möhgliche Ursachen könnten sein, dass die NYT aufgrung großer politischer Themen (trump/Biden/SkandaleWahlen…Ereignissse…) mehr den Fokus auf politische Berichterstattung gelegt hat, während sich the guardian zum beispiel mehr auf andere Themen wie etwa Klimawandel…foklussiert haben könnte…
+Polarisation von 0,1 ist ein positives Signal, es zeigt, dass es in den untersuchten Medien keine starken Spaltungen gibt, sowie das gesellschaftliche und politische Diskussionen gemäßigt bleiben.
+Der Anstieg der Artikelanzahl ind der Rubrik Politik bei "The New York Times" und der Rückgang von `was nochmal` lassen Möglichkeiten in der Interpretation. Mögliche Ursachen könnten sein, dass die NYT aufgrung großer politischer Themen (trump/Biden/SkandaleWahlen…Ereignisse…) mehr den Fokus auf politische Berichterstattung gelegt hat, während sich "The Guardian" zum Beispiel mehr auf andere Themen wie etwa dem Klimawandel `etc` fokussiert haben könnte…
 Um dies weiter genauer zu analysieren könnte man zum Beispiel die Daten spezieller Jahre (Wahljahre/Sturm des Capitol/Brexit) herausfiltern..
 Man kann sehen, dass sich die Medien an unterschiedliche Anforderungen…anpassen.
 
