@@ -101,14 +101,55 @@ In meinem Code wird dies als "Wordcount" bezeichnet, und es ist ziemlich selbstv
 
 ###### 4.2. Sentimentalanalyse
 
-Die Sentimentanalyse ist ein wichtiger Bestandteil meiner Arbeit. Hierbei wird der Text auf Polarisation sowie Subjektivität hin analysiert. Dies wird mithilfe des Moduls ``TextBlob``]() durchgeführt.
+Die Sentimentanalyse ist ein wichtiger Bestandteil meiner Arbeit. Hierbei wird der Text auf Polarisation sowie Subjektivität hin analysiert. Dies wird mithilfe des Moduls ``TextBlob``](https://textblob.readthedocs.io/en/dev/) durchgeführt.
 - **4.2.1. Polarisation**
   - Dieses Modul gibt jedem Wort eine Wertung von -1 bis 1, wobei -1 negativ und 1 positiv ist. Daran kann man erkennen, ob ein Text positiv oder negativ ist.
-- **4.2.1. Subjektivität**
+- **4.2.2. Subjektivität**
   - TextBlob berechnet die Subjektivität, indem es die 'Intensität' betrachtet. Die Intensität bestimmt, ob ein Wort das nächste Wort modifiziert.
 
 Dieser beiden Werte werden anhand des Datums als Indikator ine einer SQL-Datei gespeichert, um späteres Abrufen zu erleichtern.
 
+### 5. Visualisierung in Graphen
+
+
+### 6. Darstellung in einer interaktiven Webseite
+
+Für die Darstellung der Webseite habe ich Streamlit genutzt. Streamlit ist ein beliebtes Python-Modul, welches es ermöglicht, Webseiten mit Python zu erstellen. Es wird oft in Zusammenhang mit Datenanalysen genutzt un Ergebnis visuell darzustellen.
+
+Die Webseite ist in verschiedene Abschnitte unterteilt:
+#### 6.1 Datenauswahl und -filterung
+Hier kann der Nutzer die Daten nach verschiedenen Kriterien filtern und auswählen. Hierfür wurden verschiedene Auswahlmethoden wie Streamlits intigrierte `selectbox` und `slider` genutzt, um zwischen den verschiedenen Zeitungen auszuwählen sowie die Datenauswahl auf eine bestimmte Jahranzahl zu begrenzen.
+Es ist möglich mehrere Graphen übereinander zu platzieren, doch ich empfehle die Auswahl auf 1-2 Graphen zu beschränken, da die Punkte überlappen können und die Graphen unübersichtlich werden, sowie die Ladezeit der Webseite erhöht wird.
+#### 6.2. Graphen
+Auf Knopfdruck werden die Daten aus der zuvor erstellten Datenbank abgerufen und in einem Graphen dargestellt.
+Hierfür wurde das Modul `plotly` genutzt, um die Daten in Graphen darzustellen, welcher sogar Interaktiv ist und Zoomen, sowie verschieben des Graphen ermöglicht. Jeder Punkt repräsentiert einen Artikel, und die Farbe des Punktes repräsentiert die Rubrik des Artikels, wie an der Legende erkennbar.
+#### 6.3. Top 10 Datensätze
+Hier werden die Top 10 Datensätze angezeigt, die den Höchsten Wert haben, gefiltert entsprechend der gewählten Kategorien. Hierfür wurde eine SQL-Abfrage genutzt, um die Daten zu sortieren und die Top 10 Datensätze zu finden.
+In den Tabellen wird für jeden der Top-Artikel das Datum, die TagesID (eine eindeutige ID für jeden Artikel am selben Tag), sowie eine `ContentID` welche in Teil 7 genutzt wird.
+### 7. Artikelinhalt vorstellen
+Um den Artikeltext anzuzeigen, habe ich eine weitere Streamlit-Seite erstellt, um den Inhalt der Artikel anzuzeigen. Da der Artikeltext nur auf meinem Gerät verfügbar ist, ist das Abrufen des Inhalts nur auf meinem Gerät möglich. 
+Man kann die `ContentID` eingeben oder manuell das Datum mithilfe von Streamlits `Slider` eingeben, dann wird der Artikeltext aus der Textdatei abgerufen und angezeigt. Außerdem werden weitere Informationen des Textes angezeigt, wie die Anzahl der Wörter, sowie die Polarisation und Subjektivität des Textes.
+
+
+---
+**Fragen:**
+- Präsentation/Projekt feedback
+1. Wegen des Einbinden meines Codes. Da es sehr viel ist, macht es keinen Sinn den ganzen in die Arbeit zuzufügen, aber vielleicht ein paar "Snippets" zu erklären, um die Kredibilität zu erhöhen? Gibt es eine Möglichkeit, den gesamten von mir geschriebenen Code der Arbeit hinzuzufügen. Ich habe ein Projekt auf Github, wo der Code hinterlegt ist. Soll ich in den Quellen o.ä. auf diese Seite verlinken?
+2. Ist die Jugend-Forscht Arbeit dann auch die W-Seminararbeit oder kann/soll/muss ich noch etwas ändern? Ich muss die schriftliche Arbeit ja am 20. Januar abgegeben haben. 
+3. Wegen der Quellen: Da ich Unmengen an Artikeln der beiden Zeitungen verwende, wie gebe ich dann die "NYT" und "the Guardian" dann als Quelle an?
+4. Und was ist mit den Modulen (bzw. Python-Bibliotheken), mit denen ich die Sentimentanalyse betreibe? Gebe ich Python als Quelle an? Verlinke ich die Module am Ende?
+5. Ich habe ja für die Analyse sehr viele Diagramme. Ich würde ein paar davon in den Text einfügen. Sie meinten, dass ich die anderen Graphen in den Anhang packen soll. Aber auf Jugend Forscht steht „ein Anhang sowie Weblinks im Fließtext sind nicht gestattet“. Ich muss also viele aussagekräftige Diagramme evtl weglassen.
+
+**Antworten**:
+
+1. github 
+2. nix ändern
+3. j in quelllen mit zeitraum --> alles ins literaturverzeichnis
+4. alles auch python
+5. paar in den text erklären wichtigsten
+der rest in den anhang myb extra
+
+am besteneergebnisse in einer tabeelle und nicht so sttückweise
 
 
 ---
@@ -136,12 +177,17 @@ Dieser beiden Werte werden anhand des Datums als Indikator ine einer SQL-Datei g
 
 ---
 
-## [Quellen- und Literaturverzeichnis](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Aufbau.md#quellen--und-literaturverzeichnis)
+## [Quellen- und Literaturverzeichnis](./Aufbau.md#quellen--und-literaturverzeichnis)
 
 Hier werden alle Quellen und Unterstützungsleistungen genannt, die für das Projekt verwendet und in Anspruch genommen wurden. Quellen sind z. B. Internetseiten, Fachzeitschriften und Bücher. Alle Angaben werden jeweils alphabetisch nach Nachnamen sortiert.
 
+**Bücher**:
+1. Lückenpresse - Ulrich Teusch
+2. Die vierte Gewalt - Precht und Welzer
+3. Fake Facts - Nocun & Lamberty
+4. Die Große Gereiztheit - Bernhard Pörksen
 ---
 
-## [Unterstützungsleistungen](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Schriftliche%20Arbeit/Aufbau.md#unterst%C3%BCtzungsleistungen)
+## [Unterstützungsleistungen](./Aufbau.md#unterst%C3%BCtzungsleistungen)
 
 Hier werden sämtliche Personen und Unternehmen/Institutionen aufgeführt, die in dem Projekt unterstützt haben. Die vollständige Angabe von Unterstützungsleistungen ist wichtiger Bestandteil der Dokumentation eines wissenschaftlichen Projektes. Eine detaillierte Erläuterung von Unterstützungsleistungen hilft den Jurymitgliedern bei der Einschätzung des Eigenanteils der Arbeit und erleichtert das Jurygespräch. Vielfalt und Umfang von Unterstützungsleistungen bei Projekten im Wettbewerb Jugend forscht/Schüler experimentieren variieren stark und bestimmen nicht die Qualität des Projektes.
