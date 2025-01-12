@@ -6,7 +6,8 @@ import plotly.graph_objects as go
 import datetime
 import requests
 
-db_url = "https://raw.githubusercontent.com/AdminL3/Jugend-Forscht/main/Database/Wordcount"
+
+db_url = "https://raw.githubusercontent.com/AdminL3/Jugend-Forscht/main/Database/Sentiment"
 dbs = ["Guardian.db", "NYT.db"]
 for db in dbs:
     response = requests.get(f"{db_url}/{db}")
@@ -43,7 +44,7 @@ def get_data_from_db_with_filter(selected_news, selected_topic, name, selectors,
                 f'SELECT {selectors} FROM Politics UNION SELECT {selectors} FROM World UNION SELECT {selectors} FROM Opinion {order}').fetchall()
         elif selected_topic == "Neutral":
             rows = cursor.execute(
-                f'SELECT {selectors} FROM Politics UNION SELECT {selectors} FROM World {order}').fetchall()
+                f'SELECT {selectors} FROM Politics UNION SELECT{selectors} FROM World {order}').fetchall()
         else:
             rows = cursor.execute(f'SELECT {selectors} FROM {
                                   selected_topic} {order}').fetchall()
@@ -51,7 +52,9 @@ def get_data_from_db_with_filter(selected_news, selected_topic, name, selectors,
 
 
 st.set_page_config(layout="wide")
-st.title('Wordcount')
+st.title('Sentiment Analysis')
+
+name = st.selectbox("Select a Dataset", ["Polarity", "Subjectivity"])
 
 st.divider()
 st.subheader(
@@ -90,9 +93,9 @@ for i in range(amount_of_plots):
 
     # Get data from database based on selected news and topic
     rows = get_data_from_db_with_filter(
-        selected_news, selected_topic, "wordcount", "date, wordcount")
+        selected_news, selected_topic, name, f"date, {name}")
 
-    graph_data = pd.DataFrame(rows, columns=['date', 'wordcount'])
+    graph_data = pd.DataFrame(rows, columns=['date', name])
     graph_data['date'] = pd.to_datetime(graph_data['date'])
     all_data.append([graph_data, selected_news, selected_topic,
                     selected_color, selected_reg_color])
@@ -168,10 +171,10 @@ if st.button("Generate Graph"):
             for i in range(amount_of_plots):
                 fig.add_trace(go.Scatter(
                     x=all_data[i][0]['date'],
-                    y=all_data[i][0]['wordcount'],
+                    y=all_data[i][0][name],
                     mode='markers',
-                    name='Article Count: ' +
-                    all_data[i][1] + " - " + all_data[i][2],
+                    # name='Article Count: ' + all_data[i][1] + " - " + all_data[i][2],
+                    name=f"{name} - {all_data[i][1]} - {all_data[i][2]}",
                     marker=dict(color=all_data[i][3], size=5)
                 ))
 
@@ -180,7 +183,7 @@ if st.button("Generate Graph"):
                 model = LinearRegression()
                 X = pd.to_numeric(all_data[i][0]['date'].map(
                     datetime.datetime.toordinal)).values.reshape(-1, 1)
-                y = all_data[i][0]['wordcount'].values
+                y = all_data[i][0][name].values
 
                 model.fit(X, y)
                 y_pred = model.predict(X)
@@ -197,9 +200,9 @@ if st.button("Generate Graph"):
 
             # Update layout
             fig.update_layout(
-                title='Word Count Development',
+                title=f'{name} Development',
                 xaxis_title='Date',
-                yaxis_title='Word Count',
+                yaxis_title=name,
                 dragmode="pan"
             )
 
@@ -219,11 +222,11 @@ for i in range(amount_of_plots):
 
     # Get data from database based on selected news and topic
     rows = get_data_from_db_with_filter(
-        selected_news, selected_topic, "wordcount", "*", "ORDER BY wordcount DESC")
+        selected_news, selected_topic, name, "*", f"ORDER BY {name} DESC")
 
     # create a dataframe
     top_data = pd.DataFrame(
-        rows, columns=["ID", "Date", "Day Index", "Wordcount"])
+        rows, columns=["ID", "Date", "Day Index", "Polarity", "Subjectivity"])
     # convert the Date column to datetime
     top_data['Date'] = pd.to_datetime(top_data['Date'])
 
@@ -264,7 +267,7 @@ for i in range(amount_of_plots):
 
         # Apply styles and show the dataframe
         styled_dataframe = filtered_top_data.style.applymap(
-            lambda x: 'color: yellow', subset=['Wordcount']
+            lambda x: 'color: yellow', subset=[name]
         )
 
         st.dataframe(
@@ -273,7 +276,7 @@ for i in range(amount_of_plots):
             hide_index=True,
             column_config={
                 "ID": st.column_config.Column(width=-100),
-                "Wordcount": st.column_config.Column(width=-100),
+                name: st.column_config.Column(width=-100),
                 "Date": st.column_config.Column(width=-100),
                 "Day Index": st.column_config.Column(width=-100),
                 "Title": st.column_config.Column(width=600),

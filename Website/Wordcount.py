@@ -197,36 +197,6 @@ if st.button("Generate Graph"):
 st.divider()
 
 
-def get_title(selected_news, selected_topic, name, selectors):
-    if selected_news == "Both":
-        for i in ["NYT", "Guardian"]:
-            conn = sqlite3.connect(f'Database/{name}/{i}.db')
-            cursor = conn.cursor()
-            if selected_topic == "All":
-                rows = cursor.execute(
-                    f'SELECT {selectors} FROM Politics UNION SELECT {selectors} FROM World UNION SELECT {selectors} FROM Opinion').fetchall()
-            elif selected_topic == "Neutral":
-                rows = cursor.execute(
-                    f'SELECT {selectors} FROM Politics UNION SELECT {selectors} FROM World').fetchall()
-            else:
-                rows = cursor.execute(f'SELECT {selectors} FROM {
-                                      selected_topic}').fetchall()
-
-    else:
-        conn = sqlite3.connect(f'Database/{name}/{selected_news}.db')
-        cursor = conn.cursor()
-        if selected_topic == "All":
-            rows = cursor.execute(
-                f'SELECT {selectors} FROM Politics UNION SELECT {selectors} FROM World UNION SELECT {selectors} FROM Opinion').fetchall()
-        elif selected_topic == "Neutral":
-            rows = cursor.execute(
-                f'SELECT {selectors} FROM Politics UNION SELECT{selectors} FROM World').fetchall()
-        else:
-            rows = cursor.execute(f'SELECT {selectors} FROM {
-                                  selected_topic}').fetchall()
-    return rows
-
-
 # Get top 10 articles with applied filters
 st.header(f"Top 10 Articles for {year_range[0]} - {month_range[0]} to {
     month_range[1]}" if one_year else f"Top 10 Articles for {year_range[0]} to {year_range[1]}")
