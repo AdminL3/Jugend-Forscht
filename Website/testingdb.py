@@ -7,6 +7,6 @@ db_url = "https://raw.githubusercontent.com/AdminL3/Jugend-Forscht/main/Database
 conn = sqlite3.connect("database.db")
 
 # Beispielabfrage
-query = "SELECT * FROM users"
+query = "SELECT * FROM wordcount"
 df = pd.read_sql_query(query, conn)
 st.dataframe(df)
