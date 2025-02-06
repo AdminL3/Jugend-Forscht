@@ -18,6 +18,6 @@ data-collection/AWS/key.pem
 /data-collection/__pycache__
 /data-collection/NYT/__pycache__
 /data-collection/Guardian/__pycache__
+/Plotting/__pycache__
 # streamlit
 /devcontainer
-/Plotting/__pycache__
