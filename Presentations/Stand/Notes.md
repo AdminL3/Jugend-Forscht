@@ -1,9 +1,11 @@
-# Journalistische Perspektiven
+# Notizen für den Vortrag
 
-Journalistische Perspektiven beeinflussen, wie Informationen vermittelt werden.
+**Journalistische Perspektiven** beeinflussen, wie Informationen vermittelt werden:
 
 - Sachlich oder subjektiv?
 - Sprachliche Aspekte?
+
+---
 
 ## Anfang
 
@@ -11,13 +13,15 @@ Journalistische Perspektiven beeinflussen, wie Informationen vermittelt werden.
 
 - Gibt es tatsächlich eine zunehmende Polarisierung oder ist das nur eine Wahrnehmung?
 - Offensichtlich sinkt das Vertrauen in die Medien.
-- Mein Projekt möchte dies überprüfen.
+Mein Projekt möchte dies überprüfen.
 
 **Fragestellung:** Ist der Eindruck der zunehmenden Negativität wissenschaftlich begründbar?
 
 - Viele Studien untersuchen nur wenige Artikel oder einen kurzen Zeitraum.
 - Ich wollte über einen wirklich langen Zeitraum Veränderungen messen.
 - Fokus liegt auf der Entwicklung, nicht auf einem bestimmten Zeitpunkt.
+
+---
 
 ## Projektbeschreibung
 
@@ -27,7 +31,7 @@ Ich habe zwei Zeitungen ausgewählt:
 - **The Guardian** (britisch)
 - **The New York Times** (amerikanisch)
 
-### Untersuchungsmerkmale
+**Untersuchungsmerkmale**
 1. **Objektivität**
 2. **Polarisierung**
 3. **Artikelanzahl und -länge**
@@ -48,25 +52,32 @@ Ich habe zwei Zeitungen ausgewählt:
 
 Diese Rubriken existieren in beiden Zeitungen.
 
-## Methodik
+---
+
+## Methodik/Vorangehensweise:
+
+Freestyle
+
+--- 
+
+## Ergebnisse:
 
 ### Interaktive Webseite
-- Vergleich von Zeitungen und Rubriken übereinandergelegt.
-- Auswahl bestimmter Zeiträume.
-- Beispielhafte Analysen.
+- Vergleich von Zeitungen und Rubriken übereinandergelegt
+- Auswahl bestimmter Zeiträume
+- Beispielhafte Analysen
 
-### Datenanalyse
-- **Ergebnisse in 5 Diagrammen**.
-- Interpretation der Daten.
-- Erkenntnisse über Objektivität und Polarisierung.
+### Graphen
+- Interpretation der Daten
+- Erkenntnisse über Objektivität und Polarisierung, und andere Kategorien
 
 ### Erkenntnisse
-- Große Datenmenge über einen langen Zeitraum analysiert.
-- Skalierbarkeit der Methode.
-- Gesellschaftlich relevante Untersuchung.
-- Einsatz moderner Technologien zur Automatisierung.
-- Wissenschaftlich fundierte, objektive Analyse im Gegensatz zu emotionalen Debatten.
-- Beitrag zur Medienforschung und gesellschaftlichen Debatte.
-- Stärkung des Vertrauens in Medien.
+- Große Datenmenge über einen langen Zeitraum analysiert
+- Skalierbarkeit der Methode
+- Gesellschaftlich relevante Untersuchung
+- Einsatz moderner Technologien zur Automatisierung
+- Wissenschaftlich fundierte, objektive Analyse im Gegensatz zu emotionalen Debatten
+- Beitrag zur Medienforschung und gesellschaftlichen Debatte
+- Stärkung des Vertrauens in Medien
 
 [Gesellschaftlicher Vorteil](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Gesellschaftlicher_Vorteil.md)
