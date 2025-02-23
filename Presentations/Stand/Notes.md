@@ -98,14 +98,32 @@ abschluss nicht ganz so abgehackt und freundlicher
 
 ## Erkenntnisse & Gesellschaftlicher Vorteil
 
-- **Große Datenmenge** über einen langen Zeitraum analysiert
-- **Skalierbare Methode** für zukünftige Forschungen
-- **Gesellschaftlich relevant** – Vertrauen in Qualitätsmedien stärken
-- **Überprüfung von Vorurteilen**: Gibt es wirklich Unterschiede zwischen britischen und amerikanischen Medien?
-- **Glaubwürdigkeit von Qualitätsjournalismus** belegt – weniger emotionale und polarisierende Berichterstattung
-- **Wissenschaftlicher Mehrwert** – neue Forschungsperspektiven zur Medienlandschaft
-- **Bildung**: Förderung kritischen Denkens durch datenbasierte Analyse
-  großer mehrwert zur medienkritik
+Hier ist die vereinte Stichpunktliste für dein Referat:
+
+## **Datenanalyse und gesellschaftlicher Mehrwert**
+
+### **1. Datenanalyse auf neuer Ebene**
+
+- Noch nie dagewesene **Menge an Daten** über einen langen Zeitraum untersucht
+- **Massive Skalierung** durch moderne Technologien
+- Automatisierung ermöglicht **objektive, datenbasierte Forschung**
+- Interaktive und reproduzierbare Methodik
+
+### **2. Gesellschaftlicher Nutzen**
+
+- **Überprüfung von Vorurteilen**: Gibt es Unterschiede zwischen britischen und amerikanischen Medien?
+- **Vertrauen in Qualitätsmedien stärken** durch faktenbasierte Analyse
+- **Wissenschaftlicher Beitrag zur Medienforschung** und gesellschaftlichen Debatten
+- Förderung von **kritischem Denken** durch objektive Datenanalyse
+
+### **3. Bildung und Forschung**
+
+- **Neuer Forschungsansatz** zur Untersuchung von Medienlandschaften
+- Ansatz für zukünftige Studien zur Rolle globaler Nachrichtenagenturen
+- **Nutzen für Bildungseinrichtungen**: Methodik kann in Schulen und Universitäten angewendet werden
+- Große Relevanz in Zeiten emotional geführter Debatten über Medienvertrauen
+
+Das sollte dir eine starke Struktur für dein Referat geben! 💡😊
 
 ---
 
