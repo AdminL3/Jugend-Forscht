@@ -73,14 +73,24 @@ Diese Rubriken existieren in beiden Zeitungen.
 
 ## Methodik/Vorangehensweise:
 
-1. ursprünglich twitter idee doch bilder
-2. wechsel zu zeitungen
-3. stoße auf nyt mit api
+- ursprünglich twitter idee doch bilder
+- wechsel zu zeitungen
+- stoße auf nyt mit api
+- guardian
+- habe links
+- lade quellcode runter --> schwierigster teil
+- guardian <--> nyt
+- filtern des textes
+- analyse
+- artikelanzahl
+- artikellänge
+- polarisation
+- subjektivität
+- beispiele und analyse erklären --> wie funktioniert textblob
+- graphen erstellen
+- webseite vorstellen
 
-wie funktioniert tectblob
-
---> zusammengefasst kann man sagen, dass die polarisation nicht gestiegen ist gegen allen erwartungen..
-blablup
+--> zusammengefasst kann man sagen, dass die polarisation nicht gestiegen ist gegen allen erwartungen...
 
 ---
 
