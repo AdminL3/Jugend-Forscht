@@ -71,13 +71,11 @@ Freestyle
 - Interpretation der Daten
 - Erkenntnisse über Objektivität und Polarisierung, und andere Kategorien
 
-### Erkenntnisse
-- Große Datenmenge über einen langen Zeitraum analysiert
-- Skalierbarkeit der Methode
-- Gesellschaftlich relevante Untersuchung
-- Einsatz moderner Technologien zur Automatisierung
-- Wissenschaftlich fundierte, objektive Analyse im Gegensatz zu emotionalen Debatten
-- Beitrag zur Medienforschung und gesellschaftlichen Debatte
-- Stärkung des Vertrauens in Medien
-
-[Gesellschaftlicher Vorteil](https://github.com/AdminL3/Jugend-Forscht/blob/main/Presentations/Gesellschaftlicher_Vorteil.md)
+### Erkenntnisse & Gesellschaftlicher Vorteil
+- **Große Datenmenge** über einen langen Zeitraum analysiert
+- **Skalierbare Methode** für zukünftige Forschungen
+- **Gesellschaftlich relevant** – Vertrauen in Qualitätsmedien stärken
+- **Überprüfung von Vorurteilen**: Gibt es wirklich Unterschiede zwischen britischen und amerikanischen Medien?
+- **Glaubwürdigkeit von Qualitätsjournalismus** belegt – weniger emotionale und polarisierende Berichterstattung
+- **Wissenschaftlicher Mehrwert** – neue Forschungsperspektiven zur Medienlandschaft
+- **Bildung**: Förderung kritischen Denkens durch datenbasierte Analyse
