@@ -7,19 +7,25 @@
 
 ---
 
+- man hört immer mehr von meinungsmacherei manuipulation
+- subjektive medien
+
+---
+
 ## Anfang
 
 **Werden die Medien immer negativer, oder ist das nur ein Eindruck der Gesellschaft?**
 
 - Gibt es tatsächlich eine zunehmende Polarisierung oder ist das nur eine Wahrnehmung?
-- Offensichtlich sinkt das Vertrauen in die Medien.
-Mein Projekt möchte dies überprüfen.
+- Offensichtlich sinkt das Vertrauen in die Medien
+  Mein Projekt möchte dies überprüfen
 
 **Fragestellung:** Ist der Eindruck der zunehmenden Negativität wissenschaftlich begründbar?
 
+- ich habe mich auf die suche nach wissenschaftlichen arbeiten gemacht
 - Viele Studien untersuchen nur wenige Artikel oder einen kurzen Zeitraum.
-- Ich wollte über einen wirklich langen Zeitraum Veränderungen messen.
-- Fokus liegt auf der Entwicklung, nicht auf einem bestimmten Zeitpunkt.
+- Ich wollte über einen wirklich langen Zeitraum Veränderungen messen
+- Fokus liegt auf der Entwicklung, nicht auf einem bestimmten Zeitpunkt
 
 ---
 
@@ -28,24 +34,35 @@ Mein Projekt möchte dies überprüfen.
 **Wie haben sich die Medien über die letzten Jahre verändert?**
 
 Ich habe zwei Zeitungen ausgewählt:
+
 - **The Guardian** (britisch)
 - **The New York Times** (amerikanisch)
 
-**Untersuchungsmerkmale**
-1. **Objektivität**
+- warum diese 2 Zeitungen?
+- technische vorgaben für mein projekt
+- qualitätsmedien --> ...
+- ... ist bekannt für ...
+- **Meine Untersuchungsmerkmale**
+
+1. **Subjektivität**
 2. **Polarisierung**
 3. **Artikelanzahl und -länge**
 
 **Warum diese Merkmale?**
-- Kürzere Artikel könnten auf geringere Konzentration und Geduld hinweisen.
-- Stärkere Polarisierung könnte sich im Fokus auf negative Themen äußern.
-- Unterschiede zwischen den USA (polarisierender?) und England.
+
+- Subjektivität: Meinungseinfluss von journalistische
+- Polarisierung: Negativität von Texten --> herausfinden ob texte tendenzieren --> sind die texte neutral geschrieben oder haben eine negative grundstimmung
+- Artikellänge: mch hat inteteressiert ob die trends social media (aufmerksamkeitspanne --> wird gesagt) auch in den medien zu sehen sind --> texte kürzer werden
 
 **Zeitraum:**
+
+- eigentlich 10 jahre untersuchen aber
 - Aufgrund begrenzter Zeit wurden die Jahre **2010-2011** und **2020-2021** untersucht.
 - Werte zwischen diesen Jahren wurden interpoliert.
 
 **Rubriken:**
+-mehrere virhanden aber diese ausgewählt
+
 - **Politics**
 - **World**
 - **Opinion**
@@ -56,22 +73,21 @@ Diese Rubriken existieren in beiden Zeitungen.
 
 ## Methodik/Vorangehensweise:
 
-Freestyle
+1. ursprünglich twitter idee doch bilder
+2. wechsel zu zeitungen
+3. stoße auf nyt mit api
 
---- 
+wie funktioniert tectblob
 
-## Ergebnisse:
+--> zusammengefasst kann man sagen, dass die polarisation nicht gestiegen ist gegen allen erwartungen..
+blablup
 
-### Interaktive Webseite
-- Vergleich von Zeitungen und Rubriken übereinandergelegt
-- Auswahl bestimmter Zeiträume
-- Beispielhafte Analysen
+---
 
-### Graphen
-- Interpretation der Daten
-- Erkenntnisse über Objektivität und Polarisierung, und andere Kategorien
+abschluss nicht ganz so abgehackt und freundlicher
 
-### Erkenntnisse & Gesellschaftlicher Vorteil
+## Erkenntnisse & Gesellschaftlicher Vorteil
+
 - **Große Datenmenge** über einen langen Zeitraum analysiert
 - **Skalierbare Methode** für zukünftige Forschungen
 - **Gesellschaftlich relevant** – Vertrauen in Qualitätsmedien stärken
@@ -79,3 +95,19 @@ Freestyle
 - **Glaubwürdigkeit von Qualitätsjournalismus** belegt – weniger emotionale und polarisierende Berichterstattung
 - **Wissenschaftlicher Mehrwert** – neue Forschungsperspektiven zur Medienlandschaft
 - **Bildung**: Förderung kritischen Denkens durch datenbasierte Analyse
+  großer mehrwert zur medienkritik
+
+---
+
+## Ergebnisse:
+
+### Interaktive Webseite
+
+- Vergleich von Zeitungen und Rubriken übereinandergelegt
+- Auswahl bestimmter Zeiträume
+- Beispielhafte Analysen
+
+### Graphen
+
+- Interpretation der Daten
+- Erkenntnisse über Objektivität und Polarisierung, und andere Kategorien
