@@ -1,10 +1,14 @@
+**Vorbereitung**
+
+- Website läuft (alle 3)
+- Graphen beschriftet (Diagramme)
+- interpretation
+
 # Notizen für den Vortrag
 
 Herzlich Willkommen zu meiner Forschungsarbeit: Wandel der Worte
 
-in meinem projekt möchte ich die veränderung der medien über die letzten jahre untersuchen
-
-Haben Sie auch das Gefühl, dass Nachrichten heutzutage immer extremer klingen?
+Habt ihr auch das Gefühl, dass Nachrichten heutzutage immer extremer klingen?
 Dass Medien emotionaler, dramatischer und manchmal sogar polarisierender wirken?
 
 Haben sich die Medien tatsächlich verändert, oder ist das nur ein Eindruck der Gesellschaft?
@@ -15,13 +19,12 @@ in meiner forschungsarbeit habe ich mit einer riesigen datenmenge verschiedene V
 
 ## Projektbeschreibung
 
-- als erstes habe mich auf die suche nach wissenschaftlichen arbeiten gemacht
-- Viele Studien untersuchen nur wenige Artikel oder einen kurzen Zeitraum.
+- ich wollte wissen was es zu diesem thema bereits an forschung gibt
+- Viele Studien untersuchen aber nur wenige Artikel oder nur über einen kurzen Zeitraum.
+  große Datenmenge einbauen:
 - Ich wollte über einen wirklich langen Zeitraum Veränderungen messen mit dem Fokus auf Entwicklung, nicht auf einem bestimmten Zeitpunkt
 
-**Wie haben sich die Medien über die letzten Jahre verändert?**
-
-Ich habe zwei Zeitungen ausgewählt:
+Für die Analyse habe ich 2 Zeitungen ausgewählt:
 
 - **The Guardian** (britisch)
 - **The New York Times** (amerikanisch)
@@ -40,7 +43,7 @@ Ich habe zwei Zeitungen ausgewählt:
 
 - Subjektivität: Meinungseinfluss von journalistische
 - Polarisierung: Negativität von Texten ➡️ herausfinden ob texte tendenzieren ➡️ sind die texte neutral geschrieben oder haben eine negative grundstimmung
-- Artikellänge: mch hat inteteressiert ob die trends social media (aufmerksamkeitspanne ➡️ wird gesagt) auch in den medien zu sehen sind ➡️ texte kürzer werden
+- Artikellänge: mch hat inteteressiert ob die trends social media (aufmerksamkeitspanne ➡️ wird gesagt (vorwurf)) auch in den zeitungen zu sehen sind ➡️ texte kürzer werden
 
 **Zeitraum:**
 
@@ -59,7 +62,7 @@ Diese Rubriken sind vergleichbar in beiden Zeitungen und haben den Fokus auf das
 
 ---
 
-## Methodik/Vorangehensweise:
+## Methodik/Vorgehensweise:
 
 unterteilung in datenbeschaffung und analyse und visualisierung
 
@@ -80,6 +83,8 @@ unterteilung in datenbeschaffung und analyse und visualisierung
 - graphen erstellen
 - webseite vorstellen
 
+IIINTERPRETATION!!!!
+
 ➡️ fokus auf die komplette auswahl. man kann alles auswählen, parameter, alles genau graphisch darstellen lassen
 
 man erkennt die gnaze technische aufwand hinter dem abrufend der ganzen daten sowie der anschaulichen visualisierung
@@ -93,6 +98,8 @@ Grenzen der Analyse --> ironie, sarkasmus, etc. nicht berücksichtigt
 
 ## Erkenntnisse & Gesellschaftlicher Vorteil
 
+Was ist das besondere und innovative an meinem Projekt?
+
 - Noch nie dagewesene Menge an Daten über einen langen Zeitraum untersucht
 - Massive Skalierung und Automatisierung durch moderne Technologien
 - Reproduzierbare Methodik
@@ -100,29 +107,41 @@ Grenzen der Analyse --> ironie, sarkasmus, etc. nicht berücksichtigt
 **Gesellschaftlich**:
 
 - Überprüfung von Vorurteilen
+- siehe oben (neg medien)
 - Gibt es Unterschiede zwischen britischen und amerikanischen Medien?
+-
 - Vertrauen in Qualitätsmedien stärken
-- Wissenschaftlicher Beitrag zur Medienforschung und gesellschaftlichen Debatten
-- Förderung von kritischem Denken durch objektive Datenanalyse
-- Große Relevanz in Zeiten emotional geführter Debatten über Medienvertrauen
-
-**Bildung und Forschung:**
-
-- Neuer Forschungsansatz zur Untersuchung von Medien(landschaften) --> Ansatz für zukünftige Studien
-- Methodik kann in Schulen und Universitäten angewendet werden
-
-Ausblick, zukünftige Forschung?
+- besonders wichtig in der heutigen Zeit in der viele Debatten sehr emotional sind
 
 ---
 
-## Ergebnisse:
+**Ausblick, zukünftige Forschung:**
 
-- Graphen
-- Plakat kompakt
-- QR Codes
+- Neuer Forschungsansatz zur Untersuchung von Medien
+  --> Ansatz für zukünftige Studien
+- erweiterung zeitraum
+- andere medien
+- andere rubriken
+- andere merkmale
+- andere sprachen
 
-**Interaktive Webseite:**
+- Methodik kann in Schulen und Universitäten angewendet werden
+
+- **Interaktive Webseite:**
 
 - Vergleich von Zeitungen und Rubriken übereinandergelegt
 - Auswahl bestimmter Zeiträume
-- Beispielhafte Analysen
+- Filtern nach Wahljahren, Coronajahren
+- Änderung Berichterstattung
+
+Man konnte an meiner Forschungsarbeit sehen, dass viele Vorurteile über diese beiden Medien nicht bestätigt wurden
+eben sind nicht so negativ, polarisierend oder verkürzt wie viele Menschen vielleicht glauben
+
+---
+
+- Graphen
+- Webseite
+- Plakat kompakt
+- QR Codes
+
+wenn ich weiterkomme dann werdet ihr herausfinden was mit den medien in den coronajahren passiert ist
