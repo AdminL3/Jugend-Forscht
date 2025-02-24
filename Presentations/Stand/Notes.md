@@ -1,35 +1,23 @@
 # Notizen für den Vortrag
 
-**Journalistische Perspektiven** beeinflussen, wie Informationen vermittelt werden:
+Herzlich Willkommen zu meiner Forschungsarbeit: Wandel der Worte
 
-- Sachlich oder subjektiv?
-- Sprachliche Aspekte?
+in meinem projekt möchte ich die veränderung der medien über die letzten jahre untersuchen
 
----
+Haben Sie auch das Gefühl, dass Nachrichten heutzutage immer extremer klingen?
+Dass Medien emotionaler, dramatischer und manchmal sogar polarisierender wirken?
 
-- man hört immer mehr von meinungsmacherei manuipulation
-- subjektive medien
+Haben sich die Medien tatsächlich verändert, oder ist das nur ein Eindruck der Gesellschaft?
 
----
-
-## Anfang
-
-**Werden die Medien immer negativer, oder ist das nur ein Eindruck der Gesellschaft?**
-
-- Gibt es tatsächlich eine zunehmende Polarisierung oder ist das nur eine Wahrnehmung?
-- Offensichtlich sinkt das Vertrauen in die Medien
-  Mein Projekt möchte dies überprüfen
-
-**Fragestellung:** Ist der Eindruck der zunehmenden Negativität wissenschaftlich begründbar?
-
-- ich habe mich auf die suche nach wissenschaftlichen arbeiten gemacht
-- Viele Studien untersuchen nur wenige Artikel oder einen kurzen Zeitraum.
-- Ich wollte über einen wirklich langen Zeitraum Veränderungen messen
-- Fokus liegt auf der Entwicklung, nicht auf einem bestimmten Zeitpunkt
+in meiner forschungsarbeit habe ich mit einer riesigen datenmenge verschiedene Vorturteile bezüglich der Medien wissenschaftlich überprüft
 
 ---
 
 ## Projektbeschreibung
+
+- als erstes habe mich auf die suche nach wissenschaftlichen arbeiten gemacht
+- Viele Studien untersuchen nur wenige Artikel oder einen kurzen Zeitraum.
+- Ich wollte über einen wirklich langen Zeitraum Veränderungen messen mit dem Fokus auf Entwicklung, nicht auf einem bestimmten Zeitpunkt
 
 **Wie haben sich die Medien über die letzten Jahre verändert?**
 
@@ -40,7 +28,7 @@ Ich habe zwei Zeitungen ausgewählt:
 
 - warum diese 2 Zeitungen?
 - technische vorgaben für mein projekt
-- qualitätsmedien --> ...
+- qualitätsmedien ➡️ ...
 - ... ist bekannt für ...
 - **Meine Untersuchungsmerkmale**
 
@@ -51,8 +39,8 @@ Ich habe zwei Zeitungen ausgewählt:
 **Warum diese Merkmale?**
 
 - Subjektivität: Meinungseinfluss von journalistische
-- Polarisierung: Negativität von Texten --> herausfinden ob texte tendenzieren --> sind die texte neutral geschrieben oder haben eine negative grundstimmung
-- Artikellänge: mch hat inteteressiert ob die trends social media (aufmerksamkeitspanne --> wird gesagt) auch in den medien zu sehen sind --> texte kürzer werden
+- Polarisierung: Negativität von Texten ➡️ herausfinden ob texte tendenzieren ➡️ sind die texte neutral geschrieben oder haben eine negative grundstimmung
+- Artikellänge: mch hat inteteressiert ob die trends social media (aufmerksamkeitspanne ➡️ wird gesagt) auch in den medien zu sehen sind ➡️ texte kürzer werden
 
 **Zeitraum:**
 
@@ -61,81 +49,80 @@ Ich habe zwei Zeitungen ausgewählt:
 - Werte zwischen diesen Jahren wurden interpoliert.
 
 **Rubriken:**
--mehrere virhanden aber diese ausgewählt
+-mehrere vorhanden aber diese ausgewählt
 
 - **Politics**
 - **World**
 - **Opinion**
 
-Diese Rubriken existieren in beiden Zeitungen.
+Diese Rubriken sind vergleichbar in beiden Zeitungen und haben den Fokus auf das aktuelle Zeitgeschehen.
 
 ---
 
 ## Methodik/Vorangehensweise:
+
+unterteilung in datenbeschaffung und analyse und visualisierung
 
 - ursprünglich twitter idee doch bilder
 - wechsel zu zeitungen
 - stoße auf nyt mit api
 - guardian
 - habe links
-- lade quellcode runter --> schwierigster teil
-- guardian <--> nyt
-- filtern des textes
+- lade quellcode runter ➡️ großer komplexer teil meines projekts
+- guardian <➡️ NYT
+- sehr lange dauer des downloads ➡️ amazon server ➡️ hintergrund laufen
 - analyse
-- artikelanzahl
-- artikellänge
-- polarisation
-- subjektivität
-- beispiele und analyse erklären --> wie funktioniert textblob
+- artikelanzahl ➡️ beispiel erklären und **Interpretation**
+- artikellänge ➡️ beispiel und **Interpretation**
+- sentimentanalyse mit textblob
+- polarisation ➡️ beispiel ➡️ zuordnung durch schlüsselwörter ➡️ beispiel und **Interpretation**
+- subjektivität ➡️ wörter die andere wörter beeinflusssen ➡️ beispiel und **Interpretation**
 - graphen erstellen
 - webseite vorstellen
 
---> zusammengefasst kann man sagen, dass die polarisation nicht gestiegen ist gegen allen erwartungen...
+➡️ fokus auf die komplette auswahl. man kann alles auswählen, parameter, alles genau graphisch darstellen lassen
+
+man erkennt die gnaze technische aufwand hinter dem abrufend der ganzen daten sowie der anschaulichen visualisierung
+
+--> diese vorurteile über z.b negativere medien, polarisierung, verkürzung der texte wegen social media, usw. haben sich nach meinen ergebnissen eben nicht bestätigt
+nochmal unten??
+
+Grenzen der Analyse --> ironie, sarkasmus, etc. nicht berücksichtigt
 
 ---
 
-abschluss nicht ganz so abgehackt und freundlicher
-
 ## Erkenntnisse & Gesellschaftlicher Vorteil
 
-Hier ist die vereinte Stichpunktliste für dein Referat:
+- Noch nie dagewesene Menge an Daten über einen langen Zeitraum untersucht
+- Massive Skalierung und Automatisierung durch moderne Technologien
+- Reproduzierbare Methodik
 
-## **Datenanalyse und gesellschaftlicher Mehrwert**
+**Gesellschaftlich**:
 
-### **1. Datenanalyse auf neuer Ebene**
-
-- Noch nie dagewesene **Menge an Daten** über einen langen Zeitraum untersucht
-- **Massive Skalierung** durch moderne Technologien
-- Automatisierung ermöglicht **objektive, datenbasierte Forschung**
-- Interaktive und reproduzierbare Methodik
-
-### **2. Gesellschaftlicher Nutzen**
-
-- **Überprüfung von Vorurteilen**: Gibt es Unterschiede zwischen britischen und amerikanischen Medien?
-- **Vertrauen in Qualitätsmedien stärken** durch faktenbasierte Analyse
-- **Wissenschaftlicher Beitrag zur Medienforschung** und gesellschaftlichen Debatten
-- Förderung von **kritischem Denken** durch objektive Datenanalyse
-
-### **3. Bildung und Forschung**
-
-- **Neuer Forschungsansatz** zur Untersuchung von Medienlandschaften
-- Ansatz für zukünftige Studien zur Rolle globaler Nachrichtenagenturen
-- **Nutzen für Bildungseinrichtungen**: Methodik kann in Schulen und Universitäten angewendet werden
+- Überprüfung von Vorurteilen
+- Gibt es Unterschiede zwischen britischen und amerikanischen Medien?
+- Vertrauen in Qualitätsmedien stärken
+- Wissenschaftlicher Beitrag zur Medienforschung und gesellschaftlichen Debatten
+- Förderung von kritischem Denken durch objektive Datenanalyse
 - Große Relevanz in Zeiten emotional geführter Debatten über Medienvertrauen
 
-Das sollte dir eine starke Struktur für dein Referat geben! 💡😊
+**Bildung und Forschung:**
+
+- Neuer Forschungsansatz zur Untersuchung von Medien(landschaften) --> Ansatz für zukünftige Studien
+- Methodik kann in Schulen und Universitäten angewendet werden
+
+Ausblick, zukünftige Forschung?
 
 ---
 
 ## Ergebnisse:
 
-### Interaktive Webseite
+- Graphen
+- Plakat kompakt
+- QR Codes
+
+**Interaktive Webseite:**
 
 - Vergleich von Zeitungen und Rubriken übereinandergelegt
 - Auswahl bestimmter Zeiträume
 - Beispielhafte Analysen
-
-### Graphen
-
-- Interpretation der Daten
-- Erkenntnisse über Objektivität und Polarisierung, und andere Kategorien
