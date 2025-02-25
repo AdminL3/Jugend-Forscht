@@ -1,8 +1,8 @@
 **Vorbereitung**
 
 - Website läuft (alle 3)
-- Graphen beschriftet (Diagramme)
-- interpretation
+- Graphen rauslegen für Präsentation
+- Plakat aufhängen
 
 # Notizen für den Vortrag
 
@@ -21,8 +21,9 @@ in meiner forschungsarbeit habe ich mit einer riesigen datenmenge verschiedene V
 
 - ich wollte wissen was es zu diesem thema bereits an forschung gibt
 - Viele Studien untersuchen aber nur wenige Artikel oder nur über einen kurzen Zeitraum.
-  große Datenmenge einbauen:
-- Ich wollte über einen wirklich langen Zeitraum Veränderungen messen mit dem Fokus auf Entwicklung, nicht auf einem bestimmten Zeitpunkt
+-
+- mithilfe einer riesigen datenmenge wollte ich über einen wirklich langen Zeitraum Veränderungen messen.
+- Der Fokus liegt auf der Entwicklung, nicht auf einem bestimmten Zeitpunkt
 
 Für die Analyse habe ich 2 Zeitungen ausgewählt:
 
@@ -31,8 +32,10 @@ Für die Analyse habe ich 2 Zeitungen ausgewählt:
 
 - warum diese 2 Zeitungen?
 - technische vorgaben für mein projekt
-- qualitätsmedien ➡️ ...
-- ... ist bekannt für ...
+- Qualitätsmedien
+- umfassende und gründliche Berichterstattung
+  -???
+
 - **Meine Untersuchungsmerkmale**
 
 1. **Subjektivität**
@@ -72,18 +75,48 @@ unterteilung in datenbeschaffung und analyse und visualisierung
 - guardian
 - habe links
 - lade quellcode runter ➡️ großer komplexer teil meines projekts
-- guardian <➡️ NYT
+- guardian <--> NYT
 - sehr lange dauer des downloads ➡️ amazon server ➡️ hintergrund laufen
-- analyse
-- artikelanzahl ➡️ beispiel erklären und **Interpretation**
-- artikellänge ➡️ beispiel und **Interpretation**
-- sentimentanalyse mit textblob
-- polarisation ➡️ beispiel ➡️ zuordnung durch schlüsselwörter ➡️ beispiel und **Interpretation**
-- subjektivität ➡️ wörter die andere wörter beeinflusssen ➡️ beispiel und **Interpretation**
+
+---
+
+### Analyse
+
+**Artikelanzahl**
+
+- ➡️ beispiel erklären
+  Deutliche Veränderungen in der Artikelanzahl
+- ➡️ Mögliche Gründe: geänderte redaktionelle Schwerpunkte oder eine veränderte Nachrichtenlage
+
+**Artikellänge**
+
+- ➡️ beispiel erklären
+- Kein Einfluss von sozialen Medien oder dem Trend zu kürzeren Texten erkennbar
+
+**Sentimentanalyse** mit textblob
+
+**Polarisation**
+
+- ➡️ beispiel erklären
+- ➡️ zuordnung durch schlüsselwörter + beispiel
+- Grundsätzlich geringe Polarisation
+- keine tendenzen erkennbar
+- unverändert vergleichbare, neutrale Berichterstattung
+
+**Subjektivität**
+
+- ➡️ beispiel erklären
+- ➡️ wörter die andere wörter beeinflusssen ➡️ beispiel
+-
+- "World" eher objektiv im Vergleich zu "Opinion" ➡️ stärkere Meinungsbildung in der Rubrik „Opinion“
+- keine Veränderungen über die Zeit ➡️ konstante journalistische Standards
+
+--> Allgemein: ähnliche Entwicklung beider Zeitungen, was auf vergleichbare journalistische Standards hindeutet
+
+**Visualisierung**
+
 - graphen erstellen
 - webseite vorstellen
-
-IIINTERPRETATION!!!!
 
 ➡️ fokus auf die komplette auswahl. man kann alles auswählen, parameter, alles genau graphisch darstellen lassen
 
@@ -107,7 +140,8 @@ Was ist das besondere und innovative an meinem Projekt?
 **Gesellschaftlich**:
 
 - Überprüfung von Vorurteilen
-- siehe oben (neg medien)
+- negative medien
+- verkürzunh der texte
 - Gibt es Unterschiede zwischen britischen und amerikanischen Medien?
 -
 - Vertrauen in Qualitätsmedien stärken
@@ -123,11 +157,14 @@ Was ist das besondere und innovative an meinem Projekt?
 - andere medien
 - andere rubriken
 - andere merkmale
-- andere sprachen
+-
+- erweiterung durch
+- sortierung nach themen (migration)
+-
 
 - Methodik kann in Schulen und Universitäten angewendet werden
 
-- **Interaktive Webseite:**
+**Interaktive Webseite:**
 
 - Vergleich von Zeitungen und Rubriken übereinandergelegt
 - Auswahl bestimmter Zeiträume
