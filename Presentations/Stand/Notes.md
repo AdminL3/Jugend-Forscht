@@ -134,7 +134,7 @@ Grenzen der Analyse --> ironie, sarkasmus, etc. nicht berücksichtigt
 Was ist das besondere und innovative an meinem Projekt?
 
 - Noch nie dagewesene Menge an Daten über einen langen Zeitraum untersucht
-- Massive Skalierung und Automatisierung durch moderne Technologien
+- Automatisierung durch moderne Technologien
 - Reproduzierbare Methodik
 
 **Gesellschaftlich**:
@@ -152,7 +152,7 @@ Was ist das besondere und innovative an meinem Projekt?
 **Ausblick, zukünftige Forschung:**
 
 - Neuer Forschungsansatz zur Untersuchung von Medien
-  --> Ansatz für zukünftige Studien
+- leicht zu erweitern 
 - erweiterung zeitraum
 - andere medien
 - andere rubriken
@@ -181,4 +181,4 @@ eben sind nicht so negativ, polarisierend oder verkürzt wie viele Menschen viel
 - Plakat kompakt
 - QR Codes
 
-wenn ich weiterkomme dann werdet ihr herausfinden was mit den medien in den coronajahren passiert ist
+wenn ich im diesem wettbewerb weiterkomme dann werdet ihr herausfinden was mit den medien in den coronajahren passiert ist
