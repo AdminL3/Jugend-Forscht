@@ -34,7 +34,6 @@ Für die Analyse habe ich 2 Zeitungen ausgewählt:
 - technische vorgaben für mein projekt
 - Qualitätsmedien
 - umfassende und gründliche Berichterstattung
-  -???
 
 - **Meine Untersuchungsmerkmale**
 
@@ -44,9 +43,9 @@ Für die Analyse habe ich 2 Zeitungen ausgewählt:
 
 **Warum diese Merkmale?**
 
-- Subjektivität: Meinungseinfluss von journalistische
+- Subjektivität: Meinungseinfluss von journalisten
 - Polarisierung: Negativität von Texten ➡️ herausfinden ob texte tendenzieren ➡️ sind die texte neutral geschrieben oder haben eine negative grundstimmung
-- Artikellänge: mch hat inteteressiert ob die trends social media (aufmerksamkeitspanne ➡️ wird gesagt (vorwurf)) auch in den zeitungen zu sehen sind ➡️ texte kürzer werden
+- Artikellänge: mich hat inteteressiert ob die trends social media (aufmerksamkeitspanne ➡️ wird gesagt (vorwurf)) auch in den zeitungen zu sehen sind ➡️ texte kürzer werden
 
 **Zeitraum:**
 
